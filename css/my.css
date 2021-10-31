@@ -1,1 +1,5 @@
 /* Here is your custom css styles. */
+@font-face{
+  font-family: 'myFont';
+  src: url('../font/FangZhengKaiTiJianTi-1.ttf');	/*这里改为你准备好的字体文件*/
+}

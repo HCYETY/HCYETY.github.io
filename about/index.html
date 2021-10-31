@@ -1,11 +1,11 @@
 <!DOCTYPE HTML>
-<html lang="en">
+<html lang="zh-CN">
 
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="About, hcyety&#39;s blog">
-    <meta name="description" content="About | hcyety&#39;s blog">
+    <meta name="keywords" content="关于, hcyety&#39;s blog">
+    <meta name="description" content="关于 | hcyety&#39;s blog">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>About | hcyety&#39;s blog</title>
+    <title>关于 | hcyety&#39;s blog</title>
     <link rel="icon" type="image/png" href="/logo.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -30,7 +30,8 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="hcyety's blog" type="application/atom+xml">
+</head>
 
 
 
@@ -131,7 +132,7 @@
   
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
-      <i id="searchIcon" class="fas fa-search" title="Search" style="zoom: 0.85;"></i>
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
     </a>
   </li>
 </ul>
@@ -319,7 +320,7 @@
         <div class="brand">
             <div class="title center-align">
                 
-                心灵的栖息所
+                technics &lt;--&gt; heart
                 
             </div>
 
@@ -370,19 +371,29 @@
                         
 <div class="statis">
     <span class="count"><a href="/">2</a></span>
-    <span class="name">Posts</span>
+    <span class="name">文章</span>
 </div>
 
 
 
+<div class="statis">
+    <span class="count"><a href="/categories">1</a></span>
+    <span class="name">分类</span>
+</div>
 
+
+
+<div class="statis">
+    <span class="count"><a href="/tags">1</a></span>
+    <span class="name">标签</span>
+</div>
 
 
                     </div>
                     <div class="col s12 m12 l4">
                         <div class="profile center-align">
                             <div class="avatar">
-                                <img src="/medias/bdHeader.jpg" alt=""
+                                <img src="/medias/bdHeader.jpg" alt="hcyety"
                                      class="circle responsive-img avatar-img">
                             </div>
                             <div class="author">
@@ -390,16 +401,26 @@
                                     
 <div class="statis">
     <span class="count"><a href="/">2</a></span>
-    <span class="name">Posts</span>
+    <span class="name">文章</span>
 </div>
 
 
 
+<div class="statis">
+    <span class="count"><a href="/categories">1</a></span>
+    <span class="name">分类</span>
+</div>
 
+
+
+<div class="statis">
+    <span class="count"><a href="/tags">1</a></span>
+    <span class="name">标签</span>
+</div>
 
 
                                 </div>
-                                <div class="title"></div>
+                                <div class="title">hcyety</div>
                                 <div class="career">前端工程师</div>
                                 <div class="social-link hide-on-large-only" data-aos="zoom-in-left">
                                     
@@ -483,7 +504,7 @@
 
 <div id="postCharts" class="post-charts">
     <div class="title center-align" data-aos="zoom-in-up">
-        <i class="far fa-bar-chart"></i>&nbsp;&nbsp;Post Charts
+        <i class="far fa-bar-chart"></i>&nbsp;&nbsp;文章统计图
     </div>
     <div class="row">
         <div class="chart col s12 m6 l4" data-aos="zoom-in-up">
@@ -510,7 +531,7 @@
 
     let postsOption = {
         title: {
-            text: 'Post Publish Chart',
+            text: '文章发布统计图',
             top: -5,
             x: 'center'
         },
@@ -526,7 +547,7 @@
         },
         series: [
             {
-                name: 'Number of posts',
+                name: '文章篇数',
                 type: 'line',
                 color: ['#6772e5'],
                 data: [0,0,0,0,0,0,0,0,0,0,0,0,2],
@@ -536,17 +557,17 @@
                     data: [{
                         type: 'max',
                         itemStyle: {color: ['#3ecf8e']},
-                        name: 'Maximum'
+                        name: '最大值'
                     }, {
                         type: 'min',
                         itemStyle: {color: ['#fa755a']},
-                        name: 'Minimum'
+                        name: '最小值'
                     }]
                 },
                 markLine: {
                     itemStyle: {color: ['#ab47bc']},
                     data: [
-                        {type: 'average', name: 'Average'}
+                        {type: 'average', name: '平均值'}
                     ]
                 }
             }
@@ -557,7 +578,7 @@
 
     let categoriesOption = {
         title: {
-            text: 'Categories Chart',
+            text: '文章分类统计图',
             top: -4,
             x: 'center'
         },
@@ -567,11 +588,11 @@
         },
         series: [
             {
-                name: 'Categories',
+                name: '分类',
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [],
+                data: [{"name":"疑难杂症","value":1}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -587,7 +608,7 @@
 
     let tagsOption = {
         title: {
-            text: 'TOP10 Tags Chart',
+            text: 'TOP10 标签统计图',
             top: -5,
             x: 'center'
         },
@@ -595,7 +616,7 @@
         xAxis: [
             {
                 type: 'category',
-                data: []
+                data: ["随笔"]
             }
         ],
         yAxis: [
@@ -608,23 +629,23 @@
                 type: 'bar',
                 color: ['#82d3f4'],
                 barWidth : 18,
-                data: [],
+                data: [1],
                 markPoint: {
                     symbolSize: 45,
                     data: [{
                         type: 'max',
                         itemStyle: {color: ['#3ecf8e']},
-                        name: 'Maximum'
+                        name: '最大值'
                     }, {
                         type: 'min',
                         itemStyle: {color: ['#fa755a']},
-                        name: 'Minimum'
+                        name: '最小值'
                     }],
                 },
                 markLine: {
                     itemStyle: {color: ['#ab47bc']},
                     data: [
-                        {type: 'average', name: 'Average'}
+                        {type: 'average', name: '平均值'}
                     ]
                 }
             }
@@ -642,7 +663,7 @@
                 
 <div class="my-projects">
     <div class="title center-align" data-aos="zoom-in-up">
-        <i class="fas fa-gift"></i>&nbsp;&nbsp;My Projects
+        <i class="fas fa-gift"></i>&nbsp;&nbsp;我的项目
     </div>
     <div class="row">
         
@@ -683,7 +704,7 @@
                 
 <div class="my-skills">
     <div class="title center-align" data-aos="zoom-in-up">
-        <i class="fas fa-wrench"></i>&nbsp;&nbsp;My Skills
+        <i class="fas fa-wrench"></i>&nbsp;&nbsp;我的技能
     </div>
     <div class="row">
         
@@ -761,8 +782,14 @@
 
     
     <div class="other-skills chip-container" data-aos="zoom-in-up">
-        <div class="sub-title center-align"><i class="fa fa-book"></i>&nbsp;&nbsp;Other Skills</div>
+        <div class="sub-title center-align"><i class="fa fa-book"></i>&nbsp;&nbsp;其他技能</div>
         <div class="tag-chips center-align">
+            
+            
+            <a href="/tags/%E9%9A%8F%E7%AC%94/">
+                <span class="chip center-align waves-effect waves-light chip-default">随笔</span>
+            </a>
+            
             
         </div>
     </div>
@@ -776,7 +803,7 @@
                 
 <div id="myGallery" class="my-gallery">
     <div class="title center-align" data-aos="zoom-in-up">
-        <i class="far fa-image"></i>&nbsp;&nbsp;Gallery
+        <i class="far fa-image"></i>&nbsp;&nbsp;相册
     </div>
     <div class="row">
         
@@ -834,18 +861,18 @@
             
                 <span id="year">2021</span>
             
-            <a href="/about" target="_blank"></a>
+            <a href="/about" target="_blank">hcyety</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
 
             <!-- 站点总字数 -->
             <!-- 
-                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span class="white-color">937</span>
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">902</span>
              -->
             
                 &nbsp;<i class="fa fa-chart-area"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">937
+                <span class="white-color">902
                 
 
             <!-- <span id="sitetime"></span> -->
@@ -858,7 +885,7 @@
             <!-- 访问量 -->
             <!-- 
                 <span id="busuanzi_container_site_pv">
-                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;Total visits:&nbsp;
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
                     <span id="busuanzi_value_site_pv" class="white-color"></span>
             </span>
              -->
@@ -872,7 +899,7 @@
             <!-- 访客数 -->
             <!-- 
                 <span id="busuanzi_container_site_uv">
-                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;Total visitors:&nbsp;
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
                     <span id="busuanzi_value_site_uv" class="white-color"></span>
             </span>
              -->
@@ -892,6 +919,26 @@
                 <a href="https://beian.aliyun.com/?spm=5176.13329450.top-nav.dicp.4e324df5ha6r5w" target="_blank">2021966463577</a>
             </span>
             
+
+            <a href="https://hexo.io/" target="_blank"> 
+                <img src="https://img.shields.io/badge/Powered-Hexo-skyblue"
+                    style="vertical-align: text-bottom;" />
+            </a>
+            
+            <a href="https://github.com/blinkfox/hexo-theme-matery/blob/develop/README_CN.md" target="_blank"> 
+                <img src="https://img.shields.io/badge/Theme-Matery-brightgreen"
+                    style="vertical-align: text-bottom;" />
+            </a>
+
+            <a href="https://github.com/" target="_blank"> 
+                <img src="https://img.shields.io/badge/Hosted-GitHub & Coding-purple"
+                    style="vertical-align: text-bottom;" />
+            </a>
+
+            <!-- <a href="https://www.jsdelivr.com/" target="_blank"> 
+                <img src="https://img.shields.io/badge/CDN-jsDelivr-orange"
+                    style="vertical-align: text-bottom;" />
+            </a> -->
         </div>
         <div class="col s12 m4 l4 social-link social-statis">
     <a href="https://github.com/HCYETY" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
@@ -957,7 +1004,7 @@
         <span class="badge-subject">PV</span><span class="badge-value bg-brightgreen" id="busuanzi_value_site_pv"></span>
       </div>
       <div class="github-badge">
-        <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">937</span>
+        <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">902</span>
       </div> -->
 </footer>
 
@@ -968,8 +1015,8 @@
 <div id="searchModal" class="modal">
     <div class="modal-content">
         <div class="search-header">
-            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;Search</span>
-            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
                    class="search-input">
         </div>
         <div id="searchResult"></div>
