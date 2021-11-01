@@ -3,11 +3,11 @@
   <title>hcyety&#39;s blog</title>
   
   <subtitle>technics and heart</subtitle>
-  <link href="http://example.com/atom.xml" rel="self"/>
+  <link href="http://hcyety.github.io/atom.xml" rel="self"/>
   
-  <link href="http://example.com/"/>
-  <updated>2021-10-31T12:38:43.998Z</updated>
-  <id>http://example.com/</id>
+  <link href="http://hcyety.github.io/"/>
+  <updated>2021-11-01T08:46:24.322Z</updated>
+  <id>http://hcyety.github.io/</id>
   
   <author>
     <name>hcyety</name>
@@ -18,23 +18,34 @@
   
   <entry>
     <title>ERROR 之部署服务器篇</title>
-    <link href="http://example.com/2021/10/31/ERROR-%E4%B9%8B%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AF%87/"/>
-    <id>http://example.com/2021/10/31/ERROR-%E4%B9%8B%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AF%87/</id>
+    <link href="http://hcyety.github.io/2021/10/31/ERROR-%E4%B9%8B%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AF%87/"/>
+    <id>http://hcyety.github.io/2021/10/31/ERROR-%E4%B9%8B%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AF%87/</id>
     <published>2021-10-31T12:37:13.000Z</published>
-    <updated>2021-10-31T12:38:43.998Z</updated>
+    <updated>2021-11-01T08:46:24.322Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;ol&gt;
+&lt;li&gt;POST &lt;a href=&quot;http://localhost:3000/login&quot;&gt;http://localhost:3000/login&lt;/a&gt; 404 (Not</summary>
+        
+      
     
     
     
+    <category term="疑难杂症" scheme="http://hcyety.github.io/categories/%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87/"/>
     
-    <category term="疑难杂症" scheme="http://example.com/categories/%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87/"/>
     
+    <category term="Linux 服务器" scheme="http://hcyety.github.io/tags/Linux-%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
     
   </entry>
   
   <entry>
     <title>Begin: myfist blog</title>
-    <link href="http://example.com/2021/10/31/Begin-myfist-blog/"/>
-    <id>http://example.com/2021/10/31/Begin-myfist-blog/</id>
+    <link href="http://hcyety.github.io/2021/10/31/Begin-myfist-blog/"/>
+    <id>http://hcyety.github.io/2021/10/31/Begin-myfist-blog/</id>
     <published>2021-10-31T11:35:27.000Z</published>
     <updated>2021-10-31T12:25:41.870Z</updated>
     
@@ -50,7 +61,7 @@
     
     
     
-    <category term="随笔" scheme="http://example.com/tags/%E9%9A%8F%E7%AC%94/"/>
+    <category term="随笔" scheme="http://hcyety.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
