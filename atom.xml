@@ -6,7 +6,7 @@
   <link href="http://hcyety.github.io/atom.xml" rel="self"/>
   
   <link href="http://hcyety.github.io/"/>
-  <updated>2021-11-01T18:05:23.490Z</updated>
+  <updated>2021-11-02T05:00:26.718Z</updated>
   <id>http://hcyety.github.io/</id>
   
   <author>
@@ -17,11 +17,44 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>React-Ts 项目：在线编程笔试平台</title>
+    <link href="http://hcyety.github.io/react-ts-xiang-mu-zai-xian-bian-cheng-bi-shi-ping-tai/"/>
+    <id>http://hcyety.github.io/react-ts-xiang-mu-zai-xian-bian-cheng-bi-shi-ping-tai/</id>
+    <published>2021-11-02T01:56:24.000Z</published>
+    <updated>2021-11-02T05:00:26.718Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;上一篇博客说到线上部署项目到服务器，博主说的就是这个 React-Ts</summary>
+        
+      
+    
+    
+    
+    <category term="项目" scheme="http://hcyety.github.io/categories/%E9%A1%B9%E7%9B%AE/"/>
+    
+    
+    <category term="React" scheme="http://hcyety.github.io/tags/React/"/>
+    
+    <category term="Ts" scheme="http://hcyety.github.io/tags/Ts/"/>
+    
+    <category term="NodeJs" scheme="http://hcyety.github.io/tags/NodeJs/"/>
+    
+    <category term="Typeorm" scheme="http://hcyety.github.io/tags/Typeorm/"/>
+    
+    <category term="Koa" scheme="http://hcyety.github.io/tags/Koa/"/>
+    
+  </entry>
+  
+  <entry>
     <title>前后端分离项目线上部署</title>
-    <link href="http://hcyety.github.io/2021/11/01/%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB%E9%A1%B9%E7%9B%AE%E7%BA%BF%E4%B8%8A%E9%83%A8%E7%BD%B2/"/>
-    <id>http://hcyety.github.io/2021/11/01/%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB%E9%A1%B9%E7%9B%AE%E7%BA%BF%E4%B8%8A%E9%83%A8%E7%BD%B2/</id>
+    <link href="http://hcyety.github.io/qian-hou-duan-fen-chi-xiang-mu-xian-shang-bu-shu/"/>
+    <id>http://hcyety.github.io/qian-hou-duan-fen-chi-xiang-mu-xian-shang-bu-shu/</id>
     <published>2021-11-01T15:07:13.000Z</published>
-    <updated>2021-11-01T18:05:23.490Z</updated>
+    <updated>2021-11-02T04:48:19.098Z</updated>
     
     
       
@@ -34,7 +67,7 @@
     
     
     
-    <category term="项目" scheme="http://hcyety.github.io/categories/%E9%A1%B9%E7%9B%AE/"/>
+    <category term="部署" scheme="http://hcyety.github.io/categories/%E9%83%A8%E7%BD%B2/"/>
     
     
     <category term="Linux 服务器" scheme="http://hcyety.github.io/tags/Linux-%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
@@ -49,8 +82,8 @@
   
   <entry>
     <title>ERROR 之部署服务器篇</title>
-    <link href="http://hcyety.github.io/2021/10/31/ERROR-%E4%B9%8B%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AF%87/"/>
-    <id>http://hcyety.github.io/2021/10/31/ERROR-%E4%B9%8B%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AF%87/</id>
+    <link href="http://hcyety.github.io/error-zhi-bu-shu-fu-wu-qi-pian/"/>
+    <id>http://hcyety.github.io/error-zhi-bu-shu-fu-wu-qi-pian/</id>
     <published>2021-10-31T12:37:13.000Z</published>
     <updated>2021-11-02T01:19:43.750Z</updated>
     
@@ -75,8 +108,8 @@
   
   <entry>
     <title>Begin: myfist blog</title>
-    <link href="http://hcyety.github.io/2021/10/31/Begin-myfist-blog/"/>
-    <id>http://hcyety.github.io/2021/10/31/Begin-myfist-blog/</id>
+    <link href="http://hcyety.github.io/begin-myfist-blog/"/>
+    <id>http://hcyety.github.io/begin-myfist-blog/</id>
     <published>2021-10-31T11:35:27.000Z</published>
     <updated>2021-10-31T12:25:41.870Z</updated>
     
@@ -93,35 +126,6 @@
     
     
     <category term="随笔" scheme="http://hcyety.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>React-Ts 项目：在线编程笔试平台</title>
-    <link href="http://hcyety.github.io/2021/10/31/React-Ts-%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9C%A8%E7%BA%BF%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AF%95%E5%B9%B3%E5%8F%B0/"/>
-    <id>http://hcyety.github.io/2021/10/31/React-Ts-%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%9C%A8%E7%BA%BF%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AF%95%E5%B9%B3%E5%8F%B0/</id>
-    <published>2021-10-31T09:12:27.000Z</published>
-    <updated>2021-10-31T11:06:32.268Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="项目" scheme="http://hcyety.github.io/categories/%E9%A1%B9%E7%9B%AE/"/>
-    
-    
-    <category term="React" scheme="http://hcyety.github.io/tags/React/"/>
-    
-    <category term="Ts" scheme="http://hcyety.github.io/tags/Ts/"/>
-    
-    <category term="NodeJs" scheme="http://hcyety.github.io/tags/NodeJs/"/>
     
   </entry>
   

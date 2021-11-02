@@ -43,7 +43,7 @@
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
-                    <img src="/medias/bdHeader.jpg" class="logo-img" alt="LOGO">
+                    <img src="/medias/loading.gif" data-original="/medias/bdHeader.jpg" class="logo-img" alt="LOGO">
                     
                     <span class="logo-span">hcyety&#39;s blog</span>
                 </a>
@@ -142,7 +142,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="/medias/bdHeader.jpg" class="logo-img circle responsive-img">
+        <img src="/medias/loading.gif" data-original="/medias/bdHeader.jpg" class="logo-img circle responsive-img">
         
         <div class="logo-name">hcyety&#39;s blog</div>
         <div class="logo-desc">
@@ -438,6 +438,24 @@
                     </span>
                 </a>
                 
+                
+                <a href="/tags/Typeorm/" title="Typeorm: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="Typeorm" style="background-color: #A3E4D7;">Typeorm
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Koa/" title="Koa: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="Koa" style="background-color: #85C1E9;">Koa
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
             </div>
         </div>
     </div>
@@ -451,11 +469,11 @@
             
             <div class="article tag-post col s12 m6 l4" data-tags="随笔" data-aos="fade-up">
                 <div class="card">
-                    <a href="/2021/10/31/Begin-myfist-blog/">
+                    <a href="/begin-myfist-blog/">
                         <div class="card-image tag-image">
                             
                             
-                            <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="Begin: myfist blog">
+                            <img src="/medias/loading.gif" data-original="/medias/featureimages/19.jpg" class="responsive-img" alt="Begin: myfist blog">
                             
                             <span class="card-title">Begin: myfist blog</span>
                         </div>
@@ -546,11 +564,11 @@
 
             <!-- 站点总字数 -->
             <!-- 
-                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">6.3k</span>
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">6.4k</span>
              -->
             
                 &nbsp;<i class="fa fa-chart-area"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">6.3k
+                <span class="white-color">6.4k
             
 
             <!-- <span id="sitetime"></span> -->
@@ -698,7 +716,7 @@
         <span class="badge-subject">PV</span><span class="badge-value bg-brightgreen" id="busuanzi_value_site_pv"></span>
       </div>
       <div class="github-badge">
-        <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">6.3k</span>
+        <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">6.4k</span>
       </div> -->
 </footer>
 
@@ -883,6 +901,12 @@ $(function () {
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
 
-</body>
+<script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var e=n.imageLazyLoadSetting.isSPA,i=n.imageLazyLoadSetting.preloadRatio||1,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight*i||document.documentElement.clientHeight*i)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
 
 </html>
