@@ -6,7 +6,7 @@
   <link href="http://hcyety.github.io/atom.xml" rel="self"/>
   
   <link href="http://hcyety.github.io/"/>
-  <updated>2021-11-02T05:00:26.718Z</updated>
+  <updated>2021-11-02T16:58:13.949Z</updated>
   <id>http://hcyety.github.io/</id>
   
   <author>
@@ -17,11 +17,38 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>项目之登录/注册模块</title>
+    <link href="http://hcyety.github.io/xiang-mu-zhi-deng-lu-zhu-ce-mo-kuai/"/>
+    <id>http://hcyety.github.io/xiang-mu-zhi-deng-lu-zhu-ce-mo-kuai/</id>
+    <published>2021-11-02T11:15:01.000Z</published>
+    <updated>2021-11-02T16:58:13.949Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;上一篇博客：&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="项目" scheme="http://hcyety.github.io/categories/%E9%A1%B9%E7%9B%AE/"/>
+    
+    
+    <category term="登录" scheme="http://hcyety.github.io/tags/%E7%99%BB%E5%BD%95/"/>
+    
+    <category term="注册" scheme="http://hcyety.github.io/tags/%E6%B3%A8%E5%86%8C/"/>
+    
+  </entry>
+  
+  <entry>
     <title>React-Ts 项目：在线编程笔试平台</title>
     <link href="http://hcyety.github.io/react-ts-xiang-mu-zai-xian-bian-cheng-bi-shi-ping-tai/"/>
     <id>http://hcyety.github.io/react-ts-xiang-mu-zai-xian-bian-cheng-bi-shi-ping-tai/</id>
     <published>2021-11-02T01:56:24.000Z</published>
-    <updated>2021-11-02T05:00:26.718Z</updated>
+    <updated>2021-11-02T11:50:25.716Z</updated>
     
     
       
@@ -43,9 +70,11 @@
     
     <category term="NodeJs" scheme="http://hcyety.github.io/tags/NodeJs/"/>
     
-    <category term="Typeorm" scheme="http://hcyety.github.io/tags/Typeorm/"/>
-    
     <category term="Koa" scheme="http://hcyety.github.io/tags/Koa/"/>
+    
+    <category term="TypeORM" scheme="http://hcyety.github.io/tags/TypeORM/"/>
+    
+    <category term="MYSQL" scheme="http://hcyety.github.io/tags/MYSQL/"/>
     
   </entry>
   
