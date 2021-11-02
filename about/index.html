@@ -370,21 +370,21 @@
                     <div class="post-statis col l4 hide-on-med-and-down" data-aos="zoom-in-right">
                         
 <div class="statis">
-    <span class="count"><a href="/">2</a></span>
+    <span class="count"><a href="/">3</a></span>
     <span class="name">文章</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/categories">1</a></span>
+    <span class="count"><a href="/categories">2</a></span>
     <span class="name">分类</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/tags">2</a></span>
+    <span class="count"><a href="/tags">5</a></span>
     <span class="name">标签</span>
 </div>
 
@@ -400,21 +400,21 @@
                                 <div class="post-statis hide-on-large-only" data-aos="zoom-in-right">
                                     
 <div class="statis">
-    <span class="count"><a href="/">2</a></span>
+    <span class="count"><a href="/">3</a></span>
     <span class="name">文章</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/categories">1</a></span>
+    <span class="count"><a href="/categories">2</a></span>
     <span class="name">分类</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/tags">2</a></span>
+    <span class="count"><a href="/tags">5</a></span>
     <span class="name">标签</span>
 </div>
 
@@ -558,7 +558,7 @@
                 name: '文章篇数',
                 type: 'line',
                 color: ['#6772e5'],
-                data: [0,0,0,0,0,0,0,0,0,0,0,2,0],
+                data: [0,0,0,0,0,0,0,0,0,0,0,2,1],
                 markPoint: {
                     symbolSize: 45,
                     color: ['#fa755a','#3ecf8e','#82d3f4'],
@@ -600,7 +600,7 @@
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"疑难杂症","value":1}],
+                data: [{"name":"疑难杂症","value":1},{"name":"项目","value":1}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -624,7 +624,7 @@
         xAxis: [
             {
                 type: 'category',
-                data: ["随笔","Linux 服务器"]
+                data: ["Linux 服务器","随笔","线上部署","scp2","node-ssh"]
             }
         ],
         yAxis: [
@@ -637,7 +637,7 @@
                 type: 'bar',
                 color: ['#82d3f4'],
                 barWidth : 18,
-                data: [1,1],
+                data: [2,1,1,1,1],
                 markPoint: {
                     symbolSize: 45,
                     data: [{
@@ -805,6 +805,24 @@
             </a>
             
             
+            
+            <a href="/tags/%E7%BA%BF%E4%B8%8A%E9%83%A8%E7%BD%B2/">
+                <span class="chip center-align waves-effect waves-light chip-default">线上部署</span>
+            </a>
+            
+            
+            
+            <a href="/tags/scp2/">
+                <span class="chip center-align waves-effect waves-light chip-default">scp2</span>
+            </a>
+            
+            
+            
+            <a href="/tags/node-ssh/">
+                <span class="chip center-align waves-effect waves-light chip-default">node-ssh</span>
+            </a>
+            
+            
         </div>
     </div>
     
@@ -928,11 +946,11 @@
 
             <!-- 站点总字数 -->
             <!-- 
-                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">1.9k</span>
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">5.5k</span>
              -->
             
                 &nbsp;<i class="fa fa-chart-area"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">1.9k
+                <span class="white-color">5.5k
             
 
             <!-- <span id="sitetime"></span> -->
@@ -981,7 +999,7 @@
                     <a href="https://beian.aliyun.com/?spm=5176.13329450.top-nav.dicp.4e324df5ha6r5w" target="_blank">
                         2021966463577
                     </a>
-                </span>
+                </span>&nbsp;&nbsp;
             
 
             <a href="https://hexo.io/" target="_blank" title="由 Hexo 强力驱动"> 
@@ -989,21 +1007,21 @@
                     src="https://img.shields.io/badge/Powered-Hexo-skyblue"
                     style="vertical-align: text-bottom;" 
                 />
-            </a>
+            </a>&nbsp;&nbsp;
             
             <a href="https://github.com/blinkfox/hexo-theme-matery/blob/develop/README_CN.md" target="_blank" title="站点使用 Matery 主题"> 
                 <img 
                     src="https://img.shields.io/badge/Theme-Matery-brightgreen"
                     style="vertical-align: text-bottom;" 
                 />
-            </a>
+            </a>&nbsp;&nbsp;
 
             <a href="https://github.com/" target="_blank" title="静态网页托管于 GitHub Pages 和 Coding Pages"> 
                 <img 
                     src="https://img.shields.io/badge/Hosted-GitHub & Coding-purple"
                     style="vertical-align: text-bottom;" 
                 />
-            </a>
+            </a>&nbsp;&nbsp;
 
             <!-- <a href="https://www.jsdelivr.com/" target="_blank"> 
                 <img 
@@ -1080,7 +1098,7 @@
         <span class="badge-subject">PV</span><span class="badge-value bg-brightgreen" id="busuanzi_value_site_pv"></span>
       </div>
       <div class="github-badge">
-        <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">1.9k</span>
+        <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">5.5k</span>
       </div> -->
 </footer>
 
