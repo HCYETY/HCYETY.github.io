@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="项目之登录/注册模块, hcyety&#39;s blog">
-    <meta name="description" content="前言上一篇博客：React-Ts 项目：在线编程笔试平台 有说到，这个项目是前后端分离项目，也就是说，其实该项目相当于两个项目，分别专注前端和后端，如果要上传到 github ，那么就需要创建两个仓库来分别放置。博主已经将源码 push ，">
+    <meta name="description" content="记录登录/注册功能的逻辑实现">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -474,14 +474,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.9k
+                    2.8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    6 分
+                    10 分
                 </div>
                 
 
@@ -515,15 +515,13 @@
 </blockquote>
 <h2 id="注册模块（支持邮箱注册）"><a href="#注册模块（支持邮箱注册）" class="headerlink" title="注册模块（支持邮箱注册）"></a>注册模块（支持邮箱注册）</h2><h3 id="code-前思考"><a href="#code-前思考" class="headerlink" title="code 前思考"></a>code 前思考</h3><p>首先我们需要理清注册的逻辑，联想我们在一个网站上注册时，操作流程是怎么样的。我们可以很快知道，通常有两种方式，一种是手机号注册，一种是邮箱注册。</p>
 <ol>
-<li>手机号注册</li>
+<li><p>手机号注册<br><img src="/medias/loading.gif" data-original="https://z3.ax1x.com/2021/11/03/IAj9Rx.jpg" alt="常见手机注册"></p>
+</li>
+<li><p>邮箱注册<br><img src="/medias/loading.gif" data-original="https://z3.ax1x.com/2021/11/03/IAXWqg.jpg" alt="常见邮箱注册"></p>
+</li>
 </ol>
-<p>流程图：/medias/loading.gif" data-original="<img src=""></p>
-<ol start="2">
-<li>邮箱注册 </li>
-</ol>
-<p>流程图：/medias/loading.gif" data-original="<img src=""></p>
 <blockquote>
-<p>看完这两个流程图，读者应该对两种注册方式有了一定的了解，那么具体想选择哪种方式实现注册，读者可以自行选择，下面我们还需要来看看如何实现前后端的连接，以跑通整个项目。</p>
+<p>注册的方式有很多种，除了手机邮箱注册，还有用户名/xx号注册、第三方注册等，具体想选择哪种方式实现注册，读者可以自行选择，下面我们还需要来看看如何实现前后端的连接，以跑通整个项目。</p>
 </blockquote>
 <blockquote>
 <p>情况说明：博主选择的方式是邮箱注册。</p>
@@ -538,55 +536,126 @@
 <p>说到这里，读者应该懂得了将前后端项目串联起来的一系列逻辑，概括起来便是前端调用后端接口【发送请求】，后端设定接口给前端调用【接收请求】，这样一来前后端便可以互连跑通服务了。</p>
 </blockquote>
 <blockquote>
-<p>但问题来了，“你说了这么多，我还是不知道该怎么在前端调用后端接口，后端又如何接收到前端传来的请求”？别急，博主只是先抛砖引玉，先给大家捋顺跑通前后端服务的逻辑，心里好有个底。下面我们继续往下 –&gt;</p>
+<p>但问题来了，“你说了这么多，我还是不知道该怎么在前端调用后端接口，后端又如何接收到前端传来的请求”？别急，博主只是先抛砖引玉，先给大家捋顺跑通前后端服务的逻辑，心里好有个底。下面我们继续往下</p>
 </blockquote>
 <ol start="5">
-<li>先说下如何在后端定义接口。博主的后端项目使用了 <code>Koa</code> 框架，因此可以调用它的 API :</li>
+<li>前端发送请求的方式有多种，如 fetch、axios 等，这里使用的是 axios ，下面自定义封装的 axios 函数，仅供大家参考：<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 文件结构：根目录下/src/api/index.ts</span>
+<span class="token keyword">import</span> axios <span class="token keyword">from</span> <span class="token string">'axios'</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 注意这个路径，http://localhost:8080 是后端服务的地址，/api 是请求的固定格式，后面调用该函数的时候还会再传入一个参数 /xxx ，因此后端要想接收前端请求，就必须配置接口路径成 前端服务的地址/api/xxx ，这样前后端项目才能跑通【不理解的话后面代码还会有注释】</span>
+<span class="token keyword">const</span> <span class="token constant">REQUESTIP</span><span class="token operator">:</span> string <span class="token operator">=</span> <span class="token string">"http://localhost:8080/api"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">generateHttpApi</span><span class="token punctuation">(</span>method<span class="token operator">:</span> <span class="token string">'get'</span> <span class="token operator">|</span> <span class="token string">'post'</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">return</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token parameter">url<span class="token operator">:</span> string<span class="token punctuation">,</span> params<span class="token operator">?</span><span class="token operator">:</span> any</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">const</span> data <span class="token operator">=</span> method <span class="token operator">===</span> <span class="token string">'get'</span> <span class="token operator">?</span> <span class="token punctuation">&#123;</span>
+      params
+    <span class="token punctuation">&#125;</span> <span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+      data<span class="token operator">:</span> params
+    <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+    <span class="token comment">// 调用函数时会传入 url （相当于上面说的xxx），在这里进行拼接，就成了前端调用后端接口的完整 url 了：后端服务地址/api/xxx</span>
+    url <span class="token operator">=</span> <span class="token constant">REQUESTIP</span> <span class="token operator">+</span> url<span class="token punctuation">;</span>
+    <span class="token keyword">try</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">const</span> response <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">axios</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+        url<span class="token punctuation">,</span>
+        method<span class="token punctuation">,</span>
+        <span class="token operator">...</span>data<span class="token punctuation">,</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">return</span> response<span class="token punctuation">.</span>data<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">return</span> <span class="token keyword">await</span> Promise<span class="token punctuation">.</span><span class="token function">reject</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> get <span class="token operator">=</span> <span class="token function">generateHttpApi</span><span class="token punctuation">(</span><span class="token string">'get'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> post <span class="token operator">=</span> <span class="token function">generateHttpApi</span><span class="token punctuation">(</span><span class="token string">'post'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+调用 axios 封装函数的时候：<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 文件结构：根目录/src/api/modules/interface.ts</span>
+<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> post <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'根目录/src/api/index'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">testRegister</span><span class="token punctuation">(</span><span class="token parameter">data<span class="token operator">:</span> <span class="token punctuation">&#123;</span> email<span class="token operator">:</span> string<span class="token punctuation">;</span> cypher<span class="token operator">:</span> string<span class="token punctuation">;</span> captcha<span class="token operator">:</span> string<span class="token punctuation">;</span> identity<span class="token operator">:</span> number<span class="token punctuation">&#125;</span></span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token comment">// 此时前端请求的整个路径为 http://localhost:8080/api/register，那么假设前端项目地址为 http://localhost:3000 ，后端就需要定义接口路径为 http://localhost:3000/api/register</span>
+  <span class="token keyword">return</span> <span class="token function">post</span><span class="token punctuation">(</span><span class="token string">'/register'</span><span class="token punctuation">,</span> data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+
+<span class="token comment">// 文件结构：根目录/src/pages/login/index.tsx</span>
+<span class="token comment">// 这里结构其实不是很好，因为注册和登录是写在一块的，没有分开来。读者清楚是在注册事件下发送 axios 请求的就好</span>
+<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> testRegister <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'根目录/src/api/modules/interface'</span><span class="token punctuation">;</span>
+  <span class="token comment">// 点击“注册”按钮触发的函数：</span>
+<span class="token function-variable function">submitRegister</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token parameter">values<span class="token operator">:</span> any</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  <span class="token comment">// 表单的值</span>
+  <span class="token keyword">const</span> <span class="token punctuation">&#123;</span> account<span class="token punctuation">,</span> password<span class="token punctuation">,</span> identity<span class="token punctuation">,</span> email<span class="token punctuation">,</span> cypher<span class="token punctuation">,</span> captcha <span class="token punctuation">&#125;</span> <span class="token operator">=</span> values<span class="token punctuation">;</span>
+  <span class="token comment">// 请求参数</span>
+  <span class="token keyword">const</span> data <span class="token operator">=</span> <span class="token punctuation">&#123;</span> email<span class="token punctuation">,</span> cypher<span class="token punctuation">,</span> captcha<span class="token punctuation">,</span> identity <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+  <span class="token comment">// ！发送请求并获取返回值</span>
+  <span class="token keyword">const</span> res <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">testRegister</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">// 注册成功</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>res<span class="token punctuation">.</span>data<span class="token punctuation">.</span>status <span class="token operator">===</span> <span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    message<span class="token punctuation">.</span><span class="token function">success</span><span class="token punctuation">(</span>res<span class="token punctuation">.</span>msg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// 在当前页跳转至登录界面</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> noTitleKey<span class="token operator">:</span> <span class="token string">'login'</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+    message<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>res<span class="token punctuation">.</span>msg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>然后是在后端定义接口。博主的后端项目使用了 <code>Koa</code> 框架，因此可以调用它的 API :</li>
 </ol>
 <blockquote>
-<p>注意：单单处理 cookie 并不能解决前后端项目跨域问题，网上有多种处理跨域的解决方法，博主采用的方法是配置 nginx 反向代理，具体操作可以跳转到另一篇博客：<a href="https://hcyety.github.io/qian-hou-duan-fen-chi-xiang-mu-xian-shang-bu-shu/">前后端分离项目线上部署</a>，里面有配置 nginx 的具体步骤，在这里不加叙述。</p>
+<p>注意：如果是本地项目要解决跨域，Koa 可以使用 koa2-cors 直接解决；但如果是线上项目的话，还需要另外的配置，网上有多种处理跨域的解决方法，博主采用的方法是配置 nginx 反向代理，具体操作可以跳转到另一篇博客：<a href="https://hcyety.github.io/qian-hou-duan-fen-chi-xiang-mu-xian-shang-bu-shu/">前后端分离项目线上部署</a>，里面有配置 nginx 的具体步骤，在这里不加叙述。</p>
 </blockquote>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 下面 code 仅供参考，大致是这么一个模式</span>
 
 <span class="token keyword">import</span> Koa <span class="token keyword">from</span> <span class="token string">'koa'</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> Router <span class="token keyword">from</span> <span class="token string">'koa-router'</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> bodyParser <span class="token keyword">from</span> <span class="token string">'koa-bodyparser'</span><span class="token punctuation">;</span>        <span class="token comment">// 处理 post 请求，有了这个插件才能获取 post 参数</span>
-<span class="token keyword">import</span> cors <span class="token keyword">from</span> <span class="token string">'koa2-cors'</span><span class="token punctuation">;</span>                   <span class="token comment">// 处理 cookie 跨域</span>
-<span class="token keyword">import</span> register <span class="token keyword">from</span> <span class="token string">'./middleware/register'</span><span class="token punctuation">;</span>   <span class="token comment">// 导入注册的 .ts 文件</span>
+<span class="token keyword">import</span> bodyParser <span class="token keyword">from</span> <span class="token string">'koa-bodyparser'</span><span class="token punctuation">;</span>        <span class="token comment">// 处理 post 请求，有了这个插件才能获取 post 参数【通常前端的请求方式是 post 】</span>
+<span class="token keyword">import</span> cors <span class="token keyword">from</span> <span class="token string">'koa2-cors'</span><span class="token punctuation">;</span> <span class="token comment">// 处理跨域问题</span>
+<span class="token keyword">import</span> register <span class="token keyword">from</span> <span class="token string">'./middleware/register'</span><span class="token punctuation">;</span>   <span class="token comment">// 导入注册的 .ts 文件，用于处理注册事件【通常不放在入口文件里，而是单独抽出来】</span>
 
 <span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Koa</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">const</span> router <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Router</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
-<span class="token keyword">const</span> <span class="token constant">ORIGINIP</span><span class="token operator">:</span> string <span class="token operator">=</span> <span class="token string">'http://120.79.193.126:80'</span><span class="token punctuation">;</span> <span class="token comment">// 前端项目的地址</span>
 
-<span class="token comment">// 处理 cookie 跨域</span>
-<span class="token keyword">const</span> corsOptions <span class="token operator">=</span><span class="token punctuation">&#123;</span>
-  origin<span class="token operator">:</span> <span class="token constant">ORIGINIP</span><span class="token punctuation">,</span> 
-  credentials<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-  optionSuccessStatus<span class="token operator">:</span> <span class="token number">200</span>
-<span class="token punctuation">&#125;</span>
 app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token function">cors</span><span class="token punctuation">(</span>corsOptions<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">// 处理 post 请求的参数。</span>
 <span class="token comment">// 注意这个插件的位置，必须要放在匹配接口之前！！！</span>
 app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token function">bodyParser</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment">// 匹配接口</span>
+<span class="token comment">// 匹配接口，这里的路径和前端请求路径中端口号后面那部分是保持一致的</span>
 router<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">'/api/register'</span><span class="token punctuation">,</span> register<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">// 组装匹配好的路由，返回一个合并好的中间件</span>
 app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>router<span class="token punctuation">.</span><span class="token function">routes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
+<span class="token comment">// 这里启动的后端服务是 8080 端口</span>
 app<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">8080</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'网站服务器启动成功，请访问 http://120.79.193.126:8080'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'网站服务器启动成功，请访问 http://localhost:8080'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
-<p>说一句：定义好了后端接口，可以查阅 <a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1876810">postman 使用教程</a>，在 <a target="_blank" rel="noopener" href="https://www.postman.com/downloads/">postman 官网</a> 下载 <code>postman</code> ，方便测试接口是否被成功调用，推荐使用！<br>6. 最后，前端获取到表单中输入框的值（邮箱、密码、验证码），然后通过 axios （或其他方法）配合后端接口将其发送至后端 【发送请求】   </p>
+<p>说一句：定义好了后端接口，可以查阅 <a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1876810">postman 使用教程</a>，在 <a target="_blank" rel="noopener" href="https://www.postman.com/downloads/">postman 官网</a> 下载 <code>postman</code> ，方便测试接口是否被成功调用，推荐使用！</p>
 </blockquote>
-<h2 id="登录模块（支持邮箱注册）"><a href="#登录模块（支持邮箱注册）" class="headerlink" title="登录模块（支持邮箱注册）"></a>登录模块（支持邮箱注册）</h2><ol>
-<li>逻辑同注册相似，也是【前端发送请求】–【后端接收请求】–【后端响应请求】 –【前端接收响应】 </li>
+<h2 id="登录模块（支持邮箱登录）"><a href="#登录模块（支持邮箱登录）" class="headerlink" title="登录模块（支持邮箱登录）"></a>登录模块（支持邮箱登录）</h2><ol>
+<li>跑通前后端服务的逻辑同注册一致，也是【前端发送请求】–【后端接收请求】–【后端响应请求】 –【前端接收响应】 </li>
 </ol>
 <blockquote>
 <p>然而这样简单地实现登录功能，用户是可能通过控制台篡改后端的响应数据的，进而实现登录跳转，这里采用后端 session 身份验证进行防范。同时前端需实现登录拦截，防止用户未经登录便通过 url 跳过登录验证。</p>
 </blockquote>
 <ol start="2">
-<li>在后端【接收前端请求】后，若密码匹配正确，则生成一个长度为 20 左右的包含数字和大小写字母的 session 随机数，然后将这个随机数①存进该用户的信息中，以便在维护登录状态时可以根据用户账号获取；②生成一个 cookie ，将 session 存进该 cookie 中。<br>然后前后端分别配置之后，就会在前端每次向后端请求数据时，请求头中自动带上 cookie ，后端便可以获取到这个 cookie 对用户身份进行验证：如果与数据库中该用户的 session 一致，则说明用户处于登录状态，否则用户未登录。可以设一个字段标识登录状态，返回给前端，以便前端判断用户是否登录成功。</li>
+<li>所谓 session 身份验证，打个比方就是“你第一次来的时候我发给你一张身份证，但只是一张写着身份证号码的纸片。以后你每次来办事，我根据这张身份证去后台查一下你的 id 是不是有效”。  </li>
+</ol>
+<p>对应到登录功能，就是每次用户登录的时候，后端获取到用户邮箱，根据这个邮箱查找数据库中存储的该用户的信息，若查找不到说明该用户未注册；若查找得到则说明该用户已注册成功，可以往下匹配密码，若密码错误，则不能登录，也就不用“发放身份证”了；若密码正确，则“可以发放带有身份证号码的身份证”–生成 session 并存进 cookie 中响应给前端。这样用户就算篡改后端响应数据，要登录的时候 session 还是会发生更改，不会与用户篡改后的数据相匹配；同时如果用户在未登录的状态下更改 url ，也会触发登录拦截，后端会验证登录状态。</p>
+<blockquote>
+<p>这个 session 是一个长度为 20 左右的包含数字和大小写字母的 session 随机数，将这个随机数①存进该用户的信息中，以便在维护登录状态时可以根据用户账号获取；②生成一个 cookie ，将 session 存进该 cookie 中。  </p>
+<p>那么问题又来了，session 可以通过 JS 函数 return 一个值得到，但这个 cookie 该如何生成？ session 又如何存进 cookie 中？</p>
+</blockquote>
+<p>在 Koa 中，这两个问题可以一并解决：</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 文件结构：根目录/src/middleware/login.ts</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token parameter">ctx<span class="token operator">:</span>Context</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  <span class="token comment">// generateMixed() 是封装的 JS 函数，用于生成随机数</span>
+  <span class="token keyword">const</span> session <span class="token operator">=</span> <span class="token function">generateMixed</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">// 设置 cookie </span>
+  ctx<span class="token punctuation">.</span>cookies<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>
+    <span class="token string">'session'</span><span class="token punctuation">,</span> session<span class="token punctuation">,</span> <span class="token punctuation">&#123;</span> httpOnly<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> maxAge<span class="token operator">:</span> <span class="token number">3600000</span> <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>然后在前端封装 axios 函数的地方加上配置 <code>axios.defaults.withCredentials = true;</code> 之后，就会在前端每次向后端请求数据时，请求头中自动带上 cookie ，后端便可以获取到这个 cookie 对用户身份进行验证：如果与数据库中该用户的 session 一致，则说明用户处于登录状态，否则用户未登录。可以设一个字段标识登录状态，返回给前端，以便前端判断用户是否登录成功。</p>
+<ol start="3">
 <li>前端在路由页面发送登录请求（参数为 cookie ），如果后端接收到了 cookie ，并在数据库中找到 session 为 cookie 的用户信息，说明用户处于登录状态，否则处于未登录状态。对于未登录的用户，重定向到登录页面即可。</li>
 </ol>
 
@@ -1076,7 +1145,7 @@ app<span class="token punctuation">.</span><span class="token function">listen</
     //     avatar: 'monsterid',
     //     pageSize: '10',
     //     lang: 'zh-cn',
-    //     placeholder: '昵称输入QQ号会自动获取qq网名和qq邮箱~~'
+    //     placeholder: '昵称建议输入QQ号，能自动获取QQ网名和QQ邮箱~~'
     // });
     new Valine({
         el: '#vcomments',
@@ -1088,7 +1157,7 @@ app<span class="token punctuation">.</span><span class="token function">listen</
         avatar: 'monsterid',
         pageSize: '10',
         lang: 'zh-cn',
-        placeholder: '昵称输入QQ号会自动获取qq网名和qq邮箱~~',
+        placeholder: '昵称建议输入QQ号，能自动获取QQ网名和QQ邮箱~~',
         enableQQ: true,
         emojiCDN: '//i0.hdslb.com/bfs/emote/', 
         // 表情title和图片映射
@@ -1187,7 +1256,7 @@ app<span class="token punctuation">.</span><span class="token function">listen</
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            记录登录/注册功能的逻辑实现
                         
                     </div>
                     <div class="publish-info">
@@ -1572,11 +1641,11 @@ app<span class="token punctuation">.</span><span class="token function">listen</
 
             <!-- 站点总字数 -->
             <!-- 
-                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">8.2k</span>
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">9.2k</span>
              -->
             
                 &nbsp;<i class="fa fa-chart-area"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">8.2k
+                <span class="white-color">9.2k
             
 
             <!-- <span id="sitetime"></span> -->
@@ -1724,7 +1793,7 @@ app<span class="token punctuation">.</span><span class="token function">listen</
         <span class="badge-subject">PV</span><span class="badge-value bg-brightgreen" id="busuanzi_value_site_pv"></span>
       </div>
       <div class="github-badge">
-        <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">8.2k</span>
+        <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">9.2k</span>
       </div> -->
 </footer>
 
