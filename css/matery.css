@@ -40,6 +40,10 @@ body {
     color: #34495e;
     overflow-x: hidden;
     overflow-y: auto;
+    cursor: url('/medias/cursor/手写.cur'), auto;
+}
+a:hover{
+    cursor: url('medias/cursor/候选.cur'), pointer;
 }
 
 h1 {

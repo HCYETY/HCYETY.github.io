@@ -35,6 +35,16 @@
 
 
 
+   <style>
+    body{
+       background-image: url(https://cdn.jsdelivr.net/gh/Tokisaki-Galaxy/res/site/medias/background.jpg);
+       background-repeat:no-repeat;
+       background-size: 100% 100%;
+       background-attachment:fixed;
+    }
+</style>
+
+
 
 <body>
     <header class="navbar-fixed">
@@ -483,14 +493,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-11-02
+                    2021-11-03
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    896
+                    905
                 </div>
                 
 
@@ -604,6 +614,7 @@
 <h2 id="项目笔记"><a href="#项目笔记" class="headerlink" title="项目笔记"></a>项目笔记</h2><ol>
 <li><a href="https://hcyety.github.io/error-zhi-bu-shu-fu-wu-qi-pian/">ERROR 之部署服务器篇</a></li>
 <li><a href="https://hcyety.github.io/qian-hou-duan-fen-chi-xiang-mu-xian-shang-bu-shu/">前后端分离项目线上部署</a></li>
+<li><a href="https://hcyety.github.io/xiang-mu-zhi-deng-lu-zhu-ce-mo-kuai/">项目之登录/注册模块</a></li>
 </ol>
 <h2 id="本文还在持续更新中……"><a href="#本文还在持续更新中……" class="headerlink" title="本文还在持续更新中……"></a>本文还在持续更新中……</h2>
                 
@@ -1671,6 +1682,13 @@
                 />
             </a>&nbsp;&nbsp;
 
+            <a href="https://imgtu.com/" target="_blank" title="图片存储于 路过图床"> 
+                <img 
+                    src="https://img.shields.io/badge/Images-路过-red"
+                    style="vertical-align: text-bottom;" 
+                />
+            </a>&nbsp;&nbsp;
+
             <!-- <a href="https://www.jsdelivr.com/" target="_blank"> 
                 <img 
                     src="https://img.shields.io/badge/CDN-jsDelivr-orange"
@@ -1679,8 +1697,20 @@
             </a> -->
         </div>
         <div class="col s12 m4 l4 social-link social-statis">
-    <a href="https://github.com/HCYETY" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+    <a href="https://github.com/HCYETY" class="tooltipped" target="_blank" data-tooltip="访问我的 GitHub" data-position="top" data-delay="50">
         <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="https://z3.ax1x.com/2021/11/03/IEj75j.jpg" class="tooltipped" target="_blank" data-tooltip="微信联系我: y011127fz" data-position="top" data-delay="50">
+        <i class="fab fa-weixin"></i>
+    </a>
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1164939253@qq.com" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1164939253@qq.com" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
     </a>
 
 
@@ -1692,12 +1722,6 @@
 
 
 
-
-
-
-    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1164939253@qq.com" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1164939253@qq.com" data-position="top" data-delay="50">
-        <i class="fab fa-qq"></i>
-    </a>
 
 
 
@@ -1871,6 +1895,7 @@ $(function () {
     <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
     <script src="/js/matery.js"></script>
 
+
     
 
     
@@ -1894,7 +1919,7 @@ $(function () {
             }
         </script>
     
-
+    
     <!-- 鼠标星星特效 -->
      
         <script type="text/javascript">
@@ -1902,10 +1927,10 @@ $(function () {
             var windowWidth = $(window).width();
             if (windowWidth > 768) {
                 document.write('<script type="text/javascript" src="/"><\/script>');
-            }
-        </script>
+                }
+                </script>
     
-
+    
     <!-- Baidu Analytics -->
 
     <!-- Baidu Push -->
@@ -1925,7 +1950,11 @@ $(function () {
 </script>
 
     
-    <script src="/libs/others/clicklove.js" async="async"></script>
+        <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    <!-- 鼠标点击礼花特效 -->
+     
+        <script src="/libs/others/fireworks.js"></script>
     
     
     <script async src="/libs/others/busuanzi.pure.mini.js"></script>
