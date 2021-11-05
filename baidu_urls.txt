@@ -1,5 +1,5 @@
-http://hcyety.github.io/xiang-mu-zhi-deng-lu-zhu-ce-mo-kuai/
-http://hcyety.github.io/react-ts-xiang-mu-zai-xian-bian-cheng-bi-shi-ping-tai/
-http://hcyety.github.io/qian-hou-duan-fen-chi-xiang-mu-xian-shang-bu-shu/
-http://hcyety.github.io/error-zhi-bu-shu-fu-wu-qi-pian/
-http://hcyety.github.io/begin-myfist-blog/
+http://hcyety.github.io/2021/11/02/xiang-mu-zhi-deng-lu-zhu-ce-mo-kuai/
+http://hcyety.github.io/2021/11/02/react-ts-xiang-mu-zai-xian-bian-cheng-bi-shi-ping-tai/
+http://hcyety.github.io/2021/11/01/qian-hou-duan-fen-chi-xiang-mu-xian-shang-bu-shu/
+http://hcyety.github.io/2021/10/31/error-zhi-bu-shu-fu-wu-qi-pian/
+http://hcyety.github.io/2021/10/31/begin-myfist-blog/
