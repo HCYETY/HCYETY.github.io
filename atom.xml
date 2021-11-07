@@ -6,7 +6,7 @@
   <link href="http://hcyety.github.io/atom.xml" rel="self"/>
   
   <link href="http://hcyety.github.io/"/>
-  <updated>2021-11-03T06:47:25.325Z</updated>
+  <updated>2021-11-07T18:01:09.683Z</updated>
   <id>http://hcyety.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>tell it to myself</title>
+    <link href="http://hcyety.github.io/2021/11/08/tell-it-to-myself/"/>
+    <id>http://hcyety.github.io/2021/11/08/tell-it-to-myself/</id>
+    <published>2021-11-07T17:12:07.000Z</published>
+    <updated>2021-11-07T18:01:09.683Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前因后果&quot;&gt;&lt;a href=&quot;#前因后果&quot; class=&quot;headerlink&quot; title=&quot;前因后果&quot;&gt;&lt;/a&gt;前因后果&lt;/h2&gt;&lt;p&gt;实习项目从开始做到现在已经过去 10 个星期了，前 9</summary>
+        
+      
+    
+    
+    
+    
+    <category term="随笔" scheme="http://hcyety.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
   
   <entry>
     <title>项目之登录/注册模块</title>
