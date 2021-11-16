@@ -6,7 +6,7 @@
   <link href="http://hcyety.github.io/atom.xml" rel="self"/>
   
   <link href="http://hcyety.github.io/"/>
-  <updated>2021-11-07T18:01:09.683Z</updated>
+  <updated>2021-11-16T00:54:51.820Z</updated>
   <id>http://hcyety.github.io/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>setTimeout() 与 setInterval() 的区别</title>
+    <link href="http://hcyety.github.io/2021/11/15/settimeout-yu-setinterval-de-qu-bie/"/>
+    <id>http://hcyety.github.io/2021/11/15/settimeout-yu-setinterval-de-qu-bie/</id>
+    <published>2021-11-15T14:31:51.000Z</published>
+    <updated>2021-11-16T00:54:51.820Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;首先要对 setTimeout() 和 setInterval() 有一个概念，学习了 JavaScript</summary>
+        
+      
+    
+    
+    
+    <category term="技术文章" scheme="http://hcyety.github.io/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0/"/>
+    
+    
+    <category term="JS" scheme="http://hcyety.github.io/tags/JS/"/>
+    
+  </entry>
+  
+  <entry>
     <title>tell it to myself</title>
     <link href="http://hcyety.github.io/2021/11/08/tell-it-to-myself/"/>
     <id>http://hcyety.github.io/2021/11/08/tell-it-to-myself/</id>
     <published>2021-11-07T17:12:07.000Z</published>
-    <updated>2021-11-07T18:01:09.683Z</updated>
+    <updated>2021-11-07T18:01:30.575Z</updated>
     
     
       
@@ -137,7 +162,7 @@
     <link href="http://hcyety.github.io/2021/10/31/error-zhi-bu-shu-fu-wu-qi-pian/"/>
     <id>http://hcyety.github.io/2021/10/31/error-zhi-bu-shu-fu-wu-qi-pian/</id>
     <published>2021-10-31T12:37:13.000Z</published>
-    <updated>2021-11-04T11:24:24.250Z</updated>
+    <updated>2021-11-10T09:30:04.231Z</updated>
     
     
       
@@ -145,7 +170,7 @@
         
         
     <summary type="html">&lt;ol&gt;
-&lt;li&gt;POST &lt;a href=&quot;http://120.79.193.126:8080/api/login&quot;&gt;http://120.79.193.126:8080/api/login&lt;/a&gt;</summary>
+&lt;li&gt;POST &lt;a href=&quot;http://localhost:3000/login&quot;&gt;http://localhost:3000/login&lt;/a&gt; 404 (Not</summary>
         
       
     
