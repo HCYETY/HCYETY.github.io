@@ -6,7 +6,7 @@
   <link href="http://hcyety.github.io/atom.xml" rel="self"/>
   
   <link href="http://hcyety.github.io/"/>
-  <updated>2021-11-22T13:10:37.327Z</updated>
+  <updated>2021-12-06T14:06:09.091Z</updated>
   <id>http://hcyety.github.io/</id>
   
   <author>
@@ -17,11 +17,114 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>JS 之数据类型</title>
+    <link href="http://hcyety.github.io/2021/12/06/js-zhi-shu-ju-lei-xing/"/>
+    <id>http://hcyety.github.io/2021/12/06/js-zhi-shu-ju-lei-xing/</id>
+    <published>2021-12-06T05:16:43.000Z</published>
+    <updated>2021-12-06T14:06:09.091Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;数据类型&quot;&gt;&lt;a href=&quot;#数据类型&quot; class=&quot;headerlink&quot; title=&quot;数据类型&quot;&gt;&lt;/a&gt;数据类型&lt;/h2&gt;&lt;h3 id=&quot;7-种&quot;&gt;&lt;a href=&quot;#7-种&quot; class=&quot;headerlink&quot; title=&quot;7 种&quot;&gt;&lt;/a&gt;7</summary>
+        
+      
+    
+    
+    
+    <category term="JavaScript" scheme="http://hcyety.github.io/categories/JavaScript/"/>
+    
+    
+    <category term="技术文" scheme="http://hcyety.github.io/tags/%E6%8A%80%E6%9C%AF%E6%96%87/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>React-Ts 项目之在线编程模块</title>
+    <link href="http://hcyety.github.io/2021/12/03/react-ts-xiang-mu-zhi-zai-xian-bian-cheng-mo-kuai/"/>
+    <id>http://hcyety.github.io/2021/12/03/react-ts-xiang-mu-zhi-zai-xian-bian-cheng-mo-kuai/</id>
+    <published>2021-12-03T15:35:36.000Z</published>
+    <updated>2021-12-03T16:39:20.699Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;需求背景&quot;&gt;&lt;a href=&quot;#需求背景&quot; class=&quot;headerlink&quot; title=&quot;需求背景&quot;&gt;&lt;/a&gt;需求背景&lt;/h2&gt;&lt;p&gt;面试官和候选人能够实时在线语音/视频/编程/文字交流。&lt;/p&gt;
+&lt;h2 id=&quot;需求拆解&quot;&gt;&lt;a href=&quot;#需求拆解&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="技术方案" scheme="http://hcyety.github.io/categories/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%A1%88/"/>
+    
+    
+    <category term="在线聊天" scheme="http://hcyety.github.io/tags/%E5%9C%A8%E7%BA%BF%E8%81%8A%E5%A4%A9/"/>
+    
+    <category term="协同编辑" scheme="http://hcyety.github.io/tags/%E5%8D%8F%E5%90%8C%E7%BC%96%E8%BE%91/"/>
+    
+    <category term="视频和语音通话" scheme="http://hcyety.github.io/tags/%E8%A7%86%E9%A2%91%E5%92%8C%E8%AF%AD%E9%9F%B3%E9%80%9A%E8%AF%9D/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Problem 之 React-Ts 项目</title>
+    <link href="http://hcyety.github.io/2021/12/01/problem-zhi-react-ts-xiang-mu/"/>
+    <id>http://hcyety.github.io/2021/12/01/problem-zhi-react-ts-xiang-mu/</id>
+    <published>2021-12-01T12:05:36.000Z</published>
+    <updated>2021-12-06T05:22:41.236Z</updated>
+    
+    
+    
+    
+    <category term="疑难杂症" scheme="http://hcyety.github.io/categories/%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87/"/>
+    
+    
+    <category term="bug" scheme="http://hcyety.github.io/tags/bug/"/>
+    
+    <category term="前端 React-Ts" scheme="http://hcyety.github.io/tags/%E5%89%8D%E7%AB%AF-React-Ts/"/>
+    
+    <category term="后端 NodeJs-Ts" scheme="http://hcyety.github.io/tags/%E5%90%8E%E7%AB%AF-NodeJs-Ts/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ERROR 之项目通用 bug</title>
+    <link href="http://hcyety.github.io/2021/12/01/error-zhi-xiang-mu-tong-yong-bug/"/>
+    <id>http://hcyety.github.io/2021/12/01/error-zhi-xiang-mu-tong-yong-bug/</id>
+    <published>2021-12-01T09:58:45.000Z</published>
+    <updated>2021-12-01T12:04:33.931Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;ol&gt;
+&lt;li&gt;启动服务时报错显示端口被占用，但管理员命令行查找不到被占用端口的进程？&lt;blockquote&gt;
+&lt;p&gt;通常解决方案：&lt;br&gt;打开管理员命令行窗口，执行 &lt;code&gt;netstat -ano | findstr</summary>
+        
+      
+    
+    
+    
+    <category term="疑难杂症" scheme="http://hcyety.github.io/categories/%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87/"/>
+    
+    
+    <category term="bug" scheme="http://hcyety.github.io/tags/bug/"/>
+    
+  </entry>
+  
+  <entry>
     <title>数组的各种增删查改</title>
     <link href="http://hcyety.github.io/2021/11/22/shu-zu-de-ge-chong-zeng-shan-cha-gai/"/>
     <id>http://hcyety.github.io/2021/11/22/shu-zu-de-ge-chong-zeng-shan-cha-gai/</id>
     <published>2021-11-22T02:00:14.000Z</published>
-    <updated>2021-11-22T13:10:37.327Z</updated>
+    <updated>2021-12-06T05:27:17.891Z</updated>
     
     
       
@@ -34,10 +137,10 @@
     
     
     
-    <category term="技术文章" scheme="http://hcyety.github.io/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0/"/>
+    <category term="JavaScript" scheme="http://hcyety.github.io/categories/JavaScript/"/>
     
     
-    <category term="JS" scheme="http://hcyety.github.io/tags/JS/"/>
+    <category term="技术文" scheme="http://hcyety.github.io/tags/%E6%8A%80%E6%9C%AF%E6%96%87/"/>
     
   </entry>
   
@@ -46,7 +149,7 @@
     <link href="http://hcyety.github.io/2021/11/15/settimeout-yu-setinterval-de-qu-bie/"/>
     <id>http://hcyety.github.io/2021/11/15/settimeout-yu-setinterval-de-qu-bie/</id>
     <published>2021-11-15T14:31:51.000Z</published>
-    <updated>2021-11-16T00:57:31.447Z</updated>
+    <updated>2021-12-06T05:27:38.554Z</updated>
     
     
       
@@ -59,10 +162,10 @@
     
     
     
-    <category term="技术文章" scheme="http://hcyety.github.io/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0/"/>
+    <category term="JavaScript" scheme="http://hcyety.github.io/categories/JavaScript/"/>
     
     
-    <category term="JS" scheme="http://hcyety.github.io/tags/JS/"/>
+    <category term="技术文" scheme="http://hcyety.github.io/tags/%E6%8A%80%E6%9C%AF%E6%96%87/"/>
     
   </entry>
   

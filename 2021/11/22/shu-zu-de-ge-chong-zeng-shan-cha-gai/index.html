@@ -581,8 +581,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/JS/">
-                                <span class="chip bg-color">JS</span>
+                            <a href="/tags/%E6%8A%80%E6%9C%AF%E6%96%87/">
+                                <span class="chip bg-color">技术文</span>
                             </a>
                         
                     </div>
@@ -593,8 +593,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0/" class="post-category">
-                                技术文章
+                            <a href="/categories/JavaScript/" class="post-category">
+                                JavaScript
                             </a>
                         
                     </div>
@@ -613,21 +613,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-11-22
+                    2021-12-06
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2k
+                    2.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    8 分
+                    9 分
                 </div>
                 
 
@@ -652,20 +652,20 @@
             <div id="articleContent">
                 <h2 id="一、增"><a href="#一、增" class="headerlink" title="一、增"></a>一、增</h2><h3 id="1-push-【改变原数组】"><a href="#1-push-【改变原数组】" class="headerlink" title="1. push 【改变原数组】"></a>1. push 【改变原数组】</h3><p><strong>定义：</strong><code>push()</code> 方法（在数组结尾处）向数组添加一个或多个新元素，返回值为新数组的长度</p>
 <p><strong>语法：</strong><code>arr.push(ele,ele2,ele3…);</code></p>
-<p><strong>实例：</strong></p>
+<p><strong>示例：</strong></p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 <span class="token keyword">var</span> m <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'arr:'</span> <span class="token operator">+</span> arr<span class="token punctuation">,</span> <span class="token string">'m'</span> <span class="token operator">+</span> m<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// arr:[1, 2, 3, 4, 5] m:5</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <h3 id="2-unshift-【改变原数组】"><a href="#2-unshift-【改变原数组】" class="headerlink" title="2. unshift 【改变原数组】"></a>2. unshift 【改变原数组】</h3><p><strong>定义：</strong><code>unshift()</code>方法（在开头）向数组添加一个或多个新元素，并“反向位移”旧元素，返回值为新数组的长度</p>
 <p><strong>语法：</strong><code>arr.unshift(ele,ele2,ele…);</code></p>
-<p><strong>实例：</strong></p>
+<p><strong>示例：</strong></p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 <span class="token keyword">var</span> m <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token function">unshift</span><span class="token punctuation">(</span><span class="token string">"a"</span><span class="token punctuation">,</span><span class="token string">"b"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"原数组："</span> <span class="token operator">+</span> arr<span class="token punctuation">,</span> <span class="token string">"返回值:"</span> <span class="token operator">+</span> m<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">//原数组： ["a", "b", 1, 2] 返回值:4</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="3-concat-【合成一个新数组，不改变原数组】"><a href="#3-concat-【合成一个新数组，不改变原数组】" class="headerlink" title="3. concat 【合成一个新数组，不改变原数组】"></a>3. concat 【合成一个新数组，不改变原数组】</h3><p><strong>定义：</strong><code>concat()</code> 方法通过合并（连接）一个或多个数组来创建一个新数组</p>
 <p><strong>语法：</strong><code>arr.concat(arr1,arr2…);</code></p>
-<p><strong>实例：</strong></p>
+<p><strong>示例：</strong></p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 合并两个数组</span>
 <span class="token keyword">var</span> myGirls <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"Cecilie"</span><span class="token punctuation">,</span> <span class="token string">"Lone"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 <span class="token keyword">var</span> myBoys <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"Emil"</span><span class="token punctuation">,</span> <span class="token string">"Tobias"</span><span class="token punctuation">,</span> <span class="token string">"Linus"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
@@ -678,7 +678,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token keyword">var</span> arr3 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"Robin"</span><span class="token punctuation">,</span> <span class="token string">"Morgan"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 <span class="token keyword">var</span> myChildren <span class="token operator">=</span> arr1<span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span>arr2<span class="token punctuation">,</span> arr3<span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// ["Cecilie","Lone","Emil", "Tobias", "Linus","Robin", "Morgan"]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="4-length-属性"><a href="#4-length-属性" class="headerlink" title="4. length 属性"></a>4. length 属性</h3><p>使用数组的 <code>length</code> 属性向数组添加新元素</p>
-<p><strong>实例：</strong></p>
+<p><strong>示例：</strong></p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> fruits <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"Banana"</span><span class="token punctuation">,</span> <span class="token string">"Orange"</span><span class="token punctuation">,</span> <span class="token string">"Apple"</span><span class="token punctuation">,</span> <span class="token string">"Mango"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 fruits<span class="token punctuation">[</span>fruits<span class="token punctuation">.</span>length<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"Lemon"</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>fruits<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ["Banana","Orange","Apple","Mango","Lemon"]</span>
@@ -695,31 +695,31 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <li>howmany：可选。要删除的项目数。如果设置为 0，则不会删除任何项目。</li>
 <li>item1, …, itemX：可选。要添加到数组中的新项目。</li>
 </ul>
-<p><strong>实例：</strong></p>
+<p><strong>示例：</strong></p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 第二个参数为 0 且有第三个或三个以上的参数即说明是增加元素，增加的元素数量为第二个参数之后的参数数量</span>
 <span class="token keyword">var</span> fruits <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"Banana"</span><span class="token punctuation">,</span> <span class="token string">"Orange"</span><span class="token punctuation">,</span> <span class="token string">"Apple"</span><span class="token punctuation">,</span> <span class="token string">"Mango"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 fruits<span class="token punctuation">.</span><span class="token function">splice</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">"Lemon"</span><span class="token punctuation">,</span> <span class="token string">"Kiwi"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>fruits<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ["Banana","Orange","Lemon","Kiwi","Apple","Mango"]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="二、删"><a href="#二、删" class="headerlink" title="二、删"></a>二、删</h2><h3 id="delete-【改变原数组】"><a href="#delete-【改变原数组】" class="headerlink" title="delete 【改变原数组】"></a>delete 【改变原数组】</h3><p><strong>实例：</strong></p>
+<h2 id="二、删"><a href="#二、删" class="headerlink" title="二、删"></a>二、删</h2><h3 id="delete-【改变原数组】"><a href="#delete-【改变原数组】" class="headerlink" title="delete 【改变原数组】"></a>delete 【改变原数组】</h3><p><strong>示例：</strong></p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> fruits <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"Banana"</span><span class="token punctuation">,</span> <span class="token string">"Orange"</span><span class="token punctuation">,</span> <span class="token string">"Apple"</span><span class="token punctuation">,</span> <span class="token string">"Mango"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 <span class="token keyword">delete</span> fruits<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>fruits<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// ["undefined", "Orange", "Apple", "Mango"]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <h3 id="shift-【改变原数组】"><a href="#shift-【改变原数组】" class="headerlink" title="shift 【改变原数组】"></a>shift 【改变原数组】</h3><p><strong>定义：</strong><code>shift()</code> 方法删除数组的第一个元素，并返回删除的这个元素</p>
 <p><strong>语法：</strong><code>array.shift();</code></p>
-<p><strong>实例：</strong></p>
+<p><strong>示例：</strong></p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 <span class="token keyword">var</span> num <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token function">shift</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"原数组："</span> <span class="token operator">+</span> arr<span class="token punctuation">,</span> <span class="token string">"返回值:"</span> <span class="token operator">+</span> num<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">//原数组： [2] 返回值:1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="pop-【改变原数组】"><a href="#pop-【改变原数组】" class="headerlink" title="pop 【改变原数组】"></a>pop 【改变原数组】</h3><p><strong>定义：</strong><code>pop()</code> 方法删除数组的最后一个元素，并返回删除的这个元素</p>
 <p><strong>语法：</strong><code>array.pop();</code></p>
-<p><strong>实例：</strong></p>
+<p><strong>示例：</strong></p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 <span class="token keyword">var</span> num <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"原数组："</span> <span class="token operator">+</span> arr<span class="token punctuation">,</span> <span class="token string">"返回值:"</span> <span class="token operator">+</span> num<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">//原数组： [1] 返回值:2</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="splice"><a href="#splice" class="headerlink" title="splice"></a>splice</h3><p>第二个参数不为 0 且无第三个参数则说明是从 以第一个参数为下标值 开始删除数组元素，删除的数组元素个数为第二个参数的值</p>
-<p><strong>实例：</strong></p>
+<p><strong>示例：</strong></p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 在位置 2，添加新项目，并删除 1 个项目：</span>
 <span class="token keyword">var</span> fruits <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"Banana"</span><span class="token punctuation">,</span> <span class="token string">"Orange"</span><span class="token punctuation">,</span> <span class="token string">"Apple"</span><span class="token punctuation">,</span> <span class="token string">"Mango"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 fruits<span class="token punctuation">.</span><span class="token function">splice</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -737,7 +737,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <li>end：可选。整数，指定结束选择的位置；如果省略，将选择从开始位置到数组末尾的所有元素；若使用负数则从数组末尾进行选择。</li>
 </ul>
 <p><strong>注意：选定参数后，区间范围为【左闭右开】。即操作数组时，只截取从 start 到 end - 1 位置的数组元素</strong></p>
-<p><strong>实例：</strong></p>
+<p><strong>示例：</strong></p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 两个参数都不写，就是复制完整数组；否则就是复制指定元素的数组</span>
 <span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 <span class="token keyword">var</span> newArr <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -761,7 +761,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <li>para：必需。表示要查找的值。</li>
 <li>start：可选。表示搜索的起始位置，默认为0。如果第二个参数为负数，则表示倒数的位置，如果这时它大于数组长度（比如第二个参数为-4，但数组长度为3），则会重置为从0开始。</li>
 </ul>
-<p><strong>实例：</strong></p>
+<p><strong>示例：</strong></p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>       <span class="token comment">// true</span>
 <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span>       <span class="token comment">// false</span>
 <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">NaN</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token number">NaN</span><span class="token punctuation">)</span>   <span class="token comment">// true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
@@ -772,7 +772,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <li>para：必需。要查找的元素。</li>
 <li>index：可选。开始查找的位置。如果该索引值大于或等于数组长度，意味着不会在数组里查找，返回-1；如果参数中提供的索引值是一个负值，则将其作为数组末尾的一个抵消，即-1表示从最后一个元素开始查找……。 注意：如果参数中提供的索引值是一个负值，并<strong>不改变其查找顺序</strong>，查找顺序仍然是从前向后查询数组。如果抵消后的索引值仍小于0，则整个数组都将会被查询。其默认值为0。</li>
 </ul>
-<p><strong>实例：</strong></p>
+<p><strong>示例：</strong></p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> array <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 array<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token comment">// 0</span>
 array<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token comment">// -1</span>
@@ -797,7 +797,7 @@ array<span class="token punctuation">.</span><span class="token function">indexO
 <li>如果没有符合条件的元素返回 undefined</li>
 </ul>
 <p><strong>注意：</strong><br>find() 对于空数组，函数是不会执行的。</p>
-<p><strong>实例：</strong></p>
+<p><strong>示例：</strong></p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> inventory <span class="token operator">=</span> <span class="token punctuation">[</span>
     <span class="token punctuation">&#123;</span>name<span class="token operator">:</span> <span class="token string">'apples'</span><span class="token punctuation">,</span> quantity<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
     <span class="token punctuation">&#123;</span>name<span class="token operator">:</span> <span class="token string">'bananas'</span><span class="token punctuation">,</span> quantity<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
@@ -810,16 +810,37 @@ array<span class="token punctuation">.</span><span class="token function">indexO
 
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>inventory<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span>findCherries<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// &#123; name: 'cherries', quantity: 5 &#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="四、改"><a href="#四、改" class="headerlink" title="四、改"></a>四、改</h2><h3 id="splice-1"><a href="#splice-1" class="headerlink" title="splice"></a>splice</h3><p>第二个参数不为 0 且有第三个或三个以上的参数则说明是从 以第一个参数为下标值 开始修改数组元素，修改的数组元素个数为第二个参数之后的参数数量</p>
-<p><strong>实例：</strong></p>
+<p><strong>示例：</strong></p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 <span class="token keyword">var</span> newArr <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token function">splice</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"a"</span><span class="token punctuation">,</span> <span class="token string">"b"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> newArr<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">// [4, 5, "a", "b", 3, 7, 8, 8] [6]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="reverse-【改变原数组】"><a href="#reverse-【改变原数组】" class="headerlink" title="reverse 【改变原数组】"></a>reverse 【改变原数组】</h3><p><strong>定义：</strong><code>reverse()</code> 方法可以反转数组中的所有元素</p>
-<p><strong>实例：</strong></p>
+<p><strong>示例：</strong></p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 <span class="token keyword">var</span> newArr <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token function">reverse</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'arr:'</span> <span class="token operator">+</span> arr<span class="token punctuation">,</span> <span class="token string">'newArr:'</span> <span class="token operator">+</span> newArr<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// arr:[5,4,3,2,1] newArr:[5,4,3,2,1]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="reduce"><a href="#reduce" class="headerlink" title="reduce"></a>reduce</h3><p><strong>定义：</strong><code>reduce()</code> 方法对数组中的每个元素执行一个由您提供的函数(升序执行)，将其结果汇总为单个返回值。</p>
+<p><strong>语法：</strong><code>array.reduce(function(total, currentValue, currentIndex, arr), initialValue)</code></p>
+<p><strong>参数：</strong></p>
+<ul>
+<li>function(total,currentValue, index,arr)：必需。用于执行每个数组元素的函数。<ul>
+<li>total：必需。初始值, 或者累计器累计回调的返回值。</li>
+<li>currentValue：必需。当前元素。</li>
+<li>currentIndex：可选。当前元素的索引。如果提供了<code>initialValue</code>，则起始索引号为0，否则从索引1起始。</li>
+<li>arr：可选。调用reduce()的数组。</li>
+</ul>
+</li>
+<li>initialValue：可选。传递给函数的初始值。如果没有提供初始值，则将使用数组中的第一个元素。</li>
+</ul>
+<p><strong>注意：</strong><br><code>reduce()</code> 对于空数组是不会执行回调函数的。</p>
+<p><strong>示例：</strong></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> numbers <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">65</span><span class="token punctuation">,</span> <span class="token number">44</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">getSum</span><span class="token punctuation">(</span><span class="token parameter">total<span class="token punctuation">,</span> num</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">return</span> total <span class="token operator">+</span> num<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">const</span> ans <span class="token operator">=</span> numbers<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span>getSum<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>ans<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 125</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h2><p>对数组的各种操作就整理到这，如果读者没有找到自己想要的内容，可以尝试找找阮一峰的 <a target="_blank" rel="noopener" href="https://es6.ruanyifeng.com/#docs/array">ECMAScript 6 入门 之数组的扩展</a>，或许能有所收获！</p>
 
                 
@@ -885,8 +906,8 @@ console<span class="token punctuation">.</span><span class="token function">log<
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/JS/">
-                                    <span class="chip bg-color">JS</span>
+                                <a href="/tags/%E6%8A%80%E6%9C%AF%E6%96%87/">
+                                    <span class="chip bg-color">技术文</span>
                                 </a>
                             
                         </div>
@@ -1404,48 +1425,46 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/11/22/shu-zu-de-ge-chong-zeng-shan-cha-gai/">
+                <a href="/2021/12/01/error-zhi-xiang-mu-tong-yong-bug/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="数组的各种增删查改">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="ERROR 之项目通用 bug">
                         
-                        <span class="card-title">数组的各种增删查改</span>
+                        <span class="card-title">ERROR 之项目通用 bug</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            做项目过程中，由于场景需要对【数组】进行各种操作，发现不太熟，故此整理
+                            统一记录项目中遇到的“大众类” bug ，该文章将会一直更新......
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-22
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-12-01
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0/" class="post-category">
-                                    技术文章
+                            <a href="/categories/%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87/" class="post-category">
+                                    疑难杂症
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/JS/">
-                        <span class="chip bg-color">JS</span>
+                    <a href="/tags/bug/">
+                        <span class="chip bg-color">bug</span>
                     </a>
                     
                 </div>
@@ -1482,8 +1501,8 @@ console<span class="token punctuation">.</span><span class="token function">log<
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0/" class="post-category">
-                                    技术文章
+                            <a href="/categories/JavaScript/" class="post-category">
+                                    JavaScript
                                 </a>
                             
                             
@@ -1493,8 +1512,8 @@ console<span class="token punctuation">.</span><span class="token function">log<
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/JS/">
-                        <span class="chip bg-color">JS</span>
+                    <a href="/tags/%E6%8A%80%E6%9C%AF%E6%96%87/">
+                        <span class="chip bg-color">技术文</span>
                     </a>
                     
                 </div>
@@ -1728,11 +1747,11 @@ console<span class="token punctuation">.</span><span class="token function">log<
 
             <!-- 站点总字数 -->
             <!-- 
-                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">13.4k</span>
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">16.6k</span>
              -->
             
                 &nbsp;<i class="fa fa-chart-area"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">13.4k
+                <span class="white-color">16.6k
             
 
             <!-- <span id="sitetime"></span> -->
@@ -1820,8 +1839,8 @@ console<span class="token punctuation">.</span><span class="token function">log<
                         src="/medias/icp.png"
                         style="vertical-align: text-bottom;"
                     />
-                    <a href="https://beian.aliyun.com/?spm=5176.13329450.top-nav.dicp.4e324df5ha6r5w" target="_blank">
-                        2021966463577
+                    <a href="https://beian.miit.gov.cn" target="_blank">
+                        粤ICP备2021163036号
                     </a>
                 </span>&nbsp;&nbsp;
             

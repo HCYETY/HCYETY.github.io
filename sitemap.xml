@@ -2,16 +2,44 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://hcyety.github.io/2021/11/22/shu-zu-de-ge-chong-zeng-shan-cha-gai/</loc>
+    <loc>http://hcyety.github.io/2021/12/06/js-zhi-shu-ju-lei-xing/</loc>
     
-    <lastmod>2021-11-22</lastmod>
+    <lastmod>2021-12-06</lastmod>
     
   </url>
   
   <url>
     <loc>http://hcyety.github.io/2021/11/15/settimeout-yu-setinterval-de-qu-bie/</loc>
     
-    <lastmod>2021-11-16</lastmod>
+    <lastmod>2021-12-06</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://hcyety.github.io/2021/11/22/shu-zu-de-ge-chong-zeng-shan-cha-gai/</loc>
+    
+    <lastmod>2021-12-06</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://hcyety.github.io/2021/12/01/problem-zhi-react-ts-xiang-mu/</loc>
+    
+    <lastmod>2021-12-06</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://hcyety.github.io/2021/12/03/react-ts-xiang-mu-zhi-zai-xian-bian-cheng-mo-kuai/</loc>
+    
+    <lastmod>2021-12-03</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://hcyety.github.io/2021/12/01/error-zhi-xiang-mu-tong-yong-bug/</loc>
+    
+    <lastmod>2021-12-01</lastmod>
     
   </url>
   
@@ -102,7 +130,7 @@
 
   <url>
     <loc>http://hcyety.github.io/</loc>
-    <lastmod>2021-11-22</lastmod>
+    <lastmod>2021-12-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -110,98 +138,140 @@
   
   <url>
     <loc>http://hcyety.github.io/tags/%E9%9A%8F%E7%AC%94/</loc>
-    <lastmod>2021-11-22</lastmod>
+    <lastmod>2021-12-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://hcyety.github.io/tags/React/</loc>
-    <lastmod>2021-11-22</lastmod>
+    <lastmod>2021-12-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://hcyety.github.io/tags/Ts/</loc>
-    <lastmod>2021-11-22</lastmod>
+    <lastmod>2021-12-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://hcyety.github.io/tags/NodeJs/</loc>
-    <lastmod>2021-11-22</lastmod>
+    <lastmod>2021-12-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://hcyety.github.io/tags/TypeORM/</loc>
-    <lastmod>2021-11-22</lastmod>
+    <lastmod>2021-12-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://hcyety.github.io/tags/Koa/</loc>
-    <lastmod>2021-11-22</lastmod>
+    <lastmod>2021-12-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://hcyety.github.io/tags/MYSQL/</loc>
-    <lastmod>2021-11-22</lastmod>
+    <lastmod>2021-12-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://hcyety.github.io/tags/Linux-%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
-    <lastmod>2021-11-22</lastmod>
+    <lastmod>2021-12-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://hcyety.github.io/tags/%E7%BA%BF%E4%B8%8A%E9%83%A8%E7%BD%B2/</loc>
-    <lastmod>2021-11-22</lastmod>
+    <lastmod>2021-12-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://hcyety.github.io/tags/scp2/</loc>
-    <lastmod>2021-11-22</lastmod>
+    <lastmod>2021-12-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://hcyety.github.io/tags/node-ssh/</loc>
-    <lastmod>2021-11-22</lastmod>
+    <lastmod>2021-12-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://hcyety.github.io/tags/%E7%99%BB%E5%BD%95/</loc>
-    <lastmod>2021-11-22</lastmod>
+    <lastmod>2021-12-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://hcyety.github.io/tags/%E6%B3%A8%E5%86%8C/</loc>
-    <lastmod>2021-11-22</lastmod>
+    <lastmod>2021-12-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://hcyety.github.io/tags/JS/</loc>
-    <lastmod>2021-11-22</lastmod>
+    <loc>http://hcyety.github.io/tags/bug/</loc>
+    <lastmod>2021-12-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://hcyety.github.io/tags/%E6%8A%80%E6%9C%AF%E6%96%87/</loc>
+    <lastmod>2021-12-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://hcyety.github.io/tags/%E5%89%8D%E7%AB%AF-React-Ts/</loc>
+    <lastmod>2021-12-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://hcyety.github.io/tags/%E5%90%8E%E7%AB%AF-NodeJs-Ts/</loc>
+    <lastmod>2021-12-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://hcyety.github.io/tags/%E5%9C%A8%E7%BA%BF%E8%81%8A%E5%A4%A9/</loc>
+    <lastmod>2021-12-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://hcyety.github.io/tags/%E5%8D%8F%E5%90%8C%E7%BC%96%E8%BE%91/</loc>
+    <lastmod>2021-12-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://hcyety.github.io/tags/%E8%A7%86%E9%A2%91%E5%92%8C%E8%AF%AD%E9%9F%B3%E9%80%9A%E8%AF%9D/</loc>
+    <lastmod>2021-12-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -210,28 +280,35 @@
   
   <url>
     <loc>http://hcyety.github.io/categories/%E9%A1%B9%E7%9B%AE/</loc>
-    <lastmod>2021-11-22</lastmod>
+    <lastmod>2021-12-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://hcyety.github.io/categories/%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87/</loc>
-    <lastmod>2021-11-22</lastmod>
+    <lastmod>2021-12-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://hcyety.github.io/categories/%E9%83%A8%E7%BD%B2/</loc>
-    <lastmod>2021-11-22</lastmod>
+    <lastmod>2021-12-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://hcyety.github.io/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0/</loc>
-    <lastmod>2021-11-22</lastmod>
+    <loc>http://hcyety.github.io/categories/JavaScript/</loc>
+    <lastmod>2021-12-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://hcyety.github.io/categories/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%A1%88/</loc>
+    <lastmod>2021-12-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>

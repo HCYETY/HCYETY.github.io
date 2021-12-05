@@ -1,3 +1,7 @@
+http://hcyety.github.io/2021/12/06/js-zhi-shu-ju-lei-xing/
+http://hcyety.github.io/2021/12/03/react-ts-xiang-mu-zhi-zai-xian-bian-cheng-mo-kuai/
+http://hcyety.github.io/2021/12/01/problem-zhi-react-ts-xiang-mu/
+http://hcyety.github.io/2021/12/01/error-zhi-xiang-mu-tong-yong-bug/
 http://hcyety.github.io/2021/11/22/shu-zu-de-ge-chong-zeng-shan-cha-gai/
 http://hcyety.github.io/2021/11/15/settimeout-yu-setinterval-de-qu-bie/
 http://hcyety.github.io/2021/11/08/tell-it-to-myself/
