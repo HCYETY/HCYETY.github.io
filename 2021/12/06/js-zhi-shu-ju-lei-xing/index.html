@@ -613,7 +613,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-12-05
+                    2022-01-09
                 </div>
                 
 
@@ -650,10 +650,9 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h3 id="7-种"><a href="#7-种" class="headerlink" title="7 种"></a>7 种</h3><p>ECMAScript 有 <code>6</code> 种<strong>简单数据类型</strong>（也称为<strong>原始类型</strong>）：<code>Undefined</code>、<code>Null</code>、<code>Boolean</code>、<code>Number</code>、<code>String</code>和<code>Symbol</code>；还有一种复杂数据类型：<code>Object</code>。</p>
+                <h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h3 id="总共-7-种"><a href="#总共-7-种" class="headerlink" title="总共 7 种"></a>总共 7 种</h3><p>ECMAScript 有 <code>6</code> 种<strong>简单数据类型</strong>（也称为<strong>原始类型</strong>）：<code>Undefined</code>、<code>Null</code>、<code>Boolean</code>、<code>Number</code>、<code>String</code>和<code>Symbol</code>；还有一种复杂数据类型：<code>Object</code>。</p>
 <p>除过上面的 6 种基本数据类型外，剩下的就是引用数据类型了，统称为 <code>Object</code> 类型。细分的话，有：<code>Object</code>类型、<code>Array</code> 类型、<code>Date</code> 类型、<code>RegExp</code>类型、<code>Function</code> 类型 等。</p>
-<p>下面记录三个需要注意的数据类型：</p>
-<h3 id="一、Undefined-类型"><a href="#一、Undefined-类型" class="headerlink" title="一、Undefined 类型"></a>一、Undefined 类型</h3><p><code>Undefined</code> 类型只有一个值，就是 <code>undefined</code>。当使用 <code>var</code> 或 <code>let</code> 声明了变量但没有初始化时，就相当于给变量赋予了 <code>undefined</code> 值，因此：</p>
+<h3 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h3><p>下面记录三个需要注意的数据类型：<br>一、Undefined 类型<br><code>Undefined</code> 类型只有一个值，就是 <code>undefined</code>。当使用 <code>var</code> 或 <code>let</code> 声明了变量但没有初始化时，就相当于给变量赋予了 <code>undefined</code> 值，因此：</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> message<span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>message <span class="token operator">==</span> <span class="token keyword">undefined</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>ECMA-262 第3版之前，字面量 <code>undefined</code> 是不存在的，增加这个值是为了正式明确空对象指针（null）和未初始化变量的区别。</p>
@@ -669,20 +668,20 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <blockquote>
 <p>！注意：建议声明变量的同时进行初始化。这样，当 <code>typeof</code> 返回 <code>&quot;undefined&quot;</code> 时，开发者就能知道那是因为给定的变量尚未声明，而不是声明了但未初始化。</p>
 </blockquote>
-<h3 id="二、Null"><a href="#二、Null" class="headerlink" title="二、Null"></a>二、Null</h3><p><code>Null</code> 类型只有一个值，即特殊值 <code>null</code> 。**<code>null</code> 值表示一个空对象指针**，这就是 <code>typeof null</code> 会返回 <code>&quot;object&quot;</code> 的原因：</p>
+<p>二、Null<br><code>Null</code> 类型只有一个值，即特殊值 <code>null</code> 。**<code>null</code> 值表示一个空对象指针**，这就是 <code>typeof null</code> 会返回 <code>&quot;object&quot;</code> 的原因：</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> message <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>message<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// "object"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <blockquote>
-<p>!建议：在定义将来要保存对象值的变量时，建议使用 null 来初始化，而不是使用其他值。这样，只要检查整改变量的值是不是 null 就可以知道这个变量是否在后来被重新赋予了一个对象的引用，比如：</p>
+<p>！建议：在定义将来要保存对象值的变量时，建议使用 null 来初始化，而不是使用其他值。这样，只要检查整改变量的值是不是 null 就可以知道这个变量是否在后来被重新赋予了一个对象的引用，比如：</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> message <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
 <span class="token keyword">if</span> <span class="token punctuation">(</span>message <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
   <span class="token comment">// message 是一个对象的引用</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 </blockquote>
 <p>这里还有一个小点： <code>undefined</code> 值是由 <code>null</code> 值派生来的，因此 ECMA-262 将它们定义为表面上相等，如 <code>console.log(null == undefined); // true</code> </p>
-<h3 id="三、Symbol"><a href="#三、Symbol" class="headerlink" title="三、Symbol"></a>三、Symbol</h3><p>具体的参考阮一峰老师的 <a target="_blank" rel="noopener" href="https://es6.ruanyifeng.com/#docs/symbol">ECMAScript 6 入门之 Symbol</a></p>
-<h3 id="基本数据类型的特性"><a href="#基本数据类型的特性" class="headerlink" title="基本数据类型的特性"></a>基本数据类型的特性</h3><ol>
+<p>三、Symbol<br>具体的参考阮一峰老师的 <a target="_blank" rel="noopener" href="https://es6.ruanyifeng.com/#docs/symbol">ECMAScript 6 入门之 Symbol</a>，这里就不班门弄斧了。</p>
+<h4 id="基本数据类型的特性"><a href="#基本数据类型的特性" class="headerlink" title="基本数据类型的特性"></a>基本数据类型的特性</h4><ol>
 <li>基本数据类型的值是不可变的，任何方法都无法改变一个基本类型的值，比如一个字符串：<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> name <span class="token operator">=</span> <span class="token string">"change"</span><span class="token punctuation">;</span>
 name<span class="token punctuation">.</span><span class="token function">substr</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// hang</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// change</span>
@@ -730,7 +729,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token keyword">var</span> age <span class="token operator">=</span> <span class="token number">22</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>那么它的存储结构如下所示：<br>|栈区A|栈区A|<br>|:–:|:–:|<br>|name|jozo|<br>|city|guangzhou|<br>|age|22|</p>
 <p>同一个栈区里包括了变量的标识符和变量的值</p>
-<h3 id="引用数据类型的特性"><a href="#引用数据类型的特性" class="headerlink" title="引用数据类型的特性"></a>引用数据类型的特性</h3><ol>
+<h3 id="引用数据类型"><a href="#引用数据类型" class="headerlink" title="引用数据类型"></a>引用数据类型</h3><h4 id="引用数据类型的特性"><a href="#引用数据类型的特性" class="headerlink" title="引用数据类型的特性"></a>引用数据类型的特性</h4><ol>
 <li>引用类型的值是可以改变的</li>
 <li>引用类型可以添加属性和方法</li>
 <li>引用类型是同时保存在栈区和堆区中的</li>
@@ -844,7 +843,7 @@ nicole <span class="token keyword">instanceof</span> <span class="token class-na
   <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>总而言之，<code>instanceof</code> 主要的实现原理就是只要右边变量的 <code>prototype</code> 在左边变量的原型链上即可。因此，要想理解 <code>instanceof</code> 的原理，就还必须熟悉 JavaScript 的原型继承原理，可参考我的另一篇文章：<a href=""></a>。</p>
+<p>总而言之，<code>instanceof</code> 主要的实现原理就是只要右边变量的 <code>prototype</code> 在左边变量的原型链上即可。因此，要想理解 <code>instanceof</code> 的原理，就还必须熟悉 JavaScript 的原型继承原理，可参考我的 <a href="https://hcyety.github.io/2022/01/03/yuan-xing-lian/">另一篇文章</a>。</p>
 
                 
             </div>
@@ -1306,31 +1305,31 @@ nicole <span class="token keyword">instanceof</span> <span class="token class-na
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/12/21/bu-shu-fu-wu-qi-yong-dao-de-linux-ming-ling/">
+                <a href="/2021/12/14/js-zhi-shu-ju-lei-xing-zhuan-huan/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="操作服务器用到的 Linux 命令">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="JS 之数据类型转换">
                         
-                        <span class="card-title">操作服务器用到的 Linux 命令</span>
+                        <span class="card-title">JS 之数据类型转换</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            记录操作服务器用到的 linux 命令
+                            回顾 JS 的基础知识
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-12-21
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-12-14
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E9%83%A8%E7%BD%B2/" class="post-category">
-                                    部署
+                            <a href="/categories/JavaScript/" class="post-category">
+                                    JavaScript
                                 </a>
                             
                             
@@ -1340,12 +1339,8 @@ nicole <span class="token keyword">instanceof</span> <span class="token class-na
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Linux-%E6%9C%8D%E5%8A%A1%E5%99%A8/">
-                        <span class="chip bg-color">Linux 服务器</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/">
-                        <span class="chip bg-color">命令行</span>
+                    <a href="/tags/%E9%9D%A2%E8%AF%95/">
+                        <span class="chip bg-color">面试</span>
                     </a>
                     
                 </div>
@@ -1628,11 +1623,11 @@ nicole <span class="token keyword">instanceof</span> <span class="token class-na
 
             <!-- 站点总字数 -->
             <!-- 
-                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">30.1k</span>
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">33.7k</span>
              -->
             
                 &nbsp;<i class="fa fa-chart-area"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">30.1k
+                <span class="white-color">33.7k
             
 
             <!-- <span id="sitetime"></span> -->

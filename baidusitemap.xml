@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://hcyety.github.io/2022/01/08/baidu-verify-code-ohxxpvxxnw/</loc>
-    <lastmod>2022-01-07</lastmod>
+    <loc>http://hcyety.github.io/2021/12/06/js-zhi-shu-ju-lei-xing/</loc>
+    <lastmod>2022-01-08</lastmod>
+  </url>
+  <url>
+    <loc>http://hcyety.github.io/2022/01/04/yuan-xing-lian-de-ji-cheng/</loc>
+    <lastmod>2022-01-08</lastmod>
+  </url>
+  <url>
+    <loc>http://hcyety.github.io/2022/01/03/yuan-xing-lian/</loc>
+    <lastmod>2022-01-08</lastmod>
   </url>
   <url>
     <loc>http://hcyety.github.io/2022/01/08/tcp-de-liu-liang-kong-zhi-ji-zhi/</loc>
@@ -15,14 +23,6 @@
   <url>
     <loc>http://hcyety.github.io/2022/01/06/tcp-de-yun-shu-lian-jie-guan-li/</loc>
     <lastmod>2022-01-07</lastmod>
-  </url>
-  <url>
-    <loc>http://hcyety.github.io/2022/01/04/yuan-xing-lian-de-ji-cheng/</loc>
-    <lastmod>2022-01-05</lastmod>
-  </url>
-  <url>
-    <loc>http://hcyety.github.io/2022/01/03/yuan-xing-lian/</loc>
-    <lastmod>2022-01-05</lastmod>
   </url>
   <url>
     <loc>http://hcyety.github.io/2021/11/02/react-ts-xiang-mu-zai-xian-bian-cheng-bi-shi-ping-tai/</loc>
@@ -41,16 +41,16 @@
     <lastmod>2021-12-21</lastmod>
   </url>
   <url>
+    <loc>http://hcyety.github.io/2021/12/14/js-zhi-shu-ju-lei-xing-zhuan-huan/</loc>
+    <lastmod>2021-12-13</lastmod>
+  </url>
+  <url>
     <loc>http://hcyety.github.io/2021/11/15/settimeout-yu-setinterval-de-qu-bie/</loc>
     <lastmod>2021-12-06</lastmod>
   </url>
   <url>
     <loc>http://hcyety.github.io/2021/11/22/shu-zu-de-ge-chong-zeng-shan-cha-gai/</loc>
     <lastmod>2021-12-06</lastmod>
-  </url>
-  <url>
-    <loc>http://hcyety.github.io/2021/12/06/js-zhi-shu-ju-lei-xing/</loc>
-    <lastmod>2021-12-05</lastmod>
   </url>
   <url>
     <loc>http://hcyety.github.io/2021/10/31/error-zhi-bu-shu-fu-wu-qi-pian/</loc>

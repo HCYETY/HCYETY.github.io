@@ -617,14 +617,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-01-05
+                    2022-01-08
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.6k
+                    1.7k
                 </div>
                 
 
@@ -654,7 +654,8 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="原型链的基本构想"><a href="#原型链的基本构想" class="headerlink" title="原型链的基本构想"></a>原型链的基本构想</h2><p>首先大概看看何为原型链？图中由相互关联的原型组成的链状结构就是原型链，也就是蓝色的这条线。下面 step by step 来探究原型链的奥妙。<br><img src="https://s4.ax1x.com/2022/01/07/7pek60.png" alt="原型链中的各种关系"><br>从上图我们可以了解到构造函数（<code>Person</code>）、原型（<code>Person.prototype</code>）和实例（<code>person</code>）之间的关系：<br>每个构造函数都有一个原型对象（用<code>Person.prototype</code>），原型对象都包含一个指向构造函数的指针（用<code>Person.prototype.constructor</code>获取），而实例都包含一个指向原型对象的内部指针（用<code>person._proto_</code>）。这样就在实例和原型之间构造了一条原型链。这就是原型链的基本构想。</p>
+                <h2 id="原型链的基本构想"><a href="#原型链的基本构想" class="headerlink" title="原型链的基本构想"></a>原型链的基本构想</h2><p>Q：什么是原型链？<br>A：当对象查找一个属性的时候，如果没有在自身找到，那么就会查找自身的原型，如果原型还没有找到，那么会继续查找原型的原型，直到找到 <code>Object.prototype</code> 的原型时，此时原型为 <code>null</code> ，查找停止。这种通过 通过原型链接的逐级向上的查找链被称为原型链。</p>
+<p>图中由相互关联的原型组成的链状结构就是原型链，也就是蓝色的这条线。下面 step by step 来探究原型链的奥妙。<br><img src="https://s4.ax1x.com/2022/01/07/7pek60.png" alt="原型链中的各种关系"><br>从上图我们可以了解到构造函数（<code>Person</code>）、原型（<code>Person.prototype</code>）和实例（<code>person</code>）之间的关系：<br>每个构造函数都有一个原型对象（用<code>Person.prototype</code>），原型对象都包含一个指向构造函数的指针（用<code>Person.prototype.constructor</code>获取），而实例都包含一个指向原型对象的内部指针（用<code>person._proto_</code>）。这样就在实例和原型之间构造了一条原型链。这就是原型链的基本构想。</p>
 <p>下面来认识 <code>constructor</code> 和 <code>_proto_</code>：</p>
 <ol>
 <li>constructor<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
@@ -1554,11 +1555,11 @@ console<span class="token punctuation">.</span><span class="token function">log<
 
             <!-- 站点总字数 -->
             <!-- 
-                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">30.1k</span>
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">33.7k</span>
              -->
             
                 &nbsp;<i class="fa fa-chart-area"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">30.1k
+                <span class="white-color">33.7k
             
 
             <!-- <span id="sitetime"></span> -->
