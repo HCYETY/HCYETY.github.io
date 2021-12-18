@@ -6,7 +6,7 @@
   <link href="http://hcyety.github.io/atom.xml" rel="self"/>
   
   <link href="http://hcyety.github.io/"/>
-  <updated>2022-01-08T18:33:44.766Z</updated>
+  <updated>2022-01-08T18:08:17.644Z</updated>
   <id>http://hcyety.github.io/</id>
   
   <author>
@@ -17,27 +17,23 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>JS 之精度丢失</title>
-    <link href="http://hcyety.github.io/2022/01/09/js-zhi-jing-du-diu-shi/"/>
-    <id>http://hcyety.github.io/2022/01/09/js-zhi-jing-du-diu-shi/</id>
-    <published>2022-01-08T18:32:30.000Z</published>
-    <updated>2022-01-08T18:33:44.766Z</updated>
+    <title>浏览器的存储</title>
+    <link href="http://hcyety.github.io/2022/01/09/liu-lan-qi-de-cun-chu/"/>
+    <id>http://hcyety.github.io/2022/01/09/liu-lan-qi-de-cun-chu/</id>
+    <published>2022-01-08T18:00:23.000Z</published>
+    <updated>2022-01-08T18:08:17.644Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h2 id=&quot;浮点数的运算&quot;&gt;&lt;a href=&quot;#浮点数的运算&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;h2 id=&quot;浏览器的存储&quot;&gt;&lt;a href=&quot;#浏览器的存储&quot; class=&quot;headerlink&quot; title=&quot;浏览器的存储 &quot;&gt;&lt;/a&gt;浏览器的存储 &lt;!-- omit in toc</summary>
         
       
     
     
     
-    <category term="JavaScript" scheme="http://hcyety.github.io/categories/JavaScript/"/>
-    
-    
-    <category term="面试" scheme="http://hcyety.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
     
   </entry>
   
@@ -256,6 +252,31 @@
     <category term="Linux 服务器" scheme="http://hcyety.github.io/tags/Linux-%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
     
     <category term="命令行" scheme="http://hcyety.github.io/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JS 之精度丢失</title>
+    <link href="http://hcyety.github.io/2021/12/18/js-zhi-jing-du-diu-shi/"/>
+    <id>http://hcyety.github.io/2021/12/18/js-zhi-jing-du-diu-shi/</id>
+    <published>2021-12-17T18:32:30.000Z</published>
+    <updated>2021-12-18T12:59:58.231Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;浮点数的运算&quot;&gt;&lt;a href=&quot;#浮点数的运算&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="JavaScript" scheme="http://hcyety.github.io/categories/JavaScript/"/>
+    
+    
+    <category term="面试" scheme="http://hcyety.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
     
   </entry>
   
