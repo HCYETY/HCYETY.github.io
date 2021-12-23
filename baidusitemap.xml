@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://hcyety.github.io/2022/01/06/tcp-de-yun-shu-lian-jie-guan-li/</loc>
+    <loc>http://hcyety.github.io/2022/01/08/tcp-de-liu-liang-kong-zhi-ji-zhi/</loc>
     <lastmod>2022-01-07</lastmod>
   </url>
   <url>
     <loc>http://hcyety.github.io/2022/01/05/zhi-xing-shang-xia-wen/</loc>
-    <lastmod>2022-01-05</lastmod>
+    <lastmod>2022-01-07</lastmod>
+  </url>
+  <url>
+    <loc>http://hcyety.github.io/2022/01/06/tcp-de-yun-shu-lian-jie-guan-li/</loc>
+    <lastmod>2022-01-07</lastmod>
   </url>
   <url>
     <loc>http://hcyety.github.io/2022/01/04/yuan-xing-lian-de-ji-cheng/</loc>
@@ -17,16 +21,16 @@
     <lastmod>2022-01-05</lastmod>
   </url>
   <url>
-    <loc>http://hcyety.github.io/2022/01/06/tcp-de-liu-liang-kong-zhi-ji-zhi/</loc>
-    <lastmod>2022-01-05</lastmod>
-  </url>
-  <url>
     <loc>http://hcyety.github.io/2021/11/02/react-ts-xiang-mu-zai-xian-bian-cheng-bi-shi-ping-tai/</loc>
     <lastmod>2022-01-01</lastmod>
   </url>
   <url>
     <loc>http://hcyety.github.io/2021/12/27/var-let-const-de-qu-bie-shi-yong/</loc>
     <lastmod>2021-12-27</lastmod>
+  </url>
+  <url>
+    <loc>http://hcyety.github.io/2021/12/23/js-zhi-zuo-yong-yu/</loc>
+    <lastmod>2021-12-23</lastmod>
   </url>
   <url>
     <loc>http://hcyety.github.io/2021/11/15/settimeout-yu-setinterval-de-qu-bie/</loc>

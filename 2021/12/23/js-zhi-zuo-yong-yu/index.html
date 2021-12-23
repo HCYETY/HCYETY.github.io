@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="setTimeout() 与 setInterval() 的区别, hcyety&#39;s blog">
-    <meta name="description" content="做项目时用到了这两个方法，然而效果不尽相同，故此研究">
+    <meta name="keywords" content="JS 之作用域, hcyety&#39;s blog">
+    <meta name="description" content="学习执行上下文的前置知识">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>setTimeout() 与 setInterval() 的区别 | hcyety&#39;s blog</title>
+    <title>JS 之作用域 | hcyety&#39;s blog</title>
     <link rel="icon" type="image/png" href="/logo.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -460,12 +460,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">setTimeout() 与 setInterval() 的区别</h1>
+                    <h1 class="description center-align post-title">JS 之作用域</h1>
                 </div>
             </div>
         </div>
@@ -606,28 +606,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-11-15
+                    2021-12-23
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-12-06
+                    2021-12-23
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.2k
+                    786
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    3 分
                 </div>
                 
 
@@ -650,43 +650,73 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>首先要对 setTimeout() 和 setInterval() 有一个概念，学习了 JavaScript 我们知道：<strong>setTimeout() 是延时器，setInterval() 是定时器</strong>。setTimeout() 在于载入后延迟指定的时间后才会执行<strong>一次</strong>表达式，执行过后便会停止；setInterval() 在载入后每隔指定时间就会执行一次表达式，直到定时器或者窗口关闭。</p>
-<p>对这两者有了初步印象后，我们开始逐个分析</p>
-<h2 id="setTimeout"><a href="#setTimeout" class="headerlink" title="setTimeout()"></a>setTimeout()</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>setTimeout() 方法在指定的毫秒数后调用一次函数或计算表达式。</p>
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><p><code>var timeoutID = setTimeout(code/function, millisec)</code></p>
-<h4 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h4><ul>
-<li>code/funciton：必需。要调用的函数后要执行的 JavaScript 代码串或者函数。</li>
-<li>millisec：必需。在执行代码前需等待的毫秒数。<h4 id="返回值"><a href="#返回值" class="headerlink" title="返回值"></a>返回值</h4>返回值 timeoutID 是一个正整数，表示定时器的编号。这个值可以传递给clearTimeout()来取消该定时器。<h3 id="提醒"><a href="#提醒" class="headerlink" title="提醒"></a>提醒</h3>setTimeout() <strong>只执行 code 一次</strong>。如果要<strong>多次调用</strong>，请<strong>使用 setInterval() 或者让 code 自身再次调用 setTimeout()</strong><h3 id="清除-setTimeout"><a href="#清除-setTimeout" class="headerlink" title="清除 setTimeout()"></a>清除 setTimeout()</h3><code>clearTimeout(timeoutID)</code><br>timeoutID 为调用 setTimeout() 函数时所获得的返回值，使用该返回标识符作为参数，可以取消该 setTimeout() 所设定的定时执行操作。<h3 id="统一示例"><a href="#统一示例" class="headerlink" title="统一示例"></a>统一示例</h3><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">eg</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'你好'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-<span class="token comment">//使用方法名字执行方法</span>
-<span class="token keyword">let</span> t1 <span class="token operator">=</span> window<span class="token punctuation">.</span><span class="token function">setTimeout</span><span class="token punctuation">(</span>eg<span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment">//使用字符串执行方法</span>
-<span class="token keyword">let</span> t2 <span class="token operator">=</span> window<span class="token punctuation">.</span><span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token string">"eg()"</span><span class="token punctuation">,</span> <span class="token number">3000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <h2 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h2><p>是指作用域是指程序源代码中定义变量的区域。</p>
+<ul>
+<li>块级作用域<br>指在代码块 {} 里面定义的变量，只会在当前代码块有效，如果外层作用域下想访问该变量，会报引用错误异常。<br>使用关键字 <code>let</code> 或 <code>const</code> 定义块级作用域的变量。<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token comment">// ReferenceError: i is not defined</span>
 
-<span class="token comment">//清除定时器</span>
-window<span class="token punctuation">.</span><span class="token function">clearTimeout</span><span class="token punctuation">(</span>t1<span class="token punctuation">)</span><span class="token punctuation">;</span>
-window<span class="token punctuation">.</span><span class="token function">clearTimeout</span><span class="token punctuation">(</span>t2<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h3></li>
-<li>用于延迟执行某方法或功能</li>
+<span class="token comment">// 因为 i 是用 let 生命的，只能在 let 的作用域里使用，即 for 循环内部有效，外部作用域是访问不到的。</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>函数作用域<br>是指包裹在函数里的作用域，其中的变量或者内部函数，对外都是封闭的，即外界无法访问。<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">f1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">var</span> b <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+    <span class="token keyword">var</span> c <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c<span class="token punctuation">)</span> <span class="token comment">// ReferenceError: a, b, c is not defined</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>全局作用域<br>是最外层的全局作用域，任何地方都可以访问得到。<br>在最外层作用域下使用 var 关键字会定义全局变量，也就是说会挂载在 window 对象上，或者不使用关键字 var、let、const 直接对变量名字进行赋值，JS也会自动为其创建为全局变量。<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">f1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    b <span class="token operator">=</span> <span class="token number">20</span>
+
+    <span class="token keyword">function</span> <span class="token function">f2</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        c <span class="token operator">=</span> <span class="token number">30</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token comment">// 10</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token function">f2</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token function">f1</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment">// b 和 c 变量被隐式声明到全局变量了，所以能访问到，这也叫变量提升机制</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span> <span class="token comment">// 20</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span> <span class="token comment">// 30</span>
+
+<span class="token comment">// 但 a，b，c 也被挂载在 window 对象（全局作用域）上面了</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>window<span class="token punctuation">.</span>a<span class="token punctuation">)</span> <span class="token comment">// 10</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>window<span class="token punctuation">.</span>b<span class="token punctuation">)</span> <span class="token comment">// 20</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>window<span class="token punctuation">.</span>c<span class="token punctuation">)</span> <span class="token comment">// 30</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
-<h2 id="setInterval"><a href="#setInterval" class="headerlink" title="setInterval()"></a>setInterval()</h2><h3 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h3><p>setInterval() 方法重复调用一个函数或执行一个代码段，在每次调用之间具有固定的时间延迟。</p>
-<h3 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h3><p>语法与 setTimeout() 相同：</p>
-<p><code>var intervalID = setInterval(code/function, delay)</code></p>
-<h4 id="参数-1"><a href="#参数-1" class="headerlink" title="参数"></a>参数</h4><ul>
-<li>code/funciton：必需。要调用的函数后要执行的 JavaScript 代码串或者函数。</li>
-<li>millisec：必需。在执行代码前需等待的毫秒数。<h4 id="返回值-1"><a href="#返回值-1" class="headerlink" title="返回值"></a>返回值</h4>此返回值 intervalID 是一个非零数值，用来标识通过setInterval()创建的计时器，这个值可以用来作为clearInterval()的参数来清除对应的计时器 。<h3 id="提醒-1"><a href="#提醒-1" class="headerlink" title="提醒"></a>提醒</h3>setInterval() 会<strong>重复执行多次</strong>。如果想<strong>只执行一次</strong>，请<strong>使用 setTimeout()</strong><h3 id="清除-setInterval"><a href="#清除-setInterval" class="headerlink" title="清除 setInterval()"></a>清除 setInterval()</h3><code>clearInterval(intervalID)</code><h3 id="使用场景-1"><a href="#使用场景-1" class="headerlink" title="使用场景"></a>使用场景</h3></li>
-<li>用于刷新表单，对于一些表单的实时指定时间刷新同步</li>
+<hr>
+<ul>
+<li>词法作用域<br>在变量定义时决定（也叫静态作用域）。例如函数的作用域是在函数<strong>定义</strong>时决定的。  </li>
+<li>动态作用域<br>在变量调用时才决定。例如函数的作用域是在函数<strong>调用</strong>的时候才决定的。<br>基于这两种作用域的不同，于是作用域的嵌套情况也不相同。 </li>
 </ul>
-<h2 id="深入思考"><a href="#深入思考" class="headerlink" title="深入思考"></a>深入思考</h2><p>在项目中使用这两者的时候会发现，调用函数的时候时间间隔虽然几乎相同，但并不精确，这时候如果项目中用这两者做动态效果，可能会发现：当程序中同时出现其他各种事件处理程序时，动画会变得不够平滑。那为什么会出现这种情况？</p>
-<p>这是由于 JavaScript 其实是运行在单线程环境中的，这就意味着定时器仅仅是计划代码在未来的某个时间执行，而具体执行时机是不能保证的。<br>打个比方：我设置了一个定时器，这时候这个定时器事件就会被添加到待执行事项中，如果在这个定时器事件之前没有其他事件排队等待执行的话，就可以立即执行定时器事件；但如果前面有很多且耗时很久的事件等待执行，那这个定时器事件就不得不推迟时间执行了，这样一来，就不能如时按照指定的时间运行代码了。<br>因为这样，才会导致 setTimeout 和 setInterval 执行的时间间隔不能精确。那么有读者可能会问，影响这个时间间隔的因素是什么？答案是运行这两个方法的宿主环境，不同的浏览器、不同系统、不同版本的测试环境都会对其造成影响，事实上 GitHub 上早已有人 issue 该问题，然而至今仍然处于 open 状态：<a href="https://link.zhihu.com/?target=https://github.com/nodejs/node-v0.x-archive/issues/8066">setInterval doesn’t comply with DOM-version</a>、<a href="https://link.zhihu.com/?target=https://github.com/nodejs/node/issues/7346">setInterval interval includes duration of callback</a>、<a href="https://link.zhihu.com/?target=https://github.com/nodejs/node/issues/7554">setInterval/setTimeout interval should not include duration of callback</a></p>
-<p>后面这个问题如果解决了，笔者会再来更新的~</p>
-<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>知道 setTimeout() 和 setInterval() 是怎么一回事之后，在项目中合理采用就好了，一般问题不大，可能面试的时候会问到更加深入的东西？笔者也不知道呢，毕竟暂无面试经历，但准备面试过程中应该也少不了这方面的知识点拓展，有备无患 Orz。</p>
-<p>这篇文章有相关的使用案例，可供读者参考：</p>
-<blockquote>
-<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/lynnmn/p/6222753.html">setTimeout和setInterval的区别以及如何写出效率高的倒计时</a></p>
-</blockquote>
-<p>如果有说得不对的地方，还烦请大佬们指正，笔者愿与大家一起探讨 (<em>^▽^</em>)~~</p>
+<p>下面来看一个案例：</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> value <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">function</span> <span class="token function">bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">var</span> value <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+  <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token function">bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 结果是？？？</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>假设JavaScript采用静态作用域，让我们分析下执行过程：<ul>
+<li>嵌套情况：全局作用域–&gt;foo函数作用域–&gt;bar函数作用域</li>
+<li>于是：执行 <code>foo</code> 函数，先从 <code>foo</code> 函数作用域里查找是否有局部变量 <code>value</code>。如果没有，就根据函数定义的位置，往外一层的作用域里查找变量，发现在全局作用域里找到变量 <code>value</code> ，所以结果会打印 1。</li>
+</ul>
+</li>
+<li>假设JavaScript采用动态作用域，让我们分析下执行过程：<ul>
+<li>嵌套情况：全局作用域–&gt;bar函数作用域–&gt;foo函数作用域</li>
+<li>于是：执行 <code>foo</code> 函数，依然是从 <code>foo</code> 函数作用域里查找是否有局部变量 <code>value</code>。如果没有，就从调用函数的作用域，再往外一层也就是 <code>bar</code> 函数作用域里查找 <code>value</code> 变量，所以结果会打印 2。</li>
+</ul>
+</li>
+<li>由于<strong>JavaScript采用的是静态作用域</strong>，所以这个例子的结果是 1。</li>
+</ul>
 
                 
             </div>
@@ -713,7 +743,7 @@ window<span class="token punctuation">.</span><span class="token function">clear
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://hcyety.github.io/2021/11/15/settimeout-yu-setinterval-de-qu-bie/">http://hcyety.github.io/2021/11/15/settimeout-yu-setinterval-de-qu-bie/</a>
+                    <a href="http://hcyety.github.io/2021/12/23/js-zhi-zuo-yong-yu/">http://hcyety.github.io/2021/12/23/js-zhi-zuo-yong-yu/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -1148,24 +1178,24 @@ window<span class="token punctuation">.</span><span class="token function">clear
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/11/22/shu-zu-de-ge-chong-zeng-shan-cha-gai/">
+                <a href="/2021/12/27/var-let-const-de-qu-bie-shi-yong/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="数组的各种增删查改">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="var let const 的区别使用">
                         
-                        <span class="card-title">数组的各种增删查改</span>
+                        <span class="card-title">var let const 的区别使用</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            做项目过程中，由于场景需要对【数组】进行各种操作，发现不太熟，故此整理
+                            JS 基础知识，小本本记下来，面试可能会考
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-11-22
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-12-27
                         </span>
                         <span class="publish-author">
                             
@@ -1186,6 +1216,10 @@ window<span class="token punctuation">.</span><span class="token function">clear
                         <span class="chip bg-color">技术文</span>
                     </a>
                     
+                    <a href="/tags/%E9%9D%A2%E8%AF%95/">
+                        <span class="chip bg-color">面试</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -1197,29 +1231,33 @@ window<span class="token punctuation">.</span><span class="token function">clear
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/11/08/tell-it-to-myself/">
+                <a href="/2021/12/06/js-zhi-shu-ju-lei-xing/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="tell it to myself">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="JS 之数据类型">
                         
-                        <span class="card-title">tell it to myself</span>
+                        <span class="card-title">JS 之数据类型</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            有点“右倾”，谨以此篇告诫自己
+                            回顾 JS 的基础知识
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-08
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-06
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            hcyety
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/JavaScript/" class="post-category">
+                                    JavaScript
+                                </a>
+                            
                             
                         </span>
                     </div>
@@ -1227,8 +1265,8 @@ window<span class="token punctuation">.</span><span class="token function">clear
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E9%9A%8F%E7%AC%94/">
-                        <span class="chip bg-color">随笔</span>
+                    <a href="/tags/%E6%8A%80%E6%9C%AF%E6%96%87/">
+                        <span class="chip bg-color">技术文</span>
                     </a>
                     
                 </div>

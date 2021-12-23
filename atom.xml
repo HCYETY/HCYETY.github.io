@@ -6,7 +6,7 @@
   <link href="http://hcyety.github.io/atom.xml" rel="self"/>
   
   <link href="http://hcyety.github.io/"/>
-  <updated>2022-01-05T10:28:40.743Z</updated>
+  <updated>2022-01-07T14:10:40.071Z</updated>
   <id>http://hcyety.github.io/</id>
   
   <author>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>TCP 的流量控制机制</title>
-    <link href="http://hcyety.github.io/2022/01/06/tcp-de-liu-liang-kong-zhi-ji-zhi/"/>
-    <id>http://hcyety.github.io/2022/01/06/tcp-de-liu-liang-kong-zhi-ji-zhi/</id>
-    <published>2022-01-06T02:17:55.000Z</published>
-    <updated>2022-01-05T10:28:40.743Z</updated>
+    <link href="http://hcyety.github.io/2022/01/08/tcp-de-liu-liang-kong-zhi-ji-zhi/"/>
+    <id>http://hcyety.github.io/2022/01/08/tcp-de-liu-liang-kong-zhi-ji-zhi/</id>
+    <published>2022-01-08T02:17:55.000Z</published>
+    <updated>2022-01-07T14:10:40.071Z</updated>
     
     
     
@@ -30,6 +30,10 @@
     
     
     <category term="技术文" scheme="http://hcyety.github.io/tags/%E6%8A%80%E6%9C%AF%E6%96%87/"/>
+    
+    <category term="运输层" scheme="http://hcyety.github.io/tags/%E8%BF%90%E8%BE%93%E5%B1%82/"/>
+    
+    <category term="TCP" scheme="http://hcyety.github.io/tags/TCP/"/>
     
     <category term="面试" scheme="http://hcyety.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
     
@@ -71,15 +75,15 @@
     <link href="http://hcyety.github.io/2022/01/05/zhi-xing-shang-xia-wen/"/>
     <id>http://hcyety.github.io/2022/01/05/zhi-xing-shang-xia-wen/</id>
     <published>2022-01-05T10:12:08.000Z</published>
-    <updated>2022-01-05T13:07:39.190Z</updated>
+    <updated>2022-01-07T14:08:35.118Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://hcyety.github.io/2021/12/27/var-let-const-de-qu-bie-shi-yong/&quot;&gt;var let const 的区别使用&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot;</summary>
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;我们首先来看一个例子：&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-js&quot;</summary>
         
       
     
@@ -173,6 +177,33 @@
     <category term="技术文" scheme="http://hcyety.github.io/tags/%E6%8A%80%E6%9C%AF%E6%96%87/"/>
     
     <category term="面试" scheme="http://hcyety.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JS 之作用域</title>
+    <link href="http://hcyety.github.io/2021/12/23/js-zhi-zuo-yong-yu/"/>
+    <id>http://hcyety.github.io/2021/12/23/js-zhi-zuo-yong-yu/</id>
+    <published>2021-12-23T14:12:20.000Z</published>
+    <updated>2021-12-23T14:21:17.086Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;作用域&quot;&gt;&lt;a href=&quot;#作用域&quot; class=&quot;headerlink&quot; title=&quot;作用域&quot;&gt;&lt;/a&gt;作用域&lt;/h2&gt;&lt;p&gt;是指作用域是指程序源代码中定义变量的区域。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;块级作用域&lt;br&gt;指在代码块 {}</summary>
+        
+      
+    
+    
+    
+    <category term="JavaScript" scheme="http://hcyety.github.io/categories/JavaScript/"/>
+    
+    
+    <category term="技术文" scheme="http://hcyety.github.io/tags/%E6%8A%80%E6%9C%AF%E6%96%87/"/>
     
   </entry>
   
