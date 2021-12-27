@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="React-Ts 项目：在线编程笔试平台, hcyety&#39;s blog">
-    <meta name="description" content="前后端分离项目，记录实现过程，这篇是总纲">
+    <meta name="keywords" content="var let const 的区别使用, hcyety&#39;s blog">
+    <meta name="description" content="JS 基础知识，小本本记下来，面试可能会考">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>React-Ts 项目：在线编程笔试平台 | hcyety&#39;s blog</title>
+    <title>var let const 的区别使用 | hcyety&#39;s blog</title>
     <link rel="icon" type="image/png" href="/logo.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -460,12 +460,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">React-Ts 项目：在线编程笔试平台</h1>
+                    <h1 class="description center-align post-title">var let const 的区别使用</h1>
                 </div>
             </div>
         </div>
@@ -581,28 +581,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/React/">
-                                <span class="chip bg-color">React</span>
+                            <a href="/tags/%E6%8A%80%E6%9C%AF%E6%96%87/">
+                                <span class="chip bg-color">技术文</span>
                             </a>
                         
-                            <a href="/tags/Ts/">
-                                <span class="chip bg-color">Ts</span>
-                            </a>
-                        
-                            <a href="/tags/NodeJs/">
-                                <span class="chip bg-color">NodeJs</span>
-                            </a>
-                        
-                            <a href="/tags/TypeORM/">
-                                <span class="chip bg-color">TypeORM</span>
-                            </a>
-                        
-                            <a href="/tags/Koa/">
-                                <span class="chip bg-color">Koa</span>
-                            </a>
-                        
-                            <a href="/tags/MYSQL/">
-                                <span class="chip bg-color">MYSQL</span>
+                            <a href="/tags/%E9%9D%A2%E8%AF%95/">
+                                <span class="chip bg-color">面试</span>
                             </a>
                         
                     </div>
@@ -613,8 +597,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E9%A1%B9%E7%9B%AE/" class="post-category">
-                                项目
+                            <a href="/categories/JavaScript/" class="post-category">
+                                JavaScript
                             </a>
                         
                     </div>
@@ -626,28 +610,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-11-02
+                    2021-12-27
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-01-01
+                    2021-12-27
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    905
+                    1.8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    6 分
                 </div>
                 
 
@@ -670,93 +654,152 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>上一篇博客说到线上部署项目到服务器，博主说的就是这个 React-Ts 项目啦，它是博主为将来找实习准备的，用到的技术点有好一些是边学边做的，如果有不同见解的地方还请读者不吝赐教。</p>
-<blockquote>
-<p>需要事先说明的是，关于这个项目的博客，博主并不打算讲解代码实现，每个人的项目用到的技术栈不尽相同，但有一点可以确定，就是项目功能点的实现逻辑是大致相同的，故博主会更多地讲解各模块/功能点的逻辑实现 ^_^</p>
+                <h2 id="var"><a href="#var" class="headerlink" title="var"></a>var</h2><p><strong>用于声明变量，变量声明的同时，可以赋值也可不赋值（不赋值的情况下，变量会保存一个特殊值 <code>undefined</code> ），后续可以更改变量的值。</strong></p>
+<ul>
+<li>注意1：<ul>
+<li>变量名可以包含字母，数字，下划线和美元符号，但要以字母开头【也可以以$和_开头（但一般不这么用）】。</li>
+<li>变量名是大小写敏感的（y和Y是不同的变量）</li>
+<li>保留字（如JavaScript关键字）不能作为变量名使用</li>
+</ul>
+</li>
+<li>注意2：var会发生“变量提升”现象。<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">foo</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>age<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">var</span> age <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// undefined</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+之所以不会报错，是因为 ECMAScript 运行时把它看成等价于如下代码：<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">foo</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">var</span> age<span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>age<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  age <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// undefined</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+这就是所谓的“变量提升”，也就是把所有变量声明都拉到函数作用域的顶部。此外，反复多次使用 var 声明同一个变量也没有问题：<pre class="line-numbers language-js" data-language="js"><code class="language-js">  <span class="token keyword">function</span> <span class="token function">foo</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">var</span> age <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span>
+    <span class="token keyword">var</span> age <span class="token operator">=</span> <span class="token number">25</span><span class="token punctuation">;</span>
+    <span class="token keyword">var</span> age <span class="token operator">=</span> <span class="token number">30</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>age<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+  <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 30</span>
+### <span class="token keyword">var</span> 声明作用域
+使用 <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">var</span><span class="token template-punctuation string">`</span></span> 操作符定义的变量会成为 包含它的函数的局部变量。比如，使用 <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">var</span><span class="token template-punctuation string">`</span></span> 在一个函数内部定义一个变量，就意味着该变量将在函数退出时被销毁：
+<span class="token template-string"><span class="token template-punctuation string">`</span><span class="token template-punctuation string">`</span></span>`js
+<span class="token keyword">function</span> <span class="token function">test</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">var</span> message <span class="token operator">=</span> <span class="token string">'hi'</span><span class="token punctuation">;</span>  <span class="token comment">// 局部变量</span>
+<span class="token punctuation">&#125;</span>
+<span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>message<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// 出错！</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+这里，<code>message</code> 变量是在函数内部使用 <code>var</code> 定义的。函数为 <code>test()</code> ，调用它就会创建这个变量并给该变量赋值；调用之后变量随即被销毁，因此实例中的最后一行会导致错误。<br>不过，在函数内定义变量时省略 var 操作符，可以创建一个全部变量。<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">test</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  message <span class="token operator">=</span> <span class="token string">'hi'</span><span class="token punctuation">;</span>  <span class="token comment">// 全局变量</span>
+<span class="token punctuation">&#125;</span>
+<span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>message<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// "hi"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+去掉之前的 var 操作符之后，message 就变成了全局变量。只要调用一次函数 test() ，就会定义这个变量，并且可以在函数外部访问到。<blockquote>
+<p>注意：虽然可以省略 var 操作符定义全局变量，但不推荐这么做。因为在局部作用域中定义的全局变量很难维护，也会造成困扰。在严格模式下，如果像这样给未声明的变量赋值，则会导致抛出 <code>ReferenceError</code> 。</p>
 </blockquote>
-<h2 id="项目概述"><a href="#项目概述" class="headerlink" title="项目概述"></a>项目概述</h2><p>该项目是一个在线编程笔试平台。<br>主要功能是面试官①编辑（可新增、修改、删除）试卷和试题【一张试卷有多道试题】；②查看候选人编程结果并给予评分和备注等信息。候选人①在线完成代码编写并提交；②根据面试官设定的查看权限，决定能否查看已提交或已结束的试题。<br>该项目包含了前端和后端两种技术栈，前端采用的是 React ，后端采用的是 NodeJs ，整个项目为前后端分离项目。</p>
-<h2 id="项目任务拆解"><a href="#项目任务拆解" class="headerlink" title="项目任务拆解"></a>项目任务拆解</h2><ol>
-<li>登录/注册模块</li>
-</ol>
-<ul>
-<li>支持邮箱登录和注册</li>
-<li>支持退出登录</li>
+</li>
 </ul>
-<ol start="2">
-<li>面试题模块</li>
-</ol>
+<h2 id="let"><a href="#let" class="headerlink" title="let"></a>let</h2><p><strong>它的用法类似于var，但是所声明的变量，只在 let 命令所在的代码块内有效。</strong> 看下面例子：</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+<span class="token keyword">var</span> name <span class="token operator">=</span> <span class="token string">'hg'</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// hg</span>
+<span class="token punctuation">&#125;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// hg</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">let</span> age <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>age<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 20</span>
+<span class="token punctuation">&#125;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>age<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ReferenceError：age 没有定义</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>在这里，age 变量之所以不能再 if 块外部被引用，是因为它的作用域仅限于该块内部。<br>由于块作用域是函数作用域的子集，因此适用于 var 的作用域限制同样也适用于 let 。</p>
 <ul>
-<li>面试官可填写试卷和面试题</li>
-<li>支持新建、修改、删除试卷和面试题目</li>
-<li>支持邀请多个候选人编程</li>
-<li>面试题目支持富文本格式</li>
+<li>注意1：let不允许在相同作用域内，重复声明同一个变量。<pre class="line-numbers language-js" data-language="js"><code class="language-js">  <span class="token comment">// 报错</span>
+  <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+    <span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+  <span class="token comment">// 报错</span>
+  <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+    <span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+  <span class="token comment">// 报错</span>
+  <span class="token keyword">function</span> <span class="token function">func</span><span class="token punctuation">(</span><span class="token parameter">arg</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">let</span> arg<span class="token punctuation">;</span> 
+  <span class="token punctuation">&#125;</span>
+
+  <span class="token comment">// 不报错</span>
+  <span class="token keyword">function</span> <span class="token function">func</span><span class="token punctuation">(</span><span class="token parameter">arg</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token punctuation">&#123;</span>
+      <span class="token keyword">let</span> arg<span class="token punctuation">;</span> 
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+  <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token template-punctuation string">`</span></span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">     
+- 注意2：let不像var那样会发生“变量提升”现象。
+
+## const
+**声明一个只读的常量。一旦声明，常量的值就不能改变；且声明变量时，就必须立即初始化，不能留到以后赋值。**
+- 注意1：</span><span class="token template-punctuation string">`</span></span><span class="token keyword">const</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string"> 的作用域与 </span><span class="token template-punctuation string">`</span></span><span class="token keyword">let</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string"> 命令相同：只在声明所在的块级作用域内有效。
+- 注意2：</span><span class="token template-punctuation string">`</span></span><span class="token keyword">const</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string"> 命令声明的常量也是不提升，只能在声明的位置后面使用。
+- 注意3：</span><span class="token template-punctuation string">`</span></span><span class="token keyword">const</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string"> 声明的常量，也与 </span><span class="token template-punctuation string">`</span></span><span class="token keyword">let</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string"> 一样不可重复声明。
+- 注意4：对于复合类型的变量，变量名不指向数据，而是指向数据所在的地址。</span><span class="token template-punctuation string">`</span></span><span class="token keyword">const</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string"> 声明的限制只适用于它指向的变量的引用。**const 命令只是保证变量名指向的地址不变，并不保证该地址的数据不变，也就是说，如果 const 变量引用的是一个对象，那么修改整个对象内部的属性并不违反 const 限制。**   
+    栗子1：
+    </span><span class="token template-punctuation string">`</span></span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token template-punctuation string">`</span></span>js
+    <span class="token keyword">const</span> foo <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+    foo<span class="token punctuation">.</span>prop <span class="token operator">=</span> <span class="token number">123</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>foo<span class="token punctuation">.</span>prop<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 123</span>
+    foo <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span> <span class="token comment">// TypeError："foo" is read-only</span>
+
+    <span class="token comment">// 上面代码中，常量foo储存的是一个地址，这个地址指向一个对象。不可变的只是这个地址，即不能把 foo 指向另一个地址，但对象本身是可变的，所以依然可以为其添加新属性。  </span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+  栗子2：  <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+a<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">'Hello'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 可执行</span>
+a<span class="token punctuation">.</span>length <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>    <span class="token comment">// 可执行</span>
+a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'Dave'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>    <span class="token comment">// 报错</span>
+
+<span class="token comment">// 上面代码中，常量 a 是一个数组，这个数组本身是可写的，但是如果将另一个数组赋值给 a ，就会报错。</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
-<ol start="3">
-<li>在线编程模块</li>
+<h2 id="变量提升"><a href="#变量提升" class="headerlink" title="变量提升"></a>变量提升</h2><p>关于变量提升，还有一些东西可以探讨一下。首先，变量提升是指把变量声明提升到当前执行环境的最顶端。</p>
+<p>看一个例子：</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>foo<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 输出undefined</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>bar<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 报错ReferenceError</span>
+
+<span class="token keyword">var</span> foo <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> bar <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 以上代码可看作：</span>
+<span class="token keyword">var</span> foo<span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>foo<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// undefined</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>bar<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 报错ReferenceError</span>
+foo <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+
+<span class="token keyword">let</span> bar <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>上面代码中，由于 <code>var</code> 发生了“变量提升”现象，将 <code>foo</code> 的声明提升到了 <code>console.log(foo)</code> 前面，即脚本开始运行时，变量 <code>foo</code> 已经存在了，但是没有值，所以会输出 <code>undefined</code>。<br>变量 <code>bar</code> 用 let命令声明，不会发生变量提升。这表示在声明它之前，变量bar是不存在的，这时如果用到它，就会抛出一个错误。</p>
+<h3 id="优先级"><a href="#优先级" class="headerlink" title="优先级"></a>优先级</h3><ol>
+<li><code>var</code> 和 <code>function</code> 的变量提升是有优先级的，且 <code>function</code> 的高于 <code>var</code> 的。（另外，如果函数名字相同，后面函数会覆盖前面的函数。）<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> a<span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">a</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token comment">// ƒ a() &#123;&#125;</span>
+
+<span class="token comment">// 可以隐式地理解为：</span>
+<span class="token keyword">function</span> <span class="token function">a</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> a<span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ƒ a() &#123;&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>当遇到函数和变量同名且都会被提升的情况，由于函数声明优先级比较高，因此变量声明会被函数声明所覆盖，但是可以重新赋值。<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">alert</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 输出：function a()&#123; alert('我是函数') &#125;</span>
+<span class="token keyword">function</span> <span class="token function">a</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'我是函数'</span><span class="token punctuation">)</span> <span class="token punctuation">&#125;</span>
+<span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token string">'我是变量'</span><span class="token punctuation">;</span>
+<span class="token function">alert</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">//输出：'我是变量'</span>
+
+<span class="token comment">// 上面代码可以隐式的理解为：</span>
+<span class="token keyword">function</span> <span class="token function">a</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span><span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'我是函数'</span><span class="token punctuation">)</span><span class="token punctuation">&#125;</span> 
+<span class="token keyword">var</span> a<span class="token punctuation">;</span>    <span class="token comment">// undefined</span>
+<span class="token function">alert</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">//输出：function a()&#123; alert('我是函数') &#125;</span>
+a <span class="token operator">=</span> <span class="token string">'我是变量'</span><span class="token punctuation">;</span><span class="token comment">//赋值</span>
+<span class="token function">alert</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">//输出：'我是变量'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>var 和 function 的变量提升优先级显而易见，但如果是函数声明 <code>function foo()&#123;&#125;</code> 和函数表达式 <code>var foo = function()&#123;&#125;</code> 呢？<pre class="line-numbers language-js" data-language="js"><code class="language-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>f1<span class="token punctuation">)</span> <span class="token comment">// function f1()&#123;&#125;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>f2<span class="token punctuation">)</span> <span class="token comment">// undefined</span>
+<span class="token keyword">var</span> <span class="token function-variable function">f2</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span> <span class="token comment">// 函数表达式</span>
+<span class="token keyword">function</span> <span class="token function">f1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span> <span class="token comment">// 函数声明</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+上面的代码并不是说函数声明的提升优先级高于函数表达式，而是因为当遇到函数表达式的时候，首先会将<strong>关键字+变量名</strong>提升到当前执行环境的最顶端，也就是<code>var f2</code> 先被提升，然而此时 <code>f2</code> 的值为 <code>undefined</code>，所以 <code>f2</code> 打印值为 <code>undefined</code>。</li>
 </ol>
-<ul>
-<li>候选人可在线编写代码</li>
-<li>代码支持多种语言高亮</li>
-<li>候选人侧可提交最终编程代码</li>
-<li>面试官侧刷新能看到最终代码</li>
-</ul>
-<ol start="4">
-<li>在线留言模块</li>
-</ol>
-<ul>
-<li>候选人可以通过文字给面试官留言</li>
-<li>面试官可以回复</li>
-<li>留言内容长期保存</li>
-<li>留言模块自动刷新</li>
-</ul>
-<ol start="5">
-<li>在线编程模块支持自动刷新</li>
-</ol>
-<ul>
-<li>候选人侧代码支持自动保存</li>
-<li>面试官侧代码自动刷新</li>
-</ul>
-<ol start="6">
-<li>在线留言模块改成实时文字聊天</li>
-</ol>
-<ul>
-<li>候选人和面试官可实时文字聊天</li>
-<li>其他获得链接的人都可参与文字聊天</li>
-</ul>
-<ol start="7">
-<li>在线语音聊天模块</li>
-</ol>
-<ul>
-<li>候选人和面试官可实时语音聊天</li>
-</ul>
-<ol start="8">
-<li>在线编程模块支持运行JS代码</li>
-</ol>
-<ul>
-<li>候选人和面试官可在线运行 JS 代码并查看输出</li>
-</ul>
-<ol start="9">
-<li> 在线编程模块支持协同编辑</li>
-</ol>
-<ul>
-<li>候选人和面试官可实时协作编程<h2 id="项目进度"><a href="#项目进度" class="headerlink" title="项目进度"></a>项目进度</h2></li>
-<li><input checked="" disabled="" type="checkbox"> 2021/09/04：实现登录/注册的静态页面</li>
-<li><input checked="" disabled="" type="checkbox"> 2021/09/19：实现登录/注册逻辑（包括账号密码登录、登录拦截，session 身份验证）</li>
-<li><input checked="" disabled="" type="checkbox"> 2021/09/29：初步部署前后端项目到阿里云服务器</li>
-<li><input checked="" disabled="" type="checkbox"> 2021/10/04：购买域名并实现自动化部署项目</li>
-<li><input checked="" disabled="" type="checkbox"> 2021/10/05：支持使用邮箱 登录和注册（删除了账号密码登录、注册的方式）</li>
-<li><input checked="" disabled="" type="checkbox"> 2021/10/09：支持新建/删除试卷，在“新建试卷”里新建/修改/删除试题，发送邮件至候选人邮箱</li>
-<li><input checked="" disabled="" type="checkbox"> 2021/10/23：初步完成面试题模块（包含“修改试卷”）</li>
-<li><input checked="" disabled="" type="checkbox"> 2021/10/30：初步完成在线编程模块</li>
-<li><input checked="" disabled="" type="checkbox"> 2021/10/31：搭建个人博客</li>
-<li><input checked="" disabled="" type="checkbox"> 2021/11/02：记录项目从开始到现在的一系列笔记</li>
-</ul>
-<h2 id="项目笔记"><a href="#项目笔记" class="headerlink" title="项目笔记"></a>项目笔记</h2><ol>
-<li><a href="https://hcyety.github.io/2021/10/31/error-zhi-bu-shu-fu-wu-qi-pian/">ERROR 之部署服务器篇</a></li>
-<li><a href="https://hcyety.github.io/2021/11/01/qian-hou-duan-fen-chi-xiang-mu-xian-shang-bu-shu/">前后端分离项目线上部署</a></li>
-<li><a href="https://hcyety.github.io/2021/11/02/xiang-mu-zhi-deng-lu-zhu-ce-mo-kuai/">项目之登录/注册模块</a></li>
-</ol>
-<h2 id="本文还在持续更新中……"><a href="#本文还在持续更新中……" class="headerlink" title="本文还在持续更新中……"></a>本文还在持续更新中……</h2>
+
                 
             </div>
             <hr/>
@@ -782,7 +825,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://hcyety.github.io/2021/11/02/react-ts-xiang-mu-zai-xian-bian-cheng-bi-shi-ping-tai/">http://hcyety.github.io/2021/11/02/react-ts-xiang-mu-zai-xian-bian-cheng-bi-shi-ping-tai/</a>
+                    <a href="http://hcyety.github.io/2021/12/27/var-let-const-de-qu-bie-shi-yong/">http://hcyety.github.io/2021/12/27/var-let-const-de-qu-bie-shi-yong/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -820,28 +863,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/React/">
-                                    <span class="chip bg-color">React</span>
+                                <a href="/tags/%E6%8A%80%E6%9C%AF%E6%96%87/">
+                                    <span class="chip bg-color">技术文</span>
                                 </a>
                             
-                                <a href="/tags/Ts/">
-                                    <span class="chip bg-color">Ts</span>
-                                </a>
-                            
-                                <a href="/tags/NodeJs/">
-                                    <span class="chip bg-color">NodeJs</span>
-                                </a>
-                            
-                                <a href="/tags/TypeORM/">
-                                    <span class="chip bg-color">TypeORM</span>
-                                </a>
-                            
-                                <a href="/tags/Koa/">
-                                    <span class="chip bg-color">Koa</span>
-                                </a>
-                            
-                                <a href="/tags/MYSQL/">
-                                    <span class="chip bg-color">MYSQL</span>
+                                <a href="/tags/%E9%9D%A2%E8%AF%95/">
+                                    <span class="chip bg-color">面试</span>
                                 </a>
                             
                         </div>
@@ -881,9 +908,9 @@
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'http://hcyety.github.io/2021/11/02/react-ts-xiang-mu-zai-xian-bian-cheng-bi-shi-ping-tai/';
-        this.page.identifier = '/2021/11/02/react-ts-xiang-mu-zai-xian-bian-cheng-bi-shi-ping-tai/';
-        this.page.title = 'React-Ts 项目：在线编程笔试平台';
+        this.page.url = 'http://hcyety.github.io/2021/12/27/var-let-const-de-qu-bie-shi-yong/';
+        this.page.identifier = '/2021/12/27/var-let-const-de-qu-bie-shi-yong/';
+        this.page.title = 'var let const 的区别使用';
     };
     let disqus_shortname = 'hcyety';
 
@@ -917,31 +944,31 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/11/02/xiang-mu-zhi-deng-lu-zhu-ce-mo-kuai/">
+                <a href="/2022/01/06/tcp-de-yun-shu-lian-jie-guan-li/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="项目之登录/注册模块">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="TCP 的运输连接管理">
                         
-                        <span class="card-title">项目之登录/注册模块</span>
+                        <span class="card-title">TCP 的运输连接管理</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            记录登录/注册功能的逻辑实现
+                            TCP 的三次握手与四次挥手
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-11-02
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-01-06
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E9%A1%B9%E7%9B%AE/" class="post-category">
-                                    项目
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="post-category">
+                                    计算机网络
                                 </a>
                             
                             
@@ -951,12 +978,20 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%99%BB%E5%BD%95/">
-                        <span class="chip bg-color">登录</span>
+                    <a href="/tags/%E6%8A%80%E6%9C%AF%E6%96%87/">
+                        <span class="chip bg-color">技术文</span>
                     </a>
                     
-                    <a href="/tags/%E6%B3%A8%E5%86%8C/">
-                        <span class="chip bg-color">注册</span>
+                    <a href="/tags/%E8%BF%90%E8%BE%93%E5%B1%82/">
+                        <span class="chip bg-color">运输层</span>
+                    </a>
+                    
+                    <a href="/tags/TCP/">
+                        <span class="chip bg-color">TCP</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%9D%A2%E8%AF%95/">
+                        <span class="chip bg-color">面试</span>
                     </a>
                     
                 </div>
@@ -970,31 +1005,31 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/11/01/qian-hou-duan-fen-chi-xiang-mu-xian-shang-bu-shu/">
+                <a href="/2021/12/06/js-zhi-shu-ju-lei-xing/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="前后端分离项目线上部署">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="JS 之数据类型">
                         
-                        <span class="card-title">前后端分离项目线上部署</span>
+                        <span class="card-title">JS 之数据类型</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            部署前后端分离项目从基础到进阶
+                            回顾 JS 的基础知识
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-01
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-06
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E9%83%A8%E7%BD%B2/" class="post-category">
-                                    部署
+                            <a href="/categories/JavaScript/" class="post-category">
+                                    JavaScript
                                 </a>
                             
                             
@@ -1004,20 +1039,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Linux-%E6%9C%8D%E5%8A%A1%E5%99%A8/">
-                        <span class="chip bg-color">Linux 服务器</span>
-                    </a>
-                    
-                    <a href="/tags/%E7%BA%BF%E4%B8%8A%E9%83%A8%E7%BD%B2/">
-                        <span class="chip bg-color">线上部署</span>
-                    </a>
-                    
-                    <a href="/tags/scp2/">
-                        <span class="chip bg-color">scp2</span>
-                    </a>
-                    
-                    <a href="/tags/node-ssh/">
-                        <span class="chip bg-color">node-ssh</span>
+                    <a href="/tags/%E6%8A%80%E6%9C%AF%E6%96%87/">
+                        <span class="chip bg-color">技术文</span>
                     </a>
                     
                 </div>

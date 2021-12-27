@@ -116,6 +116,33 @@
   </entry>
   
   <entry>
+    <title>var let const 的区别使用</title>
+    <link href="http://hcyety.github.io/2021/12/27/var-let-const-de-qu-bie-shi-yong/"/>
+    <id>http://hcyety.github.io/2021/12/27/var-let-const-de-qu-bie-shi-yong/</id>
+    <published>2021-12-27T07:29:11.000Z</published>
+    <updated>2021-12-27T08:28:29.576Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;var&quot;&gt;&lt;a href=&quot;#var&quot; class=&quot;headerlink&quot; title=&quot;var&quot;&gt;&lt;/a&gt;var&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;用于声明变量，变量声明的同时，可以赋值也可不赋值（不赋值的情况下，变量会保存一个特殊值</summary>
+        
+      
+    
+    
+    
+    <category term="JavaScript" scheme="http://hcyety.github.io/categories/JavaScript/"/>
+    
+    
+    <category term="技术文" scheme="http://hcyety.github.io/tags/%E6%8A%80%E6%9C%AF%E6%96%87/"/>
+    
+    <category term="面试" scheme="http://hcyety.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
     <title>JS 之数据类型</title>
     <link href="http://hcyety.github.io/2021/12/06/js-zhi-shu-ju-lei-xing/"/>
     <id>http://hcyety.github.io/2021/12/06/js-zhi-shu-ju-lei-xing/</id>
