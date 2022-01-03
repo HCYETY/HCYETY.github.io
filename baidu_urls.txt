@@ -1,7 +1,5 @@
 http://hcyety.github.io/2022/01/06/tcp-de-liu-liang-kong-zhi-ji-zhi/
 http://hcyety.github.io/2022/01/06/tcp-de-yun-shu-lian-jie-guan-li/
-http://hcyety.github.io/2022/01/05/zhi-xing-shang-xia-wen/
-http://hcyety.github.io/2022/01/04/yuan-xing-lian-de-ji-cheng/
 http://hcyety.github.io/2022/01/03/yuan-xing-lian/
 http://hcyety.github.io/2021/12/27/var-let-const-de-qu-bie-shi-yong/
 http://hcyety.github.io/2021/12/06/js-zhi-shu-ju-lei-xing/
