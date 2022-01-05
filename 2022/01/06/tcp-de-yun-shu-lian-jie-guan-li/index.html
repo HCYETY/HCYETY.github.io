@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Begin: myfist blog, hcyety&#39;s blog">
-    <meta name="description" content="想说的话">
+    <meta name="keywords" content="TCP 的运输连接管理, hcyety&#39;s blog">
+    <meta name="description" content="TCP 的三次握手与四次挥手">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Begin: myfist blog | hcyety&#39;s blog</title>
+    <title>TCP 的运输连接管理 | hcyety&#39;s blog</title>
     <link rel="icon" type="image/png" href="/logo.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -460,12 +460,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Begin: myfist blog</h1>
+                    <h1 class="description center-align post-title">TCP 的运输连接管理</h1>
                 </div>
             </div>
         </div>
@@ -581,14 +581,31 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E9%9A%8F%E7%AC%94/">
-                                <span class="chip bg-color">随笔</span>
+                            <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">
+                                <span class="chip bg-color">计算机网络</span>
+                            </a>
+                        
+                            <a href="/tags/%E8%BF%90%E8%BE%93%E5%B1%82/">
+                                <span class="chip bg-color">运输层</span>
+                            </a>
+                        
+                            <a href="/tags/TCP-%E5%8D%8F%E8%AE%AE/">
+                                <span class="chip bg-color">TCP 协议</span>
                             </a>
                         
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87/" class="post-category">
+                                技术文
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -597,28 +614,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-10-31
+                    2022-01-06
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-11-05
+                    2022-01-06
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    902
+                    2.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    9 分
                 </div>
                 
 
@@ -641,12 +658,61 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近在做 React-Ts 项目，两个月了，有了这个项目该有的雏形。就在昨天，我实现好了项目 40% 的功能，心里放松了一下，突然觉得有点累了，不是说真的那种累，而是因为 我从这个项目本身学到了很多东西，不仅有知识点的深入理解，还有处理问题的能力、思维逻辑的锻炼等等，得到的好处很多，此前一直投身于项目功能点的实现，还没机会消化，突然松了口气，顿觉身上积攒了很多东西，我觉得是时候该静下心来，沉淀我这两个月来所学到的东西，于是我着手搭建个人博客，准备记录自己的所学所感……</p>
-<h2 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h2><p>大二在读生一枚，我喜欢前端世界，对于前端技术我怀有十分的兴趣，网络上所见到的各种好看、奇特的效果，一想到都是通过代码实现的，我就觉得十分神奇，我之前认为，代码和那些好看的特效是不沾边的东西，没想到那些是用我不知道的方式实现的。对于前端技术的原理，我也感觉十分神奇，让我知道了代码世界里想当然是不对的，如果这样便往往会犯错。当然，后端的世界也不赖，虽然不像前端那样可视化，但有时对数据的处理能够返回预期效果，成就感也十足。这样，我想成为一名前端工程师，努力的话，争取全栈。</p>
-<p>电脑是我日常生活中不能缺少的一件必需品，但生活不能只有电脑，我也喜欢打羽毛球、乒乓球、游泳、聚会（仅限于我在意的人），诗和远方亦是我向往的生活。但我知道心中虽有所往，但那不是想有就有的，诗和远方 都挺贵，目前我所能做的，便是提升我的硬实力，总得拿到长途旅行的门票吧^_^</p>
-<h2 id="计划"><a href="#计划" class="headerlink" title="计划"></a>计划</h2><p>用了一天时间搭建了个人博客，是我喜欢的主题，既然有这么方便好看的工具为我们铺好了红毯，我难道不应该兢兢业业地写好文章、做好博客吗（<em>^▽^</em>）</p>
-<p>我决定先把项目放一边，一个星期，就一个星期，我得总结归纳，好好沉淀一下，学到的 很多很快，如果不及时记录，估计又得还回去了，所谓好记性不如烂笔头，这句话既然能成为谚语，肯定是有它的过人之处的 (￣ェ￣;)。一个星期过后，我再重新扬帆起航吧，再花一个半月左右的时间，应该能把这个项目完全搞定，总计三个半月，应该还可以接受吧（好吧，我觉得有点久了，争取三个月搞定）。那么这一个星期，我就要从头回顾一下我的项目了，这个过程说不定还可以解决掉历史残留问题，总之，要加油了！</p>
-<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>上文有说到，搭建个人博客的初衷是沉淀所学所感，因此我对这个博客的定义首先是一个技术博客，我希望它能成为一个有含金量的技术文章存放地；其次是我本人的心灵树洞，我也期望它能成为我倾诉心声的所在，毕竟我是一个有时不太爱说话的人…..</p>
+                <h2 id="TCP-运输连接的三个阶段"><a href="#TCP-运输连接的三个阶段" class="headerlink" title="TCP 运输连接的三个阶段"></a>TCP 运输连接的三个阶段</h2><p>TCP 是面向连接的协议。运输连接是用来传送 TCP 报文的，共有三个阶段，即：</p>
+<ul>
+<li>连接建立（“三报文握手”）</li>
+<li>数据传送</li>
+<li>连接释放（“四报文挥手”）</li>
+</ul>
+<p>TCP 连接的建立采用客户–服务器方式。主动发起连接建立的应用进程叫做<strong>客户</strong>，被动等待连接建立的应用进程叫做<strong>服务器</strong>。</p>
+<blockquote>
+<p>下文将<strong>客户</strong>简写为 A ，将<strong>服务器</strong>简写为 B 。</p>
+</blockquote>
+<h2 id="TCP-的连接建立"><a href="#TCP-的连接建立" class="headerlink" title="TCP 的连接建立"></a>TCP 的连接建立</h2><p>TCP 建立连接的过程叫做<strong>握手</strong>，握手需要在 A 和 B 之间交换三个 TCP 报文段。</p>
+<p>首先，来认识一下握手挥手中用到的一些标识位和缩写的含义：</p>
+<ul>
+<li>SYN（Synchronize Sequence Numbers)：同步序列编号，表示建立链接</li>
+<li>FIN：标识位，表示关闭链接</li>
+<li>ACK（Acknowledgement）：标识位，表示响应</li>
+<li>ack（Acknowledgement Number）：确认号码，是期望收到对方下一个报文的第一个数据字节的序号</li>
+<li>seq（Sequence Number）：顺序号码（TCP连接中传送的字节流中的每个字节都按顺序编号）</li>
+</ul>
+<p>接下来先看下 TCP 三次握手的流程图：<br><img src="https://s4.ax1x.com/2022/01/05/TXqBZ9.png" alt="TCP 三次握手流程图"></p>
+<ul>
+<li>最初两端的 TCP 进程都处于 <code>CLOSED</code> （关闭）状态。</li>
+<li>一开始，B 的 TCP 服务器进程先创建 <strong>传输控制块 TCB</strong> 【用于存储 TCP 连接中的一些重要信息，如 TCP 连接表、指向发送和接收缓存的指针、当前的发送和接收序号】，准备接受 A 的连接请求。然后服务器进程就处于 <code>LISTEN</code>（收听）状态，等待客户的链接请求。</li>
+<li>A 的 TCP 客户进程也是首先创建 <strong>传输控制块 TCB</strong>。然后，在打算建立 TCP 连接时，向 B 发送 TCP 连接请求报文段，并进入 <code>SYN-SENT</code> （同步已发送）状态。<br>TCP 连接请求报文段首部中的同步位 <code>SYN = 1</code>（表明这是一个 TCP 连接请求报文段）；序号字段 <code>seq = x</code> （作为 TCP 客户进程所选择的初始序号）。【注意：TCP 规定 <code>SYN = 1</code> 的报文段不能携带数据，但要<strong>消耗掉一个序号</strong>。】</li>
+<li>B 收到 TCP 连接请求报文段后，如果同意建立连接，则向 A 发送 TCP 连接请求确认报文段，并进入 <code>SYN-RCVD</code> （同步已接受）状态。<br>该报文段首部中的同步位 <code>SYN</code> 和确认位 <code>ACK</code> 都设置为 1 （表明这是一个 TCP 连接请求确认报文段）；序号字段 <code>seq = y</code>（作为 TCP 服务器进程所选择的初始序号），确认号字段 <code>ack = x + 1</code> （这是对 TCP 客户进程所选择的初始序号的确认）。【注意：这个报文段也不能携带数据，因为它是 <code>SYN</code> 被设置为 1 的报文段，但同样要消耗掉一个序号】。</li>
+<li>A 收到 B 的确认后，还要向 B 发送一个普通的 TCP 确认报文段，并进入 <code>ESTABLISHED</code> （连接已建立）状态。<br>该报文段首部中的确认位 <code>ACK = 1</code> (表明这是一个普通的 TCP 确认报文段）；序号字段 <code>seq = x + 1</code> （这是因为 TCP 客户进程发送的第一个 TCP 报文段的序号为 x ，并且不携带数据，因此第二个报文段的序号为 x + 1）。【注意： TCP 规定普通的 TCP 确认报文段可以携带数据，但如果不携带数据，则不消耗序号】。在这种情况下，所发送的下一个数据报文段的序号仍是 <code>seq = x + 1</code>；确认号字段 <code>ack</code> 被设置为 y + 1 （这是对 TCP 服务器进程所选择的初始序号的确认）。</li>
+<li>TCP 服务器进程收到该确认报文段后也进入 <code>ESTABLISHED</code> （连接已建立）状态。现在，TCP 双方都进入了连接已建立状态，他们可以基于已建立好的 TCP 连接进行可靠的数据传输了。</li>
+</ul>
+<p>现在有一个问题：为什么 A 最后还要发送一次确认呢？<br>答案是：防止已经失效的连接请求报文突然又传送到服务器，从而导致不必要的错误和资源的浪费。<br>所谓“已失效的连接请求报文段”是这样产生的：  </p>
+<ul>
+<li>先考虑一种正常情况：A 发出连接请求，但因连接请求报文丢失而未收到确认，于是 A 重新发送一次连接请求。后来收到了确认，建立了连接。数据传输完毕后，就释放了连接。这时 A 共发送了两个连接请求报文段，其中第一个丢失，第二个到达了 B ，没有“已失效的连接请求报文段”。  </li>
+<li>现假定出现一种异常情况，即 A 发出的第一个连接请求报文段并没有丢失，而是在某些网络结点长时间滞留了，以致延误到连接释放以后的某个时间才到达 B 。本来这是一个早已失效的报文段。但 B 收到此失效的连接请求报文段后，就误以为是 A 又发出一次新的连接请求。于是就向 A 发出确认报文段，同意建立连接。假定不采用报文握手，那么只要 B 发出确认新的连接就建立了。<br>而由于现在 A 不并没有发出建立连接的请求，因此不会理睬 B 的确认，也不会向 B 发送数据。但 B 却以为新的运输连接已经建立了，并一直等待 A 发来数据。这样的话， B 的许多资源就这样白白浪费了。</li>
+</ul>
+<blockquote>
+<p>至此，三次握手就到此结束啦~</p>
+</blockquote>
+<h2 id="TCP-的连接释放"><a href="#TCP-的连接释放" class="headerlink" title="TCP 的连接释放"></a>TCP 的连接释放</h2><p>先看下四次挥手的流程图，心里有数好一点：<br><img src="https://s4.ax1x.com/2022/01/06/TvT11O.png" alt="TCP 四次挥手流程图"></p>
+<ul>
+<li>当TCP 的运输连接管理的第二个阶段-数据传输结束后，通信的双方都可释放连接。</li>
+<li>现在 A 和 B 都处于 <code>ESTABLISHED</code> （连接已建立）状态。假设 A 的应用进程通知其主动关闭 TCP 连接，就发送 TCP 连接释放报文段，停止发送数据，并进入 <code>FIN-WAIT-1</code> （终止等待1）状态。<br>TCP 连接释放报文段首部中的终止位 <code>FIN</code> 和确认为 <code>ACK</code> 的值都被设置为 1 （表明这是一个 TCP 连接释放报文段，同时也对之前收到的报文段进行确认）；序号 <code>seq = u</code> （它等于 TCP 客户进程之前已传送过的数据的最后一个字节的序号加 1 ）【注意：TCP 规定终止位 FIN 等于 1 的报文段即使不携带数据，也要消耗掉一个序号。】；确认号 <code>ack = v</code> （它等于 TCP 客户进程之前已收到的数据的最后一个字节的序号加 1 ）。</li>
+<li>B 收到 TCP 连接释放报文段后，会发送一个普通的 TCP 确认报文段并进入 <code>CLOSE-WAIT</code>（关闭等待） 状态。<br>TCP 确认报文段首部中的确认位 <code>ACK = 1</code> （表明这是一个普通的 TCP 确认报文段）；序号 <code>seq = v</code> （它等于 TCP 服务器进程之前已传送过的数据的最后一个字节的序号加 1 ，这也与之前收到的 TCP 连接释放报文段中的确认号匹配）；确认号 <code>ack = u + 1</code> （这是对 TCP 连接释放报文段的确认）。<br>收到 A 发来的连接释放报文段后，B 应用进程这时应通知高层应用进程：TCP 客户进程要断开与自己的 TCP 连接。于是，从 A –&gt; B 这个方向的连接就释放了。这时的 TCP 连接属于 <code>half-close</code> （半关闭）状态，也就是 A 已经没有数据要发送了。但如果 B 还有数据要发送，A 仍要接收。也就是说，从 B –&gt; A 这个方向的连接并未关闭，这个状态可能会持续一段时间。</li>
+<li>A 收到来自 B 的确认后，就进入 <code>FIN-WAIT-2</code> （终止等待2）状态，等待 B 发出的连接释放报文段。</li>
+<li>若 B 已经没有要向 A 发送的数据，其应用进程就通知 TCP 释放连接。这时 B 发出的连接释放报文段必须使 <code>FIN = 1</code> 。现假定 B 的序号为 w （在半关闭状态 B 可能又发送了一些数据）。B 还必须重复上次已发送过的确认号 <code>ack = u + 1</code> 。这时 B 就进入 <code>LAST-ACK</code> （最后确认）状态，等待 A 的确认。</li>
+<li>A 在收到 B 的连接释放报文段后，必须对此发出确认。在确认报文段中把 <code>ACK = 1</code> ，确认号 <code>ack = w + 1</code> ，而自己的序号是 <code>seq = u + 1</code> （根据 TCP 标准，前面发送过的 FIN 报文段要消耗掉一个序号），然后进入到 <code>TIME-WAIT</code> （时间等待）状态。【<strong>注意：现在 TCP 连接还没有释放掉，必须经过时间等待计时器设置的时间 <code>2 MSL</code>（最长报文段寿命，RFC 793 建议设为 2 分钟，现如今 2 分钟可能已经太长了，可以自己修改合适的时间） 后，A 才能进入到 <code>CLOSED</code> 状态</strong>，然后才能开始建立下一个新的连接】。当 A 撤销相应的传输控制块 TCB 后，就算结束了这次的 TCP 连接。</li>
+<li>B 只要收到了 A 发出的确认，立即进入 <code>CLOSED</code> 状态。同样，撤销 TCB 后，就结束了这次的 TCP 连接。</li>
+<li>可以看到，B 结束 TCP 连接的时间要比 B 早一些。</li>
+</ul>
+<p>那么问题又来了：为什么 A 在 TIME-WAIT 状态必须等待 2MSL 的时间呢？<br>答案是：①保证客户端发送的最后一个 ACK 报文段能够达到服务器；②防止已经失效的关闭连接报文段出现在本连接中。为什么这么说呢，可以来看看：  </p>
+<ul>
+<li>①由于这个 ACK 报文段有可能丢失，因而使处在 <code>LAST-ACK</code> 状态的 B 收不到对己发送的 FIN + ACK 报文段的确认。<br>B 会超时重传这个 FIN + ACK 报文段，而 A 就能在 2MSL 时间内收到这个重传的 FIN + ACK 报文段。<br>接着 A 重传一次确认，重新启动 <code>2MSL</code> 计时器。最后，A 和 B 都正常进入到 <code>CLOSED</code> 状态。<br>如果 A 在 TIME-WAIT 状态不等待一段时间，那么就无法收到 B 重传的 FIN + ACK 报文段，因而也不会再发送一次确认报文段。这样，B 就无法按照正常步骤进入 <code>CLOSED</code> 状态。</li>
+<li>② A 在发送完最后一个 ACK 报文段后，再经过时间 2MSL ，就可以使本连接持续的时间内所产生的所有报文段都从网络中消失。这样就可以使下一个新的连接中不会出现这种旧的连接请求报文段。</li>
+</ul>
+<blockquote>
+<p>至此，四报文握手就到此结束啦~</p>
+</blockquote>
 
                 
             </div>
@@ -673,7 +739,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://hcyety.github.io/2021/10/31/begin-myfist-blog/">http://hcyety.github.io/2021/10/31/begin-myfist-blog/</a>
+                    <a href="http://hcyety.github.io/2022/01/06/tcp-de-yun-shu-lian-jie-guan-li/">http://hcyety.github.io/2022/01/06/tcp-de-yun-shu-lian-jie-guan-li/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -711,8 +777,16 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E9%9A%8F%E7%AC%94/">
-                                    <span class="chip bg-color">随笔</span>
+                                <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">
+                                    <span class="chip bg-color">计算机网络</span>
+                                </a>
+                            
+                                <a href="/tags/%E8%BF%90%E8%BE%93%E5%B1%82/">
+                                    <span class="chip bg-color">运输层</span>
+                                </a>
+                            
+                                <a href="/tags/TCP-%E5%8D%8F%E8%AE%AE/">
+                                    <span class="chip bg-color">TCP 协议</span>
                                 </a>
                             
                         </div>
@@ -752,9 +826,9 @@
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'http://hcyety.github.io/2021/10/31/begin-myfist-blog/';
-        this.page.identifier = '/2021/10/31/begin-myfist-blog/';
-        this.page.title = 'Begin: myfist blog';
+        this.page.url = 'http://hcyety.github.io/2022/01/06/tcp-de-yun-shu-lian-jie-guan-li/';
+        this.page.identifier = '/2022/01/06/tcp-de-yun-shu-lian-jie-guan-li/';
+        this.page.title = 'TCP 的运输连接管理';
     };
     let disqus_shortname = 'hcyety';
 
@@ -784,46 +858,56 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/10/31/error-zhi-bu-shu-fu-wu-qi-pian/">
+                <a href="/2022/01/06/tcp-de-yun-shu-lian-jie-guan-li/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="ERROR 之部署服务器篇">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="TCP 的运输连接管理">
                         
-                        <span class="card-title">ERROR 之部署服务器篇</span>
+                        <span class="card-title">TCP 的运输连接管理</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            记录将项目部署到服务器时遇到的各种 bug
+                            TCP 的三次握手与四次挥手
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-10-31
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-06
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87/" class="post-category">
-                                    疑难杂症
+                            <a href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87/" class="post-category">
+                                    技术文
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Linux-%E6%9C%8D%E5%8A%A1%E5%99%A8/">
-                        <span class="chip bg-color">Linux 服务器</span>
+                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">
+                        <span class="chip bg-color">计算机网络</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%BF%90%E8%BE%93%E5%B1%82/">
+                        <span class="chip bg-color">运输层</span>
+                    </a>
+                    
+                    <a href="/tags/TCP-%E5%8D%8F%E8%AE%AE/">
+                        <span class="chip bg-color">TCP 协议</span>
                     </a>
                     
                 </div>
@@ -834,42 +918,45 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/10/31/begin-myfist-blog/">
+                <a href="/2021/12/06/js-zhi-shu-ju-lei-xing/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="Begin: myfist blog">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="JS 之数据类型">
                         
-                        <span class="card-title">Begin: myfist blog</span>
+                        <span class="card-title">JS 之数据类型</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            想说的话
+                            回顾 JS 的基础知识
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-31
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-06
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            hcyety
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/JavaScript/" class="post-category">
+                                    JavaScript
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E9%9A%8F%E7%AC%94/">
-                        <span class="chip bg-color">随笔</span>
+                    <a href="/tags/%E6%8A%80%E6%9C%AF%E6%96%87/">
+                        <span class="chip bg-color">技术文</span>
                     </a>
                     
                 </div>

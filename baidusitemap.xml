@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://hcyety.github.io/2022/01/06/tcp-de-yun-shu-lian-jie-guan-li/</loc>
+    <lastmod>2022-01-05</lastmod>
+  </url>
+  <url>
+    <loc>http://hcyety.github.io/2021/11/02/react-ts-xiang-mu-zai-xian-bian-cheng-bi-shi-ping-tai/</loc>
+    <lastmod>2022-01-01</lastmod>
+  </url>
+  <url>
     <loc>http://hcyety.github.io/2021/11/15/settimeout-yu-setinterval-de-qu-bie/</loc>
     <lastmod>2021-12-06</lastmod>
   </url>
@@ -22,10 +30,6 @@
   </url>
   <url>
     <loc>http://hcyety.github.io/2021/10/31/begin-myfist-blog/</loc>
-    <lastmod>2021-11-05</lastmod>
-  </url>
-  <url>
-    <loc>http://hcyety.github.io/2021/11/02/react-ts-xiang-mu-zai-xian-bian-cheng-bi-shi-ping-tai/</loc>
     <lastmod>2021-11-05</lastmod>
   </url>
   <url>

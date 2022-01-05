@@ -6,7 +6,7 @@
   <link href="http://hcyety.github.io/atom.xml" rel="self"/>
   
   <link href="http://hcyety.github.io/"/>
-  <updated>2021-12-05T14:06:57.072Z</updated>
+  <updated>2022-01-05T17:52:37.794Z</updated>
   <id>http://hcyety.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>TCP 的运输连接管理</title>
+    <link href="http://hcyety.github.io/2022/01/06/tcp-de-yun-shu-lian-jie-guan-li/"/>
+    <id>http://hcyety.github.io/2022/01/06/tcp-de-yun-shu-lian-jie-guan-li/</id>
+    <published>2022-01-05T16:31:19.000Z</published>
+    <updated>2022-01-05T17:52:37.794Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;TCP-运输连接的三个阶段&quot;&gt;&lt;a href=&quot;#TCP-运输连接的三个阶段&quot; class=&quot;headerlink&quot; title=&quot;TCP 运输连接的三个阶段&quot;&gt;&lt;/a&gt;TCP 运输连接的三个阶段&lt;/h2&gt;&lt;p&gt;TCP 是面向连接的协议。运输连接是用来传送</summary>
+        
+      
+    
+    
+    
+    <category term="技术文" scheme="http://hcyety.github.io/categories/%E6%8A%80%E6%9C%AF%E6%96%87/"/>
+    
+    
+    <category term="计算机网络" scheme="http://hcyety.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+    <category term="运输层" scheme="http://hcyety.github.io/tags/%E8%BF%90%E8%BE%93%E5%B1%82/"/>
+    
+    <category term="TCP 协议" scheme="http://hcyety.github.io/tags/TCP-%E5%8D%8F%E8%AE%AE/"/>
+    
+  </entry>
   
   <entry>
     <title>JS 之数据类型</title>
@@ -146,7 +175,7 @@
     <link href="http://hcyety.github.io/2021/11/02/react-ts-xiang-mu-zai-xian-bian-cheng-bi-shi-ping-tai/"/>
     <id>http://hcyety.github.io/2021/11/02/react-ts-xiang-mu-zai-xian-bian-cheng-bi-shi-ping-tai/</id>
     <published>2021-11-02T01:56:24.000Z</published>
-    <updated>2021-11-05T01:21:33.888Z</updated>
+    <updated>2022-01-01T14:44:49.943Z</updated>
     
     
       
