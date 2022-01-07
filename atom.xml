@@ -95,6 +95,34 @@
   </entry>
   
   <entry>
+    <title>原型链的继承</title>
+    <link href="http://hcyety.github.io/2022/01/04/yuan-xing-lian-de-ji-cheng/"/>
+    <id>http://hcyety.github.io/2022/01/04/yuan-xing-lian-de-ji-cheng/</id>
+    <published>2022-01-04T04:50:10.000Z</published>
+    <updated>2022-01-05T12:54:28.793Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;原型链继承&quot;&gt;&lt;a href=&quot;#原型链继承&quot; class=&quot;headerlink&quot; title=&quot;原型链继承&quot;&gt;&lt;/a&gt;原型链继承&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;模拟实现：&lt;pre class=&quot;line-numbers language-js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="JavaScript" scheme="http://hcyety.github.io/categories/JavaScript/"/>
+    
+    
+    <category term="技术文" scheme="http://hcyety.github.io/tags/%E6%8A%80%E6%9C%AF%E6%96%87/"/>
+    
+    <category term="面试" scheme="http://hcyety.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
     <title>原型链</title>
     <link href="http://hcyety.github.io/2022/01/03/yuan-xing-lian/"/>
     <id>http://hcyety.github.io/2022/01/03/yuan-xing-lian/</id>
