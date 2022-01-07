@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="ERROR 之部署服务器篇, hcyety&#39;s blog">
-    <meta name="description" content="记录将项目部署到服务器时遇到的各种 bug">
+    <meta name="keywords" content="原型链, hcyety&#39;s blog">
+    <meta name="description" content="原型链的基本构想首先大概看看何为原型链？图中由相互关联的原型组成的链状结构就是原型链，也就是蓝色的这条线。下面 step by step 来探究原型链的奥妙。从上图我们可以了解到构造函数（Person）、原型（Person.prototyp">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>ERROR 之部署服务器篇 | hcyety&#39;s blog</title>
+    <title>原型链 | hcyety&#39;s blog</title>
     <link rel="icon" type="image/png" href="/logo.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -460,12 +460,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">ERROR 之部署服务器篇</h1>
+                    <h1 class="description center-align post-title">原型链</h1>
                 </div>
             </div>
         </div>
@@ -475,10 +475,104 @@
 
 
 
-<main class="container content">
+<main class="post-container content">
 
     
-    <!-- 文章内容详情 -->
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
 <div id="artDetail">
     <div class="card">
         <div class="card-content article-info">
@@ -487,8 +581,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Linux-%E6%9C%8D%E5%8A%A1%E5%99%A8/">
-                                <span class="chip bg-color">Linux 服务器</span>
+                            <a href="/tags/%E6%8A%80%E6%9C%AF%E6%96%87/">
+                                <span class="chip bg-color">技术文</span>
+                            </a>
+                        
+                            <a href="/tags/%E9%9D%A2%E8%AF%95/">
+                                <span class="chip bg-color">面试</span>
                             </a>
                         
                     </div>
@@ -499,8 +597,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87/" class="post-category">
-                                疑难杂症
+                            <a href="/categories/JavaScript/" class="post-category">
+                                JavaScript
                             </a>
                         
                     </div>
@@ -512,28 +610,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-10-31
+                    2022-01-07
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-11-10
+                    2022-01-07
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.4k
+                    1.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    6 分
                 </div>
                 
 
@@ -556,91 +654,114 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <ol>
-<li>POST <a target="_blank" rel="noopener" href="http://localhost:3000/login">http://localhost:3000/login</a> 404 (Not Found)?</li>
-</ol>
-<p>有多种原因：①前端调用后端接口失败，通常是因为接口的路径匹配错误；②后端没有响应数据给前端；前端接收数据的格式与后端返回数据的格式不相符。</p>
+                <h2 id="原型链的基本构想"><a href="#原型链的基本构想" class="headerlink" title="原型链的基本构想"></a>原型链的基本构想</h2><p>首先大概看看何为原型链？图中由相互关联的原型组成的链状结构就是原型链，也就是蓝色的这条线。下面 step by step 来探究原型链的奥妙。<br><img src="https://s4.ax1x.com/2022/01/07/7pek60.png" alt="原型链中的各种关系"><br>从上图我们可以了解到构造函数（<code>Person</code>）、原型（<code>Person.prototype</code>）和实例（<code>person</code>）之间的关系：<br>每个构造函数都有一个原型对象（用<code>Person.prototype</code>），原型对象都包含一个指向构造函数的指针（用<code>Person.prototype.constructor</code>获取），而实例都包含一个指向原型对象的内部指针（用<code>person._proto_</code>）。这样就在实例和原型之间构造了一条原型链。这就是原型链的基本构想。</p>
+<p>下面来认识 <code>constructor</code> 和 <code>_proto_</code>：</p>
+<ol>
+<li>constructor<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+<span class="token keyword">var</span> person <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>person<span class="token punctuation">.</span>constructor <span class="token operator">===</span> Person<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <blockquote>
-<p>参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_44163269/article/details/105442612">vue项目 前端 POST(GET) http://127.0.0.1xxx 404(Not Found)错误 （多种误区解决）</a></p>
+<p>在解释为什么之前，我们需要了解到原型链的搜索机制：在读取实例上的属性时，首先会在实例上搜索这个属性。如果没找到，则会继承搜索实例的原型。在通过原型链实现继承之后，搜索就可以继承向上，搜索原型的原型。<strong>对属性和方法的搜索会一直持续到原型链的末端</strong>。</p>
 </blockquote>
+</li>
+</ol>
+<p>那么现在可以来看看为什么代码块中的打印会为 true 了：当获取 person.constructor 时，其实 person 中并没有 <code>constructor</code> 属性，当不能读取到 <code>constructor</code> 属性时，会从 person 的原型也就是 Person.prototype 中读取，正好原型中有该属性。</p>
 <ol start="2">
-<li>在服务器运行<code>npm run dev</code>报错：SyntaxError: Cannot use import statement outside a module？  </li>
+<li><strong>proto</strong><br>是实例对象指向原型对象的指针，隐式原型，是每个对象都会有的一个属性。</li>
 </ol>
-<p>这提示一般是node下无法使用import。</p>
-<blockquote>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43094085/article/details/114832738">解决方法参考这篇文章</a></p>
-</blockquote>
-<ol start="3">
-<li>在服务器上启动 NodeJs+ts 项目时报错之一：TS错误:⨯无法编译TypeScript(Error: TSError: ⨯ Unable to compile TypeScript)</li>
-</ol>
-<p>解决：从 package.json 中删除 ts-node 和 typescript 。然后：</p>
-<pre class="line-numbers language-none"><code class="language-none">npm install ts-node --save-dev
-npm install typescript -g 
-npm install typescript --save-dev<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<ol start="4">
-<li>在服务器上启动 NodeJs + Ts 项目时报错之二：Can’t run my Node.js Typescript project TypeError [ERR_UNKNOWN_FILE_EXTENSION]: Unknown file extension “.ts” for /app/src/App.ts</li>
-</ol>
-<p>情况说明：博主启动项目的命令是 <code>npm start</code> ，项目 <code>package.json</code> 文件中 <code>scripts</code> 字段下 <code>start</code> 的代码为 <code>node src/app.ts</code> 。不幸的是，由于项目中既有 ES6 模块又有 CommonJS 模块，因此不能按照网上的教程只在 <code>package.json</code> 中添加 <code>&quot;type&quot;: &quot;module</code> 或者 只在 <code>tsconfig.json</code> 中添加 <code>&quot;type&quot;: &quot;CommonJS&quot;</code> ，因为如果这样的话，项目运行后还是会报如下的错误：</p>
-<pre class="line-numbers language-none"><code class="language-none">import Koa from &#39;koa&#39;;
-^^^^^^
+<p>来看个例子：</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">SuperType</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>property <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token class-name">SuperType</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">getSuperValue</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>property<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-SyntaxError: Cannot use import statement outside a module<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token keyword">function</span> <span class="token function">SubType</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>subproperty <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-<p>解决方法：修改 <code>package.json</code> 中 <code>scripts</code> 字段下 <code>start</code> 的代码为 <code>node --experimental-modules --loader ts-node/esm &#123; 项目入口文件 &#125;</code> </p>
-<ol start="5">
-<li>服务器用 pm2 启动项目失败：Error: Cannot find module ‘/Users/wyb/.nvm/versions/io.js/v3.0.0/lib/node_modules/pm2/lib/ProcessContainerFork.js’</li>
+<span class="token comment">// 继承了 SuperType</span>
+<span class="token class-name">SubType</span><span class="token punctuation">.</span>prototype <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SuperType</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+SubType<span class="token punctuation">.</span>prototpye<span class="token punctuation">.</span><span class="token function-variable function">getSubValue</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>subproperty<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">var</span> instance <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SubType</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>instance<span class="token punctuation">.</span><span class="token function">getSuperValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>上面代码我们可以看到，<code>SubType</code> 通过创建 <code>SuperType</code> 的实例继承了 <code>SuperType</code>，于是 <code>SubType</code> 从构造函数变成了实例，<code>SuperType</code> 的实例变成了 <code>SubType</code> 的原型。这样一来，原本存在于 <code>SuperType</code> 的实例中的所有属性和方法，现在也存在于 <code>SubType.prototype</code>中了。<br>后面的代码还在继承的基础上，给 <code>SubType</code> 添加了一个新方法。于是：<img src="../img/36.png"><br>提醒：<code>getSuperValue()</code>方法仍然还在 <code>SuperType.prototype</code>中，但<code>property</code>则位于<code>SubType.prototype</code>中。这是因为<code>property</code>是一个实例属性，而<code>getSuperValue()</code>则是一个原型方法。既然<code>SubType.prototype</code>现在是<code>SuperType</code>的实例，那么<code>property</code>当然就位于该实例中了。<br>于是我们懂了，当原型对象等于另一个类型的实例后，此时的原型对象将包含一个指向另一个原型的指针，相应的，另一个原型中也包含着一个指向另一个构造函数的指针。假如另一个原型又是另一个类型的实例，那么如此递进，就会构成实例与原型的链条，也就是原型链。</p>
+<h3 id="默认原型"><a href="#默认原型" class="headerlink" title="默认原型"></a>默认原型</h3><p>实际上，原型链中还有一环。我们知道所有引用类型默认都继承自 <code>Object</code> ，所有函数的默认原型也都是 <code>Object</code> 的实例，因此默认原型都会包含一个内部指针，指向 <code>Object.prototype</code> 。这也正是所有自定义类型都会继承 <code>toString()</code>、<code>valueOf()</code> 等默认方法的根本原因。</p>
+<h3 id="原型与继承关系"><a href="#原型与继承关系" class="headerlink" title="原型与继承关系"></a>原型与继承关系</h3><p>原型与实例的关系可以通过两种方式来确定。<br>①是使用 <code>instanceof</code> 操作符，如果一个实例的原型链中出现过相应的构造函数，则 <code>instanceof</code> 返回 <code>true</code>。如下所示：</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">SuperType</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>property <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">function</span> <span class="token function">SubType</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>subproperty <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">// 继承了 SuperType</span>
+<span class="token class-name">SubType</span><span class="token punctuation">.</span>prototype <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SuperType</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> instance <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SubType</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>instance <span class="token keyword">instanceof</span> <span class="token class-name">Object</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>instance <span class="token keyword">instanceof</span> <span class="token class-name">SubType</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>instance <span class="token keyword">instanceof</span> <span class="token class-name">SuperType</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>从技术上讲，<code>instance</code> 是 <code>Object</code>、<code>SubType</code>、<code>SuperType</code> 的实例，因为 <code>instance</code> 的原型链中包含这些构造函数的原型。</p>
+<p>②是使用 <code>isPrototypeOf()</code> 方法。原型链中的每个原型都可以调用这个方法，只要原型链中包含这个原型，这个方法就返回 <code>true</code> 。如下所示：</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token class-name">Object</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">isPrototypeOf</span><span class="token punctuation">(</span>instance<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token class-name">SubType</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">isPrototypeOf</span><span class="token punctuation">(</span>instance<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token class-name">SuperType</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">isPrototypeOf</span><span class="token punctuation">(</span>instance<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="原型链的问题："><a href="#原型链的问题：" class="headerlink" title="原型链的问题："></a>原型链的问题：</h3><ol>
+<li>原型中如果存在引用类型的值，会被所有实例共享，如下所示：<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">SuperType</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>colors <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'red'</span><span class="token punctuation">,</span> <span class="token string">'blue'</span><span class="token punctuation">,</span> <span class="token string">'greeb'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">function</span> <span class="token function">SubType</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+<span class="token class-name">SubType</span><span class="token punctuation">.</span>prototype <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SuperType</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> instance1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SubType</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+instance1<span class="token punctuation">.</span>colors<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">'black'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>instance1<span class="token punctuation">.</span>colors<span class="token punctuation">)</span> <span class="token comment">// "red, blue, green, black"</span>
+
+<span class="token keyword">var</span> instance2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SubType</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>instance2<span class="token punctuation">.</span>colors<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// "red, blue, green, black"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+如果原型的属性被所有的实例共享，就会存在一个实例修改了这个属性后，也会影响到其他实例，这往往会造成一些不必要的麻烦。因此，通常的做法是在构造函数中，而不是在原型中定义属性，如：<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">SuperType</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+<span class="token keyword">function</span> <span class="token function">SubType</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>colors <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token class-name">SubType</span><span class="token punctuation">.</span>prototype <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SuperType</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> instance1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SubType</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+instance1<span class="token punctuation">.</span>colors<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">'black'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>instance1<span class="token punctuation">.</span>colors<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ["black"]</span>
+
+<span class="token keyword">var</span> instance2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SubType</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+instance2<span class="token punctuation">.</span>colors<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">'red'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>instance2<span class="token punctuation">.</span>colors<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ["red"]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>在创建子类型的实例时，不能向超类型的构造函数中传递参数</li>
 </ol>
-<p>情况说明：笔者的服务器确定是有安装了 pm2 的，使用 <code>pm2 -v</code> 也可以正常查询到版本号。然而此前 NodeJs 因为我误操作卸载重装了，虽然 pm2 也重新安装了一遍，但根目录下残留的文件路径指向的是以前的 pm2 ，因此只要将根目录下的 pm2 删除即可。</p>
-<p>解决：<code>rm -rf ~/.pm2</code>  </p>
+<p>实际上，应该说是没有办法在不影响所有对象实例的情况下，给超类型的构造函数传递参数。有鉴于此，再加上由于原型中包含引用类型值所带来的问题，实践中很少会单独使用原型链。<br>为了解决这些问题，可以使用一种叫做 借用构造函数的技术（有时候也叫做伪造对象或经典继承），即在子类型构造函数的内部调用超类型构造函数。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">SuperType</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">function</span> <span class="token function">SubType</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> age</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">// 继承了 SuperType ，同时还传递了参数</span>
+    <span class="token function">SuperType</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// 实例属性</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">var</span> instance1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SubType</span><span class="token punctuation">(</span><span class="token string">'siyang'</span><span class="token punctuation">,</span> <span class="token number">29</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>instance1<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// "siyang"</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>instance1<span class="token punctuation">.</span>age<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 29</span>
+
+<span class="token keyword">var</span> instance2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SubType</span><span class="token punctuation">(</span><span class="token string">'hg'</span><span class="token punctuation">,</span> <span class="token number">28</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>instance2<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// "hg"</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>instance2<span class="token punctuation">.</span>age<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 28</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>以上代码在 SubType 内部使用 call 实现了对 SuperType 的”继承”，同时每个实例都有自己的实例属性，互不影响；而且创建实例时还可以向超类型 SuperType 传递参数。</p>
 <blockquote>
-<p>参考：<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/36690442/error-cannot-find-module-users-wyb-nvm-versions-io-js-v3-0-0-lib-node-module">overflow 回答</a></p>
-</blockquote>
-<ol start="6">
-<li>启动 pm2 报错：Process or Namespace ./src/app not found<pre class="line-numbers language-none"><code class="language-none">[PM2][ERROR] Process or Namespace .&#x2F;src&#x2F;app.ts not found
-[PM2][ERROR] Interpreter &#x2F;www&#x2F;server&#x2F;nvm&#x2F;versions&#x2F;node&#x2F;v14.17.6&#x2F;lib&#x2F;node_modules&#x2F;pm2&#x2F;node_modules&#x2F;.bin&#x2F;ts-node is NOT AVAILABLE in PATH. (type &#39;which &#x2F;www&#x2F;server&#x2F;nvm&#x2F;versions&#x2F;node&#x2F;v14.17.6&#x2F;lib&#x2F;node_modules&#x2F;pm2&#x2F;node_modules&#x2F;.bin&#x2F;ts-node&#39; to double check.)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-排查流程：正常下，可以先 <code>pm2 -v</code> 查看是否已经安装 pm2 ，如果不能显示版本信息，有两种情况，一种是没有安装，那么运行 <code>npm install pm2 -g</code> ；如果确定安装过了，则可以试试建立软链接：<code>ln -s &#123; 安装 pm2 的绝对路径 &#125; /usr/local/bin/</code> 。如果还不能解决，就再往下看看。</li>
-</ol>
-<p>先看第二个报错，情况①博主的服务器安装了宝塔面板，并在面板里安装了 pm2 管理器，导致与服务器的 pm2 冲突。于是把宝塔面板中的 pm2 管理器卸载，就没有这个报错了。②用 xshell 工具执行这条命令：<code>pm2 start src/app.ts --interpreter ./node_modules/.bin/ts-node</code> 即可。</p>
-<ol start="7">
-<li><p>将项目中的脚本上传至服务器并执行时报错：npm: command not found？</p>
-<pre class="line-numbers language-none"><code class="language-none">deploy.sh: line 2: npm: command not found
-&#x2F;usr&#x2F;bin&#x2F;env: node: No such file or directory
-&#x2F;usr&#x2F;bin&#x2F;env: node: No such file or directory<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>根据网上的解决方法，正解本来应该是 用绝对路径设置软链 ，但博主的情况很特殊，是由于 /usr/bin/env 命令被修改，导致找不到 node ，这也是在我多方尝试无果之后向阿里提交工单，大佬给出的回复。<br>大佬的解决方法便是从版本相同的主机 copy 一份 /usr/bin/env 命令到我本机上，这才恢复正常。</p>
-<blockquote>
-<p>注：在服务器上的操作大家一定要慎重，误删文件可能会导致各种很难解决的 bug ，这已经是我第二次遇到特殊情况了。</p>
-</blockquote>
-</li>
-<li><p>端口被占用？</p>
-</li>
-</ol>
-<ul>
-<li>查看端口使用情况：<code>netstat -ntlp</code></li>
-<li>杀掉进程：<code>kill （对应端口的PID）</code><blockquote>
-<p>参考资料：<a target="_blank" rel="noopener" href="http://blog.csdn.net/ljfphp/article/details/78666376">【转】linux下杀死进程（kill）的N种方法</a></p>
-</blockquote>
-</li>
-</ul>
-<ol start="9">
-<li>无法访问阿里云ip地址？</li>
-</ol>
-<p>解决方法：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/ghzjm/p/10677599.html">linux服务器安装nginx及使用</a></p>
-<blockquote>
-<p>排查1：<a target="_blank" rel="noopener" href="https://blog.csdn.net/sinat_25957705/article/details/80641077">阿里云服务器 nginx公网IP无法访问浏览器</a><br>排查2：<a target="_blank" rel="noopener" href="https://blog.csdn.net/Adime_J/article/details/109155234">linux服务器部署完成之后访问不到—–总结篇</a></p>
-</blockquote>
-<blockquote>
-<ol>
-<li>ping ip成功只能说明主机可以到达，端口还是有可能不可到达的。端口不可到达可能是由于HTTP 服务器未启动或者监听在其他端口入8080上了；还有一个可能是防火墙没开放80端口的访问权限。</li>
-</ol>
-</blockquote>
-<blockquote>
-<p>排查过程中遇到的问题：</p>
-<ol>
-<li>curl: (7) Failed to connect to 120.79.193.126 port 80: Connection refused<br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/jukaiit/p/8994448.html">Xshell 链接 Could not connect to ‘192.168.80.129’ (port 22): Connection failed</a><br>在Linux6中查看及设置开机自启信息是使用chkconfig命令，Linux7中此命令已经被替代。虽然Linux7中已经不再使用chkconfig命令来管理服务是否开机自启，但是此命令仍旧可用，但是输出信息提示我们使用chkconfig命令的输出只是呗SysV所管理的服务，不包括systemd管理的服务，所以如果想在CentOS7中查看systemd管理的服务需要使用以下命令：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_38295166/article/details/79828482">CentOS 7设置ssh服务自动启动</a></li>
-</ol>
-</blockquote>
-<blockquote>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_38705903/article/details/101911553">或许有用？</a></p>
+<p>说到原型链的继承，也是一个 JS 必须学习的一个重点，在我另一篇博客中也有详细介绍：<a href="">原型链的继承</a></p>
 </blockquote>
 
                 
@@ -668,7 +789,7 @@ SyntaxError: Cannot use import statement outside a module<span aria-hidden="true
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://hcyety.github.io/2021/10/31/error-zhi-bu-shu-fu-wu-qi-pian/">http://hcyety.github.io/2021/10/31/error-zhi-bu-shu-fu-wu-qi-pian/</a>
+                    <a href="http://hcyety.github.io/2022/01/07/yuan-xing-lian/">http://hcyety.github.io/2022/01/07/yuan-xing-lian/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -706,8 +827,12 @@ SyntaxError: Cannot use import statement outside a module<span aria-hidden="true
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Linux-%E6%9C%8D%E5%8A%A1%E5%99%A8/">
-                                    <span class="chip bg-color">Linux 服务器</span>
+                                <a href="/tags/%E6%8A%80%E6%9C%AF%E6%96%87/">
+                                    <span class="chip bg-color">技术文</span>
+                                </a>
+                            
+                                <a href="/tags/%E9%9D%A2%E8%AF%95/">
+                                    <span class="chip bg-color">面试</span>
                                 </a>
                             
                         </div>
@@ -747,9 +872,9 @@ SyntaxError: Cannot use import statement outside a module<span aria-hidden="true
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'http://hcyety.github.io/2021/10/31/error-zhi-bu-shu-fu-wu-qi-pian/';
-        this.page.identifier = '/2021/10/31/error-zhi-bu-shu-fu-wu-qi-pian/';
-        this.page.title = 'ERROR 之部署服务器篇';
+        this.page.url = 'http://hcyety.github.io/2022/01/07/yuan-xing-lian/';
+        this.page.identifier = '/2022/01/07/yuan-xing-lian/';
+        this.page.title = '原型链';
     };
     let disqus_shortname = 'hcyety';
 
@@ -783,31 +908,31 @@ SyntaxError: Cannot use import statement outside a module<span aria-hidden="true
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/11/01/qian-hou-duan-fen-chi-xiang-mu-xian-shang-bu-shu/">
+                <a href="/2022/01/07/yuan-xing-lian-de-ji-cheng/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="前后端分离项目线上部署">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="原型链的继承">
                         
-                        <span class="card-title">前后端分离项目线上部署</span>
+                        <span class="card-title">原型链的继承</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            部署前后端分离项目从基础到进阶
+                            
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-11-01
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-01-07
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E9%83%A8%E7%BD%B2/" class="post-category">
-                                    部署
+                            <a href="/categories/JavaScript/" class="post-category">
+                                    JavaScript
                                 </a>
                             
                             
@@ -817,20 +942,12 @@ SyntaxError: Cannot use import statement outside a module<span aria-hidden="true
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Linux-%E6%9C%8D%E5%8A%A1%E5%99%A8/">
-                        <span class="chip bg-color">Linux 服务器</span>
+                    <a href="/tags/%E6%8A%80%E6%9C%AF%E6%96%87/">
+                        <span class="chip bg-color">技术文</span>
                     </a>
                     
-                    <a href="/tags/%E7%BA%BF%E4%B8%8A%E9%83%A8%E7%BD%B2/">
-                        <span class="chip bg-color">线上部署</span>
-                    </a>
-                    
-                    <a href="/tags/scp2/">
-                        <span class="chip bg-color">scp2</span>
-                    </a>
-                    
-                    <a href="/tags/node-ssh/">
-                        <span class="chip bg-color">node-ssh</span>
+                    <a href="/tags/%E9%9D%A2%E8%AF%95/">
+                        <span class="chip bg-color">面试</span>
                     </a>
                     
                 </div>
@@ -844,24 +961,24 @@ SyntaxError: Cannot use import statement outside a module<span aria-hidden="true
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/10/31/begin-myfist-blog/">
+                <a href="/2022/01/06/tcp-de-liu-liang-kong-zhi-ji-zhi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="Begin: myfist blog">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="TCP 的流量控制机制">
                         
-                        <span class="card-title">Begin: myfist blog</span>
+                        <span class="card-title">TCP 的流量控制机制</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            想说的话
+                            
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-31
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-06
                             </span>
                         <span class="publish-author">
                             
@@ -870,14 +987,6 @@ SyntaxError: Cannot use import statement outside a module<span aria-hidden="true
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E9%9A%8F%E7%AC%94/">
-                        <span class="chip bg-color">随笔</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -944,6 +1053,100 @@ SyntaxError: Cannot use import statement outside a module<span aria-hidden="true
 
 <script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
 
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
 
     
 
