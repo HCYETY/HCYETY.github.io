@@ -617,7 +617,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-01-07
+                    2022-01-09
                 </div>
                 
 
@@ -817,13 +817,12 @@ fn2_EC<span class="token punctuation">.</span><span class="token constant">SC</s
 <li><p>③checkscope 函数并不立刻执行，开始做准备工作，第一步：复制函数[[scope]]属性创建作用域链</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js">checkscopeContext <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
   Scope<span class="token operator">:</span>checkscope<span class="token punctuation">.</span><span class="token punctuation">[</span><span class="token punctuation">[</span>scope<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+</ul>
 <p>读到这里可能会有以下疑问：</p>
 <blockquote>
 <p>Q1：checkscope函数被创建时保存到[[scope]]的作用域链，和 checkscope执行前的准备工作中复制函数[[scope]]属性创建的作用域链有什么不同？<br>A1：checkscope函数创建的时候，保存的是根据词法所生成的作用域链。checkscope执行的时候，会复制这个作用域链，作为自己作用域链的初始化，然后根据环境生成变量对象，然后将这个变量对象，添加到这个复制的作用域链，这才完整的构建了自己的作用域链。  </p>
 </blockquote>
-</li>
-</ul>
 <blockquote>
 <p>Q2：为什么会有两个作用域链？<br>A2：因为在函数创建的时候并不能确定最终的作用域的样子。而为什么会采用复制的方式而不是直接修改呢？应该是因为函数会被调用很多次吧。</p>
 </blockquote>
@@ -1819,7 +1818,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2021</span>
+                <span id="year">2021-2022</span>
             
             <a href="/about" target="_blank">hcyety</a>
             <!-- 运行天数提醒. -->
@@ -1874,11 +1873,11 @@ console<span class="token punctuation">.</span><span class="token function">log<
 
             <!-- 站点总字数 -->
             <!-- 
-                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">39.3k</span>
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">40.5k</span>
              -->
             
                 &nbsp;<i class="fa fa-chart-area"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">39.3k
+                <span class="white-color">40.5k
             
 
             <!-- <span id="sitetime"></span> -->
