@@ -4,23 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="浏览器的存储, hcyety&#39;s blog">
-    <meta name="description" content="浏览器的存储 目录
-
-
-cookie
-web存储
-localStorage
-sessionStorage
-
-
-总结
-浏览器本地存储与服务器端存储的区别
-Session机制
-
-写在前面：现在市面上最常见的数据存储方案是以下三种：
-
-Cooki">
+    <meta name="keywords" content="JS 之内存管理, hcyety&#39;s blog">
+    <meta name="description" content="要掌握数据存储、内存泄露、垃圾回收机制">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -32,7 +17,7 @@ Cooki">
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>浏览器的存储 | hcyety&#39;s blog</title>
+    <title>JS 之内存管理 | hcyety&#39;s blog</title>
     <link rel="icon" type="image/png" href="/logo.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -475,12 +460,12 @@ Cooki">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">浏览器的存储</h1>
+                    <h1 class="description center-align post-title">JS 之内存管理</h1>
                 </div>
             </div>
         </div>
@@ -594,9 +579,13 @@ Cooki">
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E9%9D%A2%E8%AF%95/">
+                                <span class="chip bg-color">面试</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -608,28 +597,28 @@ Cooki">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-01-09
+                    2022-01-10
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-12-18
+                    2022-01-10
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    5.2k
+                    4.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    18 分
+                    16 分
                 </div>
                 
 
@@ -652,270 +641,368 @@ Cooki">
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="浏览器的存储"><a href="#浏览器的存储" class="headerlink" title="浏览器的存储 "></a>浏览器的存储 <!-- omit in toc --></h2><pre><code>目录
-</code></pre>
+                <h2 id="内存机制"><a href="#内存机制" class="headerlink" title="内存机制"></a>内存机制</h2><p>JS有两种数据类型，分别是原始数据类型（<code>String、Number、Boolean、Null、Undefined、Symbol</code>）和引用数据类型（<code>Object</code>）。<br>而存放这两种数据类型的内存又可以分为两部分，分别是栈内存（Stack）和堆内存（Heap）。</p>
+<p>这里说下栈内存和堆内存的区别：<br>|栈内存|堆内存|<br>|:–:|:–:|<br>|先进后出，后进先出|无序存储，根据引用直接获取|<br>|存储原始数据类型|存储引用数据类型|<br>|存储的值大小固定|存储的值大小不固定，可动态调整|<br>|按值访问|按引用访问|<br>|可以直接操作|不允许直接操作|<br>|空间小，但运行效率高|空间大，但运行效率相对低|</p>
+<p>不知道大家有没有过这样一个疑问：Js 声明变量时，底层是怎么实现这个声明过程的，或者说是怎么存储这个变量的，感兴趣的话可以看看下面这两篇文章：</p>
 <ul>
-<li><a href="#cookie">cookie</a></li>
-<li><a href="#web%E5%AD%98%E5%82%A8">web存储</a><ul>
-<li><a href="#localstorage">localStorage</a></li>
-<li><a href="#sessionstorage">sessionStorage</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.dennisgo.cn/Articles/JavaScript/MemoryManagement.html#%E6%A0%88%E5%86%85%E5%AD%98">原始数据类型是如何存进栈内存的</a>  </li>
+<li><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000015118062">基本类型和引用类型发生复制行为后的不同影响</a></li>
 </ul>
-</li>
-<li><a href="#%E6%80%BB%E7%BB%93">总结</a></li>
-<li><a href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8%E4%B8%8E%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E5%AD%98%E5%82%A8%E7%9A%84%E5%8C%BA%E5%88%AB">浏览器本地存储与服务器端存储的区别</a></li>
-<li><a href="#session%E6%9C%BA%E5%88%B6">Session机制</a></li>
-</ul>
-<p>写在前面：<br>现在市面上最常见的数据存储方案是以下三种：</p>
-<ul>
-<li><p>Cookie</p>
-</li>
-<li><p>web存储 (localStorage和seesionStorage)</p>
-</li>
-<li><p>IndexedDB</p>
-<h2 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h2></li>
-<li><p>cookie是什么</p>
+<h2 id="内存生命周期"><a href="#内存生命周期" class="headerlink" title="内存生命周期"></a>内存生命周期</h2><p>不管什么程序语言，内存生命周期基本是一致的：   </p>
+<ol>
+<li>分配你所需要的内存</li>
+<li>使用分配到的内存（读、写）</li>
+<li>不需要时将其释放/归还</li>
+</ol>
+<p>JS的内存分配</p>
+<ol>
+<li>值的初始化<br>在定义变量时就完成了内存分配</li>
+<li>使用值<br>使用值的过程实际上是对分配内存进行读取与写入的操作。这个操作可能是写入一个变量或者一个对象的属性值，甚至传递函数的参数。</li>
+<li>释放不再需要的内存</li>
+</ol>
+<h2 id="内存泄漏"><a href="#内存泄漏" class="headerlink" title="内存泄漏"></a>内存泄漏</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>不再用到的内存，没有及时释放，就叫做内存泄漏（memory leak），会导致内存溢出。</p>
 <blockquote>
-<p>cookie是指存储在用户本地终端上的数据，同时它是与具体的web页面或者站点相关的。cookie数据会自动在web浏览器和web服务器之间传输，也就是说HTTP请求发送时，会把保存在该请求域名下的所有cookie值发送给web服务器，因此服务器端脚本是可以读、写存储在客户端的cookie的操作。</p>
+<p>内存溢出：指程序申请内存时，没有足够的内存供申请者使用。例如，给一块存储int类型数据的存储空间，但却存储long类型的数据，那么结果就是内存不够用，此时就会报错，即所谓的内存溢出。</p>
 </blockquote>
-<ul>
-<li>属于文档对象模型DOM树根节点document</li>
-</ul>
-</li>
-<li><p>Cookie的特点</p>
-<blockquote>
-<p>（1）不同的浏览器存放的cookie位置不一样，也是不能通用的。<br>  （2）cookie的存储是以域名形式进行区分的，不同的域下存储的cookie是独立的。<br>  （3）我们可以设置cookie生效的域（当前设置cookie所在域的子域），也就是说，我们能够操作的cookie是当前域以及当前域下的所有子域</p>
-</blockquote>
-</li>
-<li><p>Cookie的缺点</p>
-<blockquote>
-<p>（1）存储量小。大小和数量有限制，每个 domain 最多只能有 20 条 cookie，每个 cookie 不能超过4KB，否则会被截断。<br>  （2）影响性能。由于Cookie会由浏览器作为请求头发送，因此当Cookie存储信息过多时，会影响特定域的资源获取的效率，增加文档传输的负载（同一个域名下的所有请求都会携带 Cookie）。 且每次访问都要传送cookie给服务器，浪费带宽。<br>  （3）安全问题。cookie 一旦被劫持，就可以获取用户的 session 信息。<br>  （4）只能储存字符串，且以文本的方式存储。<br>  （5）cookie 需要指定作用域，不可以跨域调用。<br>  （6）cookie数据有路径（path）的概念，可以限制cookie只属于某个路径下。<br>  （7）用户可以操作（禁用）cookie，功能受限；</p>
-</blockquote>
-</li>
-<li><p>应用场景</p>
-<blockquote>
-<p>（1）判断用户是否登陆过网站，以便下次登录时能够实现自动登录（或者记住密码）。如果我们删除cookie，则每次登录必须从新填写登录的相关信息。<br>  （2）保存上次登录的时间等信息。<br>  （3）保存上次查看的页面<br>  （4）浏览计数<br>  （5）广告追踪<br>  （6）购物车的状态保持</p>
-</blockquote>
-</li>
-<li><p>Cookie的操作</p>
-<blockquote>
-<p>基本的Cookie操作主要有三个：读取，写入和删除。但在JavaScript中去处理cookie是一件很繁琐的事情，因为cookie中的所有的名字和值都是经过URI编码的，所以当我们必须使用decodeURICompoent来进行解码才能得到cookie的值。</p>
-  <pre class="line-numbers language-js" data-language="js"><code class="language-js">expires：过期时间
-默认为这个cookie生命周期为浏览器会话期间，只要关闭浏览器窗口，cookie就消失了。
-如果设置一个时间，当过了到期日期时，浏览器会自动删除该cookie。
-如果想删除一个cookie，只需要把它过期时间设置成过去的时间即可，比如希望设置过期时间一年：<span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">365</span> <span class="token operator">*</span> <span class="token number">24</span> <span class="token operator">*</span> <span class="token number">60</span> <span class="token operator">*</span> <span class="token number">60</span> <span class="token operator">*</span> <span class="token number">1000</span>
-
-path：路径
-值可以是一个目录，或者是一个路径。
-如果cc<span class="token punctuation">.</span>com<span class="token operator">/</span>test<span class="token operator">/</span>index<span class="token punctuation">.</span>html 建立了一个cookie，那么在cc<span class="token punctuation">.</span>com<span class="token operator">/</span>test<span class="token operator">/</span>目录里的所有页面，以及该目录下面任何子目录里的页面都可以访问这个cookie。因此在cc<span class="token punctuation">.</span>com<span class="token operator">/</span>test<span class="token operator">/</span>test2<span class="token operator">/</span>test3 里的任何页面都可以访问cc<span class="token punctuation">.</span>com<span class="token operator">/</span>test<span class="token operator">/</span>index<span class="token punctuation">.</span>html建立的cookie。
-若cc<span class="token punctuation">.</span>com<span class="token operator">/</span>test<span class="token operator">/</span> 若想访问cc<span class="token punctuation">.</span>com<span class="token operator">/</span>test<span class="token operator">/</span>index<span class="token punctuation">.</span>html设置的cookes，需要把cookies的path属性设置成“<span class="token operator">/</span>”。
-在指定路径的时候，凡是来自同一服务器，<span class="token constant">URL</span>里有相同路径的所有<span class="token constant">WEB</span>页面都可以共享cookies。
-
-domain：主机名
-是指同一个域下的不同主机，例如：www<span class="token punctuation">.</span>baidu<span class="token punctuation">.</span>com和map<span class="token punctuation">.</span>baidu<span class="token punctuation">.</span>com就是两个不同的主机名。默认情况下，一个主机中创建的cookie在另一个主机下是不能被访问的，但可以通过domain参数来实现对其的控制：document<span class="token punctuation">.</span>cookie <span class="token operator">=</span> <span class="token string">"name=value;domain=.baidu.com"</span>
-这样，所有<span class="token operator">*</span><span class="token punctuation">.</span>baidu<span class="token punctuation">.</span>com的主机都可以访问该cookie。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</blockquote>
-  <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 看下具体实现方法：</span>
-document<span class="token punctuation">.</span>cookie <span class="token operator">=</span> <span class="token string">"username=John Doe; expires=Thu, 18 Dec 2013 12:00:00 GMT; path=/"</span>    <span class="token comment">// 设置cookie</span>
-document<span class="token punctuation">.</span>cookie <span class="token operator">=</span> <span class="token string">"username=; expires=Thu, 01 Jan 1970 00:00:00 GMT"</span>    <span class="token comment">// 删除cookie</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>  我们来看看CookieUtil对象是如何操纵cookie的：</p>
-  <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> CookieUtil <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
-    <span class="token comment">// get可根据cookie的名字获取相应的值</span>
-    <span class="token function-variable function">get</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">const</span> cookieName <span class="token operator">=</span> <span class="token function">encodeURIcOMPONET</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"="</span><span class="token punctuation">,</span>
-            cookieStart <span class="token operator">=</span> document<span class="token punctuation">.</span>cookie<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span>cookieName<span class="token punctuation">)</span><span class="token punctuation">,</span>
-            cookieValue <span class="token operator">=</span> <span class="token keyword">null</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>cookieStart <span class="token operator">></span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-            <span class="token keyword">const</span> cookieEnd <span class="token operator">=</span> document<span class="token punctuation">.</span>cookie<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">";"</span><span class="token punctuation">,</span> cookieStart<span class="token punctuation">)</span>
-            <span class="token keyword">if</span><span class="token punctuation">(</span>cookieEnd <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-                cookieEnd <span class="token operator">=</span> document<span class="token punctuation">.</span>cookie<span class="token punctuation">.</span>length
-            <span class="token punctuation">&#125;</span>
-            cookieValue <span class="token operator">=</span> <span class="token function">decodeURICompoent</span><span class="token punctuation">(</span>document<span class="token punctuation">.</span>cookie<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span>cookieStart <span class="token operator">+</span> cookieName<span class="token punctuation">.</span>length<span class="token punctuation">,</span> cookieEnd<span class="token punctuation">)</span><span class="token punctuation">)</span>	
-        <span class="token punctuation">&#125;</span>
-        <span class="token keyword">return</span> cookieValue
-    <span class="token punctuation">&#125;</span>
-    <span class="token comment">// set设置一个cookie</span>
-    <span class="token function-variable function">set</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> value<span class="token punctuation">,</span> expires<span class="token punctuation">,</span> path<span class="token punctuation">,</span> domain<span class="token punctuation">,</span> secure</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">var</span> cookieText <span class="token operator">=</span> <span class="token function">encodeURIComponet</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">"="</span><span class="token operator">+</span><span class="token function">encodeURIComponet</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>expires <span class="token keyword">instanceof</span> <span class="token class-name">Date</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-            cookieText <span class="token operator">+=</span> <span class="token string">"; expires="</span> <span class="token operator">+</span> expires<span class="token punctuation">.</span><span class="token function">toGMTString</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-        <span class="token punctuation">&#125;</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-            cookieText <span class="token operator">+=</span> <span class="token string">";path="</span> <span class="token operator">+</span> path
-        <span class="token punctuation">&#125;</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>domain<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-            cookieText <span class="token operator">+=</span> <span class="token string">"; domain"</span> <span class="token operator">+</span> domain
-        <span class="token punctuation">&#125;</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>secure<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-            cookieText <span class="token operator">+=</span> <span class="token string">"; secure"</span>
-        <span class="token punctuation">&#125;</span>
-        document<span class="token punctuation">.</span>cookie <span class="token operator">=</span> cookieText
-    <span class="token punctuation">&#125;</span>
-    <span class="token comment">// 删除已有的cookie</span>
-    <span class="token function-variable function">unset</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> path<span class="token punctuation">,</span> domain<span class="token punctuation">,</span> secure</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> path<span class="token punctuation">,</span> domain<span class="token punctuation">,</span> secure<span class="token punctuation">)</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="web存储"><a href="#web存储" class="headerlink" title="web存储"></a>web存储</h2><p>web存储机制最初作为HTML5的一部分被定义成API的形式，但又由于其本身的独特性与其他的一些原因而剥离了出来，成为独立的一个标准。web存储标准的API包括locaStorage对象和seesionStorage对象。它所产生的主要原因主要出于以下两个原因：</p>
-</li>
-<li><p>人们希望有一种在cookie之外存储回话数据的途径。</p>
-</li>
-<li><p>人们希望有一种存储大量可以跨会话存在的数据的机制。</p>
-</li>
-</ul>
-<p><code>sessionStorage</code> 和 <code>localStorage</code> 属于浏览器对象模型BOM的对象window</p>
-<p><code>sessionStorage</code>保存的数据用于浏览器的一次会话（session），当会话结束（通常是窗口关闭），数据被清空；<code>localStorage</code>保存的数据长期存在，下一次访问该网站的时候，网页可以直接读取以前保存的数据。除了保存期限的长短不同，这两个对象的其他方面都一致。</p>
-<p>保存的数据都以“键值对”的形式存在。也就是说，每一项数据都有一个键名和对应的值。所有的数据都是以文本格式保存。</p>
-<h3 id="localStorage"><a href="#localStorage" class="headerlink" title="localStorage"></a>localStorage</h3><ul>
-<li>localStorage是什么<blockquote>
-<p>在HTML5中，新加入了一个localStorage特性，这个特性主要是用来作为本地存储来使用的，解决了cookie存储空间不足的问题(cookie中每条cookie的存储空间为4k)，localStorage中一般浏览器支持的是5M大小，这个在不同的浏览器中localStorage会有所不同。</p>
-</blockquote>
-</li>
-<li>localStorage的优点：<blockquote>
-<p>1） localStorage拓展了cookie的4K限制；<br>  2） localStorage会可以将第一次请求的数据直接存储到本地，这个相当于一个5M大小的针对于前端页面的数据库，相比于cookie可以节约带宽，但是这个却是只有在高版本的浏览器中才支持的；<br>  3） localStorage 方法存储的数据没有时间限制。第二天、第二周或下一年之后，数据依然可用。</p>
-</blockquote>
-</li>
-<li>localStorage的缺点：<blockquote>
-<p>1）浏览器的大小不统一，并且在IE8以上的IE版本才支持localStorage这个属性；<br>  2）目前所有的浏览器中都会把localStorage的值类型限定为string类型，这个在对我们日常比较常见的JSON对象类型需要一些转换；<br>  3）localStorage在浏览器的隐私模式下面是不可读取的；<br>  4）localStorage本质上是对字符串的读取，如果存储内容多的话会消耗内存空间，会导致页面变卡；<br>  5）localStorage不能被爬虫抓取到</p>
-</blockquote>
-</li>
-<li>localStorage的操作  <pre class="line-numbers language-js" data-language="js"><code class="language-js">window<span class="token punctuation">.</span>localStorage<span class="token punctuation">.</span>username <span class="token operator">=</span> <span class="token string">'hehe'</span>            <span class="token comment">// 设置</span>
-window<span class="token punctuation">.</span>localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">'username'</span><span class="token punctuation">,</span> <span class="token string">'hehe'</span><span class="token punctuation">)</span>  <span class="token comment">// 设置</span>
-window<span class="token punctuation">.</span>localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">'username'</span><span class="token punctuation">)</span>          <span class="token comment">// 读取</span>
-window<span class="token punctuation">.</span>localStorage<span class="token punctuation">.</span><span class="token function">removeItem</span><span class="token punctuation">(</span><span class="token string">'username'</span><span class="token punctuation">)</span>       <span class="token comment">// 删除</span>
-window<span class="token punctuation">.</span>localStorage<span class="token punctuation">.</span><span class="token function">key</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>                       <span class="token comment">// 读取索引为 1 的值</span>
-window<span class="token punctuation">.</span>localStorage<span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span>                      <span class="token comment">// 清除所有</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>但需要注意的是，以上示例全是存储字符串格式的数据，当我们需要传输其他格式的数据时，我们就需要将这些数据全部转换为字符串格式，然后再进行存储：  <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> user <span class="token operator">=</span> <span class="token punctuation">&#123;</span>name<span class="token operator">:</span><span class="token string">"Srtian"</span><span class="token punctuation">,</span> age<span class="token operator">:</span> <span class="token number">22</span><span class="token punctuation">&#125;</span>
-localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">"user"</span><span class="token punctuation">,</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>user<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
-<li>在获取值的时候也需要将其转化回来：  <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> age <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>localStorage<span class="token punctuation">.</span>user<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-</ul>
-</li>
-<li>localStorage储存数据的有效期与作用域<ul>
-<li>通过localStorage存储的数据时永久性的，除非我们使用removeItem来删除或者用户通过设置浏览器配置来删除，负责数据会一直保留在用户的电脑上，永不过期。</li>
-</ul>
-</li>
-<li>localStorage的作用域<ul>
-<li>localStorage的作用域限定在文档源级别的（意思就是同源的才能共享），同源的文档间会共享localStorage的数据，他们可以互相读取对方的数据，甚至有时会覆盖对方的数据。当然，localStorage的作用域同样也受浏览器的限制。<h3 id="sessionStorage"><a href="#sessionStorage" class="headerlink" title="sessionStorage"></a>sessionStorage</h3>sessionStorage与localStorage的唯一一点区别就是localStorage属于永久性存储，而sessionStorage属于当会话结束的时候，sessionStorage中的键值对就会被清空。</li>
-</ul>
-</li>
-<li>Session Storage只存储当前会话页的数据，且只有当用户关闭当前会话页或浏览器时，数据才会被清除。</li>
-<li>sessionStorage的基本语法  <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 保存数据到sessionStorage</span>
-sessionStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">'name'</span><span class="token punctuation">,</span> <span class="token string">'Srtian'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token comment">// 从sessionStorage获取数据</span>
-<span class="token keyword">var</span> data <span class="token operator">=</span> sessionStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">'name'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token comment">// 从sessionStorage删除保存的数据</span>
-sessionStorage<span class="token punctuation">.</span><span class="token function">removeItem</span><span class="token punctuation">(</span><span class="token string">'name'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token comment">// 从sessionStorage删除所有保存的数据</span>
-sessionStorage<span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-下面的示例会自动保存一个文本输入框的内容，如果浏览器因偶然因素被刷新了，文本输入框里面的内容会被恢复，写入的内容不会丢失：<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 获取文本输入框</span>
-<span class="token keyword">var</span> field <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"field"</span><span class="token punctuation">)</span>
-
-<span class="token comment">// 检测是否存在 autosave 键值</span>
-<span class="token comment">// (这个会在页面偶然被刷新的情况下存在)</span>
-<span class="token keyword">if</span> <span class="token punctuation">(</span>sessionStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">"autosave"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token comment">// 恢复文本输入框的内容</span>
-  field<span class="token punctuation">.</span>value <span class="token operator">=</span> sessionStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">"autosave"</span><span class="token punctuation">)</span>
+<h3 id="常见-JavaScript-内存泄露"><a href="#常见-JavaScript-内存泄露" class="headerlink" title="常见 JavaScript 内存泄露"></a>常见 JavaScript 内存泄露</h3><ol>
+<li>意外的全局变量 </li>
+</ol>
+<p>①未定义的变量会在全局对象创建一个新变量。在浏览器中，全局对象是 window 。<br>  <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token parameter">arg</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  bar <span class="token operator">=</span> <span class="token string">"this is a hidden global variable"</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span>
-<span class="token comment">// 监听文本输入框的 change 事件</span>
-field<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"change"</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token comment">// 保存结果到 sessionStorage 对象中</span>
-  sessionStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">"autosave"</span><span class="token punctuation">,</span> field<span class="token punctuation">.</span>value<span class="token punctuation">)</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<blockquote>
-<p><a target="_blank" rel="noopener" href="http://javascript.ruanyifeng.com/bom/webstorage.html#toc3">Storage API</a></p>
+<span class="token comment">// 实际上是：</span>
+<span class="token keyword">function</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token parameter">arg</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  window<span class="token punctuation">.</span>bar <span class="token operator">=</span> <span class="token string">"this is an explicit global variable"</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><br>  如果 bar 是一个应该指向 foo 函数作用域内变量的引用，但是你忘记使用 var 来声明这个变量，这时就会创建一个全局变量。</p>
+<p>  ②另一种意外的全局变量可能由 this 创建：<br>  <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>variable <span class="token operator">=</span> <span class="token string">"potential accidental global"</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><br>  函数自身发生了调用，this 指向全局对象（window）</p>
+<p>  为了防止这种错误的发生，可以在你的 JavaScript 文件开头添加 <code>&#39;use strict&#39;;</code> 语句。这个语句实际上开启了解释 JavaScript 代码的严格模式，可以避免创建意外的全局变量。</p>
+<p>总结：</p>
+<ul>
+<li>全局变量的注意事项：如果你必须使用全局变量来存储很多的数据，请确保在使用过后将它设置为 <code>null</code> 或者将它<strong>重新赋值</strong>。常见的和全局变量相关的引发内存消耗增长的原因就是缓存。（缓存存储着可复用的数据）</li>
+<li>解决方法：①避免创建全局变量；②使用严格模式,在 JavaScript 文件头部或者函数的顶部加上 use strict。</li>
+</ul>
+<ol start="2">
+<li>闭包引起的内存泄漏</li>
+</ol>
+<p>原理：闭包可以读取函数内部的变量，然后让这些变量始终保存在内存中。如果在使用结束后没有将局部变量清除，就可能导致内存泄露。 </p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> leaks <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>  
+  <span class="token keyword">var</span> leak <span class="token operator">=</span> <span class="token string">'xxxxxx'</span><span class="token punctuation">;</span> <span class="token comment">// 被闭包所引用，不会被回收</span>
+  <span class="token keyword">return</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>leak<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>解决方法：将事件处理函数定义在外部，解除闭包，或者在定义事件处理函数的外部函数中。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 比如：在循环中的函数表达式，能复用最好放到循环外面。</span>
+<span class="token comment">// 不要这样：</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> k <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> k <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> k<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">var</span> <span class="token function-variable function">t</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">a</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">// 创建了10次函数对象</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+  <span class="token punctuation">&#125;</span>
+  <span class="token function">t</span><span class="token punctuation">(</span>k<span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">// 这样比较好：</span>
+<span class="token keyword">function</span> <span class="token function">t</span><span class="token punctuation">(</span><span class="token parameter">a</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> k <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> k <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> k<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token function">t</span><span class="token punctuation">(</span>k<span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
+t <span class="token operator">=</span> <span class="token keyword">null</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="3">
+<li>没有清理的 DOM 元素引用</li>
+</ol>
+<p>原因：虽然别的地方删除了，但是对象中还存在对 dom 的引用。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 在对象中引用DOM</span>
+<span class="token keyword">var</span> elements <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+  btn<span class="token operator">:</span>document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'btn'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">function</span> <span class="token function">doSomeThing</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  elements<span class="token punctuation">.</span>btn<span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">function</span> <span class="token function">removeBtn</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token comment">// 将body中的btn移除，也就是移除DOM树中的btn</span>
+  document<span class="token punctuation">.</span>body<span class="token punctuation">.</span><span class="token function">removeChild</span><span class="token punctuation">(</span>document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'button'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+  <span class="token comment">// 但是此时全局变量 elements 还是保留了对 btn 的引用，btn 还是存在于内存中，不能被 GC 回收</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>解决方法：手动删除，elements.btn = null。</p>
+<ol start="4">
+<li><p>没有移除计时器或回调函数</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 定时器中有 dom 的引用，即使 dom 删除了，但是定时器还在，所以内存中还是有这个 dom。</span>
+
+<span class="token comment">// 定时器</span>
+<span class="token keyword">var</span> serverData <span class="token operator">=</span> <span class="token function">loadData</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token function">setInterval</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">var</span> renderer <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'renderer'</span><span class="token punctuation">)</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span>renderer<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    renderer<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>serverData<span class="token punctuation">)</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token number">5000</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 观察者模式</span>
+<span class="token keyword">var</span> btn <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'btn'</span><span class="token punctuation">)</span>
+<span class="token keyword">function</span> <span class="token function">onClick</span><span class="token punctuation">(</span><span class="token parameter">element</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    element<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token string">"I'm innerHTML"</span>
+<span class="token punctuation">&#125;</span>
+btn<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> onClick<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>解决方法：①手动删除定时器和 dom；②removeEventListener 移除事件监听</p>
+</li>
+<li><p>循环引用 </p>
+</li>
+</ol>
+<p>当出现了一个含有DOM对象的循环引用时，就会发生内存泄露。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token constant">A</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">var</span> a <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">"div"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  a<span class="token punctuation">.</span><span class="token function-variable function">onclick</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"hi"</span><span class="token punctuation">)</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token constant">A</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="内存泄露的解决方案"><a href="#内存泄露的解决方案" class="headerlink" title="内存泄露的解决方案"></a>内存泄露的解决方案</h3><p>下面的方案是从网上搜索到的资料，本人并没有实践过（主要是还不懂），仅供大家参考：</p>
+<ul>
+<li> 显式类型转换</li>
+<li> 避免事件导致的循环引用</li>
+<li> 不影响返回值地打破循环引用</li>
+<li> 延迟appendChild</li>
+<li> 代理DOM对象<blockquote>
+<p>更加具体的解决方法可点击这里：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/67843006?from=from_parent_mindnote">传送门</a></p>
 </blockquote>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><table>
+<h2 id="V8-垃圾回收机制"><a href="#V8-垃圾回收机制" class="headerlink" title="V8 垃圾回收机制"></a>V8 垃圾回收机制</h2>上文有提到：内存会发生泄露是因为没有及时释放多余的内存。那么问题来了，应该由谁去释放多余的内存，又是怎么释放内存的？答案是 V8 垃圾回收机制。在了解这个机制之前，我们先来认识下什么是 V8 。<h3 id="认识V8"><a href="#认识V8" class="headerlink" title="认识V8"></a>认识V8</h3>V8 是 Google 采用 C++ 编写的开源 JavaScript 引擎。采用即时编译，直接翻译成机器语言，并且使用了如内联缓存（inline caching）等方法来提高性能。有了这些功能，JavaScript程序在V8引擎下的运行速度媲美二进制程序。</li>
+</ul>
+<p>V8内存设限：64bit操作系统上不超过1.5G，32bit操作系统上不超过800M 这么设限为了浏览器使用内存足够，内部还有垃圾运行机制，时间也在用户感知的合理范围</p>
+<p>目前V8垃圾回收采用增量标记算法需要50ms，采用非增量标记算法需要1s</p>
+<p>这里先停一下，康康这篇文章再往下会更好：<a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000018605776">前端面试：谈谈 JS 垃圾回收机制</a></p>
+<hr>
+<p>ddd，如果已经看完了上面这篇文章，就让我们继续往下吧~</p>
+<h3 id="什么是垃圾"><a href="#什么是垃圾" class="headerlink" title="什么是垃圾"></a>什么是垃圾</h3><p>一般来说没有被引用的对象就是垃圾，就是要被清除。 有个例外如果几个对象引用形成一个环，互相引用，但根访问不到它们，这几个对象也是垃圾，也要被清除。</p>
+<h3 id="V8垃圾回收策略"><a href="#V8垃圾回收策略" class="headerlink" title="V8垃圾回收策略"></a>V8垃圾回收策略</h3><p>基本思路：确定哪个变量不会再使用，然后释放它占用的内存。这个过程是周期性的，即垃圾回收程序每隔一定时间（或者说在代码执行过程中某个预定的收集时间）就会自动运行。值得注意的是，垃圾回收过程是一个近似且不完美的方案，因为某块内存是否还有用–属于“不可判定的”问题，这意味着靠算法是解决不了的。</p>
+<p>我们以函数中局部变量的正常生命周期为例。函数中的局部变量会在函数执行时存在，此时，栈（或堆）内存会分配空间以保存相应的值。当函数在内部使用了变量，然后退出，此时，就不再需要那个局部变量了，它占用的内存可以释放了。但垃圾回收程序并不知道哪个局部变量是要被释放的，因此，程序必须跟踪记录哪个变量还会使用，以及哪个变量不会再使用。</p>
+<p>原始数据都是由程序语言自身控制的，这里的回收还是指主要存活在堆区的对象数据，这个过程是离不开内存操作的，那在这种情况下是如何对垃圾进行回收的?答案是：</p>
+<ol>
+<li>采用分代回收的思想</li>
+<li>内存分为新生代存储区、老生代存储区</li>
+<li>针对不同代采用不同的 GC 算法</li>
+</ol>
+<p>下面针对 GC 算法展开讨论。</p>
+<h3 id="GC"><a href="#GC" class="headerlink" title="GC"></a>GC</h3><p>相关概念：</p>
+<ul>
+<li><p>GC：垃圾回收机制的简写，垃圾回收期完成具体的工作，可以找到内存中的垃圾、并释放和回收空间</p>
+</li>
+<li><p>GC 算法：是 GC 工作时查找和回收所遵循的规则</p>
+<h3 id="常见-GC-算法："><a href="#常见-GC-算法：" class="headerlink" title="常见 GC 算法："></a>常见 GC 算法：</h3></li>
+<li><p>引用计数（不太常用）</p>
+<ul>
+<li>核心思想：跟踪记录每个值被引用的次数，每次引用的时候加一，被释放时减一，如果一个值的引用次数变成 0 了，就可以将其内存空间回收。</li>
+<li>实现原理：<ul>
+<li>引用计数器</li>
+<li>当引用关系改变时修改引用数字</li>
+<li>当引用数字为0时立即回收</li>
+</ul>
+</li>
+<li>实例：  <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> user1 <span class="token operator">=</span> <span class="token punctuation">&#123;</span>age<span class="token operator">:</span><span class="token number">11</span><span class="token punctuation">&#125;</span>
+<span class="token keyword">const</span> user2 <span class="token operator">=</span> <span class="token punctuation">&#123;</span>age<span class="token operator">:</span><span class="token number">12</span><span class="token punctuation">&#125;</span>
+<span class="token keyword">const</span> user3 <span class="token operator">=</span> <span class="token punctuation">&#123;</span>age<span class="token operator">:</span><span class="token number">13</span><span class="token punctuation">&#125;</span>
+<span class="token keyword">const</span> nameList <span class="token operator">=</span> <span class="token punctuation">[</span>user1<span class="token punctuation">.</span>age<span class="token punctuation">,</span> user2<span class="token punctuation">.</span>age<span class="token punctuation">,</span> user<span class="token punctuation">.</span>age<span class="token punctuation">]</span>
+
+<span class="token keyword">function</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">const</span> num1 <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> num2 <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+    num3 <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>当函数调用过后，<code>num1</code> 和 <code>num2</code> 在外部不能使用，引用数为 0，会被回收;</li>
+<li><code>num3</code> 是挂载在window上的，所以不会被回收;</li>
+<li><code>user1</code>、<code>user2</code>、<code>user3</code> 被 <code>nameList</code> 引用，所以引用数不为 0，故不会被回收 ;</li>
+</ul>
+</li>
+<li>优缺点：<table>
 <thead>
 <tr>
-<th align="left">存储方式</th>
-<th align="left">作用与特性</th>
-<th align="left">存储数量及大小</th>
+<th align="center">引用计数算法</th>
+<th align="left">内容</th>
 </tr>
 </thead>
 <tbody><tr>
-<td align="left">cookie</td>
-<td align="left">1.存储用户信息，获取数据需要与服务器建立连接。<br>2.可存储的数据有限，且依赖于服务器，无需请求服务器的数据尽量不要存放在cookie中，以免影响页面性能。<br>3.可设置过期时间。</td>
-<td align="left">最好将cookie控制在4095B以内，超出的数据会被忽略。</td>
+<td align="center">优点</td>
+<td align="left">1.发现垃圾时立即回收<br>2.最大限度减少程序暂停，让空间不会有被占满的时候</td>
 </tr>
 <tr>
-<td align="left">localStorage</td>
-<td align="left">1.存储客户端信息，无需请求服务器。<br>2.数据永久保存，除非用户手动清理客户端缓存。<br>3. 开发者可自行封装一个方法，设置失效时间。</td>
-<td align="left">5M左右，各浏览器的存储空间有差异。</td>
+<td align="center">缺点</td>
+<td align="left">1.无法回收循环引用的对象<br>2.资源消耗开销大（对所有对象进行数值的监控和修改，本身就会占用时间和资源）</td>
+</tr>
+</tbody></table>
+<ul>
+<li>举一栗子说明上面缺点中无法回收循环应用对象的情况：  <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">const</span> obj1 <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span> 
+  <span class="token keyword">const</span> obj2 <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+  obj1<span class="token punctuation">.</span>name <span class="token operator">=</span> obj2 
+  obj2<span class="token punctuation">.</span>name <span class="token operator">=</span> obj1
+  <span class="token keyword">return</span> <span class="token string">'hello world'</span> 
+<span class="token punctuation">&#125;</span>
+
+<span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+  obj1 和 obj2 因为互相有引用，所以计数器并不为 0 ，fn 调用结束之后依旧无法回收这两个对象</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>标记清除（最常用）</p>
+<ul>
+<li>核心思想：<strong>当变量进入执行上下文时</strong>（比如在函数内部声明一个变量时），这个变量会被加上存在于上下文中的标记；<strong>而在上下文中的变量</strong>，从逻辑上来说，永远不应该释放它们的内存，因为只要上下文中的代码在运行，就有可能用到它们；<strong>当变量离开上下文时</strong>，也会被加上离开上下文的标记【也有的说法是标记被清除，不过《JavaScript 高级程序设计》中写的是前者，就以该书为主吧】。于是当垃圾回收时就会销毁那些带标记的值并回收他们的内存空间。</li>
+<li>实现原理：分 <strong>标记</strong> 和 <strong>清除</strong> 两个阶段完成<ul>
+<li>第一阶段：遍历所有对象找活动对象（可达对象）进行标记（层次用递归进行操作）<ol>
+<li>有一组基本的固有可达值，由于显而易见的原因无法删除。例如:<ul>
+<li>本地函数的局部变量和参数</li>
+<li>当前嵌套调用链上的其他函数的- 变量和参数</li>
+<li>全局变量</li>
+<li>还有一些其他的，内部的这些值称为根。</li>
+</ul>
+</li>
+<li>如果引用或引用链可以从根访问任何其他值，则认为该值是可访问的<ul>
+<li>例如，如果局部变量中有对象，并且该对象具有引用另一个对象的属性，则该对象被视为可达性， 它引用的那些也是可以访问的。</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>第二阶段：遍历所有对象，清除没有标记的对象，并抹掉第一个阶段标的标记<ul>
+<li>注意：js中的标记是标记所有的变量，清除掉被标记为离开状态的变量；而老生代中的标记使标记存活的变量，清除没有被标记的变量。（什么是老生代？后面会讲到的）</li>
+</ul>
+</li>
+<li>收尾：回收相应空间，将回收的空间加到空闲链表中，方便后面的程序申请空间使用</li>
+</ul>
+</li>
+<li>优缺点：<table>
+<thead>
+<tr>
+<th align="center">标记清除算法</th>
+<th align="left">内容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">优点</td>
+<td align="left">1.相对于引用计数算法来说，解决了对象循环引用的问题。因为局部作用域里面的内容无法被标记，所以即使有引用还是会被清除掉<br>2.回收速度较快</td>
 </tr>
 <tr>
-<td align="left">sessionStorage</td>
-<td align="left">1.存储客户端信息，无需请求服务器。<br>2.数据保存在当前会话，刷新页面数据不会被清除，结束会话（关闭浏览器、关闭页面、跳转页面）数据失效。</td>
-<td align="left">同localStorage</td>
+<td align="center">缺点</td>
+<td align="left">1.空间链表地址不连续（空间碎片化），不能进行空间最大化使用<br>2.不会立即回收垃圾对象，清除的时候程序是停止工作的</td>
+</tr>
+</tbody></table>
+<ul>
+<li>下面是空间链表地址不连续的图示，可以更好的帮我们理解这个缺点是怎么肥事：<img src="https://s4.ax1x.com/2022/01/10/7EKZIs.jpg" alt="不连续空间链表"></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>标记整理</p>
+<ul>
+<li><p>核心思想：在 标记 和 清除 中间，添加了内存空间的 整理</p>
+</li>
+<li><p>实现原理：（标记整理可以看做是标记清除的 增强）</p>
+<ul>
+<li>标记阶段：与标记清除一致</li>
+<li>整理阶段：清除垃圾前先执行整理操作，移动对象位置，在地址上产生连续</li>
+<li>最后留出了整个的空闲空间</li>
+</ul>
+</li>
+<li><p>流程图示：<br><img src="https://s4.ax1x.com/2022/01/10/7EK1LF.png" alt="未整理前"><br><img src="https://s4.ax1x.com/2022/01/10/7EK8Z4.png" alt="整理后"><br><img src="https://s4.ax1x.com/2022/01/10/7EKlsU.png" alt="回收后"></p>
+</li>
+<li><p>优缺点：</p>
+<table>
+<thead>
+<tr>
+<th align="center">标记整理算法</th>
+<th align="left">内容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">优点</td>
+<td align="left">相较标记清除算法减少了碎片化空间</td>
+</tr>
+<tr>
+<td align="center">缺点</td>
+<td align="left">不会立即回收垃圾对象，清除的时候程序是停止工作的</td>
 </tr>
 </tbody></table>
 </li>
 </ul>
-<p>cookie、localStorage、sessionStorage之间的区别<br>|异同点|cookie|localStorage|sessionStorage|<br>|:–|:–|:–|:–|<br>|数据生命周期|默认是会话结束的时候。也可设置过期时间|永久存储，除非手动删除|会话结束时（当前页面关闭的时候，会自动销毁）|<br>|存储数据大小|4k左右|一般5M或更大|一般5M或更大|<br>|存储位置|保存在浏览器端，与服务器进行交互通信|都保存在客户端，不与服务器进行交互通信|都保存在客户端，不与服务器进行交互通信|<br>|作用域|在所有同源窗口中都是共享的|在所有同源窗口中都是共享的|不在不同的浏览器页面中共享，即使是同一个页面|</p>
-<h2 id="浏览器本地存储与服务器端存储的区别"><a href="#浏览器本地存储与服务器端存储的区别" class="headerlink" title="浏览器本地存储与服务器端存储的区别"></a>浏览器本地存储与服务器端存储的区别</h2><p>其实数据既可以在浏览器本地存储，也可以在服务器端存储 </p>
+</li>
+<li><p>空间复制</p>
 <ul>
-<li>浏览器可以保存一些数据，需要的时候直接从本地存取，sessionStorage、localStorage和cookie都是由浏览器存储在本地的数据 </li>
-<li>服务器端也可以保存所有用户的所有数据，但需要的时候浏览器要向服务器请求数据。 <ul>
-<li>1、服务器端可以保存用户的持久数据，如数据库和云存储将用户的大量数据保存在服务器端 </li>
-<li>2、服务器端也可以保存用户的临时会话数据，服务器端的session机制，如jsp的session对象，数据保存在服务器上</li>
+<li>新生代区域垃圾回收使用空间换时间</li>
+<li>主要采用复制算法，要有空闲空间存在，当然新生代本身空间小，分出来的复制的空间更小，所以浪费这点空间换取时间的效率是微不足道的</li>
+<li>老生代区域垃圾回收不适合复制算法，老生代空间大一分为二，会造成一半的空间浪费，存放数据多复制时间长。</li>
 </ul>
 </li>
-</ul>
-<p>实际上，服务器和浏览器之间仅需传递session id即可，服务器根据session id找到对应用户的session对象，会话数据仅在一段时间内有效，这个时间就是server端设置的session有效期</p>
-<p>服务器端保存所有的用户的数据，所以服务器端的开销较大，而浏览器端保存则把不同用户需要的数据分别保存在用户各自的浏览器中，浏览器端一般只用来存储小数据，而非服务可以存储大数据或小数据服务器存储数据安全一些，浏览器只适合存储一般数据</p>
-<h2 id="Session机制"><a href="#Session机制" class="headerlink" title="Session机制"></a>Session机制</h2><ul>
-<li>session机制：当程序需要为某个客户端的请求创建一个session的时候，服务器首先<strong>检查这个客户端的请求里是否已包含了一个session标识 - 称为session id</strong>。如果已包含一个session id则说明以前已经为此客户端创建过session，<strong>服务器就按照session id把这个session检索出来使用</strong>；如果客户端请求不包含session id，则为此客户端创建一个session并且生成一个与此session相关联的session id（session id的值应该是一个既不会重复，又不容易被找到规律以仿造的字符串），这个session id将被在本次响应中返回给客户端保存。 <ul>
-<li>保存session id的方式：①采用cookie；②URL重写。<ul>
-<li>①把session的id放在cookie里面，这样在交互过程中浏览器可以自动的按照规则把这个标识发挥给服务器。一般这个cookie的名字都是类似于SEEESIONID。  <pre class="line-numbers language-none"><code class="language-none">比如weblogic对于web应用程序生成的cookie，JSESSIONID&#x3D;ByOK3vjFD75aPnrF7C2HmdnV6QZcEbzWoWiBYEnLerjQ99zWpBng!-145788764，它的名字就是JSESSIONID。 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-【由于cookie可以被人为的禁止，必须有其他机制以便在cookie被禁止时仍然能够把session id传递回服务器，即采用URL重写。】</li>
-<li>②就是把session id直接附加在URL路径的后面，附加方式也有两种：<br>一种是作为URL路径的附加信息  <pre class="line-numbers language-none"><code class="language-none">http:&#x2F;&#x2F;.....&#x2F;xxx;jsessionid&#x3D;ByOK3vjFD75aPnrF7C2HmdnV6QZcEbzWoWiBYEnLerjQ99zWpBng!-145788764 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-  另一种是作为查询字符串附加在URL后面  <pre class="line-numbers language-none"><code class="language-none">http:&#x2F;&#x2F;.....&#x2F;xxx?jsessionid&#x3D;ByOK3vjFD75aPnrF7C2HmdnV6QZcEbzWoWiBYEnLerjQ99zWpBng!-145788764 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-  【这两种方式对于用户来说是没有区别的，只是服务器在解析的时候处理的方式不同，采用第一种方式也有利于把session id的信息和正常程序参数区分开来。 】<br>  为了在整个交互过程中始终保持状态，就必须在每个客户端可能请求的路径后面都包含这个session id。  <blockquote>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/h19910518/article/details/79348051">了解Session机制</a></p>
-</blockquote>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p>用个例子来描述一下cookie和session机制之间的区别与联系：  </p>
-<blockquote>
-<p>笔者曾经常去的一家咖啡店有喝5杯咖啡免费赠一杯咖啡的优惠，然而一次性消费5杯咖啡的机会微乎其微，这时就需要某种方式来纪录某位顾客的消费数量：<br>1、该店的店员很厉害，能记住每位顾客的消费数量，只要顾客一走进咖啡店，店员就知道该怎么对待了。这种做法就是协议本身支持状态。<br>2、发给顾客一张卡片，上面记录着消费的数量，一般还有个有效期限。每次消费时，如果顾客出示这张卡片，则此次消费就会与以前或以后的消费相联系起来。这种做法就是在客户端保持状态。<br>3、发给顾客一张会员卡，除了卡号之外什么信息也不纪录，每次消费时，如果顾客出示该卡片，则店员在店里的纪录本上找到这个卡号对应的纪录添加一些消费信息。这种做法就是在服务器端保持状态。   </p>
-</blockquote>
-<blockquote>
-<p>由于HTTP协议是无状态的，而出于种种考虑也不希望使之成为有状态的，因此，后面两种方案就成为现实的选择。具体来说cookie机制采用的是在客户端保持状态的方案，而session机制采用的是在服务器端保持状态的方案。同时我们也看到，由于采用服务器端保持状态的方案在客户端也需要保存一个标识，所以session机制可能需要借助于cookie机制来达到保存标识的目的，尽管实际上它还有其他选择。</p>
+<li><p>分代回收 (一定会用)</p>
+<ul>
+<li>新生代对象回收<blockquote>
+<p>新生代 —— 就是指存活时间较短的对象，例如：一个局部作用域中，只要函数执行完毕之后变量就会回收。</p>
 </blockquote>
 <ul>
-<li>session：用于保存每个用户的专用信息，变量的值保存在服务器端，通过SessionID来区分不同的客户。</li>
-<li>session有期限：当一个网站的第一个窗口关掉了，而没有继续接着访问第二个页面，就没有使用到session。这时候<strong>session不会在中断程序后立刻关闭session，而是会给它一定的保留时间</strong>。当最近一次访问的时候开始计时，每刷新一次重写开始计时。当隔了这么久的时间，还没有访问这个session，就要关闭这个session了。所以<strong>session有过期时间，session什么时候过期，要看配置</strong>。session对象默认30分钟没有使用，则服务器会自动销毁session，在web.xml文件中可以手工配置session的失效时间。<ul>
-<li>在谈论session机制的时候，常常听到这样一种误解“只要关闭浏览器，session就消失了”。<br>其实可以想象一下会员卡的例子，除非顾客主动对店家提出销卡，否则店家绝对不会轻易删除顾客的资料。对session来说也是一样的，<strong>除非程序通知服务器删除一个session，否则服务器会一直保留，程序一般都是在用户做log off的时候发个指令去删除session</strong>。<br>然而浏览器从来不会主动在关闭之前通知服务器它将要关闭，因此服务器根本不会有机会知道浏览器已经关闭，<strong>之所以会有这种错觉，是大部分session机制都使用会话cookie来保存session id，而关闭浏览器后这个session id就消失了</strong>，再次连接服务器时也就无法找到原来的session。  </li>
+<li>主要使用算法：采用赋值算法 + 标记整理算法</li>
+<li>回收过程：<ul>
+<li>新生代内存区分为<strong>两个等大小空间</strong>，使用空间为From，空闲空间为To</li>
+<li>如果需要申请空间使用，回收步骤如下：<ol>
+<li>首先会将所有活动对象存储于From空间，这个过程中To是空闲状态。   </li>
+<li>当From空间使用到一定程度之后就会触发GC操作，这个时候会进行标记整理——对活动对象进行标记并移动位置将使用空间变得连续。<br><img src="https://s4.ax1x.com/2022/01/10/7EKQMT.png" alt="步骤 1、2 图示"></li>
+<li>将活动对象拷贝至To空间，拷贝完成之后活动空间就有了备份，这个时候就可以考虑回收操作了。</li>
+<li>把From空间完成释放，回收完成。<br><img src="https://s4.ax1x.com/2022/01/10/7EKnGq.png" alt="步骤 3、4 图示"> </li>
+<li>对From和To名称进行调换，继续重复之前的操作。<br><img src="https://s4.ax1x.com/2022/01/10/7EKmin.png" alt="步骤 5 图示"></li>
+</ol>
+</li>
 </ul>
-  <strong>如果服务器设置的cookie被保存到硬盘上，或者使用某种手段改写浏览器发出的HTTP请求头，把原来的session id发送给服务器，则再次打开浏览器仍然能够找到原来的session。</strong></li>
-<li>session 的安全性大于 cookie<blockquote>
-<p>（1）sessionID存储在cookie中，若要攻破session首先要攻破cookie；<br>  （2）sessionID是要有人登录，或者启动session_start才会有，所以攻破cookie也不一定能得到sessionID；<br>  （3）第二次启动session_start后，前一次的sessionID就是失效了，session过期后，sessionID也随之失效。<br>  （4）sessionID是加密的<br>  （5）综上所述，攻击者必须在短时间内攻破加密的sessionID，这是有难度的</p>
-</blockquote>
 </li>
-<li>session的缺点<blockquote>
-<p>（1）Session保存的东西越多，就越占用服务器内存，对于用户在线人数较多的网站，服务器的内存压力会比较大。<br>  （2）依赖于cookie（sessionID保存在cookie），如果禁用cookie，则要使用URL重写，不安全<br>  （3）创建Session变量有很大的随意性，可随时调用，不需要开发者做精确地处理，所以，过度使用session变量将会导致代码不可读而且不好维护。</p>
-</blockquote>
+<li>这种算法的缺点是：只能使用堆内存的一半。</li>
+<li>总结：使用From -&gt; 触发GC标记整理 -&gt; 拷贝到To -&gt; 回收From -&gt; 名称互换 -&gt; 重复之前</li>
+</ul>
 </li>
-<li>Session中的一些常用方法说明：  <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">isNew</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">//是否是新的Session，一般在第一次访问的时候出现</span>
-<span class="token function">getid</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">//拿到session，获取ID</span>
-<span class="token function">getCreationTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">//当前session创建的时间</span>
-<span class="token function">getLastAccessedTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">//最近的一次访问这个session的时间。</span>
-getRrquestedSessionid <span class="token comment">// 跟随上个网页cookies或者URL传过来的session</span>
-<span class="token function">isRequestedSessionIdFromCookie</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">//是否通过Cookies传过来的</span>
-<span class="token function">isRequestedSessionIdFromURL</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">//是否通过重写URL传过来的</span>
-<span class="token function">isRequestedSessionIdValid</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">//是不是有效的sessionID</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li>用途：<ul>
-<li>网上商城中的购物车   </li>
-<li>保存用户登录信息  </li>
-<li>将某些数据放入session中，供同一用户的不同页面使用  </li>
-<li>防止用户非法登录<blockquote>
-<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/lonelydreamer/p/6169469.html">Session机制详解</a></p>
+<li>晋升<ul>
+<li>定义：拷贝的过程中某个对象的指代在老生代空间，就可能出现晋升。 晋升就是将新生代对象移动至老生代。</li>
+<li>什么时候触发晋升操作?<ul>
+<li>1.<strong>一轮GC之后还存活的新生代对象</strong>就需要晋升</li>
+<li>2.在拷贝过程中，To空间的使用率超过25%，将这次的活动对象都移动至老生代空间<ul>
+<li>Q：为什么设置25%这个阈值</li>
+<li>A：当这次回收完成后，这个To空间会变为From空间，接下来的内存分配将在这个空间中进行。如果占比过高，会影响后续的内存分配。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>老生代对象回收<blockquote>
+<p>老生代 —— 就是指存活时间较长的对象，例如：全局对象，闭包变量数据。</p>
+</blockquote>
+<ul>
+<li>主要使用算法：主要采用标记清除 （首要） 、标记整理、增量标记算法</li>
+</ul>
+</li>
+<li>V8内存空间一分为二，分为新生代存储区和老生代存储区<ul>
+<li>左边小空间用于存储新生代对象<ul>
+<li>64bit操作系统上不超过32M</li>
+<li>32bit操作系统上不超过16M</li>
+</ul>
+</li>
+<li>右边较大空间用于存储老生代对象<ul>
+<li>64bit操作系统上不超过1.6G</li>
+<li>32bit操作系统上不超过700M</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>标记增量 (提高效率用)</p>
+<ul>
+<li>将一整段的垃圾回收操作标记拆分成多个小段完成回收，主要是为了实现程序和垃圾回收的交替完成，这样进行 效率优化 带来的时间消耗更加的合理。</li>
+<li>优化垃圾回收：看图可以将垃圾回收分成两个部分，一个是程序的执行，一个是垃圾的回收。当垃圾回收的时候其实会阻塞程序的执行，所以中间会有空档期。<br>  <img src="../img/12.png"><blockquote>
+<p>这篇文章也挺好，小伙伴们可以看看：<a target="_blank" rel="noopener" href="http://newhtml.net/v8-garbage-collection/">传送门</a></p>
 </blockquote>
 </li>
 </ul>
@@ -947,7 +1034,7 @@ getRrquestedSessionid <span class="token comment">// 跟随上个网页cookies�
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://hcyety.github.io/2022/01/09/liu-lan-qi-de-cun-chu/">http://hcyety.github.io/2022/01/09/liu-lan-qi-de-cun-chu/</a>
+                    <a href="http://hcyety.github.io/2022/01/10/js-zhi-nei-cun-guan-li/">http://hcyety.github.io/2022/01/10/js-zhi-nei-cun-guan-li/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -984,7 +1071,11 @@ getRrquestedSessionid <span class="token comment">// 跟随上个网页cookies�
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E9%9D%A2%E8%AF%95/">
+                                    <span class="chip bg-color">面试</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -1374,41 +1465,39 @@ getRrquestedSessionid <span class="token comment">// 跟随上个网页cookies�
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/01/09/shi-me-shi-bi-bao/">
+                <a href="/2022/01/10/js-zhi-nei-cun-guan-li/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="什么是闭包">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="JS 之内存管理">
                         
-                        <span class="card-title">什么是闭包</span>
+                        <span class="card-title">JS 之内存管理</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            要面试了，复习下 JS
+                            要掌握数据存储、内存泄露、垃圾回收机制
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-01-09
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-10
+                            </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/JavaScript/" class="post-category">
-                                    JavaScript
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            hcyety
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1427,31 +1516,31 @@ getRrquestedSessionid <span class="token comment">// 跟随上个网页cookies�
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/01/08/tcp-de-liu-liang-kong-zhi-ji-zhi/">
+                <a href="/2022/01/09/shi-me-shi-bi-bao/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="TCP 的流量控制机制">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="什么是闭包">
                         
-                        <span class="card-title">TCP 的流量控制机制</span>
+                        <span class="card-title">什么是闭包</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            要面试了，复习下 JS
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-08
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-09
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="post-category">
-                                    计算机网络
+                            <a href="/categories/JavaScript/" class="post-category">
+                                    JavaScript
                                 </a>
                             
                             
@@ -1460,18 +1549,6 @@ getRrquestedSessionid <span class="token comment">// 跟随上个网页cookies�
                 </div>
                 
                 <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E6%8A%80%E6%9C%AF%E6%96%87/">
-                        <span class="chip bg-color">技术文</span>
-                    </a>
-                    
-                    <a href="/tags/%E8%BF%90%E8%BE%93%E5%B1%82/">
-                        <span class="chip bg-color">运输层</span>
-                    </a>
-                    
-                    <a href="/tags/TCP/">
-                        <span class="chip bg-color">TCP</span>
-                    </a>
                     
                     <a href="/tags/%E9%9D%A2%E8%AF%95/">
                         <span class="chip bg-color">面试</span>
@@ -1708,11 +1785,11 @@ getRrquestedSessionid <span class="token comment">// 跟随上个网页cookies�
 
             <!-- 站点总字数 -->
             <!-- 
-                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">40.5k</span>
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">39.9k</span>
              -->
             
                 &nbsp;<i class="fa fa-chart-area"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">40.5k
+                <span class="white-color">39.9k
             
 
             <!-- <span id="sitetime"></span> -->
