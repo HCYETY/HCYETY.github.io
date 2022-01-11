@@ -6,7 +6,7 @@
   <link href="http://hcyety.github.io/atom.xml" rel="self"/>
   
   <link href="http://hcyety.github.io/"/>
-  <updated>2022-01-10T05:35:47.874Z</updated>
+  <updated>2022-01-11T13:37:54.781Z</updated>
   <id>http://hcyety.github.io/</id>
   
   <author>
@@ -17,11 +17,58 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>CSS 盒模型</title>
+    <link href="http://hcyety.github.io/2022/01/11/css-he-mo-xing/"/>
+    <id>http://hcyety.github.io/2022/01/11/css-he-mo-xing/</id>
+    <published>2022-01-11T09:44:10.000Z</published>
+    <updated>2022-01-11T13:37:54.781Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;基本概念&quot;&gt;&lt;a href=&quot;#基本概念&quot; class=&quot;headerlink&quot; title=&quot;基本概念&quot;&gt;&lt;/a&gt;基本概念&lt;/h2&gt;&lt;p&gt;盒模型又称框模型（Box</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>CSS 选择器</title>
+    <link href="http://hcyety.github.io/2022/01/11/css-xuan-ze-qi/"/>
+    <id>http://hcyety.github.io/2022/01/11/css-xuan-ze-qi/</id>
+    <published>2022-01-11T05:15:46.000Z</published>
+    <updated>2022-01-11T09:42:51.072Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;css-选择器&quot;&gt;&lt;a href=&quot;#css-选择器&quot; class=&quot;headerlink&quot; title=&quot;css 选择器&quot;&gt;&lt;/a&gt;css 选择器&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;关于css属性选择器常用的有以下这些：  &lt;pre</summary>
+        
+      
+    
+    
+    
+    <category term="CSS" scheme="http://hcyety.github.io/categories/CSS/"/>
+    
+    
+    <category term="面试" scheme="http://hcyety.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
     <title>JS 之内存管理</title>
     <link href="http://hcyety.github.io/2022/01/10/js-zhi-nei-cun-guan-li/"/>
     <id>http://hcyety.github.io/2022/01/10/js-zhi-nei-cun-guan-li/</id>
     <published>2022-01-10T02:49:42.000Z</published>
-    <updated>2022-01-10T05:35:47.874Z</updated>
+    <updated>2022-01-10T05:36:34.834Z</updated>
     
     
       
@@ -491,63 +538,6 @@
     <category term="Koa" scheme="http://hcyety.github.io/tags/Koa/"/>
     
     <category term="MYSQL" scheme="http://hcyety.github.io/tags/MYSQL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>前后端分离项目线上部署</title>
-    <link href="http://hcyety.github.io/2021/11/01/qian-hou-duan-fen-chi-xiang-mu-xian-shang-bu-shu/"/>
-    <id>http://hcyety.github.io/2021/11/01/qian-hou-duan-fen-chi-xiang-mu-xian-shang-bu-shu/</id>
-    <published>2021-11-01T15:07:13.000Z</published>
-    <updated>2021-11-02T04:48:19.098Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="部署" scheme="http://hcyety.github.io/categories/%E9%83%A8%E7%BD%B2/"/>
-    
-    
-    <category term="Linux 服务器" scheme="http://hcyety.github.io/tags/Linux-%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
-    
-    <category term="线上部署" scheme="http://hcyety.github.io/tags/%E7%BA%BF%E4%B8%8A%E9%83%A8%E7%BD%B2/"/>
-    
-    <category term="scp2" scheme="http://hcyety.github.io/tags/scp2/"/>
-    
-    <category term="node-ssh" scheme="http://hcyety.github.io/tags/node-ssh/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ERROR 之部署服务器篇</title>
-    <link href="http://hcyety.github.io/2021/10/31/error-zhi-bu-shu-fu-wu-qi-pian/"/>
-    <id>http://hcyety.github.io/2021/10/31/error-zhi-bu-shu-fu-wu-qi-pian/</id>
-    <published>2021-10-31T12:37:13.000Z</published>
-    <updated>2021-11-10T09:30:04.231Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;ol&gt;
-&lt;li&gt;POST &lt;a href=&quot;http://localhost:3000/login&quot;&gt;http://localhost:3000/login&lt;/a&gt; 404 (Not</summary>
-        
-      
-    
-    
-    
-    <category term="疑难杂症" scheme="http://hcyety.github.io/categories/%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87/"/>
-    
-    
-    <category term="Linux 服务器" scheme="http://hcyety.github.io/tags/Linux-%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
     
   </entry>
   
