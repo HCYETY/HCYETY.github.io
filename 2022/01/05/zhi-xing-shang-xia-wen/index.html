@@ -617,7 +617,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-01-09
+                    2022-02-24
                 </div>
                 
 
@@ -729,44 +729,50 @@ window<span class="token punctuation">.</span>a<span class="token punctuation">;
 </ul>
 </li>
 </ul>
-  举个栗子：  <pre class="line-numbers language-js" data-language="js"><code class="language-js">    <span class="token keyword">function</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token parameter">a</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">var</span> b <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
-        <span class="token keyword">function</span> <span class="token function">c</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
-        <span class="token keyword">var</span> <span class="token function-variable function">d</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+</li>
+</ul>
+<p>举个栗子：</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token parameter">a</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+   <span class="token keyword">var</span> b <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+   <span class="token keyword">function</span> <span class="token function">c</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+   <span class="token keyword">var</span> <span class="token function-variable function">d</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
 
-        b <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-    <span class="token function">foo</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   b <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token function">foo</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    <span class="token comment">// 在进入执行上下文后，这时候的AO是：</span>
-    <span class="token constant">AO</span> <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
-        arguments<span class="token operator">:</span><span class="token punctuation">&#123;</span>
-            <span class="token number">0</span><span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">,</span>
-            length<span class="token operator">:</span><span class="token number">1</span>
-        <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-        a<span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token comment">// 函数调用时创建的函数上下文，所以为 1</span>
-        b<span class="token operator">:</span><span class="token keyword">undefined</span><span class="token punctuation">,</span>
-        c<span class="token operator">:</span>reference to <span class="token keyword">function</span> <span class="token function">c</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-        d<span class="token operator">:</span><span class="token keyword">undefined</span>
-    <span class="token punctuation">&#125;</span>
-    <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token template-punctuation string">`</span></span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">           
-    > [执行上下文创建阶段的另一种参考解释1](https://www.cnblogs.com/echolun/p/11438363.html)  
-    [执行上下文创建阶段的另一种参考解释2](https://blog.csdn.net/qq_33718648/article/details/90754331)  
-    [执行上下文创建阶段的另一种参考解释3](https://juejin.cn/post/6844903682283143181#heading-4)
+<span class="token comment">// 在进入执行上下文后，这时候的AO是：</span>
+<span class="token constant">AO</span> <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+   arguments<span class="token operator">:</span><span class="token punctuation">&#123;</span>
+       <span class="token number">0</span><span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">,</span>
+       length<span class="token operator">:</span><span class="token number">1</span>
+   <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+   a<span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token comment">// 函数调用时创建的函数上下文，所以为 1</span>
+   b<span class="token operator">:</span><span class="token keyword">undefined</span><span class="token punctuation">,</span>
+   c<span class="token operator">:</span>reference to <span class="token keyword">function</span> <span class="token function">c</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+   d<span class="token operator">:</span><span class="token keyword">undefined</span>
+<span class="token punctuation">&#125;</span>
+<span class="token template-string"><span class="token template-punctuation string">`</span><span class="token template-punctuation string">`</span></span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">        
+
+> [执行上下文创建阶段的另一种参考解释1](https://www.cnblogs.com/echolun/p/11438363.html)  
+[执行上下文创建阶段的另一种参考解释2](https://blog.csdn.net/qq_33718648/article/details/90754331)  
+[执行上下文创建阶段的另一种参考解释3](https://juejin.cn/post/6844903682283143181#heading-4)
+
 - 2.代码执行阶段（执行代码逻辑，修改变量对象的值）
-    </span><span class="token template-punctuation string">`</span></span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token template-punctuation string">`</span></span>js                
-    <span class="token comment">// 还是上面的栗子，当代码执行完之后，这时候的AO是：</span>
-    <span class="token constant">AO</span> <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
-        arguments<span class="token operator">:</span><span class="token punctuation">&#123;</span>
-            <span class="token number">0</span><span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">,</span>
-            length<span class="token operator">:</span><span class="token number">1</span>
-        <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-        a<span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">,</span>
-        b<span class="token operator">:</span><span class="token number">3</span><span class="token punctuation">,</span>
-        c<span class="token operator">:</span>reference to <span class="token keyword">function</span> <span class="token function">c</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-        d<span class="token operator">:</span>reference to FunctionExpression <span class="token string">"d"</span>
-    <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-总结上述所说：</li>
+  </span><span class="token template-punctuation string">`</span></span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token template-punctuation string">`</span></span>js                
+  <span class="token comment">// 还是上面的栗子，当代码执行完之后，这时候的AO是：</span>
+  <span class="token constant">AO</span> <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+      arguments<span class="token operator">:</span><span class="token punctuation">&#123;</span>
+          <span class="token number">0</span><span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">,</span>
+          length<span class="token operator">:</span><span class="token number">1</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+      a<span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">,</span>
+      b<span class="token operator">:</span><span class="token number">3</span><span class="token punctuation">,</span>
+      c<span class="token operator">:</span>reference to <span class="token keyword">function</span> <span class="token function">c</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+      d<span class="token operator">:</span>reference to FunctionExpression <span class="token string">"d"</span>
+  <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>总结上述所说：</p>
+<ul>
 <li>全局上下文的变量对象初始化是全局对象</li>
 <li>函数上下文的变量对象初始化只包括 Arguments 对象</li>
 <li>在进入执行上下文时会给变量对象添加形参、函数声明、变量声明等初始的属性值</li>
