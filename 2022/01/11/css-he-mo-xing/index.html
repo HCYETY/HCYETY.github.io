@@ -601,21 +601,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-01-11
+                    2022-03-06
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.3k
+                    1.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    5 分
                 </div>
                 
 
@@ -641,12 +641,14 @@
                 <h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p>盒模型又称框模型（Box Model），包含了元素内容（content）、内边距（padding）、边框（border）、外边距（margin）几个要素。它有两种分类，分别是<strong>标准模型</strong>和 <strong>IE 模型</strong>。</p>
 <h2 id="标准模型和-IE-模型的区别"><a href="#标准模型和-IE-模型的区别" class="headerlink" title="标准模型和 IE 模型的区别"></a>标准模型和 IE 模型的区别</h2><p>IE模型和标准模型唯一的区别是内容计算方式的不同：</p>
 <ul>
-<li>IE 模型元素宽度 <code>width=content+padding</code> ，高度计算相同</li>
-<li>标准模型元素宽度 <code>width=content</code> ，高度计算相同</li>
+<li>IE 模型元素宽度 <code>width = content + padding + border</code> ，高度计算相同</li>
+<li>标准模型元素宽度 <code>width = content</code> ，高度计算相同</li>
 </ul>
 <p>通过两幅图可以直观了解到区别所在：<br><img src="https://s4.ax1x.com/2022/01/11/7mF13T.png" alt="IE 模型"><br><img src="https://s4.ax1x.com/2022/01/11/7mFlCV.png" alt="标准模型"></p>
-<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><p>通过 css3 新增的属性 <code>box-sizing: content-box | border-box |  inherit</code> 分别设置盒模型为<strong>标准模型（content-box）</strong> 和 <strong>IE 模型（border-box）</strong>。</p>
+<h2 id="一个问题"><a href="#一个问题" class="headerlink" title="一个问题"></a>一个问题</h2><p>盒模型分为两种，那么问题来了，是什么因素让浏览器决定使用哪一种盒模型来渲染页面呢？<br>有两种解决方案：</p>
 <ul>
+<li>编写 html 文件时，我们可以在其头部第一行看见这样的代码 <code>&lt;!DOCTYPE html &gt;</code> ，这个是文档类型声明，只要浏览器看到这行代码就会用标准盒模型来渲染页面；如果没有这行代码，各个浏览器就会按照自己的标准去使用不同的盒模型来渲染。</li>
+<li>通过文档声明的方式来渲染可以实现我们的目的，但是很被动。CSS3 给出了一种解决方法：<code>box-sizing</code> ，通过设置这个属性，就可以指定某种盒模型来渲染页面。<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2>通过 css3 新增的属性 <code>box-sizing: content-box | border-box |  inherit</code> 分别设置盒模型为<strong>标准模型（content-box）</strong> 和 <strong>IE 模型（border-box）</strong>。</li>
 <li>content-box：盒子宽高是 <code>content(内容)</code> 的宽高  </li>
 <li>border-box：盒子宽高是 <code>border + padding + content</code> 的宽高。</li>
 <li>inherit：规定应从父元素继承 <code>box-sizing</code> 属性的值。<h2 id="BFC"><a href="#BFC" class="headerlink" title="BFC"></a>BFC</h2></li>
@@ -1491,11 +1493,11 @@
 
             <!-- 站点总字数 -->
             <!-- 
-                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">46.9k</span>
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">47.2k</span>
              -->
             
                 &nbsp;<i class="fa fa-chart-area"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">46.9k
+                <span class="white-color">47.2k
             
 
             <!-- <span id="sitetime"></span> -->
