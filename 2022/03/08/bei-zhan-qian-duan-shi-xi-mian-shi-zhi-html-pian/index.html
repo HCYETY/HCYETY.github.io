@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="原型链, hcyety&#39;s blog">
-    <meta name="description" content="要实习了，复习下原型链，为面试做准备">
+    <meta name="keywords" content="备战前端实习面试之HTML篇, hcyety&#39;s blog">
+    <meta name="description" content="用自问自答的形式模拟面试，备战大厂">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>原型链 | hcyety&#39;s blog</title>
+    <title>备战前端实习面试之HTML篇 | hcyety&#39;s blog</title>
     <link rel="icon" type="image/png" href="/logo.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -460,12 +460,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">原型链</h1>
+                    <h1 class="description center-align post-title">备战前端实习面试之HTML篇</h1>
                 </div>
             </div>
         </div>
@@ -581,12 +581,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%8A%80%E6%9C%AF%E6%96%87/">
-                                <span class="chip bg-color">技术文</span>
+                            <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                                <span class="chip bg-color">前端</span>
                             </a>
                         
-                            <a href="/tags/%E9%9D%A2%E8%AF%95/">
-                                <span class="chip bg-color">面试</span>
+                            <a href="/tags/%E5%AE%9E%E4%B9%A0%E9%9D%A2%E8%AF%95/">
+                                <span class="chip bg-color">实习面试</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%85%AB%E8%82%A1%E6%96%87/">
+                                <span class="chip bg-color">八股文</span>
                             </a>
                         
                     </div>
@@ -597,8 +601,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/JavaScript/" class="post-category">
-                                JavaScript
+                            <a href="/categories/%E6%B1%82%E8%81%8C/" class="post-category">
+                                求职
                             </a>
                         
                     </div>
@@ -610,28 +614,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-01-03
+                    2022-03-08
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-01-08
+                    2022-03-08
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.7k
+                    3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    6 分
+                    11 分
                 </div>
                 
 
@@ -654,116 +658,127 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="原型链的基本构想"><a href="#原型链的基本构想" class="headerlink" title="原型链的基本构想"></a>原型链的基本构想</h2><p>Q：什么是原型链？<br>A：当对象查找一个属性的时候，如果没有在自身找到，那么就会查找自身的原型，如果原型还没有找到，那么会继续查找原型的原型，直到找到 <code>Object.prototype</code> 的原型时，此时原型为 <code>null</code> ，查找停止。这种通过 通过原型链接的逐级向上的查找链被称为原型链。</p>
-<p>图中由相互关联的原型组成的链状结构就是原型链，也就是蓝色的这条线。下面 step by step 来探究原型链的奥妙。<br><img src="https://s4.ax1x.com/2022/01/07/7pek60.png" alt="原型链中的各种关系"><br>从上图我们可以了解到构造函数（<code>Person</code>）、原型（<code>Person.prototype</code>）和实例（<code>person</code>）之间的关系：<br>每个构造函数都有一个原型对象（用<code>Person.prototype</code>），原型对象都包含一个指向构造函数的指针（用<code>Person.prototype.constructor</code>获取），而实例都包含一个指向原型对象的内部指针（用<code>person._proto_</code>）。这样就在实例和原型之间构造了一条原型链。这就是原型链的基本构想。</p>
-<p>下面来认识 <code>constructor</code> 和 <code>_proto_</code>：</p>
+                <p>前端面试题系列小抄：<br>【1】<a href="">备战前端实习面试之HTML篇</a><br>【2】<a href="">备战前端实习面试之CSS篇</a><br>【3】<a href="">备战前端实习面试之JavaScript篇</a><br>【4】<a href="">备战前端实习面试之React篇</a><br>【5】<a href="">备战前端实习面试之Node.js篇</a><br>【6】<a href="">备战前端实习面试之浏览器原理篇</a><br>【8】<a href="">备战前端实习面试之性能优化篇</a><br>【7】<a href="">备战前端实习面试之计算机网络篇</a><br>【9】<a href="">备战前端实习面试之手写代码篇</a><br>【9】<a href="">备战前端实习面试之代码输出结果篇</a></p>
+<h1 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h1><h2 id="html-常用的标签"><a href="#html-常用的标签" class="headerlink" title="html 常用的标签"></a>html 常用的标签</h2><p><code>h</code> <code>p</code> <code>hr</code> <code>br</code> <code>div</code> <code>span</code> <code>ul li</code> <code>ol li</code> <code>img</code> <code>a</code> <code>input</code> <code>label</code> <code>textarea</code> <code>select</code> <code>form</code> <code>head</code> <code>nav</code> <code>footer</code> <code>article</code> <code>section</code> <code>aside</code> <code>audio</code> <code>video</code>  </p>
+<h2 id="html-新特性"><a href="#html-新特性" class="headerlink" title="html 新特性"></a>html 新特性</h2><ol>
+<li>语义化标签<br><code>header</code>、<code>footer</code>、<code>nav</code>、<code>article</code>、<code>aside</code>、<code>section</code>、<code>meau</code>、<code>template</code></li>
+<li>新增媒体元素：<code>audio</code>、<code>video</code></li>
+<li>用于绘画的 canvas 属性</li>
+<li>新增本地存储方式：<code>sessionStorage</code>、 <code>localStorage</code></li>
+<li>新的技术：<code>webworker</code>、<code>websocket</code></li>
+<li>新增表单控件：<code>calendar</code>、<code>date</code>、<code>time</code>、<code>email</code>、<code>url</code>、<code>search</code></li>
+</ol>
+<h2 id="对语义化的理解"><a href="#对语义化的理解" class="headerlink" title="对语义化的理解"></a>对语义化的理解</h2><p>语义化是指根据内容的结构化（内容语义化），选择合适的标签（代码语义化）。</p>
+<p><strong>好处：</strong></p>
+<ul>
+<li>对开发者友好，让人容易理解，利于代码可读性</li>
+<li>对机器友好，让搜索引擎更容易读懂，利于 SEO</li>
+</ul>
+<h2 id="说说-web-worker"><a href="#说说-web-worker" class="headerlink" title="说说 web worker"></a>说说 web worker</h2><p><code>web worker</code> 的作用是为 JavaScript 创造多线程环境，允许主线程创建 <code>Worker 线程</code>，然后将一些任务分配给其运行。</p>
+<p>在主线程运行的同时，Worker 线程在后台运行，两者互不干扰，等到 Worker 线程完成任务后就将结果返回给主线程。这样的好处是：一些计算密集型或高延迟的任务，被 Worker 线程负担了，主线程就会很流畅，不会被阻塞或拖慢（通过 <code>postMessage</code> 将结果传回到主线程即可）。</p>
+<p>Worker 线程一旦新建成功，就会始终运行，不会被主线程上的活动（如用户点击按钮、提交表单）打断。这样有利于随时响应主线程的通信。但是，这也造成了 <code>Worker</code> 比较耗费资源，不应该过度使用，而且一旦使用完毕，就应该关闭。</p>
+<p>这里有几个注意点：</p>
 <ol>
-<li>constructor<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
-<span class="token keyword">var</span> person <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>person<span class="token punctuation">.</span>constructor <span class="token operator">===</span> Person<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<li>同源限制<br>分配给 Worker 线程的脚本文件，必须和主线程脚本文件同源。</li>
+<li>通信联系<br>Worker 线程和主线程不在同一个上下文环境，不能直接通信，必须通过消息完成。</li>
+<li>DOM 限制<br>Worker 线程所在的全局对象，与主线程不一样，无法读取主线程所在网页的 DOM 对象，也无法使用 <code>document</code>、<code>window</code>、<code>parent</code> 这些对象。但是 Worker 线程可以使用 <code>navigator</code> 对象和 <code>location</code> 对象。</li>
+<li>脚本限制<br>Worker 线程不能执行 <code>alert()</code> 方法和 <code>confirm()</code> 方法，但可以使用 <code>XMLHttpRequest</code> 对象发出 <code>AJAX</code> 请求。</li>
+<li>文件限制<br>Worker 线程无法读取本地文件，即不能打开本机的文件系统，它所加载的脚本，必须来自于网络。</li>
+</ol>
 <blockquote>
-<p>在解释为什么之前，我们需要了解到原型链的搜索机制：在读取实例上的属性时，首先会在实例上搜索这个属性。如果没找到，则会继承搜索实例的原型。在通过原型链实现继承之后，搜索就可以继承向上，搜索原型的原型。<strong>对属性和方法的搜索会一直持续到原型链的末端</strong>。</p>
+<p><a target="_blank" rel="noopener" href="https://www.ruanyifeng.com/blog/2018/07/web-worker.html">阮一峰：Web Worker 使用教程</a></p>
+</blockquote>
+<h2 id="DOCTYPE的作用？严格模式和混杂模式的区别？"><a href="#DOCTYPE的作用？严格模式和混杂模式的区别？" class="headerlink" title="DOCTYPE的作用？严格模式和混杂模式的区别？"></a>DOCTYPE的作用？严格模式和混杂模式的区别？</h2><p><code>!DOCTYPE</code> 告诉浏览器以 <code>HTML5</code> 标准解析页面，如果不写，则进入混杂模式</p>
+<ul>
+<li>严格模式（标准模式）：以 w3c 标准解析代码</li>
+<li>混杂模式（怪异模式）：浏览器用自己的方式解析代码，混杂模式通常模拟老式浏览器的行为，以防止老站点无法工作</li>
+</ul>
+<h2 id="常⽤的-meta-标签有哪些"><a href="#常⽤的-meta-标签有哪些" class="headerlink" title="常⽤的 meta 标签有哪些"></a>常⽤的 meta 标签有哪些</h2><p>meta 标签由 name 和 content 属性定义，用来描述网页文档的属性。<br>|属性|描述|值|例子|<br>|:–:|:–:|:–:|:–|<br>|charset|HTML文档的编码类型|utf-8<br>gb2312|<code>&lt;meta charset=&quot;UTF-8&quot; &gt;</code>|<br>|keywords|页面关键词|自定义|<code>&lt;meta name=&quot;keywords&quot; content=&quot;关键词&quot; /&gt;</code>|<br>|description|页面描述|自定义|<code>&lt;meta name=&quot;description&quot; content=&quot;页面描述内容&quot; /&gt;</code>|<br>|refresh|页面重定向和刷新|自定义|<code>&lt;meta http-equiv=&quot;refresh&quot; content=&quot;0;url=&quot; /&gt;</code>|<br>|viewport|适配移动端，可以控制视口的大小和比例|width viewport ：宽度(数值/device-width)<br>height viewport ：高度(数值/device-height)<br>initial-scale ：初始缩放比例<br>maximum-scale ：最大缩放比例<br>minimum-scale ：最小缩放比例<br>user-scalable ：是否允许用户缩放(yes/no）|<code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, maximum-scale=1&quot;&gt;</code>|<br>|robots|搜索引擎索引方式|all：文件将被检索，且页面上的链接可以被查询；<br>none：文件将不被检索，且页面上的链接不可以被查询；<br>index：文件将被检索；<br>follow：页面上的链接可以被查询；<br>noindex：文件将不被检索；<br>nofollow：页面上的链接不可以被查询。|<code>&lt;meta name=&quot;robots&quot; content=&quot;index,follow&quot; /&gt;</code>|</p>
+<h2 id="iframe-有那些优点和缺点"><a href="#iframe-有那些优点和缺点" class="headerlink" title="iframe 有那些优点和缺点"></a>iframe 有那些优点和缺点</h2><p>iframe 元素会创建包含另外一个文档的内联框架（即行内框架）。<br>优点：</p>
+<ul>
+<li>用来加载速度较慢的内容（如广告）</li>
+<li>可以使脚本可以并行下载</li>
+<li>可以实现跨子域通信</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>iframe 会阻塞主页面的 onload 事件</li>
+<li>无法被一些搜索引擎索识别</li>
+<li>会产生很多页面，不容易管理</li>
+</ul>
+<h2 id="defer-和-async-的区别"><a href="#defer-和-async-的区别" class="headerlink" title="defer 和 async 的区别"></a>defer 和 async 的区别</h2><p>defer 和 async 都是 script 标签的属性。</p>
+<p><strong>defer：</strong></p>
+<ul>
+<li>在 script 标签添加 defer 属性，就可以让这个 script 外联的 js 变成异步加载。当 html 解析过程中碰到这个 script ，就会开辟一个新线程来下载脚本（这个脚本的下载和 html 的解析是同步的），当脚本下载完毕后不会立即执行，而是等待 html 解析完毕后才开始执行。</li>
+<li>所有 defer 的 js 代码都保证按顺序执行。</li>
+</ul>
+<p><strong>async：</strong></p>
+<ul>
+<li>在 script 标签添加 async 属性后，html 解析过程中碰到这个 script ，也会开辟新线程来同步下载脚本，下载完毕后会立即执行脚本，并中断 html 解析流程，等到脚本执行完之后再接着解析 html 。</li>
+<li>async 的 js 代码不能保证按顺序执行，而是谁先下载完就先执行哪个脚本。</li>
+</ul>
+<h2 id="HTML5的离线储存怎么使用，它的工作原理是什么"><a href="#HTML5的离线储存怎么使用，它的工作原理是什么" class="headerlink" title="HTML5的离线储存怎么使用，它的工作原理是什么"></a>HTML5的离线储存怎么使用，它的工作原理是什么</h2><p>离线存储指的是：在用户没有连接网络时，可以正常访问站点或应用，当连接上网络后，更新用户机器上的缓存文件。</p>
+<p>原理：html5 的离线缓存是基于一个新建的 <code>.appcache</code> 文件的缓存机制，即通过这个文件上的解析清单 离线缓存资源。之后当网络在离线状态下时，浏览器会通过被离线存储的数据进行页面展示。</p>
+<p>使用方法：</p>
+<ol>
+<li>创建一个和 html 同名的 <code>.manifest</code> 文件，然后在页面头部插入 <code>manifest</code> 属性：<code>&lt;html lang=&quot;en&quot; manifest=&quot;index.manifest&quot;&gt;</code></li>
+<li>在 <code>cache.manifest</code> 文件中编写需要离线存储的资源：<pre class="line-numbers language-none"><code class="language-none">CACHE:
+  js&#x2F;app.js
+  css&#x2F;style.css
+NETWORK:
+  resourse&#x2F;logo.png
+FALLBACK:
+  &#x2F; &#x2F;offline.html<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ol>
+<ul>
+<li>CACHE: 表示需要离线存储的资源列表，由于包含 manifest 文件的页面将被自动离线存储，所以不需要把页面自身也列出来。</li>
+<li>NETWORK: 表示在它下面列出来的资源只有在在线的情况下才能访问，他们不会被离线存储。不过，如果在 CACHE 和 NETWORK 中有一个相同的资源，那么这个资源还是会被离线存储，也就是说 CACHE 的优先级更高。</li>
+<li>FALLBACK: 表示如果访问第一个资源失败，那么就使用第二个资源来替换他，比如上面这个文件表示的就是如果访问根目录下任何一个资源失败了，那么就去访问 offline.html 。</li>
+</ul>
+<ol start="3">
+<li>在离线状态时，操作 window.applicationCache 进行离线缓存的操作。</li>
+</ol>
+<p>更新缓存的3种方案：</p>
+<ul>
+<li>更新 manifest 文件</li>
+<li>通过 javascript 操作</li>
+<li>清除浏览器缓存</li>
+</ul>
+<p>注意事项：<br>（1）浏览器对缓存数据的容量限制可能不太一样（某些浏览器设置的限制是每个站点 5MB）。<br>（2）如果 manifest 文件，或者内部列举的某一个文件不能正常下载，整个更新过程都将失败，浏览器继续全部使用老的缓存。<br>（3）引用 manifest 的 html 必须与 manifest 文件同源，在同一个域下。<br>（4）FALLBACK 中的资源必须和 manifest 文件同源。<br>（5）当一个资源被缓存后，该浏览器直接请求这个绝对路径也会访问缓存中的资源。<br>（6）站点中的其他页面即使没有设置 manifest 属性，请求的资源如果在缓存中也从缓存中访问。<br>（7）当 manifest 文件发生改变时，资源请求本身也会触发更新。</p>
+<h2 id="浏览器是如何对-HTML5-的离线储存资源进行管理和加载"><a href="#浏览器是如何对-HTML5-的离线储存资源进行管理和加载" class="headerlink" title="浏览器是如何对 HTML5 的离线储存资源进行管理和加载"></a>浏览器是如何对 HTML5 的离线储存资源进行管理和加载</h2><ul>
+<li>在线情况下，浏览器发现 html 头部有 <code>manifest</code> 属性，它会请求 <code>.manifest</code> 文件，<strong>如果是第一次访问页面</strong>，那么浏览器就会根据 <code>.manifest</code> 文件的内容下载相应的资源并进行离线存储；<strong>如果已经访问过页面并进行过离线存储</strong>，那么浏览器会使用离线的资源加载页面，然后对比新旧 <code>.manifest</code> 文件，若文件发生改变就会重新下载文件中的资源并进行存储。</li>
+<li>离线情况下，浏览器会直接使用离线存储的资源加载页面。</li>
+</ul>
+<h2 id="行内元素、块级元素，以及两者的区别"><a href="#行内元素、块级元素，以及两者的区别" class="headerlink" title="行内元素、块级元素，以及两者的区别"></a>行内元素、块级元素，以及两者的区别</h2><ol>
+<li>行内元素有：<code>a</code>、 <code>br</code>、 <code>cite</code>、 <code>em</code>、 <code>i</code>、 <code>img</code>、 <code>input</code>、 <code>label</code>、 <code>select</code>、 <code>span</code>、 <code>strong</code>、 <code>sub</code>、 <code>sup</code>、 <code>textarea</code></li>
+<li>块级元素有：<code>div</code>、<code>p</code>、<code>form</code>、<code>ul</code>、<code>ol</code>、<code>dl</code>、<code>h</code>、<code>hr</code>、<code>table</code>、<code>menu</code>、</li>
+<li>区别：</li>
+</ol>
+<ul>
+<li>块级元素独占一行，行内元素不会</li>
+<li>块级元素可以设置宽高，行内元素不能</li>
+<li>块级元素可以包含行内元素和块级元素，行内元素不能包含块级元素。</li>
+<li>块级元素可以设置 <code>margin</code> 和 <code>padding</code> ，行内元素的水平方向的 <code>padding-left</code>、<code>padding-right</code>、<code>margin-left</code>、<code>margin-right</code> 都产生边距效果，但是竖直方向的 <code>padding-top</code>、<code>padding-bottom</code>、<code>margin-top</code>、<code>margin-bottom</code> 都不会产生边距效果。（水平方向有效，竖直方向无效）<blockquote>
+<p>若是设置为行内块级元素，它也不能独占一行，但能设置宽高</p>
 </blockquote>
 </li>
+</ul>
+<h2 id="渐进增强、优雅降级，以及两者的区别"><a href="#渐进增强、优雅降级，以及两者的区别" class="headerlink" title="渐进增强、优雅降级，以及两者的区别"></a>渐进增强、优雅降级，以及两者的区别</h2><ol>
+<li>渐进增强：针对低版本浏览器也能保证基础功能，然后对高级浏览器改进追加功能（向上兼容）。</li>
+<li>优雅降级：一开始就构建站点的完整功能，然后针对浏览器进行测试和修复（向下兼容）。</li>
+<li>区别：优雅降级是从复杂的现状开始，并试图减少用户体验的供给，而渐进增强则是从一个非常基础的，能够起作用的版本开始，并不断扩充，以适应未来环境的需要。</li>
 </ol>
-<p>那么现在可以来看看为什么代码块中的打印会为 true 了：当获取 person.constructor 时，其实 person 中并没有 <code>constructor</code> 属性，当不能读取到 <code>constructor</code> 属性时，会从 person 的原型也就是 Person.prototype 中读取，正好原型中有该属性。</p>
-<ol start="2">
-<li><strong>proto</strong><br>是实例对象指向原型对象的指针，隐式原型，是每个对象都会有的一个属性。</li>
-</ol>
-<p>来看个例子：</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">SuperType</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">this</span><span class="token punctuation">.</span>property <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-<span class="token class-name">SuperType</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">getSuperValue</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>property<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-
-<span class="token keyword">function</span> <span class="token function">SubType</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">this</span><span class="token punctuation">.</span>subproperty <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-
-<span class="token comment">// 继承了 SuperType</span>
-<span class="token class-name">SubType</span><span class="token punctuation">.</span>prototype <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SuperType</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-SubType<span class="token punctuation">.</span>prototpye<span class="token punctuation">.</span><span class="token function-variable function">getSubValue</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>subproperty<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-
-<span class="token keyword">var</span> instance <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SubType</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>instance<span class="token punctuation">.</span><span class="token function">getSuperValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>上面代码我们可以看到，<code>SubType</code> 通过创建 <code>SuperType</code> 的实例继承了 <code>SuperType</code>，于是 <code>SubType</code> 从构造函数变成了实例，<code>SuperType</code> 的实例变成了 <code>SubType</code> 的原型。这样一来，原本存在于 <code>SuperType</code> 的实例中的所有属性和方法，现在也存在于 <code>SubType.prototype</code>中了。<br>后面的代码还在继承的基础上，给 <code>SubType</code> 添加了一个新方法。于是：<img src="../img/36.png"><br>提醒：<code>getSuperValue()</code>方法仍然还在 <code>SuperType.prototype</code>中，但<code>property</code>则位于<code>SubType.prototype</code>中。这是因为<code>property</code>是一个实例属性，而<code>getSuperValue()</code>则是一个原型方法。既然<code>SubType.prototype</code>现在是<code>SuperType</code>的实例，那么<code>property</code>当然就位于该实例中了。<br>于是我们懂了，当原型对象等于另一个类型的实例后，此时的原型对象将包含一个指向另一个原型的指针，相应的，另一个原型中也包含着一个指向另一个构造函数的指针。假如另一个原型又是另一个类型的实例，那么如此递进，就会构成实例与原型的链条，也就是原型链。</p>
-<h3 id="默认原型"><a href="#默认原型" class="headerlink" title="默认原型"></a>默认原型</h3><p>实际上，原型链中还有一环。我们知道所有引用类型默认都继承自 <code>Object</code> ，所有函数的默认原型也都是 <code>Object</code> 的实例，因此默认原型都会包含一个内部指针，指向 <code>Object.prototype</code> 。这也正是所有自定义类型都会继承 <code>toString()</code>、<code>valueOf()</code> 等默认方法的根本原因。</p>
-<h3 id="原型与继承关系"><a href="#原型与继承关系" class="headerlink" title="原型与继承关系"></a>原型与继承关系</h3><p>原型与实例的关系可以通过两种方式来确定。<br>①是使用 <code>instanceof</code> 操作符，如果一个实例的原型链中出现过相应的构造函数，则 <code>instanceof</code> 返回 <code>true</code>。如下所示：</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">SuperType</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">this</span><span class="token punctuation">.</span>property <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-<span class="token keyword">function</span> <span class="token function">SubType</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">this</span><span class="token punctuation">.</span>subproperty <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-
-<span class="token comment">// 继承了 SuperType</span>
-<span class="token class-name">SubType</span><span class="token punctuation">.</span>prototype <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SuperType</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">var</span> instance <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SubType</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>instance <span class="token keyword">instanceof</span> <span class="token class-name">Object</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>instance <span class="token keyword">instanceof</span> <span class="token class-name">SubType</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>instance <span class="token keyword">instanceof</span> <span class="token class-name">SuperType</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>从技术上讲，<code>instance</code> 是 <code>Object</code>、<code>SubType</code>、<code>SuperType</code> 的实例，因为 <code>instance</code> 的原型链中包含这些构造函数的原型。</p>
-<p>②是使用 <code>isPrototypeOf()</code> 方法。原型链中的每个原型都可以调用这个方法，只要原型链中包含这个原型，这个方法就返回 <code>true</code> 。如下所示：</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token class-name">Object</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">isPrototypeOf</span><span class="token punctuation">(</span>instance<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token class-name">SubType</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">isPrototypeOf</span><span class="token punctuation">(</span>instance<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token class-name">SuperType</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">isPrototypeOf</span><span class="token punctuation">(</span>instance<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="原型链的问题："><a href="#原型链的问题：" class="headerlink" title="原型链的问题："></a>原型链的问题：</h3><ol>
-<li>原型中如果存在引用类型的值，会被所有实例共享，如下所示：<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">SuperType</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">this</span><span class="token punctuation">.</span>colors <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'red'</span><span class="token punctuation">,</span> <span class="token string">'blue'</span><span class="token punctuation">,</span> <span class="token string">'greeb'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-<span class="token keyword">function</span> <span class="token function">SubType</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
-<span class="token class-name">SubType</span><span class="token punctuation">.</span>prototype <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SuperType</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token keyword">var</span> instance1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SubType</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-instance1<span class="token punctuation">.</span>colors<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">'black'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>instance1<span class="token punctuation">.</span>colors<span class="token punctuation">)</span> <span class="token comment">// "red, blue, green, black"</span>
-
-<span class="token keyword">var</span> instance2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SubType</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>instance2<span class="token punctuation">.</span>colors<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// "red, blue, green, black"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-如果原型的属性被所有的实例共享，就会存在一个实例修改了这个属性后，也会影响到其他实例，这往往会造成一些不必要的麻烦。因此，通常的做法是在构造函数中，而不是在原型中定义属性，如：<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">SuperType</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
-<span class="token keyword">function</span> <span class="token function">SubType</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">this</span><span class="token punctuation">.</span>colors <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-<span class="token class-name">SubType</span><span class="token punctuation">.</span>prototype <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SuperType</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token keyword">var</span> instance1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SubType</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-instance1<span class="token punctuation">.</span>colors<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">'black'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>instance1<span class="token punctuation">.</span>colors<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ["black"]</span>
-
-<span class="token keyword">var</span> instance2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SubType</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-instance2<span class="token punctuation">.</span>colors<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">'red'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>instance2<span class="token punctuation">.</span>colors<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ["red"]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li>在创建子类型的实例时，不能向超类型的构造函数中传递参数</li>
-</ol>
-<p>实际上，应该说是没有办法在不影响所有对象实例的情况下，给超类型的构造函数传递参数。有鉴于此，再加上由于原型中包含引用类型值所带来的问题，实践中很少会单独使用原型链。<br>为了解决这些问题，可以使用一种叫做 借用构造函数的技术（有时候也叫做伪造对象或经典继承），即在子类型构造函数的内部调用超类型构造函数。</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">SuperType</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-<span class="token keyword">function</span> <span class="token function">SubType</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> age</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token comment">// 继承了 SuperType ，同时还传递了参数</span>
-    <span class="token function">SuperType</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> name<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token comment">// 实例属性</span>
-    <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-
-<span class="token keyword">var</span> instance1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SubType</span><span class="token punctuation">(</span><span class="token string">'siyang'</span><span class="token punctuation">,</span> <span class="token number">29</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>instance1<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// "siyang"</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>instance1<span class="token punctuation">.</span>age<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 29</span>
-
-<span class="token keyword">var</span> instance2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SubType</span><span class="token punctuation">(</span><span class="token string">'hg'</span><span class="token punctuation">,</span> <span class="token number">28</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>instance2<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// "hg"</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>instance2<span class="token punctuation">.</span>age<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 28</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>以上代码在 SubType 内部使用 call 实现了对 SuperType 的”继承”，同时每个实例都有自己的实例属性，互不影响；而且创建实例时还可以向超类型 SuperType 传递参数。</p>
-<blockquote>
-<p>说到原型链的继承，也是一个 JS 必须学习的一个重点，在我另一篇博客中也有详细介绍：<a href="https://hcyety.github.io/2022/01/07/yuan-xing-lian-de-ji-cheng/">原型链的继承</a></p>
-</blockquote>
+<h2 id="canvas-和-svg-的区别"><a href="#canvas-和-svg-的区别" class="headerlink" title="canvas 和 svg 的区别"></a>canvas 和 svg 的区别</h2><ul>
+<li>canvas是画布，适合图形密集型的游戏，不支持事件处理</li>
+<li>svg是矢量图，不依赖分辨率，不适合游戏，适合大型渲染区域（地图），支持事件处理</li>
+</ul>
+<h2 id="src-和-href-的区别"><a href="#src-和-href-的区别" class="headerlink" title="src 和 href 的区别"></a>src 和 href 的区别</h2><ul>
+<li>src 是引入外部资源下载到文档，会暂停其他资源的下载</li>
+<li>href  是链接外部资源，不会暂停其他资源的下载</li>
+</ul>
+<h2 id="label-的作用"><a href="#label-的作用" class="headerlink" title="label 的作用"></a>label 的作用</h2><p><code>label</code> 标签为 input 元素定义标注。</p>
+<p>作用：用于绑定一个表单元素，当点击 <code>label</code> 标签的时候，被绑定的表单元素就会获得输入焦点。</p>
+<h2 id="title-与-h1-的区别、b-与-strong-的区别、i-与-em-的区别"><a href="#title-与-h1-的区别、b-与-strong-的区别、i-与-em-的区别" class="headerlink" title="title 与 h1 的区别、b 与 strong 的区别、i 与 em 的区别"></a>title 与 h1 的区别、b 与 strong 的区别、i 与 em 的区别</h2><p><code>title</code> 属性没有明确意义只表示是个标题，<code>h1</code> 则表示层次明确的标题。<br><code>strong</code> 标签有语义，是起到加重语气的效果，而 <code>b</code> 标签是没有的。虽然都能加粗字体，但搜索引擎更侧重 <code>strong</code> 标签。<br><code>i</code> 内容展示为斜体，<code>em</code> 表示强调的文本</p>
 
                 
             </div>
@@ -790,7 +805,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://hcyety.github.io/2022/01/03/yuan-xing-lian/">http://hcyety.github.io/2022/01/03/yuan-xing-lian/</a>
+                    <a href="http://hcyety.github.io/2022/03/08/bei-zhan-qian-duan-shi-xi-mian-shi-zhi-html-pian/">http://hcyety.github.io/2022/03/08/bei-zhan-qian-duan-shi-xi-mian-shi-zhi-html-pian/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -828,12 +843,16 @@ console<span class="token punctuation">.</span><span class="token function">log<
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%8A%80%E6%9C%AF%E6%96%87/">
-                                    <span class="chip bg-color">技术文</span>
+                                <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                                    <span class="chip bg-color">前端</span>
                                 </a>
                             
-                                <a href="/tags/%E9%9D%A2%E8%AF%95/">
-                                    <span class="chip bg-color">面试</span>
+                                <a href="/tags/%E5%AE%9E%E4%B9%A0%E9%9D%A2%E8%AF%95/">
+                                    <span class="chip bg-color">实习面试</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%85%AB%E8%82%A1%E6%96%87/">
+                                    <span class="chip bg-color">八股文</span>
                                 </a>
                             
                         </div>
@@ -1229,48 +1248,32 @@ console<span class="token punctuation">.</span><span class="token function">log<
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/01/04/yuan-xing-lian-de-ji-cheng/">
+                <a href="/2022/03/08/bei-zhan-qian-duan-shi-xi-mian-shi-zhi-css-pian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="原型链的继承">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="备战前端实习面试之CSS篇">
                         
-                        <span class="card-title">原型链的继承</span>
+                        <span class="card-title">备战前端实习面试之CSS篇</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            要实习了，复习下原型链的继承，为面试做准备
+                            
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-01-04
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-03-08
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/JavaScript/" class="post-category">
-                                    JavaScript
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            hcyety
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E6%8A%80%E6%9C%AF%E6%96%87/">
-                        <span class="chip bg-color">技术文</span>
-                    </a>
-                    
-                    <a href="/tags/%E9%9D%A2%E8%AF%95/">
-                        <span class="chip bg-color">面试</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -1282,48 +1285,32 @@ console<span class="token punctuation">.</span><span class="token function">log<
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/12/27/var-let-const-de-qu-bie-shi-yong/">
+                <a href="/2022/03/01/shi-jian-xun-huan-event-loop/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="var let const 的区别使用">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="事件循环（Event Loop）">
                         
-                        <span class="card-title">var let const 的区别使用</span>
+                        <span class="card-title">事件循环（Event Loop）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            JS 基础知识，小本本记下来，面试可能会考
+                            
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-27
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-01
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/JavaScript/" class="post-category">
-                                    JavaScript
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            hcyety
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E6%8A%80%E6%9C%AF%E6%96%87/">
-                        <span class="chip bg-color">技术文</span>
-                    </a>
-                    
-                    <a href="/tags/%E9%9D%A2%E8%AF%95/">
-                        <span class="chip bg-color">面试</span>
-                    </a>
-                    
                 </div>
                 
             </div>
