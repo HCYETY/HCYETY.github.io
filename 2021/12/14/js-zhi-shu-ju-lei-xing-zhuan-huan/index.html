@@ -613,14 +613,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-03-01
+                    2022-03-09
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.4k
+                    3.5k
                 </div>
                 
 
@@ -661,7 +661,35 @@ console<span class="token punctuation">.</span><span class="token function">log<
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">Boolean</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// false </span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">Boolean</span><span class="token punctuation">(</span><span class="token number">NaN</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// false </span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">Boolean</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// false</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="原始值转数字"><a href="#原始值转数字" class="headerlink" title="原始值转数字"></a>原始值转数字</h3><p>我们可以使用 <code>Number函数</code> 将类型转换成数字类型。如果 Number 函数<strong>不传参数，返回 +0</strong>；如果<strong>有参数，隐式调用 ToNumber(value)<strong>，ToNumber 则直接给了一个对应的结果表，表如下。但如果</strong>参数无法被转换为数字，则返回 NaN</strong>。<br>|参数类型|结果|<br>|:–:|:–:|<br>|Undefined|NaN|<br>|Null|+0|<br>|Boolean|如果参数是true，返回1；参数为false，返回+0|<br>|Number|返回与之相等的值|<br>|String|这段比较复杂，看例子|</p>
+<h3 id="原始值转数字"><a href="#原始值转数字" class="headerlink" title="原始值转数字"></a>原始值转数字</h3><p>我们可以使用 <code>Number函数</code> 将类型转换成数字类型。如果 Number 函数<strong>不传参数，返回 +0</strong>；如果<strong>有参数，隐式调用 ToNumber(value)<strong>，ToNumber 则直接给了一个对应的结果表，表如下。但如果</strong>参数无法被转换为数字，则返回 NaN</strong>。</p>
+<table>
+<thead>
+<tr>
+<th align="center">参数类型</th>
+<th align="center">结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Undefined</td>
+<td align="center">NaN</td>
+</tr>
+<tr>
+<td align="center">Null</td>
+<td align="center">+0</td>
+</tr>
+<tr>
+<td align="center">Boolean</td>
+<td align="center">如果参数是true，返回1；参数为false，返回+0</td>
+</tr>
+<tr>
+<td align="center">Number</td>
+<td align="center">返回与之相等的值</td>
+</tr>
+<tr>
+<td align="center">String</td>
+<td align="center">这段比较复杂，看例子</td>
+</tr>
+</tbody></table>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 不传参</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">Number</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// +0 </span>
 <span class="token comment">// 传参</span>
@@ -757,7 +785,9 @@ console<span class="token punctuation">.</span><span class="token function">log<
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>date<span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// 1495296000000</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
 </ul>
 <ol>
-<li><p>对象转字符串<br>对象到字符串是如何转换的，其实就是 ToString 方法的对应表，只是这次我们加上 Object 的转换规则：   </p>
+<li>对象转字符串   </li>
+</ol>
+<p>对象到字符串是如何转换的，其实就是 ToString 方法的对应表，只是这次我们加上 Object 的转换规则：   </p>
 <table>
 <thead>
 <tr>
@@ -770,61 +800,50 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <td align="left">1.primValue = ToPrimitive(input, String)<br>2.返回ToString(primValue)</td>
 </tr>
 </tbody></table>
-<p> 所谓的 ToPrimitive 方法，其实就是输入一个值，然后返回一个一定是基本类型的值。   </p>
+<p>所谓的 ToPrimitive 方法，其实就是输入一个值，然后返回一个一定是基本类型的值。   </p>
 <ul>
 <li>语法：ToPrimitive(input[, PreferredType])<ul>
-<li>第一个参数是 input，表示要处理的输入值。<ul>
-<li>如果传入的 input 是 Undefined、Null、Boolean、Number、String 类型，直接返回该值。</li>
-</ul>
-</li>
-<li>第二个参数是 PreferredType，非必填，表示希望转换成的类型，有两个值可以选，Number 或者 String。<ul>
-<li>当不传入 PreferredType 时，如果 input 是日期类型，相当于传入 String，否则，都相当于传入 Number。</li>
+<li>第一个参数是 input，表示要处理的输入值。<strong>如果传入的 input 是 Undefined、Null、Boolean、Number、String 类型，直接返回该值。</strong></li>
+<li>第二个参数是 PreferredType，非必填，表示希望转换成的类型，有两个值可以选，Number 或者 String。<strong>当不传入 PreferredType 时，如果 input 是日期类型，相当于传入 String，否则，都相当于传入 Number。</strong></li>
 </ul>
 </li>
 </ul>
-</li>
-</ul>
-</li>
-</ol>
-<pre><code>- 如果是 ToPrimitive(obj, Number)，处理步骤如下：   
-    - 如果 obj 为 基本类型，直接返回
-    - 否则，调用 valueOf 方法，如果返回一个原始值，则 JavaScript 将其返回。
-    - 否则，调用 toString 方法，如果返回一个原始值，则 JavaScript 将其返回。
-    - 否则，JavaScript 抛出一个类型错误异常。
-
-- 如果是 ToPrimitive(obj, String)，处理步骤如下：   
-    - 如果 obj为 基本类型，直接返回
-    - 否则，调用 toString 方法，如果返回一个原始值，则 JavaScript 将其返回。
-    - 否则，调用 valueOf 方法，如果返回一个原始值，则 JavaScript 将其返回。
-    - 否则，JavaScript 抛出一个类型错误异常。
-
-初次总结：当我们用 String 方法转化一个值的时候，如果是基本类型，就参照 “原始值转字符” 这一节的对应表，如果不是基本类型，我们会将调用一个 ToPrimitive 方法，将其转为基本类型，然后再参照“原始值转字符” 这一节的对应表进行转换。
-
-最终总结：对象转字符串(就是 Number() 函数)可以概括为：
-- 如果对象具有 toString 方法，则调用这个方法。如果他返回一个原始值，JavaScript 将这个值转换为字符串，并返回这个字符串结果。
-- 如果对象没有 toString 方法，或者这个方法并不返回一个原始值，那么 JavaScript 会调用 valueOf 方法。如果存在这个方法，则 JavaScript 调用它。如果返回值是原始值，JavaScript 将这个值转换为字符串，并返回这个字符串的结果。
-- 否则，JavaScript 无法从 toString 或者 valueOf 获得一个原始值，这时它将抛出一个类型错误异常。
-</code></pre>
-<ol start="2">
-<li><p>对象转数字<br>其实，从对象到数字的转换也是一样：</p>
-<table>
-<thead>
-<tr>
-<th align="center">参数类型</th>
-<th align="left">结果</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">Object</td>
-<td align="left">1.primValue = ToPrimitive(input, Number)<br>2.返回ToNumber(primValue)</td>
-</tr>
-</tbody></table>
-<p> <strong>虽然转换成基本值都会使用 ToPrimitive 方法，但传参有不同，最后的处理也有不同 -&gt; 转字符串调用的是 ToString，转数字调用 ToNumber。</strong></p>
 <ul>
-<li>对象转数字的过程中，JavaScript 做了同样的事情，只是它会首先尝试 valueOf 方法。   <ul>
+<li><p>如果是 ToPrimitive(obj, Number)，处理步骤如下：   </p>
+<ul>
+<li>如果 obj 为 基本类型，直接返回</li>
+<li>否则，调用 valueOf 方法，如果返回一个原始值，则 JavaScript 将其返回。</li>
+<li>否则，调用 toString 方法，如果返回一个原始值，则 JavaScript 将其返回。</li>
+<li>否则，JavaScript 抛出一个类型错误异常。</li>
+</ul>
+</li>
+<li><p>如果是 ToPrimitive(obj, String)，处理步骤如下：   </p>
+<ul>
+<li>如果 obj为 基本类型，直接返回</li>
+<li>否则，调用 toString 方法，如果返回一个原始值，则 JavaScript 将其返回。</li>
+<li>否则，调用 valueOf 方法，如果返回一个原始值，则 JavaScript 将其返回。</li>
+<li>否则，JavaScript 抛出一个类型错误异常。</li>
+</ul>
+</li>
+</ul>
+<p>初次总结：当我们用 String 方法转化一个值的时候，如果是基本类型，就参照 “原始值转字符” 这一节的对应表，如果不是基本类型，我们会将调用一个 ToPrimitive 方法，将其转为基本类型，然后再参照“原始值转字符” 这一节的对应表进行转换。</p>
+<p>最终总结：对象转字符串(就是 Number() 函数)可以概括为：</p>
+<ul>
+<li>如果对象具有 toString 方法，则调用这个方法。如果他返回一个原始值，JavaScript 将这个值转换为字符串，并返回这个字符串结果。</li>
+<li>如果对象没有 toString 方法，或者这个方法并不返回一个原始值，那么 JavaScript 会调用 valueOf 方法。如果存在这个方法，则 JavaScript 调用它。如果返回值是原始值，JavaScript 将这个值转换为字符串，并返回这个字符串的结果。</li>
+<li>否则，JavaScript 无法从 toString 或者 valueOf 获得一个原始值，这时它将抛出一个类型错误异常。</li>
+</ul>
+<ol start="2">
+<li>对象转数字   </li>
+</ol>
+<p>其实，从对象到数字的转换也是一样：<br>|参数类型|结果|<br>|:–:|:–|<br>|Object|1.primValue = ToPrimitive(input, Number)<br>2.返回ToNumber(primValue)| </p>
+<p><strong>虽然转换成基本值都会使用 ToPrimitive 方法，但传参有不同，最后的处理也有不同 -&gt; 转字符串调用的是 ToString，转数字调用 ToNumber。</strong></p>
+<p>对象转数字的过程中，JavaScript 做了同样的事情，只是它会首先尝试 valueOf 方法。   </p>
+<ul>
 <li>如果对象具有 valueOf 方法，且返回一个原始值，则 JavaScript 将这个原始值转换为数字并返回这个数字。</li>
 <li>否则，如果对象具有 toString 方法，且返回一个原始值，则 JavaScript 将其转换并返回。</li>
-<li>否则，JavaScript 抛出一个类型错误异常。<pre class="line-numbers language-js" data-language="js"><code class="language-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">Number</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// NaN</span>
+<li>否则，JavaScript 抛出一个类型错误异常。<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 例子</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">Number</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// NaN</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">Number</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>a <span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// NaN</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">Number</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// 0</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">Number</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// 0</span>
@@ -832,15 +851,11 @@ console<span class="token punctuation">.</span><span class="token function">log<
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">Number</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// NaN</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">Number</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\d+</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// NaN</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">Number</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token number">2010</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// 1262275200000</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">Number</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// NaN</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">Number</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// NaN</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 注意，在以上代码块中，[] 和 [0] 都返回了 0，而 [1, 2, 3] 却返回了一个 NaN。我们分析一下原因：</li>
-</ul>
-</li>
 <li>当我们 Number([]) 的时候，先调用 [] 的 valueOf 方法，此时返回 []，因为返回了一个对象而不是原始值，所以又调用了 toString 方法，此时返回一个空字符串，接下来调用 ToNumber 这个规范上的方法，参照对应表，转换为 0, 所以最后的结果为 0。</li>
 <li>而当我们 Number([1, 2, 3]) 的时候，先调用 [1, 2, 3] 的 valueOf 方法，此时返回 [1, 2, 3]，再调用 toString 方法，此时返回 1,2,3，接下来调用 ToNumber，参照对应表，因为无法转换为数字，所以最后的结果为 NaN。</li>
 </ul>
-</li>
-</ol>
 <h2 id="隐式数据类型转化"><a href="#隐式数据类型转化" class="headerlink" title="隐式数据类型转化"></a>隐式数据类型转化</h2><h3 id="一元操作符"><a href="#一元操作符" class="headerlink" title="一元操作符 +"></a>一元操作符 +</h3><p>当 + 运算符作为一元操作符的时候，会调用 ToNumber 处理该值，既然是调用 ToNumber 方法，当输入的值是对象的时候，先调用 ToPrimitive(input, Number) 方法，例子：</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token operator">+</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token comment">// [] 调用 valueOf 方法，返回一个空数组；</span>
@@ -1094,7 +1109,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://hcyety.github.io/2021/12/14/js-zhi-shu-ju-lei-xing-zhuan-huan/">http://hcyety.github.io/2021/12/14/js-zhi-shu-ju-lei-xing-zhuan-huan/</a>
+                    <a href="https://hcyety.github.io/2021/12/14/js-zhi-shu-ju-lei-xing-zhuan-huan/">https://hcyety.github.io/2021/12/14/js-zhi-shu-ju-lei-xing-zhuan-huan/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -1847,11 +1862,11 @@ console<span class="token punctuation">.</span><span class="token function">log<
 
             <!-- 站点总字数 -->
             <!-- 
-                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">50.6k</span>
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">54.6k</span>
              -->
             
                 &nbsp;<i class="fa fa-chart-area"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">50.6k
+                <span class="white-color">54.6k
             
 
             <!-- <span id="sitetime"></span> -->
