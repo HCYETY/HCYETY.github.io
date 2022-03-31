@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="baidu-site-verification" content="L6Lm9d5Crl"/>
+  
+  
+  
+  
+  <title>备战前端实习面试之HTML篇 | hcyety&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="前端面试题系列小抄：【1】备战前端实习面试之HTML篇【2】备战前端实习面试之CSS篇【3】备战前端实习面试之JavaScript篇【4】备战前端实习面试之React篇【5】备战前端实习面试之Node.js篇【6】备战前端实习面试之浏览器原理篇【8】备战前端实习面试之性能优化篇【7】备战前端实习面试之计算机网络篇【9】备战前端实习面试之手写代码篇【9】备战前端实习面试之代码输出结果篇 HTMLht">
+<meta property="og:type" content="article">
+<meta property="og:title" content="备战前端实习面试之HTML篇">
+<meta property="og:url" content="https://hcyety.github.io/2022/03/08/bei-zhan-qian-duan-shi-xi-mian-shi-zhi-html-pian/index.html">
+<meta property="og:site_name" content="hcyety&#39;s blog">
+<meta property="og:description" content="前端面试题系列小抄：【1】备战前端实习面试之HTML篇【2】备战前端实习面试之CSS篇【3】备战前端实习面试之JavaScript篇【4】备战前端实习面试之React篇【5】备战前端实习面试之Node.js篇【6】备战前端实习面试之浏览器原理篇【8】备战前端实习面试之性能优化篇【7】备战前端实习面试之计算机网络篇【9】备战前端实习面试之手写代码篇【9】备战前端实习面试之代码输出结果篇 HTMLht">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-03-08T14:33:50.000Z">
+<meta property="article:modified_time" content="2022-03-08T14:45:41.135Z">
+<meta property="article:author" content="hcyety">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="实习面试">
+<meta property="article:tag" content="八股文">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="hcyety&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+<style type="text/css" lang="css">
+    #loading-container{
+        position: fixed;
+        top: 0;
+        left: 0;
+        min-height: 100vh;
+        width: 100vw;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #FFF;
+        text-align: center;
+        /* loader页面消失采用渐隐的方式*/
+        -webkit-transition: opacity 1s ease;
+        -moz-transition: opacity 1s ease;
+        -o-transition: opacity 1s ease;
+        transition: opacity 1s ease;
+    }
+    .loading-image{
+        width: 120px;
+        height: 50px;
+        transform: translate(-50%);
+    }
+    
+    .loading-image div:nth-child(2) {
+        -webkit-animation: pacman-balls 1s linear 0s infinite;
+        animation: pacman-balls 1s linear 0s infinite
+    }
+
+    .loading-image div:nth-child(3) {
+        -webkit-animation: pacman-balls 1s linear .33s infinite;
+        animation: pacman-balls 1s linear .33s infinite
+    }
+
+    .loading-image div:nth-child(4) {
+        -webkit-animation: pacman-balls 1s linear .66s infinite;
+        animation: pacman-balls 1s linear .66s infinite
+    }
+
+    .loading-image div:nth-child(5) {
+        -webkit-animation: pacman-balls 1s linear .99s infinite;
+        animation: pacman-balls 1s linear .99s infinite
+    }
+    
+   .loading-image div:first-of-type {
+        width: 0;
+        height: 0;
+        border: 25px solid #49b1f5;
+        border-right-color: transparent;
+        border-radius: 25px;
+        -webkit-animation: rotate_pacman_half_up .5s 0s infinite;
+        animation: rotate_pacman_half_up .5s 0s infinite;
+    }
+    .loading-image div:nth-child(2) {
+        width: 0;
+        height: 0;
+        border: 25px solid #49b1f5;
+        border-right-color: transparent;
+        border-radius: 25px;
+        -webkit-animation: rotate_pacman_half_down .5s 0s infinite;
+        animation: rotate_pacman_half_down .5s 0s infinite;
+        margin-top: -50px;
+    }
+    @-webkit-keyframes rotate_pacman_half_up {0% {transform: rotate(270deg)}50% {transform: rotate(1turn)}to {transform: rotate(270deg)}}
+
+    @keyframes rotate_pacman_half_up {0% {transform: rotate(270deg)}50% {transform: rotate(1turn)}to {transform: rotate(270deg)}}
+
+    @-webkit-keyframes rotate_pacman_half_down {0% {transform: rotate(90deg)}50% {transform: rotate(0deg)}to {transform: rotate(90deg)}}
+
+    @keyframes rotate_pacman_half_down {0% {transform: rotate(90deg)}50% {transform: rotate(0deg)}to {transform: rotate(90deg)}}
+    
+    @-webkit-keyframes pacman-balls {75% {opacity: .7}to {transform: translate(-100px, -6.25px)}}
+
+    @keyframes pacman-balls {75% {opacity: .7}to {transform: translate(-100px, -6.25px)}}
+    
+   
+    .loading-image div:nth-child(3),
+    .loading-image div:nth-child(4),
+    .loading-image div:nth-child(5),
+    .loading-image div:nth-child(6){
+        background-color: #49b1f5;
+        width: 15px;
+        height: 15px;
+        border-radius: 100%;
+        margin: 2px;
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        transform: translateY(-6.25px);
+        top: 25px;
+        left: 100px;
+    }
+    .loading-text{
+        margin-bottom: 20vh;
+        text-align: center;
+        color: #2c3e50;
+        font-size: 2rem;
+        box-sizing: border-box;
+        padding: 0 10px;
+        text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+    @media only screen and (max-width: 500px) {
+         .loading-text{
+            font-size: 1.5rem;
+         }
+    }
+    .fadeout {
+        opacity: 0;
+        filter: alpha(opacity=0);
+    }
+    /* logo出现动画 */
+    @-webkit-keyframes fadeInDown{0%{opacity:0;-webkit-transform:translate3d(0,-100%,0);transform:translate3d(0,-100%,0)}100%{opacity:1;-webkit-transform:none;transform:none}}
+    @keyframes fadeInDown{0%{opacity:0;-webkit-transform:translate3d(0,-100%,0);}}
+ </style>
+ <script>
+(function () {
+    const loaded = function(){
+       setTimeout(function(){
+            const loader = document.getElementById("loading-container");
+            loader.className="fadeout" ;//使用渐隐的方法淡出loading page
+            // document.getElementById("body-wrap").style.display="flex";
+            setTimeout(function(){
+                loader.style.display="none";
+            },1000); 
+        },1000);//强制显示loading page 1s  
+    };
+    loaded();
+})()
+ </script><meta name="generator" content="Hexo 5.4.0"></head>
+
+ <div id="loading-container">
+     <p class="loading-text">玩命加载中 . . . </p> 
+     <div class="loading-image">
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div> 
+         <div></div>
+     </div>
+ </div><body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/avatar.png" class="js-avatar">
+            
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/"></a></h1>
+        </hgroup>
+        
+        
+            <form>
+                <input type="text" class="st-default-search-input search" id="local-search-input" placeholder="搜索一下" autocomplete="off">
+            </form>
+            <div id="local-search-result"></div>
+        
+        
+            <script type="text/javascript">
+                (function() {
+                    'use strict';
+                    function getMatchData(keyword, data) {
+                        var matchData = [];
+                        for(var i =0;i<data.length;i++){
+                            if(data[i].title.toLowerCase().indexOf(keyword)>=0) 
+                                matchData.push(data[i])
+                        }
+                        return matchData;
+                    }
+                    var $input = $('#local-search-input');
+                    var $resultContent = $('#local-search-result');
+                    $input.keyup(function(){
+                        $.ajax({
+                            url: '/search.json',
+                            dataType: "json",
+                            success: function( json ) {
+                                var str='<ul class=\"search-result-list\">';                
+                                var keyword = $input.val().trim().toLowerCase();
+                                $resultContent.innerHTML = "";
+                                if ($input.val().trim().length <= 0) {
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                }
+                                var results = getMatchData(keyword, json);
+                                if(results.length === 0){
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                } 
+                                for(var i =0; i<results.length; i++){
+                                    str += "<li><a href='"+ results[i].url +"' class='search-result-title'>"+ results[i].title +"</a></li>";
+                                }
+                                str += "</ul>";
+                                $resultContent.empty();
+                                $resultContent.append(str);
+                                $('#switch-area').hide();
+                            }
+                        });
+                    });
+                })();
+            </script>
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a  href="/archives/">所有文章</a></li>
+                        
+                            <li><a  href="/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/">玩转开发工具</a></li>
+                        
+                            <li><a  href="/categories/digital">玩转数码</a></li>
+                        
+                            <li><a  href="/categories/algorithm">算法学习</a></li>
+                        
+                            <li><a  href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl github"  target="_blank" href="/xxxxx" title="github">github</a>
+                            
+                                <a class="fl weibo"  target="_blank" href="/xxxxxxxx" title="weibo">weibo</a>
+                            
+                                <a class="fl rss"  target="_blank" href="/atom.xml" title="rss">rss</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/Koa/" style="font-size: 10px;">Koa</a> <a href="/tags/Linux-%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 15px;">Linux 服务器</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/NodeJs/" style="font-size: 10px;">NodeJs</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/TCP/" style="font-size: 12.5px;">TCP</a> <a href="/tags/Ts/" style="font-size: 10px;">Ts</a> <a href="/tags/node-ssh/" style="font-size: 10px;">node-ssh</a> <a href="/tags/scp2/" style="font-size: 10px;">scp2</a> <a href="/tags/%E5%85%AB%E8%82%A1%E6%96%87/" style="font-size: 10px;">八股文</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 12.5px;">前端</a> <a href="/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/" style="font-size: 10px;">命令行</a> <a href="/tags/%E5%AE%9E%E4%B9%A0%E9%9D%A2%E8%AF%95/" style="font-size: 10px;">实习面试</a> <a href="/tags/%E5%BC%80%E5%8F%91%E8%B0%83%E8%AF%95%E6%8A%80%E5%B7%A7/" style="font-size: 10px;">开发调试技巧</a> <a href="/tags/%E6%8A%80%E6%9C%AF%E6%96%87/" style="font-size: 17.5px;">技术文</a> <a href="/tags/%E6%B3%A8%E5%86%8C/" style="font-size: 10px;">注册</a> <a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8E%A7%E5%88%B6%E5%8F%B0/" style="font-size: 10px;">浏览器控制台</a> <a href="/tags/%E7%99%BB%E5%BD%95/" style="font-size: 10px;">登录</a> <a href="/tags/%E7%BA%BF%E4%B8%8A%E9%83%A8%E7%BD%B2/" style="font-size: 10px;">线上部署</a> <a href="/tags/%E8%BF%90%E8%BE%93%E5%B1%82/" style="font-size: 12.5px;">运输层</a> <a href="/tags/%E9%9A%8F%E7%AC%94/" style="font-size: 12.5px;">随笔</a> <a href="/tags/%E9%9D%A2%E8%AF%95/" style="font-size: 20px;">面试</a>
+                    </div>
+                </section>
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://blog.csdn.net/baidu_21483933">csdn</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://segmentfault.com/blog/maocg_web">segmentfault</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.jianshu.com/users/eb37ef89c746/latest_articles">简书</a>
+                    
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">爱动漫,爱游戏,爱编程,爱运动,爱的太多了!</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页"></a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/avatar.png" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页"></a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/">玩转开发工具</a></li>
+                
+                    <li><a href="/categories/digital">玩转数码</a></li>
+                
+                    <li><a href="/categories/algorithm">算法学习</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="github" target="_blank" href="/xxxxx" title="github">github</a>
+                    
+                        <a class="weibo" target="_blank" href="/xxxxxxxx" title="weibo">weibo</a>
+                    
+                        <a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+                    
+                </div>
+            </nav>
+        </header>
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-备战前端实习面试之HTML篇" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2022/03/08/bei-zhan-qian-duan-shi-xi-mian-shi-zhi-html-pian/" class="article-date">
+      <time datetime="2022-03-08T14:33:50.000Z" itemprop="datePublished">2022-03-08</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      备战前端实习面试之HTML篇
+    </h1>
+  
+
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%B1%82%E8%81%8C/">求职</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%85%AB%E8%82%A1%E6%96%87/" rel="tag">八股文</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AE%9E%E4%B9%A0%E9%9D%A2%E8%AF%95/" rel="tag">实习面试</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>前端面试题系列小抄：<br>【1】<a href="">备战前端实习面试之HTML篇</a><br>【2】<a href="">备战前端实习面试之CSS篇</a><br>【3】<a href="">备战前端实习面试之JavaScript篇</a><br>【4】<a href="">备战前端实习面试之React篇</a><br>【5】<a href="">备战前端实习面试之Node.js篇</a><br>【6】<a href="">备战前端实习面试之浏览器原理篇</a><br>【8】<a href="">备战前端实习面试之性能优化篇</a><br>【7】<a href="">备战前端实习面试之计算机网络篇</a><br>【9】<a href="">备战前端实习面试之手写代码篇</a><br>【9】<a href="">备战前端实习面试之代码输出结果篇</a></p>
+<h1 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h1><h2 id="html-常用的标签"><a href="#html-常用的标签" class="headerlink" title="html 常用的标签"></a>html 常用的标签</h2><p><code>h</code> <code>p</code> <code>hr</code> <code>br</code> <code>div</code> <code>span</code> <code>ul li</code> <code>ol li</code> <code>img</code> <code>a</code> <code>input</code> <code>label</code> <code>textarea</code> <code>select</code> <code>form</code> <code>head</code> <code>nav</code> <code>footer</code> <code>article</code> <code>section</code> <code>aside</code> <code>audio</code> <code>video</code>  </p>
+<h2 id="html-新特性"><a href="#html-新特性" class="headerlink" title="html 新特性"></a>html 新特性</h2><ol>
+<li>语义化标签<br><code>header</code>、<code>footer</code>、<code>nav</code>、<code>article</code>、<code>aside</code>、<code>section</code>、<code>meau</code>、<code>template</code></li>
+<li>新增媒体元素：<code>audio</code>、<code>video</code></li>
+<li>用于绘画的 canvas 属性</li>
+<li>新增本地存储方式：<code>sessionStorage</code>、 <code>localStorage</code></li>
+<li>新的技术：<code>webworker</code>、<code>websocket</code></li>
+<li>新增表单控件：<code>calendar</code>、<code>date</code>、<code>time</code>、<code>email</code>、<code>url</code>、<code>search</code></li>
+</ol>
+<h2 id="对语义化的理解"><a href="#对语义化的理解" class="headerlink" title="对语义化的理解"></a>对语义化的理解</h2><p>语义化是指根据内容的结构化（内容语义化），选择合适的标签（代码语义化）。</p>
+<p><strong>好处：</strong></p>
+<ul>
+<li>对开发者友好，让人容易理解，利于代码可读性</li>
+<li>对机器友好，让搜索引擎更容易读懂，利于 SEO</li>
+</ul>
+<h2 id="说说-web-worker"><a href="#说说-web-worker" class="headerlink" title="说说 web worker"></a>说说 web worker</h2><p><code>web worker</code> 的作用是为 JavaScript 创造多线程环境，允许主线程创建 <code>Worker 线程</code>，然后将一些任务分配给其运行。</p>
+<p>在主线程运行的同时，Worker 线程在后台运行，两者互不干扰，等到 Worker 线程完成任务后就将结果返回给主线程。这样的好处是：一些计算密集型或高延迟的任务，被 Worker 线程负担了，主线程就会很流畅，不会被阻塞或拖慢（通过 <code>postMessage</code> 将结果传回到主线程即可）。</p>
+<p>Worker 线程一旦新建成功，就会始终运行，不会被主线程上的活动（如用户点击按钮、提交表单）打断。这样有利于随时响应主线程的通信。但是，这也造成了 <code>Worker</code> 比较耗费资源，不应该过度使用，而且一旦使用完毕，就应该关闭。</p>
+<p>这里有几个注意点：</p>
+<ol>
+<li>同源限制<br>分配给 Worker 线程的脚本文件，必须和主线程脚本文件同源。</li>
+<li>通信联系<br>Worker 线程和主线程不在同一个上下文环境，不能直接通信，必须通过消息完成。</li>
+<li>DOM 限制<br>Worker 线程所在的全局对象，与主线程不一样，无法读取主线程所在网页的 DOM 对象，也无法使用 <code>document</code>、<code>window</code>、<code>parent</code> 这些对象。但是 Worker 线程可以使用 <code>navigator</code> 对象和 <code>location</code> 对象。</li>
+<li>脚本限制<br>Worker 线程不能执行 <code>alert()</code> 方法和 <code>confirm()</code> 方法，但可以使用 <code>XMLHttpRequest</code> 对象发出 <code>AJAX</code> 请求。</li>
+<li>文件限制<br>Worker 线程无法读取本地文件，即不能打开本机的文件系统，它所加载的脚本，必须来自于网络。</li>
+</ol>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.ruanyifeng.com/blog/2018/07/web-worker.html">阮一峰：Web Worker 使用教程</a></p>
+</blockquote>
+<h2 id="DOCTYPE的作用？严格模式和混杂模式的区别？"><a href="#DOCTYPE的作用？严格模式和混杂模式的区别？" class="headerlink" title="DOCTYPE的作用？严格模式和混杂模式的区别？"></a>DOCTYPE的作用？严格模式和混杂模式的区别？</h2><p><code>!DOCTYPE</code> 告诉浏览器以 <code>HTML5</code> 标准解析页面，如果不写，则进入混杂模式</p>
+<ul>
+<li>严格模式（标准模式）：以 w3c 标准解析代码</li>
+<li>混杂模式（怪异模式）：浏览器用自己的方式解析代码，混杂模式通常模拟老式浏览器的行为，以防止老站点无法工作</li>
+</ul>
+<h2 id="常⽤的-meta-标签有哪些"><a href="#常⽤的-meta-标签有哪些" class="headerlink" title="常⽤的 meta 标签有哪些"></a>常⽤的 meta 标签有哪些</h2><p>meta 标签由 name 和 content 属性定义，用来描述网页文档的属性。<br>|属性|描述|值|例子|<br>|:–:|:–:|:–:|:–|<br>|charset|HTML文档的编码类型|utf-8<br>gb2312|<code>&lt;meta charset=&quot;UTF-8&quot; &gt;</code>|<br>|keywords|页面关键词|自定义|<code>&lt;meta name=&quot;keywords&quot; content=&quot;关键词&quot; /&gt;</code>|<br>|description|页面描述|自定义|<code>&lt;meta name=&quot;description&quot; content=&quot;页面描述内容&quot; /&gt;</code>|<br>|refresh|页面重定向和刷新|自定义|<code>&lt;meta http-equiv=&quot;refresh&quot; content=&quot;0;url=&quot; /&gt;</code>|<br>|viewport|适配移动端，可以控制视口的大小和比例|width viewport ：宽度(数值/device-width)<br>height viewport ：高度(数值/device-height)<br>initial-scale ：初始缩放比例<br>maximum-scale ：最大缩放比例<br>minimum-scale ：最小缩放比例<br>user-scalable ：是否允许用户缩放(yes/no）|<code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, maximum-scale=1&quot;&gt;</code>|<br>|robots|搜索引擎索引方式|all：文件将被检索，且页面上的链接可以被查询；<br>none：文件将不被检索，且页面上的链接不可以被查询；<br>index：文件将被检索；<br>follow：页面上的链接可以被查询；<br>noindex：文件将不被检索；<br>nofollow：页面上的链接不可以被查询。|<code>&lt;meta name=&quot;robots&quot; content=&quot;index,follow&quot; /&gt;</code>|</p>
+<h2 id="iframe-有那些优点和缺点"><a href="#iframe-有那些优点和缺点" class="headerlink" title="iframe 有那些优点和缺点"></a>iframe 有那些优点和缺点</h2><p>iframe 元素会创建包含另外一个文档的内联框架（即行内框架）。<br>优点：</p>
+<ul>
+<li>用来加载速度较慢的内容（如广告）</li>
+<li>可以使脚本可以并行下载</li>
+<li>可以实现跨子域通信</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>iframe 会阻塞主页面的 onload 事件</li>
+<li>无法被一些搜索引擎索识别</li>
+<li>会产生很多页面，不容易管理</li>
+</ul>
+<h2 id="defer-和-async-的区别"><a href="#defer-和-async-的区别" class="headerlink" title="defer 和 async 的区别"></a>defer 和 async 的区别</h2><p>defer 和 async 都是 script 标签的属性。</p>
+<p><strong>defer：</strong></p>
+<ul>
+<li>在 script 标签添加 defer 属性，就可以让这个 script 外联的 js 变成异步加载。当 html 解析过程中碰到这个 script ，就会开辟一个新线程来下载脚本（这个脚本的下载和 html 的解析是同步的），当脚本下载完毕后不会立即执行，而是等待 html 解析完毕后才开始执行。</li>
+<li>所有 defer 的 js 代码都保证按顺序执行。</li>
+</ul>
+<p><strong>async：</strong></p>
+<ul>
+<li>在 script 标签添加 async 属性后，html 解析过程中碰到这个 script ，也会开辟新线程来同步下载脚本，下载完毕后会立即执行脚本，并中断 html 解析流程，等到脚本执行完之后再接着解析 html 。</li>
+<li>async 的 js 代码不能保证按顺序执行，而是谁先下载完就先执行哪个脚本。</li>
+</ul>
+<h2 id="HTML5的离线储存怎么使用，它的工作原理是什么"><a href="#HTML5的离线储存怎么使用，它的工作原理是什么" class="headerlink" title="HTML5的离线储存怎么使用，它的工作原理是什么"></a>HTML5的离线储存怎么使用，它的工作原理是什么</h2><p>离线存储指的是：在用户没有连接网络时，可以正常访问站点或应用，当连接上网络后，更新用户机器上的缓存文件。</p>
+<p>原理：html5 的离线缓存是基于一个新建的 <code>.appcache</code> 文件的缓存机制，即通过这个文件上的解析清单 离线缓存资源。之后当网络在离线状态下时，浏览器会通过被离线存储的数据进行页面展示。</p>
+<p>使用方法：</p>
+<ol>
+<li>创建一个和 html 同名的 <code>.manifest</code> 文件，然后在页面头部插入 <code>manifest</code> 属性：<code>&lt;html lang=&quot;en&quot; manifest=&quot;index.manifest&quot;&gt;</code></li>
+<li>在 <code>cache.manifest</code> 文件中编写需要离线存储的资源：<pre class="line-numbers language-none"><code class="language-none">CACHE:
+  js&#x2F;app.js
+  css&#x2F;style.css
+NETWORK:
+  resourse&#x2F;logo.png
+FALLBACK:
+  &#x2F; &#x2F;offline.html<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ol>
+<ul>
+<li>CACHE: 表示需要离线存储的资源列表，由于包含 manifest 文件的页面将被自动离线存储，所以不需要把页面自身也列出来。</li>
+<li>NETWORK: 表示在它下面列出来的资源只有在在线的情况下才能访问，他们不会被离线存储。不过，如果在 CACHE 和 NETWORK 中有一个相同的资源，那么这个资源还是会被离线存储，也就是说 CACHE 的优先级更高。</li>
+<li>FALLBACK: 表示如果访问第一个资源失败，那么就使用第二个资源来替换他，比如上面这个文件表示的就是如果访问根目录下任何一个资源失败了，那么就去访问 offline.html 。</li>
+</ul>
+<ol start="3">
+<li>在离线状态时，操作 window.applicationCache 进行离线缓存的操作。</li>
+</ol>
+<p>更新缓存的3种方案：</p>
+<ul>
+<li>更新 manifest 文件</li>
+<li>通过 javascript 操作</li>
+<li>清除浏览器缓存</li>
+</ul>
+<p>注意事项：<br>（1）浏览器对缓存数据的容量限制可能不太一样（某些浏览器设置的限制是每个站点 5MB）。<br>（2）如果 manifest 文件，或者内部列举的某一个文件不能正常下载，整个更新过程都将失败，浏览器继续全部使用老的缓存。<br>（3）引用 manifest 的 html 必须与 manifest 文件同源，在同一个域下。<br>（4）FALLBACK 中的资源必须和 manifest 文件同源。<br>（5）当一个资源被缓存后，该浏览器直接请求这个绝对路径也会访问缓存中的资源。<br>（6）站点中的其他页面即使没有设置 manifest 属性，请求的资源如果在缓存中也从缓存中访问。<br>（7）当 manifest 文件发生改变时，资源请求本身也会触发更新。</p>
+<h2 id="浏览器是如何对-HTML5-的离线储存资源进行管理和加载"><a href="#浏览器是如何对-HTML5-的离线储存资源进行管理和加载" class="headerlink" title="浏览器是如何对 HTML5 的离线储存资源进行管理和加载"></a>浏览器是如何对 HTML5 的离线储存资源进行管理和加载</h2><ul>
+<li>在线情况下，浏览器发现 html 头部有 <code>manifest</code> 属性，它会请求 <code>.manifest</code> 文件，<strong>如果是第一次访问页面</strong>，那么浏览器就会根据 <code>.manifest</code> 文件的内容下载相应的资源并进行离线存储；<strong>如果已经访问过页面并进行过离线存储</strong>，那么浏览器会使用离线的资源加载页面，然后对比新旧 <code>.manifest</code> 文件，若文件发生改变就会重新下载文件中的资源并进行存储。</li>
+<li>离线情况下，浏览器会直接使用离线存储的资源加载页面。</li>
+</ul>
+<h2 id="行内元素、块级元素，以及两者的区别"><a href="#行内元素、块级元素，以及两者的区别" class="headerlink" title="行内元素、块级元素，以及两者的区别"></a>行内元素、块级元素，以及两者的区别</h2><ol>
+<li>行内元素有：<code>a</code>、 <code>br</code>、 <code>cite</code>、 <code>em</code>、 <code>i</code>、 <code>img</code>、 <code>input</code>、 <code>label</code>、 <code>select</code>、 <code>span</code>、 <code>strong</code>、 <code>sub</code>、 <code>sup</code>、 <code>textarea</code></li>
+<li>块级元素有：<code>div</code>、<code>p</code>、<code>form</code>、<code>ul</code>、<code>ol</code>、<code>dl</code>、<code>h</code>、<code>hr</code>、<code>table</code>、<code>menu</code>、</li>
+<li>区别：</li>
+</ol>
+<ul>
+<li>块级元素独占一行，行内元素不会</li>
+<li>块级元素可以设置宽高，行内元素不能</li>
+<li>块级元素可以包含行内元素和块级元素，行内元素不能包含块级元素。</li>
+<li>块级元素可以设置 <code>margin</code> 和 <code>padding</code> ，行内元素的水平方向的 <code>padding-left</code>、<code>padding-right</code>、<code>margin-left</code>、<code>margin-right</code> 都产生边距效果，但是竖直方向的 <code>padding-top</code>、<code>padding-bottom</code>、<code>margin-top</code>、<code>margin-bottom</code> 都不会产生边距效果。（水平方向有效，竖直方向无效）<blockquote>
+<p>若是设置为行内块级元素，它也不能独占一行，但能设置宽高</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="渐进增强、优雅降级，以及两者的区别"><a href="#渐进增强、优雅降级，以及两者的区别" class="headerlink" title="渐进增强、优雅降级，以及两者的区别"></a>渐进增强、优雅降级，以及两者的区别</h2><ol>
+<li>渐进增强：针对低版本浏览器也能保证基础功能，然后对高级浏览器改进追加功能（向上兼容）。</li>
+<li>优雅降级：一开始就构建站点的完整功能，然后针对浏览器进行测试和修复（向下兼容）。</li>
+<li>区别：优雅降级是从复杂的现状开始，并试图减少用户体验的供给，而渐进增强则是从一个非常基础的，能够起作用的版本开始，并不断扩充，以适应未来环境的需要。</li>
+</ol>
+<h2 id="canvas-和-svg-的区别"><a href="#canvas-和-svg-的区别" class="headerlink" title="canvas 和 svg 的区别"></a>canvas 和 svg 的区别</h2><ul>
+<li>canvas是画布，适合图形密集型的游戏，不支持事件处理</li>
+<li>svg是矢量图，不依赖分辨率，不适合游戏，适合大型渲染区域（地图），支持事件处理</li>
+</ul>
+<h2 id="src-和-href-的区别"><a href="#src-和-href-的区别" class="headerlink" title="src 和 href 的区别"></a>src 和 href 的区别</h2><ul>
+<li>src 是引入外部资源下载到文档，会暂停其他资源的下载</li>
+<li>href  是链接外部资源，不会暂停其他资源的下载</li>
+</ul>
+<h2 id="label-的作用"><a href="#label-的作用" class="headerlink" title="label 的作用"></a>label 的作用</h2><p><code>label</code> 标签为 input 元素定义标注。</p>
+<p>作用：用于绑定一个表单元素，当点击 <code>label</code> 标签的时候，被绑定的表单元素就会获得输入焦点。</p>
+<h2 id="title-与-h1-的区别、b-与-strong-的区别、i-与-em-的区别"><a href="#title-与-h1-的区别、b-与-strong-的区别、i-与-em-的区别" class="headerlink" title="title 与 h1 的区别、b 与 strong 的区别、i 与 em 的区别"></a>title 与 h1 的区别、b 与 strong 的区别、i 与 em 的区别</h2><p><code>title</code> 属性没有明确意义只表示是个标题，<code>h1</code> 则表示层次明确的标题。<br><code>strong</code> 标签有语义，是起到加重语气的效果，而 <code>b</code> 标签是没有的。虽然都能加粗字体，但搜索引擎更侧重 <code>strong</code> 标签。<br><code>i</code> 内容展示为斜体，<code>em</code> 表示强调的文本</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a  href="/2022/03/08/bei-zhan-qian-duan-shi-xi-mian-shi-zhi-html-pian/">备战前端实习面试之HTML篇</a></p>
+        <p><span>文章作者:</span><a  href="/" title="访问  的个人博客"></a></p>
+        <p><span>发布时间:</span>2022年03月08日 - 22时33分</p>
+        <p><span>最后更新:</span>2022年03月08日 - 22时45分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2022/03/08/bei-zhan-qian-duan-shi-xi-mian-shi-zhi-html-pian/" title="备战前端实习面试之HTML篇">https://hcyety.github.io/2022/03/08/bei-zhan-qian-duan-shi-xi-mian-shi-zhi-html-pian/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://hcyety.github.io/2022/03/08/bei-zhan-qian-duan-shi-xi-mian-shi-zhi-html-pian/　　作者: " title=""></span>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a  href="/2022/03/08/bei-zhan-da-han-qian-duan-shi-xi/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          备战大厂前端实习之代码输出结果篇
+        
+      </div>
+    </a>
+  
+  
+    <a  href="/2022/01/22/qian-duan-bi-xu-zhi-dao-de-kai-fa-diao-shi-zhi-shi/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">前端必须知道的开发调试知识</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#HTML"><span class="toc-number">1.</span> <span class="toc-text">HTML</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#html-%E5%B8%B8%E7%94%A8%E7%9A%84%E6%A0%87%E7%AD%BE"><span class="toc-number">1.1.</span> <span class="toc-text">html 常用的标签</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#html-%E6%96%B0%E7%89%B9%E6%80%A7"><span class="toc-number">1.2.</span> <span class="toc-text">html 新特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E8%AF%AD%E4%B9%89%E5%8C%96%E7%9A%84%E7%90%86%E8%A7%A3"><span class="toc-number">1.3.</span> <span class="toc-text">对语义化的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%B4%E8%AF%B4-web-worker"><span class="toc-number">1.4.</span> <span class="toc-text">说说 web worker</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DOCTYPE%E7%9A%84%E4%BD%9C%E7%94%A8%EF%BC%9F%E4%B8%A5%E6%A0%BC%E6%A8%A1%E5%BC%8F%E5%92%8C%E6%B7%B7%E6%9D%82%E6%A8%A1%E5%BC%8F%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-number">1.5.</span> <span class="toc-text">DOCTYPE的作用？严格模式和混杂模式的区别？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E2%BD%A4%E7%9A%84-meta-%E6%A0%87%E7%AD%BE%E6%9C%89%E5%93%AA%E4%BA%9B"><span class="toc-number">1.6.</span> <span class="toc-text">常⽤的 meta 标签有哪些</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#iframe-%E6%9C%89%E9%82%A3%E4%BA%9B%E4%BC%98%E7%82%B9%E5%92%8C%E7%BC%BA%E7%82%B9"><span class="toc-number">1.7.</span> <span class="toc-text">iframe 有那些优点和缺点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#defer-%E5%92%8C-async-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">1.8.</span> <span class="toc-text">defer 和 async 的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTML5%E7%9A%84%E7%A6%BB%E7%BA%BF%E5%82%A8%E5%AD%98%E6%80%8E%E4%B9%88%E4%BD%BF%E7%94%A8%EF%BC%8C%E5%AE%83%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-number">1.9.</span> <span class="toc-text">HTML5的离线储存怎么使用，它的工作原理是什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E6%98%AF%E5%A6%82%E4%BD%95%E5%AF%B9-HTML5-%E7%9A%84%E7%A6%BB%E7%BA%BF%E5%82%A8%E5%AD%98%E8%B5%84%E6%BA%90%E8%BF%9B%E8%A1%8C%E7%AE%A1%E7%90%86%E5%92%8C%E5%8A%A0%E8%BD%BD"><span class="toc-number">1.10.</span> <span class="toc-text">浏览器是如何对 HTML5 的离线储存资源进行管理和加载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%8C%E5%86%85%E5%85%83%E7%B4%A0%E3%80%81%E5%9D%97%E7%BA%A7%E5%85%83%E7%B4%A0%EF%BC%8C%E4%BB%A5%E5%8F%8A%E4%B8%A4%E8%80%85%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">1.11.</span> <span class="toc-text">行内元素、块级元素，以及两者的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B8%90%E8%BF%9B%E5%A2%9E%E5%BC%BA%E3%80%81%E4%BC%98%E9%9B%85%E9%99%8D%E7%BA%A7%EF%BC%8C%E4%BB%A5%E5%8F%8A%E4%B8%A4%E8%80%85%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">1.12.</span> <span class="toc-text">渐进增强、优雅降级，以及两者的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#canvas-%E5%92%8C-svg-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">1.13.</span> <span class="toc-text">canvas 和 svg 的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#src-%E5%92%8C-href-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">1.14.</span> <span class="toc-text">src 和 href 的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#label-%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-number">1.15.</span> <span class="toc-text">label 的作用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#title-%E4%B8%8E-h1-%E7%9A%84%E5%8C%BA%E5%88%AB%E3%80%81b-%E4%B8%8E-strong-%E7%9A%84%E5%8C%BA%E5%88%AB%E3%80%81i-%E4%B8%8E-em-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">1.16.</span> <span class="toc-text">title 与 h1 的区别、b 与 strong 的区别、i 与 em 的区别</span></a></li></ol></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+        <section class="changyan" id="comments">
+  <!--<div id="uyan_frame"></div>-->
+  <div id="SOHUCS"></div>
+  <script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js"></script>
+  <script type="text/javascript">
+    window.changyan.api.config({
+      appid: 'xxxx',
+      conf: 'xxxxxxxxx'
+    });
+  </script>
+</section>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a  href="/2022/03/08/bei-zhan-da-han-qian-duan-shi-xi/" title="上一篇: 备战大厂前端实习之代码输出结果篇">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a  href="/2022/01/22/qian-duan-bi-xu-zhi-dao-de-kai-fa-diao-shi-zhi-shi/" title="下一篇: 前端必须知道的开发调试知识">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2022/03/13/bei-zhan-qian-duan-shi-xi-mian-shi/">备战大厂前端实习</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/03/08/bei-zhan-qian-duan-shi-xi-mian-shi-zhi-javascript-pian/">备战大厂前端实习之浏览器篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/03/08/bei-zhan-qian-duan-shi-xi-mian-shi-zhi-css-pian/">备战大厂前端实习之CSS篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/03/08/bei-zhan-da-han-qian-duan-shi-xi/">备战大厂前端实习之代码输出结果篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/03/08/bei-zhan-qian-duan-shi-xi-mian-shi-zhi-html-pian/">备战前端实习面试之HTML篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/01/22/qian-duan-bi-xu-zhi-dao-de-kai-fa-diao-shi-zhi-shi/">前端必须知道的开发调试知识</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/01/22/css3-xin-te-xing/">CSS3 新特性</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/01/11/css-he-mo-xing/">CSS 盒模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/01/11/css-xuan-ze-qi/">CSS 选择器</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/01/10/js-zhi-nei-cun-guan-li/">JS 之内存管理</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/01/09/shi-me-shi-bi-bao/">什么是闭包</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/01/08/tcp-de-liu-liang-kong-zhi-ji-zhi/">TCP 的流量控制机制</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/01/06/tcp-de-yun-shu-lian-jie-guan-li/">TCP 的运输连接管理</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/01/05/zhi-xing-shang-xia-wen/">执行上下文</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/01/04/yuan-xing-lian-de-ji-cheng/">原型链的继承</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/01/03/yuan-xing-lian/">原型链</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/12/27/var-let-const-de-qu-bie-shi-yong/">var let const 的区别使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/12/23/js-zhi-zuo-yong-yu/">JS 之作用域</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/12/21/bu-shu-fu-wu-qi-yong-dao-de-linux-ming-ling/">操作服务器用到的 Linux 命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/12/18/js-zhi-jing-du-diu-shi/">JS 之精度丢失</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/12/14/js-zhi-shu-ju-lei-xing-zhuan-huan/">JS 之数据类型转换</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/12/06/js-zhi-shu-ju-lei-xing/">JS 之数据类型</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/11/22/shu-zu-de-ge-chong-zeng-shan-cha-gai/">数组的各种增删查改</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/11/15/settimeout-yu-setinterval-de-qu-bie/">setTimeout() 与 setInterval() 的区别</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/11/08/tell-it-to-myself/">tell it to myself</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/11/02/xiang-mu-zhi-deng-lu-zhu-ce-mo-kuai/">项目之登录/注册模块</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/11/02/react-ts-xiang-mu-zai-xian-bian-cheng-bi-shi-ping-tai/">React-Ts 项目：在线编程笔试平台</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/11/01/qian-hou-duan-fen-chi-xiang-mu-xian-shang-bu-shu/">前后端分离项目线上部署</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/10/31/error-zhi-bu-shu-fu-wu-qi-pian/">ERROR 之部署服务器篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/10/31/begin-myfist-blog/">Begin: myfist blog</a></li></ul>
+    
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+    <script>
+        $(".post-list").addClass("toc-article");
+        // $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#toc, .switch-btn, .switch-area").toggle();
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+                $(".switch-btn, .switch-area").fadeToggle(300);
+            }
+        })
+    </script>
+
+
+
+
+    <script>
+        
+    </script>
+
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2022 hcyety
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo &nbsp;&nbsp;</a><a href="https://github.com/maochunguang" target="_blank">Blog</a> by tommy
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >极客到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 1;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'xxxxx', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?xxxxxx";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+</html>

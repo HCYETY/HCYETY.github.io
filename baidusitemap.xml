@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://hcyety.github.io/2022/01/06/tcp-de-yun-shu-lian-jie-guan-li/</loc>
+    <lastmod>2022-03-28</lastmod>
+  </url>
+  <url>
+    <loc>https://hcyety.github.io/2021/11/02/react-ts-xiang-mu-zai-xian-bian-cheng-bi-shi-ping-tai/</loc>
+    <lastmod>2022-03-20</lastmod>
+  </url>
+  <url>
+    <loc>https://hcyety.github.io/2022/01/08/tcp-de-liu-liang-kong-zhi-ji-zhi/</loc>
+    <lastmod>2022-03-20</lastmod>
+  </url>
+  <url>
+    <loc>https://hcyety.github.io/2021/12/27/var-let-const-de-qu-bie-shi-yong/</loc>
+    <lastmod>2022-03-20</lastmod>
+  </url>
+  <url>
     <loc>https://hcyety.github.io/2022/03/08/bei-zhan-da-han-qian-duan-shi-xi/</loc>
     <lastmod>2022-03-17</lastmod>
   </url>
@@ -63,22 +79,6 @@
   <url>
     <loc>https://hcyety.github.io/2022/01/03/yuan-xing-lian/</loc>
     <lastmod>2022-01-08</lastmod>
-  </url>
-  <url>
-    <loc>https://hcyety.github.io/2022/01/08/tcp-de-liu-liang-kong-zhi-ji-zhi/</loc>
-    <lastmod>2022-01-07</lastmod>
-  </url>
-  <url>
-    <loc>https://hcyety.github.io/2022/01/06/tcp-de-yun-shu-lian-jie-guan-li/</loc>
-    <lastmod>2022-01-07</lastmod>
-  </url>
-  <url>
-    <loc>https://hcyety.github.io/2021/11/02/react-ts-xiang-mu-zai-xian-bian-cheng-bi-shi-ping-tai/</loc>
-    <lastmod>2022-01-01</lastmod>
-  </url>
-  <url>
-    <loc>https://hcyety.github.io/2021/12/27/var-let-const-de-qu-bie-shi-yong/</loc>
-    <lastmod>2021-12-27</lastmod>
   </url>
   <url>
     <loc>https://hcyety.github.io/2021/12/23/js-zhi-zuo-yong-yu/</loc>

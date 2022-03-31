@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="baidu-site-verification" content="L6Lm9d5Crl"/>
+  
+  
+  
+  
+  <title>JS 之数据类型 | hcyety&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="数据类型总共 7 种ECMAScript 有 6 种简单数据类型（也称为原始类型）：Undefined、Null、Boolean、Number、String和Symbol；还有一种复杂数据类型：Object。 除过上面的 6 种基本数据类型外，剩下的就是引用数据类型了，统称为 Object 类型。细分的话，有：Object类型、Array 类型、Date 类型、RegExp类型、Function">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS 之数据类型">
+<meta property="og:url" content="https://hcyety.github.io/2021/12/06/js-zhi-shu-ju-lei-xing/index.html">
+<meta property="og:site_name" content="hcyety&#39;s blog">
+<meta property="og:description" content="数据类型总共 7 种ECMAScript 有 6 种简单数据类型（也称为原始类型）：Undefined、Null、Boolean、Number、String和Symbol；还有一种复杂数据类型：Object。 除过上面的 6 种基本数据类型外，剩下的就是引用数据类型了，统称为 Object 类型。细分的话，有：Object类型、Array 类型、Date 类型、RegExp类型、Function">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s4.ax1x.com/2021/12/06/osS36O.png">
+<meta property="og:image" content="https://s4.ax1x.com/2021/12/06/osSDc8.png">
+<meta property="article:published_time" content="2021-12-06T05:16:43.000Z">
+<meta property="article:modified_time" content="2022-01-08T18:36:48.454Z">
+<meta property="article:author" content="hcyety">
+<meta property="article:tag" content="技术文">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s4.ax1x.com/2021/12/06/osS36O.png">
+  
+    <link rel="alternative" href="/atom.xml" title="hcyety&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+<style type="text/css" lang="css">
+    #loading-container{
+        position: fixed;
+        top: 0;
+        left: 0;
+        min-height: 100vh;
+        width: 100vw;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #FFF;
+        text-align: center;
+        /* loader页面消失采用渐隐的方式*/
+        -webkit-transition: opacity 1s ease;
+        -moz-transition: opacity 1s ease;
+        -o-transition: opacity 1s ease;
+        transition: opacity 1s ease;
+    }
+    .loading-image{
+        width: 120px;
+        height: 50px;
+        transform: translate(-50%);
+    }
+    
+    .loading-image div:nth-child(2) {
+        -webkit-animation: pacman-balls 1s linear 0s infinite;
+        animation: pacman-balls 1s linear 0s infinite
+    }
+
+    .loading-image div:nth-child(3) {
+        -webkit-animation: pacman-balls 1s linear .33s infinite;
+        animation: pacman-balls 1s linear .33s infinite
+    }
+
+    .loading-image div:nth-child(4) {
+        -webkit-animation: pacman-balls 1s linear .66s infinite;
+        animation: pacman-balls 1s linear .66s infinite
+    }
+
+    .loading-image div:nth-child(5) {
+        -webkit-animation: pacman-balls 1s linear .99s infinite;
+        animation: pacman-balls 1s linear .99s infinite
+    }
+    
+   .loading-image div:first-of-type {
+        width: 0;
+        height: 0;
+        border: 25px solid #49b1f5;
+        border-right-color: transparent;
+        border-radius: 25px;
+        -webkit-animation: rotate_pacman_half_up .5s 0s infinite;
+        animation: rotate_pacman_half_up .5s 0s infinite;
+    }
+    .loading-image div:nth-child(2) {
+        width: 0;
+        height: 0;
+        border: 25px solid #49b1f5;
+        border-right-color: transparent;
+        border-radius: 25px;
+        -webkit-animation: rotate_pacman_half_down .5s 0s infinite;
+        animation: rotate_pacman_half_down .5s 0s infinite;
+        margin-top: -50px;
+    }
+    @-webkit-keyframes rotate_pacman_half_up {0% {transform: rotate(270deg)}50% {transform: rotate(1turn)}to {transform: rotate(270deg)}}
+
+    @keyframes rotate_pacman_half_up {0% {transform: rotate(270deg)}50% {transform: rotate(1turn)}to {transform: rotate(270deg)}}
+
+    @-webkit-keyframes rotate_pacman_half_down {0% {transform: rotate(90deg)}50% {transform: rotate(0deg)}to {transform: rotate(90deg)}}
+
+    @keyframes rotate_pacman_half_down {0% {transform: rotate(90deg)}50% {transform: rotate(0deg)}to {transform: rotate(90deg)}}
+    
+    @-webkit-keyframes pacman-balls {75% {opacity: .7}to {transform: translate(-100px, -6.25px)}}
+
+    @keyframes pacman-balls {75% {opacity: .7}to {transform: translate(-100px, -6.25px)}}
+    
+   
+    .loading-image div:nth-child(3),
+    .loading-image div:nth-child(4),
+    .loading-image div:nth-child(5),
+    .loading-image div:nth-child(6){
+        background-color: #49b1f5;
+        width: 15px;
+        height: 15px;
+        border-radius: 100%;
+        margin: 2px;
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        transform: translateY(-6.25px);
+        top: 25px;
+        left: 100px;
+    }
+    .loading-text{
+        margin-bottom: 20vh;
+        text-align: center;
+        color: #2c3e50;
+        font-size: 2rem;
+        box-sizing: border-box;
+        padding: 0 10px;
+        text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+    @media only screen and (max-width: 500px) {
+         .loading-text{
+            font-size: 1.5rem;
+         }
+    }
+    .fadeout {
+        opacity: 0;
+        filter: alpha(opacity=0);
+    }
+    /* logo出现动画 */
+    @-webkit-keyframes fadeInDown{0%{opacity:0;-webkit-transform:translate3d(0,-100%,0);transform:translate3d(0,-100%,0)}100%{opacity:1;-webkit-transform:none;transform:none}}
+    @keyframes fadeInDown{0%{opacity:0;-webkit-transform:translate3d(0,-100%,0);}}
+ </style>
+ <script>
+(function () {
+    const loaded = function(){
+       setTimeout(function(){
+            const loader = document.getElementById("loading-container");
+            loader.className="fadeout" ;//使用渐隐的方法淡出loading page
+            // document.getElementById("body-wrap").style.display="flex";
+            setTimeout(function(){
+                loader.style.display="none";
+            },1000); 
+        },1000);//强制显示loading page 1s  
+    };
+    loaded();
+})()
+ </script><meta name="generator" content="Hexo 5.4.0"></head>
+
+ <div id="loading-container">
+     <p class="loading-text">玩命加载中 . . . </p> 
+     <div class="loading-image">
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div> 
+         <div></div>
+     </div>
+ </div><body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/avatar.png" class="js-avatar">
+            
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/"></a></h1>
+        </hgroup>
+        
+        
+            <form>
+                <input type="text" class="st-default-search-input search" id="local-search-input" placeholder="搜索一下" autocomplete="off">
+            </form>
+            <div id="local-search-result"></div>
+        
+        
+            <script type="text/javascript">
+                (function() {
+                    'use strict';
+                    function getMatchData(keyword, data) {
+                        var matchData = [];
+                        for(var i =0;i<data.length;i++){
+                            if(data[i].title.toLowerCase().indexOf(keyword)>=0) 
+                                matchData.push(data[i])
+                        }
+                        return matchData;
+                    }
+                    var $input = $('#local-search-input');
+                    var $resultContent = $('#local-search-result');
+                    $input.keyup(function(){
+                        $.ajax({
+                            url: '/search.json',
+                            dataType: "json",
+                            success: function( json ) {
+                                var str='<ul class=\"search-result-list\">';                
+                                var keyword = $input.val().trim().toLowerCase();
+                                $resultContent.innerHTML = "";
+                                if ($input.val().trim().length <= 0) {
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                }
+                                var results = getMatchData(keyword, json);
+                                if(results.length === 0){
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                } 
+                                for(var i =0; i<results.length; i++){
+                                    str += "<li><a href='"+ results[i].url +"' class='search-result-title'>"+ results[i].title +"</a></li>";
+                                }
+                                str += "</ul>";
+                                $resultContent.empty();
+                                $resultContent.append(str);
+                                $('#switch-area').hide();
+                            }
+                        });
+                    });
+                })();
+            </script>
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a  href="/archives/">所有文章</a></li>
+                        
+                            <li><a  href="/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/">玩转开发工具</a></li>
+                        
+                            <li><a  href="/categories/digital">玩转数码</a></li>
+                        
+                            <li><a  href="/categories/algorithm">算法学习</a></li>
+                        
+                            <li><a  href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl github"  target="_blank" href="/xxxxx" title="github">github</a>
+                            
+                                <a class="fl weibo"  target="_blank" href="/xxxxxxxx" title="weibo">weibo</a>
+                            
+                                <a class="fl rss"  target="_blank" href="/atom.xml" title="rss">rss</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/Koa/" style="font-size: 10px;">Koa</a> <a href="/tags/Linux-%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 15px;">Linux 服务器</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/NodeJs/" style="font-size: 10px;">NodeJs</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/TCP/" style="font-size: 12.5px;">TCP</a> <a href="/tags/Ts/" style="font-size: 10px;">Ts</a> <a href="/tags/node-ssh/" style="font-size: 10px;">node-ssh</a> <a href="/tags/scp2/" style="font-size: 10px;">scp2</a> <a href="/tags/%E5%85%AB%E8%82%A1%E6%96%87/" style="font-size: 10px;">八股文</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 12.5px;">前端</a> <a href="/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/" style="font-size: 10px;">命令行</a> <a href="/tags/%E5%AE%9E%E4%B9%A0%E9%9D%A2%E8%AF%95/" style="font-size: 10px;">实习面试</a> <a href="/tags/%E5%BC%80%E5%8F%91%E8%B0%83%E8%AF%95%E6%8A%80%E5%B7%A7/" style="font-size: 10px;">开发调试技巧</a> <a href="/tags/%E6%8A%80%E6%9C%AF%E6%96%87/" style="font-size: 17.5px;">技术文</a> <a href="/tags/%E6%B3%A8%E5%86%8C/" style="font-size: 10px;">注册</a> <a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8E%A7%E5%88%B6%E5%8F%B0/" style="font-size: 10px;">浏览器控制台</a> <a href="/tags/%E7%99%BB%E5%BD%95/" style="font-size: 10px;">登录</a> <a href="/tags/%E7%BA%BF%E4%B8%8A%E9%83%A8%E7%BD%B2/" style="font-size: 10px;">线上部署</a> <a href="/tags/%E8%BF%90%E8%BE%93%E5%B1%82/" style="font-size: 12.5px;">运输层</a> <a href="/tags/%E9%9A%8F%E7%AC%94/" style="font-size: 12.5px;">随笔</a> <a href="/tags/%E9%9D%A2%E8%AF%95/" style="font-size: 20px;">面试</a>
+                    </div>
+                </section>
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://blog.csdn.net/baidu_21483933">csdn</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://segmentfault.com/blog/maocg_web">segmentfault</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.jianshu.com/users/eb37ef89c746/latest_articles">简书</a>
+                    
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">爱动漫,爱游戏,爱编程,爱运动,爱的太多了!</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页"></a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/avatar.png" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页"></a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/">玩转开发工具</a></li>
+                
+                    <li><a href="/categories/digital">玩转数码</a></li>
+                
+                    <li><a href="/categories/algorithm">算法学习</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="github" target="_blank" href="/xxxxx" title="github">github</a>
+                    
+                        <a class="weibo" target="_blank" href="/xxxxxxxx" title="weibo">weibo</a>
+                    
+                        <a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+                    
+                </div>
+            </nav>
+        </header>
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-JS-之数据类型" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2021/12/06/js-zhi-shu-ju-lei-xing/" class="article-date">
+      <time datetime="2021-12-06T05:16:43.000Z" itemprop="datePublished">2021-12-06</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JS 之数据类型
+    </h1>
+  
+
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF%E6%96%87/" rel="tag">技术文</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h3 id="总共-7-种"><a href="#总共-7-种" class="headerlink" title="总共 7 种"></a>总共 7 种</h3><p>ECMAScript 有 <code>6</code> 种<strong>简单数据类型</strong>（也称为<strong>原始类型</strong>）：<code>Undefined</code>、<code>Null</code>、<code>Boolean</code>、<code>Number</code>、<code>String</code>和<code>Symbol</code>；还有一种复杂数据类型：<code>Object</code>。</p>
+<p>除过上面的 6 种基本数据类型外，剩下的就是引用数据类型了，统称为 <code>Object</code> 类型。细分的话，有：<code>Object</code>类型、<code>Array</code> 类型、<code>Date</code> 类型、<code>RegExp</code>类型、<code>Function</code> 类型 等。</p>
+<h3 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h3><p>下面记录三个需要注意的数据类型：<br>一、Undefined 类型<br><code>Undefined</code> 类型只有一个值，就是 <code>undefined</code>。当使用 <code>var</code> 或 <code>let</code> 声明了变量但没有初始化时，就相当于给变量赋予了 <code>undefined</code> 值，因此：</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> message<span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>message <span class="token operator">==</span> <span class="token keyword">undefined</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>ECMA-262 第3版之前，字面量 <code>undefined</code> 是不存在的，增加这个值是为了正式明确空对象指针（null）和未初始化变量的区别。</p>
+<p>需要注意的是，未声明的变量和声明了但未赋值的变量是不同的，请看下面例子：</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> message<span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>message<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// "undefined"</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>msg<span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token comment">// 报错</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>前面说过，声明变量时没有进行初始化就相当于给变量赋予 <code>undefined</code> 值，于是可以打印出 <code>&quot;undefined&quot;</code> ；但未声明的变量进行打印等操作就会报错，这点不难理解。难以理解的是下面这一点，对于未声明的变量，只能执行一个有效的操作，那就是对它调用 <code>typeof</code> （对未声明的变量调用 <code>delete</code> 也不会报错，只是没什么用，实际上在严格模式下会抛出错误），问题来了：在对未初始化的变量调用 <code>typeof</code> 时，返回的结果是 <code>&quot;undefined&quot;</code> ，但对为声明的变量调用它时，也返回了 <code>&quot;undefined&quot;</code> ，这就有点不是很好。比如：</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> message<span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> message<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// "undefined"</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> msg<span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token comment">// "undefined"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>无论变量是否声明，<code>typeof</code> 返回的都是 <code>&quot;undefined&quot;</code> 。逻辑上讲这是对的，因为虽然严格来讲这两个变量存在根本性差异，但它们都无法执行实际操作。</p>
+<blockquote>
+<p>！注意：建议声明变量的同时进行初始化。这样，当 <code>typeof</code> 返回 <code>&quot;undefined&quot;</code> 时，开发者就能知道那是因为给定的变量尚未声明，而不是声明了但未初始化。</p>
+</blockquote>
+<p>二、Null<br><code>Null</code> 类型只有一个值，即特殊值 <code>null</code> 。**<code>null</code> 值表示一个空对象指针**，这就是 <code>typeof null</code> 会返回 <code>&quot;object&quot;</code> 的原因：</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> message <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>message<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// "object"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>！建议：在定义将来要保存对象值的变量时，建议使用 null 来初始化，而不是使用其他值。这样，只要检查整改变量的值是不是 null 就可以知道这个变量是否在后来被重新赋予了一个对象的引用，比如：</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> message <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>message <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token comment">// message 是一个对象的引用</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+</blockquote>
+<p>这里还有一个小点： <code>undefined</code> 值是由 <code>null</code> 值派生来的，因此 ECMA-262 将它们定义为表面上相等，如 <code>console.log(null == undefined); // true</code> </p>
+<p>三、Symbol<br>具体的参考阮一峰老师的 <a target="_blank" rel="noopener" href="https://es6.ruanyifeng.com/#docs/symbol">ECMAScript 6 入门之 Symbol</a>，这里就不班门弄斧了。</p>
+<h4 id="基本数据类型的特性"><a href="#基本数据类型的特性" class="headerlink" title="基本数据类型的特性"></a>基本数据类型的特性</h4><ol>
+<li>基本数据类型的值是不可变的，任何方法都无法改变一个基本类型的值，比如一个字符串：<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> name <span class="token operator">=</span> <span class="token string">"change"</span><span class="token punctuation">;</span>
+name<span class="token punctuation">.</span><span class="token function">substr</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// hang</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// change</span>
+
+<span class="token keyword">var</span> s <span class="token operator">=</span> <span class="token string">"hello"</span><span class="token punctuation">;</span>
+s<span class="token punctuation">.</span><span class="token function">toUpperCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// HELLO</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// hello</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ol>
+<ul>
+<li>通过这两个例子，我们会发现原先定义的变量name的值始终没有发生改变。</li>
+<li>而调用 <code>substr()</code> 和 <code>toUpperCase()</code> 方法后返回的是一个新的字符串，跟原先定义的变量 name 并没有关系。</li>
+</ul>
+<p>或许有人会有以下的疑问：</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> name <span class="token operator">=</span> <span class="token string">"change"</span><span class="token punctuation">;</span>
+name <span class="token operator">=</span> <span class="token string">"change1"</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// change1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>这样看起来 name 的值“改变了”，其实 var name = “change”，这里的基础类型是 string ，也就是“change”,这里的“change”是不可以改变的，name只是指向“change”的一个指针，指针的指向可以改变，所以你可以name = “change1”，代表此时name指向了“change1”。同理，这里的“change1”同样不可以改变。</li>
+<li>也就是说这里你认为的改变只是“指针的指向改变”，这里的基础类型指的是“change”，而不是name，需区分清楚。</li>
+</ul>
+<ol start="2">
+<li>基本数据类型不可以添加属性和方法<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> p <span class="token operator">=</span> <span class="token string">"change"</span><span class="token punctuation">;</span>
+p<span class="token punctuation">.</span>age <span class="token operator">=</span> <span class="token number">29</span><span class="token punctuation">;</span>
+p<span class="token punctuation">.</span><span class="token function-variable function">method</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>age<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// undefined</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>method<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// undefined</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+通过上面的代码，我们知道不能给基本类型添加属性和方法，也再次说明基本类型是不可变的。</li>
+<li>基本数据类型的赋值是简单赋值</li>
+</ol>
+<p>如果从一个变量向另一个变量赋值基本类型的值，会在变量对象上创建一个新值，然后把该值复制到为新变量分配的位置上</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> b <span class="token operator">=</span> a<span class="token punctuation">;</span>
+a<span class="token operator">++</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 11</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 10</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>上面的代码中， a 中保存的值是10。当使用 a 的值来初始化 b 时， b 中也保存了值 10 。但 b 中的 10 和 a 中的 10 是完全独立的。 b 中的值只是 a 中值的一个副本。所以这两个变量可以参与任何操作而不会相互影响。<br>4. 基本数据类型的比较是值的比较</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> b <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a <span class="token operator">==</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a <span class="token operator">==</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// false</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>上面 a 和 b 的数据类型不同，但是也可以进行值的比较，这是因为在比较之前，自动进行了数据类型的 隐式转换。<br>5. 基本数据类型是存放在栈区的</p>
+<p>假如有以下几个基本类型的变量：</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> name <span class="token operator">=</span> <span class="token string">"jozo"</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> city <span class="token operator">=</span> <span class="token string">"guangzhou"</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> age <span class="token operator">=</span> <span class="token number">22</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>那么它的存储结构如下所示：<br>|栈区A|栈区A|<br>|:–:|:–:|<br>|name|jozo|<br>|city|guangzhou|<br>|age|22|</p>
+<p>同一个栈区里包括了变量的标识符和变量的值</p>
+<h3 id="引用数据类型"><a href="#引用数据类型" class="headerlink" title="引用数据类型"></a>引用数据类型</h3><h4 id="引用数据类型的特性"><a href="#引用数据类型的特性" class="headerlink" title="引用数据类型的特性"></a>引用数据类型的特性</h4><ol>
+<li>引用类型的值是可以改变的</li>
+<li>引用类型可以添加属性和方法</li>
+<li>引用类型是同时保存在栈区和堆区中的</li>
+</ol>
+<p>引用类型的存储需要在内存的栈区和堆区共同完成，栈区保存变量标识符和指向堆内存的地址</p>
+<p>假如有以下两个对象：</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> man <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+<span class="token keyword">let</span> woman <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>man <span class="token operator">===</span> woman<span class="token punctuation">)</span> <span class="token comment">// 输出：false</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>则这两个对象在内存中保存的情况如下图：<br><img src="https://s4.ax1x.com/2021/12/06/osS36O.png" alt="变量在内存中的保存情况"><br>4. 引用类型的赋值是对象引用</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> b <span class="token operator">=</span> a<span class="token punctuation">;</span>
+
+a<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">"change"</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// change</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>b<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// change</span>
+
+b<span class="token punctuation">.</span>age <span class="token operator">=</span> <span class="token number">29</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">.</span>age<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 29</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>b<span class="token punctuation">.</span>age<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 29</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>当 a 向 b 赋值引用类型的值时，同样也会将储存在 a 中的对象的值复制一份，并放到为 b 分配的空间中。此时引用类型保存在 b 中的是对象在堆内存中的地址。所以，与基本数据类型的简单赋值不同，这个值的副本实际上是一个指针，而这个指针指向存储在堆内存的一个对象。那么赋值操作后，两个变量都保存了同一个对象地址，而这两个地址指向了同一个对象。因此，改变其中任何一个变量，都会互相影响。 他们的关系如下图：<br><img src="https://s4.ax1x.com/2021/12/06/osSDc8.png" alt="变量赋值后在内存中的保存情况"><br>5. 引用类型的比较是引用的比较</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> person1 <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> person2 <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>person1 <span class="token operator">==</span> person2<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// false</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>Q：为什么两个对象看起来一摸一样，但是却不相等呢？</li>
+<li>A：因为引用类型的比较是引用的比较，换句话说，就是比较两个对象保存在栈区的指向堆内存的地址是否相同，此时，虽然 p1 和 p2 看起来都是一个”{}”，但是他们保存在栈区中的指向堆内存的地址却是不同的，所以两个对象不相等<h2 id="判断数据类型的方法"><a href="#判断数据类型的方法" class="headerlink" title="判断数据类型的方法"></a>判断数据类型的方法</h2><h3 id="typeof-操作符"><a href="#typeof-操作符" class="headerlink" title="typeof 操作符"></a>typeof 操作符</h3>用于确定任意变量的数据类型，对一个值使用 <code>typeof</code> 操作符会返回下列字符串之一：</li>
+<li>“undefined” 表示值未定义；</li>
+<li>“boolean” 表示值为布尔值；</li>
+<li>“string” 表示值为字符串；</li>
+<li>“number” 表示值为数值；</li>
+<li>“object” 表示值为对象（而不是函数）或 null；</li>
+<li>“function” 表示值为函数；</li>
+<li>“symbol” 表示值为符号；</li>
+</ul>
+<p>使用 typeof 操作符的示例：</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// es5</span>
+<span class="token keyword">typeof</span> <span class="token string">''</span>           <span class="token comment">// string</span>
+<span class="token keyword">typeof</span> <span class="token number">1</span>            <span class="token comment">// number</span>
+<span class="token keyword">typeof</span> <span class="token boolean">true</span>         <span class="token comment">// boolean</span>
+<span class="token keyword">typeof</span> <span class="token keyword">undefined</span>    <span class="token comment">// undefined</span>
+<span class="token keyword">typeof</span> Array        <span class="token comment">// function</span>
+<span class="token keyword">typeof</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>           <span class="token comment">// object</span>
+<span class="token keyword">typeof</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>           <span class="token comment">// object</span>
+<span class="token keyword">typeof</span> <span class="token function">Symbol</span><span class="token punctuation">(</span><span class="token punctuation">)</span>     <span class="token comment">// symbol</span>
+<span class="token keyword">typeof</span> console      <span class="token comment">// object</span>
+<span class="token keyword">typeof</span> console<span class="token punctuation">.</span>log  <span class="token comment">// function</span>
+
+<span class="token keyword">typeof</span> <span class="token keyword">null</span>         <span class="token comment">// object</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>需要注意的是：<code>null</code> 会返回  <code>&quot;object&quot;</code> 是因为特殊值 <code>null</code> 被认为是一个对空对象的引用（这只是 <code>JavaScript</code> 存在的一个悠久 Bug，不代表 <code>null</code> 就是引用数据类型，并且 <code>null</code> 本身也不是对象）。那为什么会被这么认为呢？这就需要了解变量是如何被存储的。在 <code>Javascript</code> 底层存储变量的时候，会在变量的机器码低位 1-3 位表示类型信息：</p>
+<ul>
+<li>000：对象</li>
+<li>010：浮点数</li>
+<li>100：字符串</li>
+<li>110：布尔</li>
+<li>1：整数</li>
+<li>null：所有码都是0</li>
+<li>undefined：用 -2^30 表示</li>
+</ul>
+<p>而 <code>null</code> 的低位 1-3 解析到的为 000，刚好与 <code>object</code> 一样，因此就被当做了对象来看待。</p>
+</blockquote>
+<p><code>typeof</code> 的实现大致如下，在 JS 诞生之初就只有六种类型判断：</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token constant">JSVAL_IS_VOID</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>    <span class="token comment">// 判断是否为 undefined</span>
+  type <span class="token operator">=</span> <span class="token constant">JSTYPE_VOID</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token constant">JSVAL_IS_OBJECT</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token comment">// 判断是否为 object</span>
+  obj <span class="token operator">=</span> <span class="token constant">JSVAL_TO_OBJECT</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>obj <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span>ops <span class="token operator">=</span> obj<span class="token operator">-</span><span class="token operator">></span>map<span class="token operator">-</span><span class="token operator">></span>ops<span class="token punctuation">,</span> ops <span class="token operator">==</span> <span class="token operator">&amp;</span>js_ObjectOps<span class="token punctuation">)</span> 
+    <span class="token operator">?</span> <span class="token punctuation">(</span>clasp <span class="token operator">=</span> <span class="token constant">OBJ_GET_CLASS</span><span class="token punctuation">(</span>cx<span class="token punctuation">,</span> obj<span class="token punctuation">)</span><span class="token punctuation">,</span> clasp<span class="token operator">-</span><span class="token operator">></span>call <span class="token operator">||</span> clasp <span class="token operator">==</span> <span class="token operator">&amp;</span>js_FunctionClass<span class="token punctuation">)</span>
+    <span class="token operator">:</span> ops<span class="token operator">-</span><span class="token operator">></span>call <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    type <span class="token operator">=</span> <span class="token constant">JSTYPE_FUNCTION</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+    type <span class="token operator">=</span> <span class="token constant">JSTYPE_OBJECT</span><span class="token punctuation">;</span>     
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token constant">JSVAL_IS_NUMBER</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token comment">// 判断是否为 number</span>
+  type <span class="token operator">=</span> <span class="token constant">JSTYPE_NUMBER</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token constant">JSVAL_IS_STRING</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token comment">// 判断是否为 string</span>
+  type <span class="token operator">=</span> <span class="token constant">JSTYPE_STRING</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token constant">JSVAL_IS_BOOLEAN</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token comment">// 判断是否为 boolean</span>
+  type <span class="token operator">=</span> <span class="token constant">JSTYPE_BOOLEAN</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="instanceof-操作符"><a href="#instanceof-操作符" class="headerlink" title="instanceof 操作符"></a>instanceof 操作符</h3><p>使用方法：</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 判断一个实例是否属于某种类型：</span>
+<span class="token keyword">let</span> <span class="token function-variable function">person</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> nicole <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">person</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+nicole <span class="token keyword">instanceof</span> <span class="token class-name">person</span><span class="token punctuation">;</span> <span class="token comment">// true</span>
+
+<span class="token comment">// 判断一个实例是否是其父类型或者祖先类型的实例</span>
+<span class="token keyword">let</span> <span class="token function-variable function">person</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> <span class="token function-variable function">programmer</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+programmer<span class="token punctuation">.</span>prototype <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">person</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> nicole <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">programmer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+nicole <span class="token keyword">instanceof</span> <span class="token class-name">person</span> <span class="token comment">// true</span>
+nicole <span class="token keyword">instanceof</span> <span class="token class-name">programmer</span> <span class="token comment">// true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>用法挺简单的，那么其底层实现原理是什么呢？根据 ECMAScript 语言规范，大概的思路如下：</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">new_instance_of</span><span class="token punctuation">(</span><span class="token parameter">leftVaule<span class="token punctuation">,</span> rightVaule</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> 
+  <span class="token keyword">let</span> rightProto <span class="token operator">=</span> rightVaule<span class="token punctuation">.</span>prototype<span class="token punctuation">;</span> <span class="token comment">// 取右表达式的 prototype 值</span>
+  leftVaule <span class="token operator">=</span> leftVaule<span class="token punctuation">.</span>__proto__<span class="token punctuation">;</span> <span class="token comment">// 取左表达式的__proto__值</span>
+  <span class="token comment">// 循环体一直循环，直到在 leftVaule 的原型链上找到 rightVaule；或者走到 leftVaule 原型链的尽头也还是找不到 rightVaule ，则退出循环</span>
+  <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>leftVaule <span class="token operator">===</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>	
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>leftVaule <span class="token operator">===</span> rightProto<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>	
+    <span class="token punctuation">&#125;</span> 
+    <span class="token comment">// 不用执行 rightVaule = rightVaule.__proto__ ，因为 rightVaule 就是要查找的对象</span>
+    leftVaule <span class="token operator">=</span> leftVaule<span class="token punctuation">.</span>__proto__ <span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>总而言之，<code>instanceof</code> 主要的实现原理就是只要右边变量的 <code>prototype</code> 在左边变量的原型链上即可。因此，要想理解 <code>instanceof</code> 的原理，就还必须熟悉 JavaScript 的原型继承原理，不太清楚的小伙伴可以浏览我的 <a href="https://hcyety.github.io/2022/01/03/yuan-xing-lian/">另一篇文章</a>。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a  href="/2021/12/06/js-zhi-shu-ju-lei-xing/">JS 之数据类型</a></p>
+        <p><span>文章作者:</span><a  href="/" title="访问  的个人博客"></a></p>
+        <p><span>发布时间:</span>2021年12月06日 - 13时16分</p>
+        <p><span>最后更新:</span>2022年01月09日 - 02时36分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2021/12/06/js-zhi-shu-ju-lei-xing/" title="JS 之数据类型">https://hcyety.github.io/2021/12/06/js-zhi-shu-ju-lei-xing/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://hcyety.github.io/2021/12/06/js-zhi-shu-ju-lei-xing/　　作者: " title=""></span>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a  href="/2021/12/14/js-zhi-shu-ju-lei-xing-zhuan-huan/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          JS 之数据类型转换
+        
+      </div>
+    </a>
+  
+  
+    <a  href="/2021/11/22/shu-zu-de-ge-chong-zeng-shan-cha-gai/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">数组的各种增删查改</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.</span> <span class="toc-text">数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E5%85%B1-7-%E7%A7%8D"><span class="toc-number">1.1.</span> <span class="toc-text">总共 7 种</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.2.</span> <span class="toc-text">基本数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E7%89%B9%E6%80%A7"><span class="toc-number">1.2.1.</span> <span class="toc-text">基本数据类型的特性</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%95%E7%94%A8%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.3.</span> <span class="toc-text">引用数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%95%E7%94%A8%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E7%89%B9%E6%80%A7"><span class="toc-number">1.3.1.</span> <span class="toc-text">引用数据类型的特性</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A4%E6%96%AD%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-number">2.</span> <span class="toc-text">判断数据类型的方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#typeof-%E6%93%8D%E4%BD%9C%E7%AC%A6"><span class="toc-number">2.1.</span> <span class="toc-text">typeof 操作符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#instanceof-%E6%93%8D%E4%BD%9C%E7%AC%A6"><span class="toc-number">2.2.</span> <span class="toc-text">instanceof 操作符</span></a></li></ol></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+        <section class="changyan" id="comments">
+  <!--<div id="uyan_frame"></div>-->
+  <div id="SOHUCS"></div>
+  <script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js"></script>
+  <script type="text/javascript">
+    window.changyan.api.config({
+      appid: 'xxxx',
+      conf: 'xxxxxxxxx'
+    });
+  </script>
+</section>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a  href="/2021/12/14/js-zhi-shu-ju-lei-xing-zhuan-huan/" title="上一篇: JS 之数据类型转换">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a  href="/2021/11/22/shu-zu-de-ge-chong-zeng-shan-cha-gai/" title="下一篇: 数组的各种增删查改">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2022/03/13/bei-zhan-qian-duan-shi-xi-mian-shi/">备战大厂前端实习</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/03/08/bei-zhan-qian-duan-shi-xi-mian-shi-zhi-javascript-pian/">备战大厂前端实习之浏览器篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/03/08/bei-zhan-qian-duan-shi-xi-mian-shi-zhi-css-pian/">备战大厂前端实习之CSS篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/03/08/bei-zhan-da-han-qian-duan-shi-xi/">备战大厂前端实习之代码输出结果篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/03/08/bei-zhan-qian-duan-shi-xi-mian-shi-zhi-html-pian/">备战前端实习面试之HTML篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/01/22/qian-duan-bi-xu-zhi-dao-de-kai-fa-diao-shi-zhi-shi/">前端必须知道的开发调试知识</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/01/22/css3-xin-te-xing/">CSS3 新特性</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/01/11/css-he-mo-xing/">CSS 盒模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/01/11/css-xuan-ze-qi/">CSS 选择器</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/01/10/js-zhi-nei-cun-guan-li/">JS 之内存管理</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/01/09/shi-me-shi-bi-bao/">什么是闭包</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/01/08/tcp-de-liu-liang-kong-zhi-ji-zhi/">TCP 的流量控制机制</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/01/06/tcp-de-yun-shu-lian-jie-guan-li/">TCP 的运输连接管理</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/01/05/zhi-xing-shang-xia-wen/">执行上下文</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/01/04/yuan-xing-lian-de-ji-cheng/">原型链的继承</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/01/03/yuan-xing-lian/">原型链</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/12/27/var-let-const-de-qu-bie-shi-yong/">var let const 的区别使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/12/23/js-zhi-zuo-yong-yu/">JS 之作用域</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/12/21/bu-shu-fu-wu-qi-yong-dao-de-linux-ming-ling/">操作服务器用到的 Linux 命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/12/18/js-zhi-jing-du-diu-shi/">JS 之精度丢失</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/12/14/js-zhi-shu-ju-lei-xing-zhuan-huan/">JS 之数据类型转换</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/12/06/js-zhi-shu-ju-lei-xing/">JS 之数据类型</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/11/22/shu-zu-de-ge-chong-zeng-shan-cha-gai/">数组的各种增删查改</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/11/15/settimeout-yu-setinterval-de-qu-bie/">setTimeout() 与 setInterval() 的区别</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/11/08/tell-it-to-myself/">tell it to myself</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/11/02/xiang-mu-zhi-deng-lu-zhu-ce-mo-kuai/">项目之登录/注册模块</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/11/02/react-ts-xiang-mu-zai-xian-bian-cheng-bi-shi-ping-tai/">React-Ts 项目：在线编程笔试平台</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/11/01/qian-hou-duan-fen-chi-xiang-mu-xian-shang-bu-shu/">前后端分离项目线上部署</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/10/31/error-zhi-bu-shu-fu-wu-qi-pian/">ERROR 之部署服务器篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/10/31/begin-myfist-blog/">Begin: myfist blog</a></li></ul>
+    
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+    <script>
+        $(".post-list").addClass("toc-article");
+        // $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#toc, .switch-btn, .switch-area").toggle();
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+                $(".switch-btn, .switch-area").fadeToggle(300);
+            }
+        })
+    </script>
+
+
+
+
+    <script>
+        
+    </script>
+
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2022 hcyety
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo &nbsp;&nbsp;</a><a href="https://github.com/maochunguang" target="_blank">Blog</a> by tommy
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >极客到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 1;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'xxxxx', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?xxxxxx";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+</html>
