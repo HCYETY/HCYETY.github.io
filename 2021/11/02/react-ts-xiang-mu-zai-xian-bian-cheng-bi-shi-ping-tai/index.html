@@ -622,14 +622,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    905
+                    1.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    5 分
                 </div>
                 
 
@@ -656,21 +656,22 @@
 <blockquote>
 <p>需要事先说明的是，关于这个项目的博客，博主并不打算讲解代码实现，每个人的项目用到的技术栈不尽相同，但有一点可以确定，就是项目功能点的实现逻辑是大致相同的，故博主会更多地讲解各模块/功能点的逻辑实现 ^_^</p>
 </blockquote>
-<h2 id="项目概述"><a href="#项目概述" class="headerlink" title="项目概述"></a>项目概述</h2><p>该项目是一个在线编程笔试平台。<br>主要功能是面试官①编辑（可新增、修改、删除）试卷和试题【一张试卷有多道试题】；②查看候选人编程结果并给予评分和备注等信息。候选人①在线完成代码编写并提交；②根据面试官设定的查看权限，决定能否查看已提交或已结束的试题。<br>该项目包含了前端和后端两种技术栈，前端采用的是 React ，后端采用的是 NodeJs ，整个项目为前后端分离项目。</p>
+<h2 id="项目介绍"><a href="#项目介绍" class="headerlink" title="项目介绍"></a>项目介绍</h2><p>这是一个前后端分离项目：在线编程笔试平台。按照用户角色分为两部分，分别是面试官侧和候选人侧，主要功能是候选人在线完成代码编写，面试官可查看编程结果。</p>
 <h2 id="项目任务拆解"><a href="#项目任务拆解" class="headerlink" title="项目任务拆解"></a>项目任务拆解</h2><ol>
 <li>登录/注册模块</li>
 </ol>
 <ul>
 <li>支持邮箱登录和注册</li>
-<li>支持退出登录</li>
+<li>支持“退出登录”功能</li>
 </ul>
 <ol start="2">
 <li>面试题模块</li>
 </ol>
 <ul>
-<li>面试官可填写试卷和面试题</li>
-<li>支持新建、修改、删除试卷和面试题目</li>
-<li>支持邀请多个候选人编程</li>
+<li>面试官可填写面试题</li>
+<li>每个面试题有固定链接</li>
+<li>支持新建面试题和修改面试题目</li>
+<li>支持邀请一个候选人编程</li>
 <li>面试题目支持富文本格式</li>
 </ul>
 <ol start="3">
@@ -678,50 +679,69 @@
 </ol>
 <ul>
 <li>候选人可在线编写代码</li>
-<li>代码支持多种语言高亮</li>
-<li>候选人侧可提交最终编程代码</li>
-<li>面试官侧刷新能看到最终代码</li>
+<li>代码支持多种语言高亮 111</li>
+<li>候选人侧提交最终编程代码 111</li>
+<li>面试官侧刷新能看到最终代码 111</li>
 </ul>
 <ol start="4">
-<li>在线留言模块</li>
-</ol>
-<ul>
-<li>候选人可以通过文字给面试官留言</li>
-<li>面试官可以回复</li>
-<li>留言内容长期保存</li>
-<li>留言模块自动刷新</li>
-</ul>
-<ol start="5">
 <li>在线编程模块支持自动刷新</li>
 </ol>
 <ul>
 <li>候选人侧代码支持自动保存</li>
 <li>面试官侧代码自动刷新</li>
 </ul>
-<ol start="6">
-<li>在线留言模块改成实时文字聊天</li>
+<ol start="5">
+<li>实时文字聊天模块</li>
 </ol>
 <ul>
 <li>候选人和面试官可实时文字聊天</li>
-<li>其他获得链接的人都可参与文字聊天</li>
+<li>其他获得连接的人都可参与文字聊天</li>
 </ul>
-<ol start="7">
+<ol start="6">
 <li>在线语音聊天模块</li>
 </ol>
 <ul>
 <li>候选人和面试官可实时语音聊天</li>
 </ul>
-<ol start="8">
+<ol start="7">
 <li>在线编程模块支持运行JS代码</li>
 </ol>
 <ul>
 <li>候选人和面试官可在线运行 JS 代码并查看输出</li>
 </ul>
-<ol start="9">
-<li> 在线编程模块支持协同编辑</li>
+<ol start="8">
+<li>在线编程模块支持协同编辑</li>
 </ol>
 <ul>
-<li>候选人和面试官可实时协作编程<h2 id="项目进度"><a href="#项目进度" class="headerlink" title="项目进度"></a>项目进度</h2></li>
+<li>候选人和面试官可实时协作编程</li>
+</ul>
+<ol start="9">
+<li>视频聊天模块</li>
+</ol>
+<ul>
+<li>候选人和面试官可实时视频聊天<h2 id="技术栈"><a href="#技术栈" class="headerlink" title="技术栈"></a>技术栈</h2>前端：React + TypeScript ，后端：Node.js + MySQL + Koa 。<h2 id="项目实现"><a href="#项目实现" class="headerlink" title="项目实现"></a>项目实现</h2></li>
+<li>  为了实现登录/注册模块，使用 Cookie 验证用户信息、localStorage 保存登录态、nodemailer 发送验证码邮件至用户邮箱、登录或注册按钮设置防抖，实现了登录、注册、忘记密码和15天内免登陆功能。</li>
+<li>  为了实现创建面试题模块，使用 Ant Design 完成 UI 设计、wangEditor  支持面试官编辑面试题、在修改信息时调用后端接口以获取数据进行初始化、nodemailer 发送邮件告知候选人试卷信息，使面试官能进行试卷和试题的增删查改，以及邮件通知当事人试卷信息。</li>
+<li>  为了实现在线编程模块，使用 react-monaco-editor 支持候选人编辑代码并提交、filter api 完成试题的多次筛选，实现了编程功能。</li>
+<li>  为了实现实时文字聊天模块，使用 WebSocket 监听客户端和服务端的聊天信息，后端接受处理后响应给前端，使候选人和面试官能进行实时文字交流。</li>
+<li>  为了快速完成项目部署，前端使用 scp 连接服务器并上传文件到服务器 nginx 下的指定目录，后端使用 fs 读写本地文件、node-ssh 连接服务器并将指定文件上传到 tomcat 下的指定目录、运行本地编写的 deploy.sh 脚本启动后端服务、并用 pm2 实时监控，以此实现了项目的自动化部署。<h2 id="可拓展点"><a href="#可拓展点" class="headerlink" title="可拓展点"></a>可拓展点</h2></li>
+<li>  性能优化。</li>
+<li>  用户能提供试题题解，支持评论。</li>
+<li>  实现语言国际化，支持多种语言切换。</li>
+<li>  完善安全措施，能防止 xss 、csrf 等网络攻击。</li>
+<li>  用户数据图形化，直观展示用户做题量、通过率等信息。</li>
+<li>  实现视频和语音聊天模块，支持实时视频通话和语音聊天。</li>
+</ul>
+<h2 id="项目亮点（目前只实现了第一点）"><a href="#项目亮点（目前只实现了第一点）" class="headerlink" title="项目亮点（目前只实现了第一点）"></a>项目亮点（目前只实现了第一点）</h2><ol>
+<li>实现自动化部署</li>
+<li>支持运行 JS 代码</li>
+<li>解决编辑冲突</li>
+<li>支持文字、语音、视频聊天</li>
+<li>性能优化</li>
+<li>支持国际化</li>
+<li>适配移动端<h2 id="项目进度"><a href="#项目进度" class="headerlink" title="项目进度"></a>项目进度</h2></li>
+</ol>
+<ul>
 <li><input checked="" disabled="" type="checkbox"> 2021/09/04：实现登录/注册的静态页面</li>
 <li><input checked="" disabled="" type="checkbox"> 2021/09/19：实现登录/注册逻辑（包括账号密码登录、登录拦截，session 身份验证）</li>
 <li><input checked="" disabled="" type="checkbox"> 2021/09/29：初步部署前后端项目到阿里云服务器</li>
@@ -731,9 +751,23 @@
 <li><input checked="" disabled="" type="checkbox"> 2021/10/23：初步完成面试题模块（包含“修改试卷”）</li>
 <li><input checked="" disabled="" type="checkbox"> 2021/10/30：初步完成在线编程模块</li>
 <li><input checked="" disabled="" type="checkbox"> 2021/10/31：搭建个人博客</li>
-<li><input checked="" disabled="" type="checkbox"> 2021/11/02：记录项目从开始到现在的一系列笔记</li>
+<li><input checked="" disabled="" type="checkbox"> 2021/11/02：记录项目从开始到现在的一系列笔记<h2 id="项目展示"><a href="#项目展示" class="headerlink" title="项目展示"></a>项目展示</h2><h3 id="PC-端"><a href="#PC-端" class="headerlink" title="PC 端"></a>PC 端</h3></li>
 </ul>
-<h2 id="项目笔记"><a href="#项目笔记" class="headerlink" title="项目笔记"></a>项目笔记</h2><ol>
+<ol>
+<li>登录/注册<br><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0cfdc5d4a8c4499bb4b61c079a472efc~tplv-k3u1fbpfcp-zoom-1.image" alt="登录界面"><br><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/861c4674ea42445c8e03a5833ae1668d~tplv-k3u1fbpfcp-zoom-1.image" alt="注册界面"><h4 id="面试官侧"><a href="#面试官侧" class="headerlink" title="面试官侧"></a>面试官侧</h4></li>
+<li>试题管理<br><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/52886536520b41448e775b477e96582e~tplv-k3u1fbpfcp-zoom-1.image" alt="试卷展示"><br><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/3a4e1f09467942778499873449cd7da5~tplv-k3u1fbpfcp-zoom-1.image" alt="添加试题之试卷信息"><br><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7ead02f50b73402cb6cd1dfe4bf0604e~tplv-k3u1fbpfcp-zoom-1.image" alt="添加试题之试题信息"><br><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/5c9e8cac0462483cb873ada635b1a614~tplv-k3u1fbpfcp-zoom-1.image" alt="修改试卷1"><br><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/112c4560c1264156a071bb2b14e9dbdd~tplv-k3u1fbpfcp-zoom-1.image" alt="修改试卷2"></li>
+<li>阅卷管理<br><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0ddf77041ab8406391ce4fe51b6a8f33~tplv-k3u1fbpfcp-zoom-1.image" alt="试卷展示"><br><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/bf43ca6e4c104112a23d6fe1a3822cbc~tplv-k3u1fbpfcp-zoom-1.image" alt="试卷详细信息之1"><br><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ffabbd4d5e8e4cfd99e4a4236d552c41~tplv-k3u1fbpfcp-zoom-1.image" alt="试卷详细信息之2"><br><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/5317d1a2c34d4a1389ebbf5759c7872a~tplv-k3u1fbpfcp-zoom-1.image" alt="试卷详细信息之3"><br><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0ed582f546a24485b3b0b0d464136f21~tplv-k3u1fbpfcp-zoom-1.image" alt="批阅试卷"></li>
+<li>面试间管理<br><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/58382121b13e4b859e2940cd0dde6198~tplv-k3u1fbpfcp-zoom-1.image" alt="面试间信息展示"><br><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/57acd164b15749d7887082c0f073e33d~tplv-k3u1fbpfcp-zoom-1.image" alt="添加面试间"></li>
+<li>面试间入口<br><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/edca450ad7c8435fbf37d679332305dc~tplv-k3u1fbpfcp-zoom-1.image" alt="进入面试间"><h4 id="候选人侧"><a href="#候选人侧" class="headerlink" title="候选人侧"></a>候选人侧</h4><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/9dbdb188dff346779348aa6beb7fe66c~tplv-k3u1fbpfcp-zoom-1.image" alt="查看试卷"><br><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/c275d45505424420b3509472543ea407~tplv-k3u1fbpfcp-zoom-1.image" alt="面试间入口"><br><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/3910385a1081432197dc0a82883279c7~tplv-k3u1fbpfcp-zoom-1.image" alt="面试间展示"></li>
+</ol>
+<h2 id="项目地址"><a href="#项目地址" class="headerlink" title="项目地址"></a>项目地址</h2><p>GitHub 前端仓库地址：<a target="_blank" rel="noopener" href="https://github.com/HCYETY/react-ts-coding_web">https://github.com/HCYETY/react-ts-coding_web</a></p>
+<p>GitHub 后端仓库地址：<a target="_blank" rel="noopener" href="https://github.com/HCYETY/node-mysql-coding_serve">https://github.com/HCYETY/node-mysql-coding_serve</a></p>
+<p>项目演示地址：<a target="_blank" rel="noopener" href="http://www.syandeg.com/">http://www.syandeg.com</a></p>
+<h2 id="写在后面"><a href="#写在后面" class="headerlink" title="写在后面"></a>写在后面</h2><p>这个项目是笔者的第一个实习项目，前后端均由笔者独立完成，花费了很多时间和精力，读者觉得不错的话不妨给个<code>star</code>支持一下呀，不胜感激~ ^_^</p>
+<p>这个项目笔者打算继续完善并维护下去，将它做大起来，如果有读者感兴趣该项目，<strong>想参与实现某个功能</strong>，<strong>或者有什么好的想法</strong>，也可以在评论区留言或者在 Github 上提 issue 等等，笔者看到的话会及时回复哒，<strong>先谢谢大家的支持啦</strong>！</p>
+<p>另外针对本项目，后续会出相关文章介绍具体实现过程，大家也可以关注一下！</p>
+<p>在线编程笔试平台项目系列文章：</p>
+<ol>
 <li><a href="https://hcyety.github.io/2021/10/31/error-zhi-bu-shu-fu-wu-qi-pian/">ERROR 之部署服务器篇</a></li>
 <li><a href="https://hcyety.github.io/2021/11/01/qian-hou-duan-fen-chi-xiang-mu-xian-shang-bu-shu/">前后端分离项目线上部署</a></li>
 <li><a href="https://hcyety.github.io/2021/11/02/xiang-mu-zhi-deng-lu-zhu-ce-mo-kuai/">项目之登录/注册模块</a></li>
@@ -1301,7 +1335,7 @@
 
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">56.7k</span>&nbsp;字
+                class="white-color">59.9k</span>&nbsp;字
             
             
             

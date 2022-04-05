@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://hcyety.github.io/2022/01/06/tcp-de-yun-shu-lian-jie-guan-li/</loc>
-    <lastmod>2022-03-28</lastmod>
+    <loc>https://hcyety.github.io/2021/11/02/react-ts-xiang-mu-zai-xian-bian-cheng-bi-shi-ping-tai/</loc>
+    <lastmod>2022-04-05</lastmod>
   </url>
   <url>
-    <loc>https://hcyety.github.io/2021/11/02/react-ts-xiang-mu-zai-xian-bian-cheng-bi-shi-ping-tai/</loc>
-    <lastmod>2022-03-20</lastmod>
+    <loc>https://hcyety.github.io/2022/04/05/shen-ru-tan-jiu-zai-liu-lan-qi-shu-ru-url-dao-xuan-ran-ye-mian-shang-guo-cheng-pou-xi/</loc>
+    <lastmod>2022-04-05</lastmod>
+  </url>
+  <url>
+    <loc>https://hcyety.github.io/2022/03/08/bei-zhan-da-han-qian-duan-shi-xi-zhi-html-pian/</loc>
+    <lastmod>2022-04-05</lastmod>
+  </url>
+  <url>
+    <loc>https://hcyety.github.io/2022/01/06/tcp-de-yun-shu-lian-jie-guan-li/</loc>
+    <lastmod>2022-03-28</lastmod>
   </url>
   <url>
     <loc>https://hcyety.github.io/2022/01/08/tcp-de-liu-liang-kong-zhi-ji-zhi/</loc>
@@ -17,28 +25,8 @@
     <lastmod>2022-03-20</lastmod>
   </url>
   <url>
-    <loc>https://hcyety.github.io/2022/03/08/bei-zhan-da-han-qian-duan-shi-xi/</loc>
-    <lastmod>2022-03-17</lastmod>
-  </url>
-  <url>
-    <loc>https://hcyety.github.io/2022/03/08/bei-zhan-qian-duan-shi-xi-mian-shi-zhi-css-pian/</loc>
-    <lastmod>2022-03-16</lastmod>
-  </url>
-  <url>
-    <loc>https://hcyety.github.io/2022/03/08/bei-zhan-qian-duan-shi-xi-mian-shi-zhi-javascript-pian/</loc>
-    <lastmod>2022-03-15</lastmod>
-  </url>
-  <url>
-    <loc>https://hcyety.github.io/2022/03/13/bei-zhan-qian-duan-shi-xi-mian-shi/</loc>
-    <lastmod>2022-03-13</lastmod>
-  </url>
-  <url>
     <loc>https://hcyety.github.io/2021/12/14/js-zhi-shu-ju-lei-xing-zhuan-huan/</loc>
     <lastmod>2022-03-09</lastmod>
-  </url>
-  <url>
-    <loc>https://hcyety.github.io/2022/03/08/bei-zhan-qian-duan-shi-xi-mian-shi-zhi-html-pian/</loc>
-    <lastmod>2022-03-08</lastmod>
   </url>
   <url>
     <loc>https://hcyety.github.io/2022/01/11/css-xuan-ze-qi/</loc>
