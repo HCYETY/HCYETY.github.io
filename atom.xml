@@ -6,7 +6,7 @@
   <link href="https://hcyety.github.io/atom.xml" rel="self"/>
   
   <link href="https://hcyety.github.io/"/>
-  <updated>2022-04-29T15:21:00.765Z</updated>
+  <updated>2022-04-29T15:28:46.021Z</updated>
   <id>https://hcyety.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>深入探究“在浏览器输入URL到渲染页面”（中）性能优化</title>
+    <link href="https://hcyety.github.io/2022/04/29/shen-ru-tan-jiu-zai-liu-lan-qi-shu-ru-url-dao-xuan-ran-ye-mian-zhong-xing-neng-you-hua/"/>
+    <id>https://hcyety.github.io/2022/04/29/shen-ru-tan-jiu-zai-liu-lan-qi-shu-ru-url-dao-xuan-ran-ye-mian-zhong-xing-neng-you-hua/</id>
+    <published>2022-04-29T15:25:46.000Z</published>
+    <updated>2022-04-29T15:28:46.021Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;关于这道经典的面试题，笔者准备写三篇文章来对知识点进行深度和广度的挖掘：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="计算机网络" scheme="https://hcyety.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+    
+    <category term="面试" scheme="https://hcyety.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+    <category term="八股文" scheme="https://hcyety.github.io/tags/%E5%85%AB%E8%82%A1%E6%96%87/"/>
+    
+  </entry>
   
   <entry>
     <title>近期安排*一点感想</title>
@@ -47,7 +76,7 @@
     <link href="https://hcyety.github.io/2022/04/05/shen-ru-tan-jiu-zai-liu-lan-qi-shu-ru-url-dao-xuan-ran-ye-mian-shang-guo-cheng-pou-xi/"/>
     <id>https://hcyety.github.io/2022/04/05/shen-ru-tan-jiu-zai-liu-lan-qi-shu-ru-url-dao-xuan-ran-ye-mian-shang-guo-cheng-pou-xi/</id>
     <published>2022-04-05T05:42:45.000Z</published>
-    <updated>2022-04-29T13:56:37.241Z</updated>
+    <updated>2022-04-29T15:29:43.489Z</updated>
     
     
       
@@ -507,31 +536,6 @@
         
         
     <summary type="html">&lt;h2 id=&quot;浮点数的运算&quot;&gt;&lt;a href=&quot;#浮点数的运算&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="JavaScript" scheme="https://hcyety.github.io/categories/JavaScript/"/>
-    
-    
-    <category term="面试" scheme="https://hcyety.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JS 之数据类型转换</title>
-    <link href="https://hcyety.github.io/2021/12/14/js-zhi-shu-ju-lei-xing-zhuan-huan/"/>
-    <id>https://hcyety.github.io/2021/12/14/js-zhi-shu-ju-lei-xing-zhuan-huan/</id>
-    <published>2021-12-13T18:24:40.000Z</published>
-    <updated>2022-03-09T07:27:33.858Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;显式数据类型转化&quot;&gt;&lt;a href=&quot;#显式数据类型转化&quot; class=&quot;headerlink&quot; title=&quot;显式数据类型转化&quot;&gt;&lt;/a&gt;显式数据类型转化&lt;/h2&gt;&lt;p&gt;ES6 前，JavaScript</summary>
         
       
     
