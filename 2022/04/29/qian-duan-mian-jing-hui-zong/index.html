@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="CSS 盒模型, hcyety&#39;s blog">
+    <meta name="keywords" content="前端面经汇总, hcyety&#39;s blog">
     <meta name="description" content="诗和远方，我向往的；自在独行，我渴望的">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>CSS 盒模型 | hcyety&#39;s blog</title>
+    <title>前端面经汇总 | hcyety&#39;s blog</title>
     <link rel="icon" type="image/png" href="/medias/logo.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -464,12 +464,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">CSS 盒模型</h1>
+                    <h1 class="description center-align post-title">前端面经汇总</h1>
                 </div>
             </div>
         </div>
@@ -585,8 +585,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E9%9D%A2%E8%AF%95/">
-                                <span class="chip bg-color">面试</span>
+                            <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                                <span class="chip bg-color">前端</span>
+                            </a>
+                        
+                            <a href="/tags/%E9%9D%A2%E7%BB%8F/">
+                                <span class="chip bg-color">面经</span>
                             </a>
                         
                     </div>
@@ -597,8 +601,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/CSS/" class="post-category">
-                                CSS
+                            <a href="/categories/%E6%B1%82%E8%81%8C/" class="post-category">
+                                求职
                             </a>
                         
                     </div>
@@ -610,7 +614,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-01-11
+                    2022-04-29
                 </div>
                 
 
@@ -619,14 +623,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.5k
+                    677
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    2 分
                 </div>
                 
 
@@ -654,86 +658,165 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p>盒模型又称框模型（Box Model），包含了元素内容（content）、内边距（padding）、边框（border）、外边距（margin）几个要素。它有两种分类，分别是<strong>标准模型</strong>和 <strong>IE 模型</strong>。</p>
-<h2 id="标准模型和-IE-模型的区别"><a href="#标准模型和-IE-模型的区别" class="headerlink" title="标准模型和 IE 模型的区别"></a>标准模型和 IE 模型的区别</h2><p>IE模型和标准模型唯一的区别是内容计算方式的不同：</p>
-<ul>
-<li>IE 模型元素宽度 <code>width = content + padding + border</code> ，高度计算相同</li>
-<li>标准模型元素宽度 <code>width = content</code> ，高度计算相同</li>
-</ul>
-<p>通过两幅图可以直观了解到区别所在：<br><img src="https://s4.ax1x.com/2022/01/11/7mF13T.png" alt="IE 模型"><br><img src="https://s4.ax1x.com/2022/01/11/7mFlCV.png" alt="标准模型"></p>
-<h2 id="一个问题"><a href="#一个问题" class="headerlink" title="一个问题"></a>一个问题</h2><p>盒模型分为两种，那么问题来了，是什么因素让浏览器决定使用哪一种盒模型来渲染页面呢？<br>有两种解决方案：</p>
-<ul>
-<li>编写 html 文件时，我们可以在其头部第一行看见这样的代码 <code>&lt;!DOCTYPE html &gt;</code> ，这个是文档类型声明，只要浏览器看到这行代码就会用标准盒模型来渲染页面；如果没有这行代码，各个浏览器就会按照自己的标准去使用不同的盒模型来渲染。</li>
-<li>通过文档声明的方式来渲染可以实现我们的目的，但是很被动。CSS3 给出了一种解决方法：<code>box-sizing</code> ，通过设置这个属性，就可以指定某种盒模型来渲染页面。<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2>通过 css3 新增的属性 <code>box-sizing: content-box | border-box |  inherit</code> 分别设置盒模型为<strong>标准模型（content-box）</strong> 和 <strong>IE 模型（border-box）</strong>。</li>
-<li>content-box：盒子宽高是 <code>content(内容)</code> 的宽高  </li>
-<li>border-box：盒子宽高是 <code>border + padding + content</code> 的宽高。</li>
-<li>inherit：规定应从父元素继承 <code>box-sizing</code> 属性的值。<h2 id="BFC"><a href="#BFC" class="headerlink" title="BFC"></a>BFC</h2></li>
-</ul>
+                <h1 id="陆一柒科技有限公司"><a href="#陆一柒科技有限公司" class="headerlink" title="陆一柒科技有限公司"></a>陆一柒科技有限公司</h1><p>2022.03.08 16:00~16:25 –&gt; 答案传送门</p>
 <ol>
-<li>在解释什么是BFC之前，我们需要先知道Box、Formatting Context的概念：</li>
-</ol>
-<ul>
-<li>Formatting Context<br>它是页面中的一块渲染区域，并且有一套渲染规则，它决定了其子元素将如何定位，以及和其他元素的关系和相互作用。最常见的 Formatting context 有 Block fomatting context (简称BFC)和 Inline formatting context (简称IFC)。</li>
-<li>Box：css布局的基本单位<br>直观点来说，就是一个页面是由很多个 Box 组成的。元素的类型和 display 属性，决定了这个 Box 的类型。 不同类型的 Box， 会参与不同的 Formatting Context（一个决定如何渲染文档的容器），因此Box内的元素会以不同的方式渲染。有三种盒子：<ul>
-<li>block-level box：display 属性为 block, list-item, table 的元素，会生成 block-level box。并且参与 block fomatting context；</li>
-<li>inline-level box：display 属性为 inline, inline-block, inline-table 的元素，会生成 inline-level box。并且参与 inline formatting context；</li>
-<li>run-in box: css3 中才有</li>
-</ul>
+<li><p>自我介绍</p>
 </li>
-</ul>
-<ol start="2">
-<li>BFC(Block formatting context)直译为”块级格式化上下文”。它是一个独立的渲染区域，只有Block-level box参与， 它规定了内部的Block-level Box如何布局，并且与这个区域外部毫不相干，并且在一个BFC中，块盒与行盒（行盒由一行中所有的内联元素所组成）都会垂直的沿着其父元素的边框排列。</li>
-<li>BFC的布局规则</li>
-</ol>
-<ul>
-<li>内部的Box会在垂直方向，一个接一个地放置。</li>
-<li>Box垂直方向的距离由margin决定。属于同一个BFC的两个相邻Box的margin会发生重叠</li>
-<li>每个元素的margin box的左边， 与包含块border box的左边相接触(对于从左往右的格式化，否则相反)。即使存在浮动也是如 此。</li>
-<li>BFC的区域不会与float box重叠。</li>
-<li>BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。反之也如此。</li>
-<li>计算BFC的高度时，浮动元素也参与计算</li>
-</ul>
-<ol start="4">
-<li>如何创建BFC<ul>
-<li>根元素或包含根元素的元素，如<code>&lt;html&gt;</code></li>
-<li> 浮动元素（元素的 float 不是 none）</li>
-<li> 绝对定位元素（元素的 position 为 absolute 或 fixed）</li>
-<li> 行内块元素（元素的 display 为 inline-block）</li>
-<li> 表格单元格（元素的 display为 table-cell，HTML表格单元格默认为该值）</li>
-<li> 表格标题（元素的 display 为 table-caption，HTML表格标题默认为该值）</li>
-<li> 匿名表格单元格元素【元素的 display为 table、table-row、 table-row-group、table-header-group、table-footer-group（分别是HTML table、row、tbody、thead、tfoot的默认属性）或 inline-table】</li>
-<li>  overflow 值不为 visible 的块元素</li>
-<li>  display 值为 <a target="_blank" rel="noopener" href="https://drafts.csswg.org/css-display/#valdef-display-flow-root">flow-root</a> 的元素</li>
-<li>  contain 值为 layout、content或 strict 的元素</li>
-<li> 弹性元素（display为 flex 或 inline-flex元素的直接子元素）</li>
-<li> 网格元素（display为 grid 或 inline-grid 元素的直接子元素）</li>
-<li> 多列容器（元素的 column-count 或 column-width 不为 auto，包括 column-count 为 1）</li>
-<li>  column-span 为 all 的元素始终会创建一个新的BFC，即使该元素没有包裹在一个多列容器中（标准变更，Chrome bug）。</li>
-</ul>
+<li><p>详细介绍项目</p>
 </li>
-<li>BFC的作用<ul>
-<li>利用BFC避免margin重叠。</li>
-<li>阻止元素被浮动元素覆盖 -&gt; 可应用于自适应两栏布局（避免右侧与左侧发生重叠)</li>
-<li>清除浮动<br>当我们不给父节点设置高度，子节点设置浮动的时候，会发生高度塌陷，这个时候我们就要清除浮动。这个时候我们根据最后一条规则：计算BFC的高度时，浮动元素也参与计算。于是给父节点激活BFC</li>
-</ul>
+<li><p>项目的难点、挑战，怎么解决</p>
 </li>
-<li>举个栗子</li>
+<li><p>html 常用的标签</p>
+</li>
+<li><p>css 有哪些选择器</p>
+</li>
+<li><p>js 的数据类型，怎么判断</p>
+</li>
+<li><p>instanceof 和 typeof 区别</p>
+</li>
+<li><p>为什么选择 react </p>
+</li>
+<li><p>数组和链表的作用，区别</p>
+</li>
+<li><p>翻转链表</p>
+</li>
+<li><p>了解哪些排序，介绍一种常用的</p>
+</li>
 </ol>
-<p>页面布局如下：</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>left<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>right<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>页面样式如下：</p>
-<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">.left</span> <span class="token punctuation">&#123;</span>
-  <span class="token property">float</span><span class="token punctuation">:</span> left<span class="token punctuation">;</span>
-  <span class="token property">width</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
-  <span class="token property">height</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
-  <span class="token property">background</span><span class="token punctuation">:</span> skyblue<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-<span class="token selector">.right</span> <span class="token punctuation">&#123;</span>
-  <span class="token property">height</span><span class="token punctuation">:</span> 150px<span class="token punctuation">;</span>
-  <span class="token property">background</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>页面效果如图：<img src="https://s4.ax1x.com/2022/01/11/7ms2ef.png" alt="未设置 BFC 之前"><br>我们看到图片中蓝色块因为浮动叠在了绿色块上面，如果我们的需求是不让这两者发生重叠，解决方法可以是对绿色块启动 BFC ，即在 .right 元素中添加 <code>overflow:hidden</code> （其他启动 BFC 的样式也可），这时就可以看到效果如图：<img src="https://s4.ax1x.com/2022/01/11/7myT4e.png" alt="设置 BFC 之后"></p>
+<hr>
+<h1 id="数预智能"><a href="#数预智能" class="headerlink" title="数预智能"></a>数预智能</h1><p>2022.04.22 18:30~19:00 –&gt; 答案传送门</p>
+<ol>
+<li><p>语音聊天功能怎么实现</p>
+</li>
+<li><p>websocket 是怎么做的</p>
+</li>
+<li><p>项目难点</p>
+</li>
+<li><p>技术使用时卡点</p>
+</li>
+<li><p>闭包</p>
+</li>
+<li><p>promise 的好处</p>
+</li>
+<li><p>promise 解决了什么问题</p>
+</li>
+<li><p>js 数组方法</p>
+</li>
+<li><p>用 setTimeout 实现 setInterval</p>
+</li>
+<li><p>react hooks</p>
+</li>
+<li><p>url 输入到渲染</p>
+</li>
+</ol>
+<hr>
+<h1 id="货拉拉"><a href="#货拉拉" class="headerlink" title="货拉拉"></a>货拉拉</h1><p>2022.04.26 16:00 –&gt; 答案传送门</p>
+<ol>
+<li><p>介绍项目</p>
+</li>
+<li><p>登录密码有没有实现加密，怎么加密</p>
+</li>
+<li><p>项目难点以及怎么实现</p>
+</li>
+<li><p>说下 websocket</p>
+</li>
+<li><p>http 长连接和 websocket 连接有什么区别，为什么用 websocket</p>
+</li>
+<li><p>怎么用 http 实现：服务端知道客户端的连接状态</p>
+</li>
+<li><p>洋葱模型</p>
+</li>
+<li><p>express 和 koa 的区别</p>
+</li>
+<li><p>怎么实现跨域</p>
+</li>
+<li><p>setstate 是同步的还是异步的</p>
+</li>
+<li><p>setstate 的第一个参数是函数会怎么样</p>
+</li>
+<li><p>连续三个setstate，将count+1，最后count会变成几</p>
+</li>
+<li><p>介绍事件机制</p>
+</li>
+<li><p>说下 filber</p>
+</li>
+<li><p>React 有哪些生命周期</p>
+</li>
+<li><p>说下 shouldWillUpdate</p>
+</li>
+<li><p>虚拟 dom 是怎么对比的</p>
+</li>
+<li><p>如果有两个 dom 是一样的，但位置不一样，怎么处理</p>
+</li>
+<li><p>js 有哪些数据类型</p>
+</li>
+<li><p>引用数据类型和基本数据类型的区别</p>
+</li>
+<li><p>介绍堆这种数据结构</p>
+</li>
+<li><p>介绍完全二叉树</p>
+</li>
+<li><p>二叉树的深搜和广搜，怎么实现</p>
+</li>
+</ol>
+<hr>
+<h1 id="字节飞书文档"><a href="#字节飞书文档" class="headerlink" title="字节飞书文档"></a>字节飞书文档</h1><p>2022.04.27 16:00~16:50 –&gt; 答案传送门</p>
+<ol>
+<li><p>项目中如何运行 JS 代码</p>
+</li>
+<li><p>如果代码一直循环，代码怎么出结果</p>
+</li>
+<li><p>说下 websocket</p>
+</li>
+<li><p>聊天时支持传输图片吗</p>
+</li>
+<li><p>聊天数据是存到数据库的吗</p>
+</li>
+<li><p>算法题：二叉树路径和<br>给定一颗二叉树，返回所有路径的节点值相加后的结果，如：</p>
+<pre class="line-numbers language-none"><code class="language-none">   1
+  &#x2F; \
+ 2   3
+&#x2F; \  &#x2F;
+4 5 6<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>返回结果 (1+2+4)+(1+2+5)+(1+3+6)=25</p>
+</li>
+<li><p>算法题：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/valid-parentheses/">有效的括号</a></p>
+</li>
+<li><p>浏览器存储数据的方式</p>
+</li>
+<li><p>cookie 和 localStorage 的区别</p>
+</li>
+<li><p>cookie 的数据放到 localStorage ，有什么影响</p>
+</li>
+<li><p>防抖节流</p>
+</li>
+<li><p>React hooks</p>
+</li>
+<li><p>React 生命周期</p>
+</li>
+<li><p>垂直居中</p>
+</li>
+<li><p>http 状态码</p>
+</li>
+<li><p>304 代表什么</p>
+</li>
+<li><p>浏览器的缓存机制</p>
+</li>
+<li><p>怎么判断命中协商缓存</p>
+</li>
+<li><p>协商缓存返回什么标识</p>
+</li>
+<li><p>协商缓存的存储位置</p>
+</li>
+<li><p>memory 和 disk 的区别</p>
+</li>
+<li><p>什么是跨域</p>
+</li>
+<li><p>cors 怎么实现跨域</p>
+</li>
+<li><p>浏览器用 cors 去跨域，请求是一次还是两次</p>
+</li>
+</ol>
 
                 
             </div>
@@ -760,7 +843,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://hcyety.github.io/2022/01/11/css-he-mo-xing/">https://hcyety.github.io/2022/01/11/css-he-mo-xing/</a>
+                    <a href="https://hcyety.github.io/2022/04/29/qian-duan-mian-jing-hui-zong/">https://hcyety.github.io/2022/04/29/qian-duan-mian-jing-hui-zong/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -798,8 +881,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E9%9D%A2%E8%AF%95/">
-                                    <span class="chip bg-color">面试</span>
+                                <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                                    <span class="chip bg-color">前端</span>
+                                </a>
+                            
+                                <a href="/tags/%E9%9D%A2%E7%BB%8F/">
+                                    <span class="chip bg-color">面经</span>
                                 </a>
                             
                         </div>
@@ -1232,46 +1319,52 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/01/22/css3-xin-te-xing/">
+                <a href="/2022/04/29/qian-duan-mian-jing-hui-zong/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="CSS3 新特性">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="前端面经汇总">
                         
-                        <span class="card-title">CSS3 新特性</span>
+                        <span class="card-title">前端面经汇总</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            要面试了，整理下 CSS 新特性
+                            整理一直以来的前端面经，这篇是总纲
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-01-22
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-29
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/CSS/" class="post-category">
-                                    CSS
+                            <a href="/categories/%E6%B1%82%E8%81%8C/" class="post-category">
+                                    求职
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E9%9D%A2%E8%AF%95/">
-                        <span class="chip bg-color">面试</span>
+                    <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                        <span class="chip bg-color">前端</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%9D%A2%E7%BB%8F/">
+                        <span class="chip bg-color">面经</span>
                     </a>
                     
                 </div>
@@ -1285,31 +1378,31 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/01/11/css-xuan-ze-qi/">
+                <a href="/2022/04/29/shen-ru-tan-jiu-zai-liu-lan-qi-shu-ru-url-dao-xuan-ran-ye-mian-zhong-xing-neng-you-hua/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="CSS 选择器">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="深入探究“在浏览器输入URL到渲染页面”（中）性能优化">
                         
-                        <span class="card-title">CSS 选择器</span>
+                        <span class="card-title">深入探究“在浏览器输入URL到渲染页面”（中）性能优化</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            整理下 CSS 选择器方面的知识，方便面试前复习
+                            从这道经典的面试题入手前端的性能优化
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-11
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-29
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/CSS/" class="post-category">
-                                    CSS
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="post-category">
+                                    计算机网络
                                 </a>
                             
                             
@@ -1321,6 +1414,10 @@
                     
                     <a href="/tags/%E9%9D%A2%E8%AF%95/">
                         <span class="chip bg-color">面试</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%85%AB%E8%82%A1%E6%96%87/">
+                        <span class="chip bg-color">八股文</span>
                     </a>
                     
                 </div>

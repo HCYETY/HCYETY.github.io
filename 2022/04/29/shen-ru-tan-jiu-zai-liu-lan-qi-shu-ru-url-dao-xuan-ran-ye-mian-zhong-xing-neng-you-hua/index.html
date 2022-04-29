@@ -664,13 +664,13 @@
 <li>深入探究“在浏览器输入URL到渲染页面”（中）性能优化</li>
 <li><a href="">深入探究“在浏览器输入URL到渲染页面”（下）模拟面试</a></li>
 </ul>
-<h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><p>在 <a target="_blank" rel="noopener" href="https://juejin.cn/post/7081987410954813447">第一篇文章</a> 中写到，用户在输入 url 并回车之后，浏览器经历了下面这些阶段：重定向 → 拉取缓存 → DNS 查询 → 建立 TCP 连接 → 发起请求 → 接收响应 → 处理 html 元素 → 页面进行渲染。因此性能优化也可以从这几个阶段入手：</p>
+<h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><p>在 <a target="_blank" rel="noopener" href="https://juejin.cn/post/7081987410954813447">上一篇文章</a> 中写到，用户在输入 url 并回车之后，浏览器经历了下面这些阶段：<br>重定向 → 拉取缓存 → DNS 查询 → 建立 TCP 连接 → 发起请求 → 接收响应 → 处理 html 元素 → 页面进行渲染。<br>因此性能优化也可以从这几个阶段入手：</p>
 <ol>
-<li>网络请求过程<blockquote>
+<li>网络请求过程</li>
+</ol>
+<blockquote>
 <p><strong>减少请求数量</strong>：</p>
 </blockquote>
-</li>
-</ol>
 <ul>
 <li>永久重定向</li>
 <li>浏览器缓存</li>
@@ -678,10 +678,12 @@
 <li>合并文件</li>
 <li>使用雪碧图</li>
 <li>避免使用空的 src 和 href</li>
-<li>不使用CSS @import<blockquote>
+<li>不使用CSS @import</li>
+</ul>
+<blockquote>
 <p><strong>减小请求资源大小</strong>：</p>
 </blockquote>
-</li>
+<ul>
 <li>资源打包压缩<ul>
 <li>  js 压缩</li>
 <li>  html 压缩</li>
@@ -694,35 +696,41 @@
 <li>  不要在 html 里缩放图像</li>
 <li>  使用雪碧图（css sprite）</li>
 <li>  使用字体图标（iconfont）</li>
-<li>  使用 webp<blockquote>
-<p><strong>提升网络传输速率</strong>：</p>
-</blockquote>
-</li>
+<li>  使用 webp</li>
 </ul>
 </li>
+</ul>
+<blockquote>
+<p><strong>提升网络传输速率</strong>：</p>
+</blockquote>
+<ul>
 <li>使用 HTTP2</li>
 <li>  静态资源走 CDN 引入</li>
 </ul>
 <ol start="2">
-<li>浏览器渲染过程<blockquote>
+<li>浏览器渲染过程</li>
+</ol>
+<blockquote>
 <p><strong>资源加载位置</strong>：</p>
 </blockquote>
-</li>
-</ol>
 <ul>
 <li>css 文件放在 <code>&lt;head&gt;</code></li>
-<li>js 文件放在 <code>&lt;body&gt;</code> 底部<blockquote>
+<li>js 文件放在 <code>&lt;body&gt;</code> 底部</li>
+</ul>
+<blockquote>
 <p><strong>资源加载时机</strong>：</p>
 </blockquote>
-</li>
+<ul>
 <li>使用预加载机制</li>
 <li>异步 script 标签</li>
 <li>模块按需加载</li>
-<li>图片懒加载<blockquote>
+<li>图片懒加载</li>
+</ul>
+<blockquote>
 <p><strong>资源渲染过程</strong>：</p>
 </blockquote>
-</li>
-<li>  减少重排与重绘</li>
+<ul>
+<li>减少重排与重绘</li>
 <li>使用服务端渲染</li>
 </ul>
 <ol start="3">
@@ -758,7 +766,10 @@ Content-Type: text&#x2F;html<span aria-hidden="true" class="line-numbers-rows"><
 <h3 id="使用雪碧图"><a href="#使用雪碧图" class="headerlink" title="使用雪碧图"></a>使用雪碧图</h3><p><strong>原理</strong>：将网站上用到的一些图片整合到一张单独的图片中，从而减少请求图片的次数。</p>
 <p><strong>使用</strong>：</p>
 <ul>
-<li>合成雪碧图：<br>配置 webpack ：<code>webpack-spritesmith</code> 插件提供了自动合成雪碧图的功能并且可以自动生成对应的样式文件。<pre class="line-numbers language-none"><code class="language-none">var path &#x3D; require(&#39;path&#39;);
+<li>合成雪碧图：</li>
+</ul>
+<p>配置 webpack ：<code>webpack-spritesmith</code> 插件提供了自动合成雪碧图的功能并且可以自动生成对应的样式文件。</p>
+<pre class="line-numbers language-none"><code class="language-none">var path &#x3D; require(&#39;path&#39;);
 var SpritesmithPlugin &#x3D; require(&#39;webpack-spritesmith&#39;);
 
 module.exports &#x3D; &#123;
@@ -779,8 +790,8 @@ module.exports &#x3D; &#123;
     &#125;),
   ],
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-通过上面配置就能将 <code>img</code> 目录下的所有 <code>png</code> 文件合成雪碧图，并且输出到对应目录，同时还可以生成对应的样式文件，样式文件的语法会根据你配置的样式文件的后缀动态生成。</li>
-</ul>
+
+<p>通过上面配置就能将 <code>img</code> 目录下的所有 <code>png</code> 文件合成雪碧图，并且输出到对应目录，同时还可以生成对应的样式文件，样式文件的语法会根据你配置的样式文件的后缀动态生成。</p>
 <p>如果不使用 webpack 插件的话，也可以使用在线生成雪碧图的网站：<a target="_blank" rel="noopener" href="https://www.toptal.com/developers/css/sprite-generator">www.toptal.com/developers/</a></p>
 <ul>
 <li>使用雪碧图：<br>通过 <code>background-position</code> 属性来设置资源在雪碧图中的哪一个位置。</li>
@@ -830,8 +841,8 @@ module.exports &#x3D; &#123;
 <li><p>使用 tree-shaking 剔除未使用过的代码</p>
 </li>
 </ul>
-<p><strong>作用</strong>：**<code>tree shaking</code> 可以去除未引用代码，减少代码体积。**</p>
-<p><strong>使用</strong>：<br>在 <code>package.json</code> 中，添加字段：<strong>sideEffects: false</strong>，告诉 Webpack <strong>所有代码都没有副作用（都可以进行tree shaking）</strong>，然后再根据不同的环境进行不同的配置。</p>
+<p><strong>作用</strong>：**<code>tree shaking</code> 可以去除未引用代码，减少代码体积**。</p>
+<p><strong>使用</strong>：在 <code>package.json</code> 中，添加字段：<strong>sideEffects: false</strong>，告诉 Webpack <strong>所有代码都没有副作用（都可以进行tree shaking）</strong>，然后再根据不同的环境进行不同的配置。</p>
 <p><code>package.json</code>：</p>
 <pre class="line-numbers language-none"><code class="language-none">&#123;
   &quot;name&quot;: &quot;webpack-demo-1&quot;,
@@ -872,13 +883,13 @@ module.exports &#x3D; &#123;
 <p><strong>流程</strong>：①浏览器发起请求时，在请求头中设置属性 <code>accept-encoding: gzip</code> 表明浏览器支持 gzip 。②服务器根据请求头信息判断浏览器是否支持 gzip ，支持的话就向浏览器传送压缩过的内容，并在响应头上带上 <code>content-encoding: gzip</code> ；不支持的话则直接向浏览器发送未经过压缩的内容。③浏览器接收到服务器响应后根据响应头判断内容是否被压缩，如果被压缩则解压缩后再显示内容。</p>
 <p>详细原理可参考 <a target="_blank" rel="noopener" href="https://blog.csdn.net/hguisu/article/details/7795435">gzip压缩算法</a>。</p>
 <h3 id="图片资源优化"><a href="#图片资源优化" class="headerlink" title="图片资源优化"></a>图片资源优化</h3><ul>
-<li><p>不要在 HTML 里缩放图像<br>不要使用 <img> 的 width、height 缩放图片，如果用到小图片，就使用相应大小的图片。如果需要 <code>&lt;img width=&quot;100&quot; height=&quot;100&quot; src=&quot;mycat.jpg&quot; alt=&quot;My Cat&quot; /&gt;</code> ，那么图片本身（mycat.jpg）应该是 100x100px 的，而不是去缩小 500x500px 的图片。</p>
+<li><p>不要在 HTML 里缩放图像<br>不要使用 <code>&lt;img&gt;</code> 的 <code>width、height</code> 缩放图片，如果用到小图片，就使用相应大小的图片。如果需要 <code>&lt;img width=&quot;100&quot; height=&quot;100&quot; src=&quot;mycat.jpg&quot; alt=&quot;My Cat&quot; /&gt;</code> ，那么图片本身（mycat.jpg）应该是 <code>100x100px</code> 的，而不是去缩小 <code>500x500px</code> 的图片。</p>
 </li>
 <li><p>使用字体图标（iconfont）代替图片图标<br>字体图标就是将图标制作成一个字体，使用时就跟字体一样，可以设置属性如 <code>font-size</code>、<code>color</code> 等。并且字体图标是矢量图，不会失真，而且生成的文件特别小。</p>
 </li>
-<li><p>Base64<br>将图片的内容以Base64格式内嵌到HTML中，可以减少HTTP请求数量。但是，由于Base64编码用8位字符表示信息中的6个位，所以编码后大小大约比原始值扩大了 33% 。</p>
+<li><p>Base64<br>将图片的内容以 <code>Base64</code> 格式内嵌到 HTML 中，可以减少 HTTP 请求数量。但是，由于 <code>Base64</code> 编码用 <code>8</code> 位字符表示信息中的 <code>6</code> 个位，所以编码后大小大约比原始值扩大了 <code>33%</code> 。</p>
 </li>
-<li><p>使用 Webp<br>webp 的优势体现在它具有更优的图像数据压缩算法，能带来更小的图片体积，而且拥有肉眼无差异的图像质量；同时具备了无损和有损的压缩模式、alpha 透明以及动画的特性，在 jpeg 和 png 上的转化效果都想当优秀、稳定和统一。</p>
+<li><p>使用 Webp<br><code>webp</code> 的优势体现在它具有更优的图像数据压缩算法，能带来更小的图片体积，而且拥有肉眼无差异的图像质量；同时具备了无损和有损的压缩模式、<code>alpha</code> 透明以及动画的特性，在 <code>jpeg</code> 和 <code>png</code> 上的转化效果都想当优秀、稳定和统一。</p>
 </li>
 </ul>
 <blockquote>
@@ -887,12 +898,16 @@ module.exports &#x3D; &#123;
 <h3 id="使用-HTTP2"><a href="#使用-HTTP2" class="headerlink" title="使用 HTTP2"></a>使用 HTTP2</h3><p><strong>原理</strong>：在一次 HTTP 请求中，底层会通过 tcp 建立连接。而 tcp 协议存在 3 次握手，4 次挥手阶段，这些机制虽然保证了 tcp 的可靠性，但降低了传输效率，为了解决这个问题，我们可以使用 http2 来增加传输时候效率。</p>
 <p>http2 相比 http1 主要有以下几点<strong>优化</strong>：</p>
 <ul>
-<li>解析速度快<br>服务器解析 HTTP1.1 的请求时，必须不断地读入字节，直到遇到分隔符 CRLF 为止。而解析 HTTP2 的请求就不用这么麻烦，因为 HTTP2 是基于帧的协议，每个帧都有表示帧长度的字段。</li>
-<li>  多路复用<br>HTTP1.1 如果要同时发起多个请求，就得建立多个 TCP 连接，因为一个 TCP 连接同时只能处理一个 HTTP1.1 的请求。在 HTTP2 上，多个请求可以共用一个 TCP 连接，这称为多路复用。同一个请求和响应用一个流来表示，并有唯一的流 ID 来标识。 多个请求和响应在 TCP 连接中可以乱序发送，到达目的地后再通过流 ID 重新组建。</li>
-<li>首部压缩<br>多次请求中，可能有很多数据都是重复的，HTTP/2 在客户端和服务器端使用“首部表”来跟踪和存储之前发送的键－值对，传输时只需要传递索引值即可，对于相同的数据，不再通过每次请求和响应发送。</li>
-<li>  服务器端推送<br>服务器根据页面内容，主动把页面需要的资源传给客户端，减少请求数。</li>
+<li><p>解析速度快<br>服务器解析 HTTP1.1 的请求时，必须不断地读入字节，直到遇到分隔符 CRLF 为止。而解析 HTTP2 的请求就不用这么麻烦，因为 HTTP2 是基于帧的协议，每个帧都有表示帧长度的字段。</p>
+</li>
+<li><p>  多路复用<br>HTTP1.1 如果要同时发起多个请求，就得建立多个 TCP 连接，因为一个 TCP 连接同时只能处理一个 HTTP1.1 的请求。在 HTTP2 上，多个请求可以共用一个 TCP 连接，这称为多路复用。同一个请求和响应用一个流来表示，并有唯一的流 ID 来标识。 多个请求和响应在 TCP 连接中可以乱序发送，到达目的地后再通过流 ID 重新组建。</p>
+</li>
+<li><p>首部压缩<br>多次请求中，可能有很多数据都是重复的，HTTP/2 在客户端和服务器端使用“首部表”来跟踪和存储之前发送的键－值对，传输时只需要传递索引值即可，对于相同的数据，不再通过每次请求和响应发送。</p>
+</li>
+<li><p>  服务器端推送<br>服务器根据页面内容，主动把页面需要的资源传给客户端，减少请求数。</p>
+</li>
 </ul>
-<h3 id="静态资源走-CDN-引入"><a href="#静态资源走-CDN-引入" class="headerlink" title="静态资源走 CDN 引入"></a>静态资源走 CDN 引入</h3><p><strong>原理</strong>：<br>当访问一个网站时，如果没有部署 CDN ，浏览器获取资源就是通过 DNS 解析得到 ip 后，向该 ip 地址请求资源；<br>如果该网站部署了 CDN ，那么就</p>
+<h3 id="静态资源走-CDN-引入"><a href="#静态资源走-CDN-引入" class="headerlink" title="静态资源走 CDN 引入"></a>静态资源走 CDN 引入</h3><p><strong>原理</strong>：当访问一个网站时，如果没有部署 CDN ，浏览器获取资源就是通过 DNS 解析得到 ip 后，向该 ip 地址请求资源；<br>如果该网站部署了 CDN ，那么就</p>
 <ul>
 <li>浏览器向本地 DNS 发出请求以获取 ip</li>
 <li>本地 DNS 服务器依次向根域名服务器、顶级域名服务器、权限域名服务器发出请求，得到全局负载均衡系统（GSLB）的 ip 地址</li>
@@ -973,8 +988,9 @@ tracert baidu.com<span aria-hidden="true" class="line-numbers-rows"><span></span
 window<span class="token punctuation">.</span>onscroll <span class="token operator">=</span> <span class="token function">lozyLoad</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <ul>
-<li>方法二：使用 <code>IntersectionObserver</code><br>用法：<br><code>IntersectionObserver</code> 是浏览器原生提供的构造函数，接受两个参数：<code>callback</code>是可见性变化时的回调函数，<code>option</code>是配置对象（该参数可选）。</li>
+<li>方法二：使用 <code>IntersectionObserver</code></li>
 </ul>
+<p>用法：<code>IntersectionObserver</code> 是浏览器原生提供的构造函数，接受两个参数：<code>callback</code>是可见性变化时的回调函数，<code>option</code>是配置对象（该参数可选）。</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> io <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">IntersectionObserver</span><span class="token punctuation">(</span>callback<span class="token punctuation">,</span> option<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 
@@ -1743,52 +1759,50 @@ window<span class="token punctuation">.</span><span class="token function">reque
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/04/29/shen-ru-tan-jiu-zai-liu-lan-qi-shu-ru-url-dao-xuan-ran-ye-mian-zhong-xing-neng-you-hua/">
+                <a href="/2022/04/29/qian-duan-mian-jing-hui-zong/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="深入探究“在浏览器输入URL到渲染页面”（中）性能优化">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="前端面经汇总">
                         
-                        <span class="card-title">深入探究“在浏览器输入URL到渲染页面”（中）性能优化</span>
+                        <span class="card-title">前端面经汇总</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            从这道经典的面试题入手前端的性能优化
+                            整理一直以来的前端面经，这篇是总纲
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-29
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-04-29
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="post-category">
-                                    计算机网络
+                            <a href="/categories/%E6%B1%82%E8%81%8C/" class="post-category">
+                                    求职
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E9%9D%A2%E8%AF%95/">
-                        <span class="chip bg-color">面试</span>
+                    <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                        <span class="chip bg-color">前端</span>
                     </a>
                     
-                    <a href="/tags/%E5%85%AB%E8%82%A1%E6%96%87/">
-                        <span class="chip bg-color">八股文</span>
+                    <a href="/tags/%E9%9D%A2%E7%BB%8F/">
+                        <span class="chip bg-color">面经</span>
                     </a>
                     
                 </div>
@@ -2070,7 +2084,7 @@ window<span class="token punctuation">.</span><span class="token function">reque
 
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">79k</span>&nbsp;字
+                class="white-color">79.6k</span>&nbsp;字
             
             
             
