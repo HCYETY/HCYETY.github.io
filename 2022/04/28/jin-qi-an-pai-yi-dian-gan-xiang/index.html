@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="JS 之精度丢失, hcyety&#39;s blog">
+    <meta name="keywords" content="近期安排*一点感想, hcyety&#39;s blog">
     <meta name="description" content="诗和远方，我向往的；自在独行，我渴望的">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>JS 之精度丢失 | hcyety&#39;s blog</title>
+    <title>近期安排*一点感想 | hcyety&#39;s blog</title>
     <link rel="icon" type="image/png" href="/medias/logo.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -451,7 +451,7 @@
 <script src="/libs/cryptojs/crypto-js.min.js"></script>
 <script>
     (function() {
-        let pwd = '';
+        let pwd = 'yfzety';
         if (pwd && pwd.length > 0) {
             if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
                 alert('密码错误，将返回主页！');
@@ -464,12 +464,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">JS 之精度丢失</h1>
+                    <h1 class="description center-align post-title">近期安排*一点感想</h1>
                 </div>
             </div>
         </div>
@@ -585,23 +585,14 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E9%9D%A2%E8%AF%95/">
-                                <span class="chip bg-color">面试</span>
+                            <a href="/tags/%E9%9A%8F%E7%AC%94/">
+                                <span class="chip bg-color">随笔</span>
                             </a>
                         
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/JavaScript/" class="post-category">
-                                JavaScript
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -610,7 +601,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-12-18
+                    2022-04-28
                 </div>
                 
 
@@ -619,14 +610,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    403
+                    1.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    5 分
                 </div>
                 
 
@@ -654,48 +645,22 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="浮点数的运算"><a href="#浮点数的运算" class="headerlink" title="浮点数的运算"></a>浮点数的运算</h2><p><strong>一般由以下五个步骤完成：对阶、尾数运算、规格化、舍入处理、溢出判断。</strong></p>
-<ul>
-<li><p>首先是对阶，所谓对阶，就是把阶码调整为相同。</p>
-<ul>
-<li>比如 0.1 是 1.1001100110011…… * 2^-4，阶码是 -4，</li>
-<li>而 0.2 就是 1.10011001100110…* 2^-3，阶码是 -3；</li>
-<li>两个阶码不同，所以先调整为相同的阶码再进行计算，调整原则是小阶对大阶，也就是 0.1 的 -4 调整为 -3，对应变成 0.11001100110011…… * 2^-3</li>
-</ul>
-</li>
-<li><p>接下来是尾数计算：</p>
-<ul>
-<li>&nbsp;&nbsp;0.1100110011001100110011001100110011001100110011001101    +1.1001100110011001100110011001100110011001100110011010—————————————————————————————— 10.0110011001100110011001100110011001100110011001100111   </li>
-<li>我们得到结果为：10.0110011001100110011001100110011001100110011001100111 * 2^-3</li>
-</ul>
-</li>
-<li><p>将这个结果处理一下，即结果规格化：</p>
-<ul>
-<li>变成 1.0011001100110011001100110011001100110011001100110011(1) * 2^-2，括号里的 1 意思是说计算后这个 1 超出了范围，所以要被舍弃了。</li>
-</ul>
-</li>
-<li><p>再然后是舍入，四舍五入对应到二进制中，就是 0 舍 1 入。</p>
-<ul>
-<li>因为我们要把括号里的 1 丢了，所以这里会进一，结果变成1.0011001100110011001100110011001100110011001100110100 * 2^-2</li>
-</ul>
-</li>
-<li><p>本来还有一个溢出判断，因为这里不涉及，就不讲了。</p>
-</li>
-</ul>
-<p>所以最终的结果存成 64 位就是0 01111111101 0011001100110011001100110011001100110011001100110100，<br>将它转换为10进制数就得到 0.30000000000000004440892098500626。<br>因为两次存储时的精度丢失加上一次运算时的精度丢失，最终导致了 0.1 + 0.2 !== 0.3</p>
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 十进制转二进制 </span>
-<span class="token function">parseFloat</span><span class="token punctuation">(</span><span class="token number">0.1</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
-<span class="token operator">=></span> <span class="token string">"0.0001100110011001100110011001100110011001100110011001101"</span> 
+                <blockquote>
+<p>记事时间点：2022.04.28 大二下 星期四 晴</p>
+</blockquote>
+<p>从 2 月开学我就在准备面试，希望能找到大厂的前端暑期实习，但事与愿违，从一开始觉得“准备好了”，到认清现实，不过是经历了两场面试，一场是北京的一家小厂面试，一场是我和我哥的模拟面试，就让我知道自己还有不足之处，于是我开始闭关修炼了。</p>
+<p>一个月后，这时已经 4 月了，我觉得自己真的比之前的我进步了，就开始海投简历，牛客、拉勾、实习僧，我都投了很多，但 2 个星期过去，到了 4 月中旬，还是没什么消息，就算简历过了初筛，也没有后续，加上今年互联网寒冬，我担心 hc 不多了，心里有一点点小焦虑。</p>
+<blockquote>
+<p>话虽这么说，这里我还是想吐槽一下我自己，期间我还是有收到 4 个未接来电，但因为手机给这几个电话标识了“广告推销”，我以为无关紧要，就没去接，也由于我手机静音，导致我不知道有人来电，后来想想，才发现那几个电话有可能是要约面的，后知后觉的话，忍不住一阵惋惜。有人说就算不接，企业那边也会再换个时间打过来，但我也没收到后续的来电，想到这里，我还是要懊悔一番啊啊啊…</p>
+</blockquote>
+<p>小插曲过后，我思考为什么投了简历没消息，难道仅仅因为今年行情不好？难道仅仅因为我是 24 届的？但也不对啊，我看见还是有同为 24 届的小伙伴能找到实习，有的甚至已经收到 offer 了，所以问题应该出在自身。于是我理所淡然的把方向瞄准了简历，发现果然还是有问题，参考了一些建议之后，我更新了我的简历，又继续在招聘网站上海投。效果很明显，投完之后的 3 天内，就有 3 家公司来约面，其中就有字节。很高兴终于有面试机会了，也不管字节是我面的第一家大厂，应该先拿其他公司攒攒面试经验了，心里想着都准备了这么久了，不管是好是坏，都得先面一面，不然都不知道这段时间的准备到了何种程度。抱着这样的心态，我就准备字节面试了。</p>
+<p>昨天刚面完字节，心里没有什么太大的波澜，总体来说还是很平静的，面试官问的问题，我大都能接得上，不足的是二叉树的算法题没写出来（题很简单，但那时没发挥好，面完后自己做能做出来555）、跨域没答好、以及一些问题答得不利索，最后面试官的评价是知识点没串联起来，这个面评不算好，因此我也只能安静等待最后的结果了，希望能过一面吧。</p>
+<p>由于担心字节不能过一面，我也有点焦虑了，开始有摆烂的想法了，但这想法只是一瞬，我知道自己还是很多事要做，那便是：英语四级、驾照、概率论期末考试、计组考试、实习（还没到最后，还是要努力的），事情很多，但留给我的时间不多了，本来之前是想等搞定实习之后，就将重心放在英语四级和驾照上，但无奈自己没法拿到 offer ，只能改变策略，每天抽时间将各个任务慢慢推进了。</p>
+<p>事情真多啊，感觉自己变得忙了，最近也没有打电话给家里，老妈有点生气了，但其实我只是因为没搞定实习感到烦恼而已，没有欢快的情绪去打电话。除此之外，还有一个原因，就是我想等拿到大厂的实习 offer 后，再开开心心地去跟他们报喜，跟他们说你们的儿子是有努力学习的，也能找到实习的。抱着这样的想法，慢慢演变成了没拿到实习就不打电话回家，因为这样的想法，我疏于和家里人沟通，被抱怨我也可以理解。</p>
+<p>怎么说呢，我一直都知道自己这样做不对，不管因为什么原因，自己都不应该长时间不跟家里联系，这样会让家里人不开心，他们不知道我究竟在做什么（因为没打电话跟他们说说最近的生活状况，他们当然不知道了），可能在他们看来，没打电话就是没打电话，不管因为什么原因。其实这样说也对，就算再忙，打个电话的时间总还是有的，是想不想、愿不愿意的问题，没打就说明不想、不愿意，仅此而已。</p>
+<p>但话说回来，我虽然清楚这一点，但就是没有要常打电话的念头，这可能跟我的性格有关，孤僻、固执，甚至“无情”，这样一个性格的人，还真是难相处啊，可能在经历了社会的毒打之后，我才会想去跟家里人倾诉，那时候的我，会无比顾家吧。</p>
+<p>对了，今天还有一件开心的事，晚上有一节软件工程的课，刚走到教室，我就看到了我爸的语音通话，原来是我爸打电话问我五一要不要回家，我真的贼开心，因为我爸几乎没有像这样打电话过来直接表达对我的关心。我觉得天底下的父亲，更多的是一种无言的爱，他们不会直接地表达对儿子的爱，而是会在背后默默付出，苦痛都自己担着，又默默给与孩子关心，他们会想得更多，因为是一家之主，要考虑到现实的处境，是偏向理性的一种思考，正因为这种理性，他们往往不会感性地表达自己的情感。所以我才会对我爸的这个电话感到开心和意外，这是今天最开心的一件事了！！！</p>
 
-<span class="token comment">// 二进制转十进制 </span>
-<span class="token function">parseInt</span><span class="token punctuation">(</span><span class="token parameter"><span class="token number">1100100</span><span class="token punctuation">,</span><span class="token number">2</span></span><span class="token punctuation">)</span> 
-<span class="token operator">=></span> <span class="token number">100</span> 
-
-<span class="token comment">// 以指定的精度返回该数值对象的字符串表示 </span>
-<span class="token punctuation">(</span><span class="token number">0.1</span> <span class="token operator">+</span> <span class="token number">0.2</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toPrecision</span><span class="token punctuation">(</span><span class="token parameter"><span class="token number">21</span></span><span class="token punctuation">)</span> 
-<span class="token operator">=></span> <span class="token string">"0.300000000000000044409"</span> 
-<span class="token punctuation">(</span><span class="token number">0.3</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toPrecision</span><span class="token punctuation">(</span><span class="token parameter"><span class="token number">21</span></span><span class="token punctuation">)</span> 
-<span class="token operator">=></span> <span class="token string">"0.299999999999999988898"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>
@@ -721,7 +686,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://hcyety.github.io/2021/12/18/js-zhi-jing-du-diu-shi/">https://hcyety.github.io/2021/12/18/js-zhi-jing-du-diu-shi/</a>
+                    <a href="https://hcyety.github.io/2022/04/28/jin-qi-an-pai-yi-dian-gan-xiang/">https://hcyety.github.io/2022/04/28/jin-qi-an-pai-yi-dian-gan-xiang/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -759,8 +724,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E9%9D%A2%E8%AF%95/">
-                                    <span class="chip bg-color">面试</span>
+                                <a href="/tags/%E9%9A%8F%E7%AC%94/">
+                                    <span class="chip bg-color">随笔</span>
                                 </a>
                             
                         </div>
@@ -1193,50 +1158,44 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/12/21/bu-shu-fu-wu-qi-yong-dao-de-linux-ming-ling/">
+                <a href="/2022/04/28/jin-qi-an-pai-yi-dian-gan-xiang/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="操作服务器用到的 Linux 命令">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="近期安排*一点感想">
                         
-                        <span class="card-title">操作服务器用到的 Linux 命令</span>
+                        <span class="card-title">近期安排*一点感想</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            记录操作服务器用到的 linux 命令
+                            这学期想做的事有很多，有点忙不过来，催生了一些情绪...
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-12-21
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-28
+                            </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E9%83%A8%E7%BD%B2/" class="post-category">
-                                    部署
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            hcyety
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Linux-%E6%9C%8D%E5%8A%A1%E5%99%A8/">
-                        <span class="chip bg-color">Linux 服务器</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/">
-                        <span class="chip bg-color">命令行</span>
+                    <a href="/tags/%E9%9A%8F%E7%AC%94/">
+                        <span class="chip bg-color">随笔</span>
                     </a>
                     
                 </div>
@@ -1250,31 +1209,31 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/12/14/js-zhi-shu-ju-lei-xing-zhuan-huan/">
+                <a href="/2022/04/05/shen-ru-tan-jiu-zai-liu-lan-qi-shu-ru-url-dao-xuan-ran-ye-mian-shang-guo-cheng-pou-xi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="JS 之数据类型转换">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="深入探究“在浏览器输入URL到渲染页面”（上）过程剖析">
                         
-                        <span class="card-title">JS 之数据类型转换</span>
+                        <span class="card-title">深入探究“在浏览器输入URL到渲染页面”（上）过程剖析</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            回顾 JS 的基础知识
+                            这是一道非常经典的面试题，十分有必要详细记录细节过程，亦可查漏补缺...
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-14
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-05
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/JavaScript/" class="post-category">
-                                    JavaScript
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="post-category">
+                                    计算机网络
                                 </a>
                             
                             
@@ -1286,6 +1245,10 @@
                     
                     <a href="/tags/%E9%9D%A2%E8%AF%95/">
                         <span class="chip bg-color">面试</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%85%AB%E8%82%A1%E6%96%87/">
+                        <span class="chip bg-color">八股文</span>
                     </a>
                     
                 </div>
