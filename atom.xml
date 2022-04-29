@@ -6,7 +6,7 @@
   <link href="https://hcyety.github.io/atom.xml" rel="self"/>
   
   <link href="https://hcyety.github.io/"/>
-  <updated>2022-04-29T13:54:57.898Z</updated>
+  <updated>2022-04-29T14:18:48.173Z</updated>
   <id>https://hcyety.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://hcyety.github.io/2022/04/28/jin-qi-an-pai-yi-dian-gan-xiang/"/>
     <id>https://hcyety.github.io/2022/04/28/jin-qi-an-pai-yi-dian-gan-xiang/</id>
     <published>2022-04-28T15:09:18.000Z</published>
-    <updated>2022-04-29T13:54:57.898Z</updated>
+    <updated>2022-04-29T14:18:48.173Z</updated>
     
     
       
@@ -441,16 +441,15 @@
     <link href="https://hcyety.github.io/2021/12/23/js-zhi-zuo-yong-yu/"/>
     <id>https://hcyety.github.io/2021/12/23/js-zhi-zuo-yong-yu/</id>
     <published>2021-12-23T14:12:20.000Z</published>
-    <updated>2021-12-23T14:21:50.878Z</updated>
+    <updated>2022-04-29T14:22:06.964Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h2 id=&quot;作用域&quot;&gt;&lt;a href=&quot;#作用域&quot; class=&quot;headerlink&quot; title=&quot;作用域&quot;&gt;&lt;/a&gt;作用域&lt;/h2&gt;&lt;p&gt;是指作用域是指程序源代码中定义变量的区域。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;块级作用域&lt;br&gt;指在代码块 {}</summary>
+    <summary type="html">&lt;h1 id=&quot;作用域&quot;&gt;&lt;a href=&quot;#作用域&quot; class=&quot;headerlink&quot; title=&quot;作用域&quot;&gt;&lt;/a&gt;作用域&lt;/h1&gt;&lt;p&gt;是指作用域是指程序源代码中定义变量的区域。&lt;/p&gt;
+&lt;h2 id=&quot;块级作用域&quot;&gt;&lt;a href=&quot;#块级作用域&quot;</summary>
         
       
     
