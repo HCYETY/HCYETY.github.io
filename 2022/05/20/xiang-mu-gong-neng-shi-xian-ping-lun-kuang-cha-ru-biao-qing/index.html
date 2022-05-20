@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="JS 之内存管理, hcyety&#39;s blog">
+    <meta name="keywords" content="项目功能实现：评论框插入表情, hcyety&#39;s blog">
     <meta name="description" content="诗和远方，我向往的；自在独行，我渴望的">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>JS 之内存管理 | hcyety&#39;s blog</title>
+    <title>项目功能实现：评论框插入表情 | hcyety&#39;s blog</title>
     <link rel="icon" type="image/png" href="/medias/logo.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -464,12 +464,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">JS 之内存管理</h1>
+                    <h1 class="description center-align post-title">项目功能实现：评论框插入表情</h1>
                 </div>
             </div>
         </div>
@@ -585,14 +585,23 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E9%9D%A2%E8%AF%95/">
-                                <span class="chip bg-color">面试</span>
+                            <a href="/tags/React/">
+                                <span class="chip bg-color">React</span>
                             </a>
                         
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E9%A1%B9%E7%9B%AE/" class="post-category">
+                                项目
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -601,7 +610,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-01-10
+                    2022-05-20
                 </div>
                 
 
@@ -610,14 +619,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.5k
+                    1.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    16 分
+                    6 分
                 </div>
                 
 
@@ -645,373 +654,142 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="内存机制"><a href="#内存机制" class="headerlink" title="内存机制"></a>内存机制</h2><p>JS有两种数据类型，分别是原始数据类型（<code>String、Number、Boolean、Null、Undefined、Symbol</code>）和引用数据类型（<code>Object</code>）。<br>而存放这两种数据类型的内存又可以分为两部分，分别是栈内存（Stack）和堆内存（Heap）。</p>
-<p>这里说下栈内存和堆内存的区别：<br>|栈内存|堆内存|<br>|:–:|:–:|<br>|先进后出，后进先出|无序存储，根据引用直接获取|<br>|存储原始数据类型|存储引用数据类型|<br>|存储的值大小固定|存储的值大小不固定，可动态调整|<br>|按值访问|按引用访问|<br>|可以直接操作|不允许直接操作|<br>|空间小，但运行效率高|空间大，但运行效率相对低|</p>
-<p>不知道大家有没有过这样一个疑问：Js 声明变量时，底层是怎么实现这个声明过程的，或者说是怎么存储这个变量的，感兴趣的话可以看看下面这两篇文章：</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="http://www.dennisgo.cn/Articles/JavaScript/MemoryManagement.html#%E6%A0%88%E5%86%85%E5%AD%98">原始数据类型是如何存进栈内存的</a>  </li>
-<li><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000015118062">基本类型和引用类型发生复制行为后的不同影响</a></li>
-</ul>
-<h2 id="内存生命周期"><a href="#内存生命周期" class="headerlink" title="内存生命周期"></a>内存生命周期</h2><p>不管什么程序语言，内存生命周期基本是一致的：   </p>
+                <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>一个 React 项目（用的函数组件）需要支持可以回复表情的评论，看到这个需求，相信读者们能想到好几种解决方案，比如使用成熟的富文本编辑器、使用第三方表情组件库、自己封装组件……</p>
+<p>考虑到开发成本不能太高、评论组件可以复用、需求只是支持表情即可，因此笔者选择了第二种解决方案，也就是说，要去技术调研以选择合适的第三方库。</p>
+<h2 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h2><p>GitHub 上有很多开源的表情库，对比了一下，个人觉得 <a target="_blank" rel="noopener" href="https://github.com/missive/emoji-mart">emoji-mart</a> 是最好的一个，原因：</p>
 <ol>
-<li>分配你所需要的内存</li>
-<li>使用分配到的内存（读、写）</li>
-<li>不需要时将其释放/归还</li>
+<li><code>star</code> 数达到了 <strong>5.4 k</strong> ；</li>
+<li>使用文档清晰易懂，支持中文；</li>
+<li>作者持续维护，可以看到上一次的 <code>commit</code> 时间是 <strong>5天</strong> 前；</li>
+<li>UI 设计高级，符合笔者审美。</li>
 </ol>
-<p>JS的内存分配</p>
-<ol>
-<li>值的初始化<br>在定义变量时就完成了内存分配</li>
-<li>使用值<br>使用值的过程实际上是对分配内存进行读取与写入的操作。这个操作可能是写入一个变量或者一个对象的属性值，甚至传递函数的参数。</li>
-<li>释放不再需要的内存</li>
-</ol>
-<h2 id="内存泄漏"><a href="#内存泄漏" class="headerlink" title="内存泄漏"></a>内存泄漏</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>不再用到的内存，没有及时释放，就叫做内存泄漏（memory leak），会导致内存溢出。</p>
-<blockquote>
-<p>内存溢出：指程序申请内存时，没有足够的内存供申请者使用。例如，给一块存储int类型数据的存储空间，但却存储long类型的数据，那么结果就是内存不够用，此时就会报错，即所谓的内存溢出。</p>
-</blockquote>
-<h3 id="常见-JavaScript-内存泄露"><a href="#常见-JavaScript-内存泄露" class="headerlink" title="常见 JavaScript 内存泄露"></a>常见 JavaScript 内存泄露</h3><ol>
-<li>意外的全局变量 </li>
-</ol>
-<p>①未定义的变量会在全局对象创建一个新变量。在浏览器中，全局对象是 window 。<br>  <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token parameter">arg</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  bar <span class="token operator">=</span> <span class="token string">"this is a hidden global variable"</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-<span class="token comment">// 实际上是：</span>
-<span class="token keyword">function</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token parameter">arg</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  window<span class="token punctuation">.</span>bar <span class="token operator">=</span> <span class="token string">"this is an explicit global variable"</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><br>  如果 bar 是一个应该指向 foo 函数作用域内变量的引用，但是你忘记使用 var 来声明这个变量，这时就会创建一个全局变量。</p>
-<p>  ②另一种意外的全局变量可能由 this 创建：<br>  <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">this</span><span class="token punctuation">.</span>variable <span class="token operator">=</span> <span class="token string">"potential accidental global"</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
+<p>到这里，就确定了技术选型（出来吧 emoji-mart 就决定是你了hhh）</p>
+<h2 id="实践"><a href="#实践" class="headerlink" title="实践"></a>实践</h2><h3 id="安装表情组件库"><a href="#安装表情组件库" class="headerlink" title="安装表情组件库"></a>安装表情组件库</h3><p>我们首先使用 <code>npm install --save emoji-mart @emoji-mart/data</code> 将库安装下来。</p>
+<h3 id="生成容器组件"><a href="#生成容器组件" class="headerlink" title="生成容器组件"></a>生成容器组件</h3><p>然后把 demo 跑起来，这里新建了一个 <code>EmojiPicker.js</code> 文件，用于生成容器组件，其代码如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">import React, &#123; useEffect, useRef &#125; from &#39;react&#39;;
 
-<span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><br>  函数自身发生了调用，this 指向全局对象（window）</p>
-<p>  为了防止这种错误的发生，可以在你的 JavaScript 文件开头添加 <code>&#39;use strict&#39;;</code> 语句。这个语句实际上开启了解释 JavaScript 代码的严格模式，可以避免创建意外的全局变量。</p>
-<p>总结：</p>
+import data from &#39;@emoji-mart&#x2F;data&#39;;
+import &#123; Picker &#125; from &#39;emoji-mart&#39;;
+
+function EmojiPicker(props) &#123;
+  const ref &#x3D; useRef();
+
+  useEffect(() &#x3D;&gt; &#123;
+    new Picker(&#123; ...props, data, ref &#125;);
+  &#125;, []);
+
+  return &lt;div ref&#x3D;&#123;ref&#125; &#x2F;&gt;;
+&#125;
+
+export default EmojiPicker;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>容器组件生成之后，就可以在其他地方使用，并调用它的 API 。在上面这段代码中，是不能在 <code>div</code> 中调用诸如 <code>onEmojiSelect</code> 之类的 API 的，因为此时容器组件还没生成，<code>div</code> 还仅仅只是 <code>div</code> 而已，这也是为什么要新建一个 <code>EmojiPicker.js</code> 的原因。</p>
+<h3 id="调用容器组件"><a href="#调用容器组件" class="headerlink" title="调用容器组件"></a>调用容器组件</h3><p>在评论框处调用 <code>EmojiPicker</code> ，即可在页面中看到效果了。</p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html">&lt;EmojiPicker
+  onEmojiSelect=&#123;emoji => searchEmoji(emoji)&#125;
+/>
+
+这里只展示与表情组件库有关联的输入框，其他相关组件的布局这里就不一一写出来了，请读者自由发挥
+&lt;Input.TextArea
+  id='textarea'
+  value=&#123;chatContent&#125; // 输入框文本值由 chatContent 决定，因此要维护 chatContent
+  onChange=&#123;e => onChatContentChange(e.target.value)&#125; // 文本值发生改变时的回调
+/><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>到这里，我们离成功实现评论功能迈进了一小步，但还不够，可以看到上面代码有三个动态数据，分别是一个 <code>chatContent</code> 字段、<code>onChatContentChange</code> 函数和 <code>searchEmoji</code> 函数，我们继续往（写）下（bug）。</p>
+<h3 id="封装函数"><a href="#封装函数" class="headerlink" title="封装函数"></a>封装函数</h3><ol>
+<li>第一版</li>
+</ol>
+<p>在输入框进行键盘输入和表情插入，我们可以想到这样的逻辑：</p>
 <ul>
-<li>全局变量的注意事项：如果你必须使用全局变量来存储很多的数据，请确保在使用过后将它设置为 <code>null</code> 或者将它<strong>重新赋值</strong>。常见的和全局变量相关的引发内存消耗增长的原因就是缓存。（缓存存储着可复用的数据）</li>
-<li>解决方法：①避免创建全局变量；②使用严格模式,在 JavaScript 文件头部或者函数的顶部加上 use strict。</li>
+<li>①键盘输入时直接调用输入框的 <code>onChange</code> API 更新文本值 <code>chatContent</code> 即可</li>
+<li>②插入表情时调用组件库的 <code>onEmojiSelect</code>  API 获取到要插入的表情，拼接到 <code>chatContent</code> 后面</li>
 </ul>
+<p>于是有了下面的代码：</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> <span class="token punctuation">[</span>chatContent<span class="token punctuation">,</span> setChatContent<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// ①输入框文本值发生改变的回调函数</span>
+<span class="token keyword">const</span> <span class="token function-variable function">onChatContentChange</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    <span class="token function">setChatContent</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+
+<span class="token comment">// ②选中表情的回调函数</span>
+<span class="token keyword">const</span> <span class="token function-variable function">searchEmoji</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">emoji</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">// 考虑到在一开始就插入表情的情况</span>
+    <span class="token keyword">const</span> newChatContent <span class="token operator">=</span> chatContent<span class="token punctuation">.</span>length <span class="token operator">></span> <span class="token number">0</span> <span class="token operator">?</span> chatContent <span class="token operator">+</span> emoji<span class="token punctuation">.</span>native <span class="token operator">:</span> emoji<span class="token punctuation">.</span>native<span class="token punctuation">;</span>
+    <span class="token function">setChatContent</span><span class="token punctuation">(</span>newChatContent<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>然而这版的代码是有 bug 的，假如先输入“你好”，再插入表情，预计结果应该是“你好【表情】”，然而实际结果是“【表情】”，如图所示：<br><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e9d1d19432ae4b3593b2138e5cc34924~tplv-k3u1fbpfcp-zoom-1.image" alt="输入“你好”"><br><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/c72ffd717f8a44849b463776950095a7~tplv-k3u1fbpfcp-zoom-1.image" alt="在“你好”后输入表情"></p>
+<p>为什么会这样呢？这是因为 <code>chatContent.length</code> 为 <code>0</code> ，自然就被赋值为 <code>emoji.native</code> 了。那么，在 <a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43591980?type=blog">@飞哥</a> 的提点下，用 <code>tempTextAreaData</code> 全局字段存储输入框的文本值，这样就可以在页面更新的时候依然也能拿到最新的文本值，因此代码变成这样：</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">+</span>   <span class="token keyword">let</span> tempTextAreaData <span class="token operator">=</span> <span class="token string">''</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token punctuation">[</span>chatContent<span class="token punctuation">,</span> setChatContent<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+
+<span class="token comment">// ①输入框文本值发生改变的回调函数 </span>
+<span class="token keyword">const</span> <span class="token function-variable function">onChatContentChange</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    <span class="token function">setChatContent</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token operator">+</span>   tempTextAreaData <span class="token operator">=</span> value<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+
+<span class="token comment">// ②选中表情的回调函数</span>
+<span class="token keyword">const</span> <span class="token function-variable function">searchEmoji</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">emoji<span class="token punctuation">,</span> event</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">// 考虑到在一开始就插入表情的情况 </span>
+<span class="token operator">-</span>   <span class="token keyword">const</span> newChatContent <span class="token operator">=</span> chatContent<span class="token punctuation">.</span>length <span class="token operator">></span> <span class="token number">0</span> <span class="token operator">?</span> chatContent <span class="token operator">+</span> emoji<span class="token punctuation">.</span>native <span class="token operator">:</span> emoji<span class="token punctuation">.</span>native<span class="token punctuation">;</span>
+<span class="token operator">+</span>   <span class="token keyword">const</span> newChatContent <span class="token operator">=</span> tempTextAreaData<span class="token punctuation">.</span>length <span class="token operator">></span> <span class="token number">0</span> <span class="token operator">?</span> tempTextAreaData <span class="token operator">+</span> emoji<span class="token punctuation">.</span>native <span class="token operator">:</span> emoji<span class="token punctuation">.</span>native<span class="token punctuation">;</span>
+<span class="token operator">+</span>   tempTextAreaData <span class="token operator">=</span> newChatContent<span class="token punctuation">;</span>
+    <span class="token function">setChatContent</span><span class="token punctuation">(</span>newChatContent<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>来看看效果：</p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e9d1d19432ae4b3593b2138e5cc34924~tplv-k3u1fbpfcp-zoom-1.image" alt="输入“你好”"><br><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1fe5df90a1874f4abed6f85fa5cfd573~tplv-k3u1fbpfcp-zoom-1.image" alt="在“你好”后输入表情"></p>
 <ol start="2">
-<li>闭包引起的内存泄漏</li>
+<li>第二版</li>
 </ol>
-<p>原理：闭包可以读取函数内部的变量，然后让这些变量始终保存在内存中。如果在使用结束后没有将局部变量清除，就可能导致内存泄露。 </p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> leaks <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>  
-  <span class="token keyword">var</span> leak <span class="token operator">=</span> <span class="token string">'xxxxxx'</span><span class="token punctuation">;</span> <span class="token comment">// 被闭包所引用，不会被回收</span>
-  <span class="token keyword">return</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>leak<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<p>我们完成了第一版的代码，实现了在输入框文本值后面插入表情，但有一个缺陷：不能在文本中间插入表情，因此我们的代码逻辑需要进一步完善。</p>
+<p>笔者的思考方向是这样的：当光标移动到文本中间时，获取这个光标的位置，截断光标之前和光标之后的字符，将表情拼接到两者之间。</p>
+<p><code>onChatContentChange</code> 函数比较简单，第一版已经搞定了，现在我们完善 <code>searchEmoji</code> 函数：</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 由于在光标中间拼接表情稍微复杂了一点，这里单独抽成 insertAtCursor 函数，tempTextAreaData 的更新也将在 insertAtCursor 中完成</span>
+<span class="token keyword">const</span> <span class="token function-variable function">searchEmoji</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">emoji</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">let</span> dom <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'textarea'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 获取输入框的节点对象</span>
+    <span class="token function">insertAtCursor</span><span class="token punctuation">(</span>dom<span class="token punctuation">,</span> emoji<span class="token punctuation">.</span>native<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 将表情插入到光标后面</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><code>insertAtCursor</code> 函数：</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">
+<span class="token keyword">const</span> <span class="token function-variable function">insertAtCursor</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">myField<span class="token punctuation">,</span> myValue</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>document<span class="token punctuation">.</span>selection<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">//IE support</span>
+    myField<span class="token punctuation">.</span><span class="token function">focus</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> sel <span class="token operator">=</span> document<span class="token punctuation">.</span>selection<span class="token punctuation">.</span><span class="token function">createRange</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    sel<span class="token punctuation">.</span>text <span class="token operator">=</span> myValue<span class="token punctuation">;</span>
+    sel<span class="token punctuation">.</span><span class="token function">select</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>myField<span class="token punctuation">.</span>selectionStart <span class="token operator">||</span> myField<span class="token punctuation">.</span>selectionStart <span class="token operator">==</span> <span class="token string">'0'</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">//MOZILLA/NETSCAPE support</span>
+    <span class="token keyword">const</span> startPos <span class="token operator">=</span> myField<span class="token punctuation">.</span>selectionStart<span class="token punctuation">;</span>
+    <span class="token keyword">const</span> endPos <span class="token operator">=</span> myField<span class="token punctuation">.</span>selectionEnd<span class="token punctuation">;</span>
+    <span class="token keyword">const</span> beforeValue <span class="token operator">=</span> myField<span class="token punctuation">.</span>value<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> startPos<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> afterValue <span class="token operator">=</span> myField<span class="token punctuation">.</span>value<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span>endPos<span class="token punctuation">,</span> myField<span class="token punctuation">.</span>value<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    tempTextAreaData <span class="token operator">=</span> beforeValue <span class="token operator">+</span> myValue <span class="token operator">+</span> afterValue<span class="token punctuation">;</span>
+    <span class="token function">setChatContent</span><span class="token punctuation">(</span>tempTextAreaData<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    myField<span class="token punctuation">.</span>selectionStart <span class="token operator">=</span> startPos <span class="token operator">+</span> myValue<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+    myField<span class="token punctuation">.</span>selectionEnd <span class="token operator">=</span> startPos <span class="token operator">+</span> myValue<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+    myField<span class="token punctuation">.</span><span class="token function">focus</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+    tempTextAreaData <span class="token operator">+=</span> myValue<span class="token punctuation">;</span>
+    <span class="token function">setChatContent</span><span class="token punctuation">(</span>tempTextAreaData<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    myField<span class="token punctuation">.</span><span class="token function">focus</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>解决方法：将事件处理函数定义在外部，解除闭包，或者在定义事件处理函数的外部函数中。</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 比如：在循环中的函数表达式，能复用最好放到循环外面。</span>
-<span class="token comment">// 不要这样：</span>
-<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> k <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> k <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> k<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">var</span> <span class="token function-variable function">t</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">a</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token comment">// 创建了10次函数对象</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
-  <span class="token punctuation">&#125;</span>
-  <span class="token function">t</span><span class="token punctuation">(</span>k<span class="token punctuation">)</span>
-<span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<span class="token comment">// 这样比较好：</span>
-<span class="token keyword">function</span> <span class="token function">t</span><span class="token punctuation">(</span><span class="token parameter">a</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
-<span class="token punctuation">&#125;</span>
-<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> k <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> k <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> k<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token function">t</span><span class="token punctuation">(</span>k<span class="token punctuation">)</span>
-<span class="token punctuation">&#125;</span>
-t <span class="token operator">=</span> <span class="token keyword">null</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ol start="3">
-<li>没有清理的 DOM 元素引用</li>
-</ol>
-<p>原因：虽然别的地方删除了，但是对象中还存在对 dom 的引用。</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 在对象中引用DOM</span>
-<span class="token keyword">var</span> elements <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
-  btn<span class="token operator">:</span>document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'btn'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-<span class="token punctuation">&#125;</span>
-<span class="token keyword">function</span> <span class="token function">doSomeThing</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  elements<span class="token punctuation">.</span>btn<span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">&#125;</span>
-<span class="token keyword">function</span> <span class="token function">removeBtn</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token comment">// 将body中的btn移除，也就是移除DOM树中的btn</span>
-  document<span class="token punctuation">.</span>body<span class="token punctuation">.</span><span class="token function">removeChild</span><span class="token punctuation">(</span>document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'button'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-
-  <span class="token comment">// 但是此时全局变量 elements 还是保留了对 btn 的引用，btn 还是存在于内存中，不能被 GC 回收</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>解决方法：手动删除，elements.btn = null。</p>
-<ol start="4">
-<li><p>没有移除计时器或回调函数</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 定时器中有 dom 的引用，即使 dom 删除了，但是定时器还在，所以内存中还是有这个 dom。</span>
-
-<span class="token comment">// 定时器</span>
-<span class="token keyword">var</span> serverData <span class="token operator">=</span> <span class="token function">loadData</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token function">setInterval</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">var</span> renderer <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'renderer'</span><span class="token punctuation">)</span>
-  <span class="token keyword">if</span><span class="token punctuation">(</span>renderer<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    renderer<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>serverData<span class="token punctuation">)</span>
-  <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token number">5000</span><span class="token punctuation">)</span>
-
-<span class="token comment">// 观察者模式</span>
-<span class="token keyword">var</span> btn <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'btn'</span><span class="token punctuation">)</span>
-<span class="token keyword">function</span> <span class="token function">onClick</span><span class="token punctuation">(</span><span class="token parameter">element</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    element<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token string">"I'm innerHTML"</span>
-<span class="token punctuation">&#125;</span>
-btn<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> onClick<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>解决方法：①手动删除定时器和 dom；②removeEventListener 移除事件监听</p>
-</li>
-<li><p>循环引用 </p>
-</li>
-</ol>
-<p>当出现了一个含有DOM对象的循环引用时，就会发生内存泄露。</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token constant">A</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">var</span> a <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">"div"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  a<span class="token punctuation">.</span><span class="token function-variable function">onclick</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"hi"</span><span class="token punctuation">)</span>
-  <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span>
-<span class="token constant">A</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="内存泄露的解决方案"><a href="#内存泄露的解决方案" class="headerlink" title="内存泄露的解决方案"></a>内存泄露的解决方案</h3><p>下面的方案是从网上搜索到的资料，本人并没有实践过（主要是还不懂），仅供大家参考：</p>
-<ul>
-<li> 显式类型转换</li>
-<li> 避免事件导致的循环引用</li>
-<li> 不影响返回值地打破循环引用</li>
-<li> 延迟appendChild</li>
-<li> 代理DOM对象<blockquote>
-<p>更加具体的解决方法可点击这里：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/67843006?from=from_parent_mindnote">传送门</a></p>
-</blockquote>
-<h2 id="V8-垃圾回收机制"><a href="#V8-垃圾回收机制" class="headerlink" title="V8 垃圾回收机制"></a>V8 垃圾回收机制</h2>上文有提到：内存会发生泄露是因为没有及时释放多余的内存。那么问题来了，应该由谁去释放多余的内存，又是怎么释放内存的？答案是 V8 垃圾回收机制。在了解这个机制之前，我们先来认识下什么是 V8 。<h3 id="认识V8"><a href="#认识V8" class="headerlink" title="认识V8"></a>认识V8</h3>V8 是 Google 采用 C++ 编写的开源 JavaScript 引擎。采用即时编译，直接翻译成机器语言，并且使用了如内联缓存（inline caching）等方法来提高性能。有了这些功能，JavaScript程序在V8引擎下的运行速度媲美二进制程序。</li>
-</ul>
-<p>V8内存设限：64bit操作系统上不超过1.5G，32bit操作系统上不超过800M 这么设限为了浏览器使用内存足够，内部还有垃圾运行机制，时间也在用户感知的合理范围</p>
-<p>目前V8垃圾回收采用增量标记算法需要50ms，采用非增量标记算法需要1s</p>
-<p>这里先停一下，康康这篇文章再往下会更好：<a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000018605776">前端面试：谈谈 JS 垃圾回收机制</a></p>
-<hr>
-<p>ddd，如果已经看完了上面这篇文章，就让我们继续往下吧~</p>
-<h3 id="什么是垃圾"><a href="#什么是垃圾" class="headerlink" title="什么是垃圾"></a>什么是垃圾</h3><p>一般来说没有被引用的对象就是垃圾，就是要被清除。 有个例外如果几个对象引用形成一个环，互相引用，但根访问不到它们，这几个对象也是垃圾，也要被清除。</p>
-<h3 id="V8垃圾回收策略"><a href="#V8垃圾回收策略" class="headerlink" title="V8垃圾回收策略"></a>V8垃圾回收策略</h3><p>基本思路：确定哪个变量不会再使用，然后释放它占用的内存。这个过程是周期性的，即垃圾回收程序每隔一定时间（或者说在代码执行过程中某个预定的收集时间）就会自动运行。值得注意的是，垃圾回收过程是一个近似且不完美的方案，因为某块内存是否还有用–属于“不可判定的”问题，这意味着靠算法是解决不了的。</p>
-<p>我们以函数中局部变量的正常生命周期为例。函数中的局部变量会在函数执行时存在，此时，栈（或堆）内存会分配空间以保存相应的值。当函数在内部使用了变量，然后退出，此时，就不再需要那个局部变量了，它占用的内存可以释放了。但垃圾回收程序并不知道哪个局部变量是要被释放的，因此，程序必须跟踪记录哪个变量还会使用，以及哪个变量不会再使用。</p>
-<p>原始数据都是由程序语言自身控制的，这里的回收还是指主要存活在堆区的对象数据，这个过程是离不开内存操作的，那在这种情况下是如何对垃圾进行回收的?答案是：</p>
-<ol>
-<li>采用分代回收的思想</li>
-<li>内存分为新生代存储区、老生代存储区</li>
-<li>针对不同代采用不同的 GC 算法</li>
-</ol>
-<p>下面针对 GC 算法展开讨论。</p>
-<h3 id="GC"><a href="#GC" class="headerlink" title="GC"></a>GC</h3><p>相关概念：</p>
-<ul>
-<li><p>GC：垃圾回收机制的简写，垃圾回收期完成具体的工作，可以找到内存中的垃圾、并释放和回收空间</p>
-</li>
-<li><p>GC 算法：是 GC 工作时查找和回收所遵循的规则</p>
-<h3 id="常见-GC-算法："><a href="#常见-GC-算法：" class="headerlink" title="常见 GC 算法："></a>常见 GC 算法：</h3></li>
-<li><p>引用计数（不太常用）</p>
-<ul>
-<li>核心思想：跟踪记录每个值被引用的次数，每次引用的时候加一，被释放时减一，如果一个值的引用次数变成 0 了，就可以将其内存空间回收。</li>
-<li>实现原理：<ul>
-<li>引用计数器</li>
-<li>当引用关系改变时修改引用数字</li>
-<li>当引用数字为0时立即回收</li>
-</ul>
-</li>
-<li>实例：  <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> user1 <span class="token operator">=</span> <span class="token punctuation">&#123;</span>age<span class="token operator">:</span><span class="token number">11</span><span class="token punctuation">&#125;</span>
-<span class="token keyword">const</span> user2 <span class="token operator">=</span> <span class="token punctuation">&#123;</span>age<span class="token operator">:</span><span class="token number">12</span><span class="token punctuation">&#125;</span>
-<span class="token keyword">const</span> user3 <span class="token operator">=</span> <span class="token punctuation">&#123;</span>age<span class="token operator">:</span><span class="token number">13</span><span class="token punctuation">&#125;</span>
-<span class="token keyword">const</span> nameList <span class="token operator">=</span> <span class="token punctuation">[</span>user1<span class="token punctuation">.</span>age<span class="token punctuation">,</span> user2<span class="token punctuation">.</span>age<span class="token punctuation">,</span> user<span class="token punctuation">.</span>age<span class="token punctuation">]</span>
-
-<span class="token keyword">function</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">const</span> num1 <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
-    <span class="token keyword">const</span> num2 <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
-    num3 <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-<span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>当函数调用过后，<code>num1</code> 和 <code>num2</code> 在外部不能使用，引用数为 0，会被回收;</li>
-<li><code>num3</code> 是挂载在window上的，所以不会被回收;</li>
-<li><code>user1</code>、<code>user2</code>、<code>user3</code> 被 <code>nameList</code> 引用，所以引用数不为 0，故不会被回收 ;</li>
-</ul>
-</li>
-<li>优缺点：<table>
-<thead>
-<tr>
-<th align="center">引用计数算法</th>
-<th align="left">内容</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">优点</td>
-<td align="left">1.发现垃圾时立即回收<br>2.最大限度减少程序暂停，让空间不会有被占满的时候</td>
-</tr>
-<tr>
-<td align="center">缺点</td>
-<td align="left">1.无法回收循环引用的对象<br>2.资源消耗开销大（对所有对象进行数值的监控和修改，本身就会占用时间和资源）</td>
-</tr>
-</tbody></table>
-<ul>
-<li>举一栗子说明上面缺点中无法回收循环应用对象的情况：  <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">const</span> obj1 <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span> 
-  <span class="token keyword">const</span> obj2 <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
-  obj1<span class="token punctuation">.</span>name <span class="token operator">=</span> obj2 
-  obj2<span class="token punctuation">.</span>name <span class="token operator">=</span> obj1
-  <span class="token keyword">return</span> <span class="token string">'hello world'</span> 
-<span class="token punctuation">&#125;</span>
-
-<span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-  obj1 和 obj2 因为互相有引用，所以计数器并不为 0 ，fn 调用结束之后依旧无法回收这两个对象</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>标记清除（最常用）</p>
-<ul>
-<li>核心思想：<strong>当变量进入执行上下文时</strong>（比如在函数内部声明一个变量时），这个变量会被加上存在于上下文中的标记；<strong>而在上下文中的变量</strong>，从逻辑上来说，永远不应该释放它们的内存，因为只要上下文中的代码在运行，就有可能用到它们；<strong>当变量离开上下文时</strong>，也会被加上离开上下文的标记【也有的说法是标记被清除，不过《JavaScript 高级程序设计》中写的是前者，就以该书为主吧】。于是当垃圾回收时就会销毁那些带标记的值并回收他们的内存空间。</li>
-<li>实现原理：分 <strong>标记</strong> 和 <strong>清除</strong> 两个阶段完成<ul>
-<li>第一阶段：遍历所有对象找活动对象（可达对象）进行标记（层次用递归进行操作）<ol>
-<li>有一组基本的固有可达值，由于显而易见的原因无法删除。例如:<ul>
-<li>本地函数的局部变量和参数</li>
-<li>当前嵌套调用链上的其他函数的- 变量和参数</li>
-<li>全局变量</li>
-<li>还有一些其他的，内部的这些值称为根。</li>
-</ul>
-</li>
-<li>如果引用或引用链可以从根访问任何其他值，则认为该值是可访问的<ul>
-<li>例如，如果局部变量中有对象，并且该对象具有引用另一个对象的属性，则该对象被视为可达性， 它引用的那些也是可以访问的。</li>
-</ul>
-</li>
-</ol>
-</li>
-<li>第二阶段：遍历所有对象，清除没有标记的对象，并抹掉第一个阶段标的标记<ul>
-<li>注意：js中的标记是标记所有的变量，清除掉被标记为离开状态的变量；而老生代中的标记使标记存活的变量，清除没有被标记的变量。（什么是老生代？后面会讲到的）</li>
-</ul>
-</li>
-<li>收尾：回收相应空间，将回收的空间加到空闲链表中，方便后面的程序申请空间使用</li>
-</ul>
-</li>
-<li>优缺点：<table>
-<thead>
-<tr>
-<th align="center">标记清除算法</th>
-<th align="left">内容</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">优点</td>
-<td align="left">1.相对于引用计数算法来说，解决了对象循环引用的问题。因为局部作用域里面的内容无法被标记，所以即使有引用还是会被清除掉<br>2.回收速度较快</td>
-</tr>
-<tr>
-<td align="center">缺点</td>
-<td align="left">1.空间链表地址不连续（空间碎片化），不能进行空间最大化使用<br>2.不会立即回收垃圾对象，清除的时候程序是停止工作的</td>
-</tr>
-</tbody></table>
-<ul>
-<li>下面是空间链表地址不连续的图示，可以更好的帮我们理解这个缺点是怎么肥事：<img src="https://s4.ax1x.com/2022/01/10/7EKZIs.jpg" alt="不连续空间链表"></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>标记整理</p>
-<ul>
-<li><p>核心思想：在 标记 和 清除 中间，添加了内存空间的 整理</p>
-</li>
-<li><p>实现原理：（标记整理可以看做是标记清除的 增强）</p>
-<ul>
-<li>标记阶段：与标记清除一致</li>
-<li>整理阶段：清除垃圾前先执行整理操作，移动对象位置，在地址上产生连续</li>
-<li>最后留出了整个的空闲空间</li>
-</ul>
-</li>
-<li><p>流程图示：<br><img src="https://s4.ax1x.com/2022/01/10/7EK1LF.png" alt="未整理前"><br><img src="https://s4.ax1x.com/2022/01/10/7EK8Z4.png" alt="整理后"><br><img src="https://s4.ax1x.com/2022/01/10/7EKlsU.png" alt="回收后"></p>
-</li>
-<li><p>优缺点：</p>
-<table>
-<thead>
-<tr>
-<th align="center">标记整理算法</th>
-<th align="left">内容</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">优点</td>
-<td align="left">相较标记清除算法减少了碎片化空间</td>
-</tr>
-<tr>
-<td align="center">缺点</td>
-<td align="left">不会立即回收垃圾对象，清除的时候程序是停止工作的</td>
-</tr>
-</tbody></table>
-</li>
-</ul>
-</li>
-<li><p>空间复制</p>
-<ul>
-<li>新生代区域垃圾回收使用空间换时间</li>
-<li>主要采用复制算法，要有空闲空间存在，当然新生代本身空间小，分出来的复制的空间更小，所以浪费这点空间换取时间的效率是微不足道的</li>
-<li>老生代区域垃圾回收不适合复制算法，老生代空间大一分为二，会造成一半的空间浪费，存放数据多复制时间长。</li>
-</ul>
-</li>
-<li><p>分代回收 (一定会用)</p>
-<ul>
-<li>新生代对象回收<blockquote>
-<p>新生代 —— 就是指存活时间较短的对象，例如：一个局部作用域中，只要函数执行完毕之后变量就会回收。</p>
-</blockquote>
-<ul>
-<li>主要使用算法：采用赋值算法 + 标记整理算法</li>
-<li>回收过程：<ul>
-<li>新生代内存区分为<strong>两个等大小空间</strong>，使用空间为From，空闲空间为To</li>
-<li>如果需要申请空间使用，回收步骤如下：<ol>
-<li>首先会将所有活动对象存储于From空间，这个过程中To是空闲状态。   </li>
-<li>当From空间使用到一定程度之后就会触发GC操作，这个时候会进行标记整理——对活动对象进行标记并移动位置将使用空间变得连续。<br><img src="https://s4.ax1x.com/2022/01/10/7EKQMT.png" alt="步骤 1、2 图示"></li>
-<li>将活动对象拷贝至To空间，拷贝完成之后活动空间就有了备份，这个时候就可以考虑回收操作了。</li>
-<li>把From空间完成释放，回收完成。<br><img src="https://s4.ax1x.com/2022/01/10/7EKnGq.png" alt="步骤 3、4 图示"> </li>
-<li>对From和To名称进行调换，继续重复之前的操作。<br><img src="https://s4.ax1x.com/2022/01/10/7EKmin.png" alt="步骤 5 图示"></li>
-</ol>
-</li>
-</ul>
-</li>
-<li>这种算法的缺点是：只能使用堆内存的一半。</li>
-<li>总结：使用From -&gt; 触发GC标记整理 -&gt; 拷贝到To -&gt; 回收From -&gt; 名称互换 -&gt; 重复之前</li>
-</ul>
-</li>
-<li>晋升<ul>
-<li>定义：拷贝的过程中某个对象的指代在老生代空间，就可能出现晋升。 晋升就是将新生代对象移动至老生代。</li>
-<li>什么时候触发晋升操作?<ul>
-<li>1.<strong>一轮GC之后还存活的新生代对象</strong>就需要晋升</li>
-<li>2.在拷贝过程中，To空间的使用率超过25%，将这次的活动对象都移动至老生代空间<ul>
-<li>Q：为什么设置25%这个阈值</li>
-<li>A：当这次回收完成后，这个To空间会变为From空间，接下来的内存分配将在这个空间中进行。如果占比过高，会影响后续的内存分配。</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>老生代对象回收<blockquote>
-<p>老生代 —— 就是指存活时间较长的对象，例如：全局对象，闭包变量数据。</p>
-</blockquote>
-<ul>
-<li>主要使用算法：主要采用标记清除 （首要） 、标记整理、增量标记算法</li>
-</ul>
-</li>
-<li>V8内存空间一分为二，分为新生代存储区和老生代存储区<ul>
-<li>左边小空间用于存储新生代对象<ul>
-<li>64bit操作系统上不超过32M</li>
-<li>32bit操作系统上不超过16M</li>
-</ul>
-</li>
-<li>右边较大空间用于存储老生代对象<ul>
-<li>64bit操作系统上不超过1.6G</li>
-<li>32bit操作系统上不超过700M</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>标记增量 (提高效率用)</p>
-<ul>
-<li>将一整段的垃圾回收操作标记拆分成多个小段完成回收，主要是为了实现程序和垃圾回收的交替完成，这样进行 效率优化 带来的时间消耗更加的合理。</li>
-<li>优化垃圾回收：看图可以将垃圾回收分成两个部分，一个是程序的执行，一个是垃圾的回收。当垃圾回收的时候其实会阻塞程序的执行，所以中间会有空档期。<br>  <img src="../img/12.png"><blockquote>
-<p>这篇文章也挺好，小伙伴们可以看看：<a target="_blank" rel="noopener" href="http://newhtml.net/v8-garbage-collection/">传送门</a></p>
-</blockquote>
-</li>
-</ul>
-</li>
-</ul>
+<p>这样一来，就可以在文本中插入表情了，效果如图：</p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/2ec089e800d94211a4be629711fdaa85~tplv-k3u1fbpfcp-zoom-1.image" alt="输入一段文字"></p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/5da97051a84f4bf49b6c3bfee28c5eb0~tplv-k3u1fbpfcp-zoom-1.image" alt="文本中插入表情"></p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7f94b4a3426d442487bd77bc3e297176~tplv-k3u1fbpfcp-zoom-1.image" alt="将选取替换成表情"></p>
+<h2 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h2><p>在第二版代码完成之后，这个项目需求就完成了，当然，这样的实现是基于这个评论功能只需要支持表情就好，对于图片的插入、上传等是不支持的，如果确实需要支持图片的话，其实可以考虑富文本编辑器，工具栏简洁一点，支持图片和表情，也就可以了。</p>
+<p>关于富文本编辑器的技术选型，可以参考这篇文章：<a target="_blank" rel="noopener" href="https://juejin.cn/post/7084046542994145294">前端开发常用的10款富文本编辑器</a>。</p>
+<p>希望读者们能多多支持这个项目： <a target="_blank" rel="noopener" href="https://gitee.com/caoshipeng/onepiece-web">onepiece-web</a>（star 一下不亏的 ^_^）<br>以上就是全部内容了，希望对大家有所帮助~  </p>
 
                 
             </div>
@@ -1038,7 +816,7 @@ btn<span class="token punctuation">.</span><span class="token function">addEvent
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://hcyety.github.io/2022/01/10/js-zhi-nei-cun-guan-li/">https://hcyety.github.io/2022/01/10/js-zhi-nei-cun-guan-li/</a>
+                    <a href="https://hcyety.github.io/2022/05/20/xiang-mu-gong-neng-shi-xian-ping-lun-kuang-cha-ru-biao-qing/">https://hcyety.github.io/2022/05/20/xiang-mu-gong-neng-shi-xian-ping-lun-kuang-cha-ru-biao-qing/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -1076,8 +854,8 @@ btn<span class="token punctuation">.</span><span class="token function">addEvent
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E9%9D%A2%E8%AF%95/">
-                                    <span class="chip bg-color">面试</span>
+                                <a href="/tags/React/">
+                                    <span class="chip bg-color">React</span>
                                 </a>
                             
                         </div>
@@ -1578,46 +1356,48 @@ btn<span class="token punctuation">.</span><span class="token function">addEvent
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/01/11/css-xuan-ze-qi/">
+                <a href="/2022/05/20/xiang-mu-gong-neng-shi-xian-ping-lun-kuang-cha-ru-biao-qing/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="CSS 选择器">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="项目功能实现：评论框插入表情">
                         
-                        <span class="card-title">CSS 选择器</span>
+                        <span class="card-title">项目功能实现：评论框插入表情</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            整理下 CSS 选择器方面的知识，方便面试前复习
+                            花了很多时间解决这个项目需求，记录一哈
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-01-11
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-20
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/CSS/" class="post-category">
-                                    CSS
+                            <a href="/categories/%E9%A1%B9%E7%9B%AE/" class="post-category">
+                                    项目
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E9%9D%A2%E8%AF%95/">
-                        <span class="chip bg-color">面试</span>
+                    <a href="/tags/React/">
+                        <span class="chip bg-color">React</span>
                     </a>
                     
                 </div>
@@ -1631,31 +1411,31 @@ btn<span class="token punctuation">.</span><span class="token function">addEvent
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/01/09/shi-me-shi-bi-bao/">
+                <a href="/2022/04/29/qian-duan-mian-jing-hui-zong/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="什么是闭包">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="前端面经汇总">
                         
-                        <span class="card-title">什么是闭包</span>
+                        <span class="card-title">前端面经汇总</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            要面试了，复习下 JS
+                            整理一直以来的前端面经，这篇是总纲
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-09
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-29
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/JavaScript/" class="post-category">
-                                    JavaScript
+                            <a href="/categories/%E6%B1%82%E8%81%8C/" class="post-category">
+                                    求职
                                 </a>
                             
                             
@@ -1665,8 +1445,12 @@ btn<span class="token punctuation">.</span><span class="token function">addEvent
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E9%9D%A2%E8%AF%95/">
-                        <span class="chip bg-color">面试</span>
+                    <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                        <span class="chip bg-color">前端</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%9D%A2%E7%BB%8F/">
+                        <span class="chip bg-color">面经</span>
                     </a>
                     
                 </div>
