@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://hcyety.github.io/2022/06/01/bei-zhan-da-han-qian-duan-mian-shi-zhi-javascript-pian/</loc>
+    <lastmod>2022-06-02</lastmod>
+  </url>
+  <url>
+    <loc>https://hcyety.github.io/2022/03/08/bei-zhan-da-han-qian-duan-mian-shi-zhi-html-pian/</loc>
+    <lastmod>2022-06-02</lastmod>
+  </url>
+  <url>
+    <loc>https://hcyety.github.io/2022/03/08/bei-zhan-da-han-qian-duan-mian-shi-zhi-css-pian/</loc>
+    <lastmod>2022-06-02</lastmod>
+  </url>
+  <url>
+    <loc>https://hcyety.github.io/2022/01/10/js-zhi-nei-cun-guan-li/</loc>
+    <lastmod>2022-06-01</lastmod>
+  </url>
+  <url>
     <loc>https://hcyety.github.io/2022/05/20/xiang-mu-gong-neng-shi-xian-ping-lun-kuang-cha-ru-biao-qing/</loc>
     <lastmod>2022-05-20</lastmod>
   </url>
@@ -14,14 +30,6 @@
   </url>
   <url>
     <loc>https://hcyety.github.io/2022/04/05/shen-ru-tan-jiu-zai-liu-lan-qi-shu-ru-url-dao-xuan-ran-ye-mian-shang-guo-cheng-pou-xi/</loc>
-    <lastmod>2022-04-29</lastmod>
-  </url>
-  <url>
-    <loc>https://hcyety.github.io/2022/03/08/bei-zhan-da-han-qian-duan-shi-xi-zhi-html-pian/</loc>
-    <lastmod>2022-04-29</lastmod>
-  </url>
-  <url>
-    <loc>https://hcyety.github.io/2022/03/08/bei-zhan-da-han-qian-duan-shi-xi-zhi-css-pian/</loc>
     <lastmod>2022-04-29</lastmod>
   </url>
   <url>
@@ -79,10 +87,6 @@
   <url>
     <loc>https://hcyety.github.io/2022/01/22/qian-duan-bi-xu-zhi-dao-de-kai-fa-diao-shi-zhi-shi/</loc>
     <lastmod>2022-01-23</lastmod>
-  </url>
-  <url>
-    <loc>https://hcyety.github.io/2022/01/10/js-zhi-nei-cun-guan-li/</loc>
-    <lastmod>2022-01-10</lastmod>
   </url>
   <url>
     <loc>https://hcyety.github.io/2022/01/09/shi-me-shi-bi-bao/</loc>

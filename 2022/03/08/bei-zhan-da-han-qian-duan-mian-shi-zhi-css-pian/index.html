@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="备战大厂前端实习之CSS篇, hcyety&#39;s blog">
+    <meta name="keywords" content="备战大厂前端面试之CSS篇, hcyety&#39;s blog">
     <meta name="description" content="诗和远方，我向往的；自在独行，我渴望的">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>备战大厂前端实习之CSS篇 | hcyety&#39;s blog</title>
+    <title>备战大厂前端面试之CSS篇 | hcyety&#39;s blog</title>
     <link rel="icon" type="image/png" href="/medias/logo.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -464,12 +464,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">备战大厂前端实习之CSS篇</h1>
+                    <h1 class="description center-align post-title">备战大厂前端面试之CSS篇</h1>
                 </div>
             </div>
         </div>
@@ -623,14 +623,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    11k
+                    11.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    46 分
+                    47 分
                 </div>
                 
 
@@ -658,7 +658,20 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h1><h2 id="一、盒模型"><a href="#一、盒模型" class="headerlink" title="一、盒模型"></a>一、盒模型</h2><p>每个标签都是一个盒模型，由四个部分组成，分别是 <code>margin</code>、<code>border</code>、<code>padding</code>、<code>content</code> 。<br>而盒模型分为两种，分别是标准盒模型和怪异盒模型，其中</p>
+                <p>前端面试题系列：</p>
+<ul>
+<li>【1】<a href="https://hcyety.github.io/2022/03/08/bei-zhan-da-han-qian-duan-shi-xi-zhi-html-pian/">备战前端实习面试之HTML篇</a>  </li>
+<li>【2】备战前端实习面试之CSS篇  </li>
+<li>【3】<a href="">备战前端实习面试之JavaScript篇</a>  </li>
+<li>【4】<a href="">备战前端实习面试之React篇</a>  </li>
+<li>【5】<a href="">备战前端实习面试之Node.js篇</a>  </li>
+<li>【6】<a href="">备战前端实习面试之浏览器原理篇</a>  </li>
+<li>【8】<a href="">备战前端实习面试之性能优化篇</a>  </li>
+<li>【7】<a href="">备战前端实习面试之计算机网络篇</a>  </li>
+<li>【9】<a href="">备战前端实习面试之手写代码篇</a>  </li>
+<li>【9】<a href="">备战前端实习面试之代码输出结果篇</a></li>
+</ul>
+<h1 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h1><h2 id="一、盒模型"><a href="#一、盒模型" class="headerlink" title="一、盒模型"></a>一、盒模型</h2><p>每个标签都是一个盒模型，由四个部分组成，分别是 <code>margin</code>、<code>border</code>、<code>padding</code>、<code>content</code> 。<br>而盒模型分为两种，分别是标准盒模型和怪异盒模型，其中</p>
 <ul>
 <li>标准盒模型的宽高等于 <code>content</code> ，通过 <code>box-sizing: content-box</code> 设置。</li>
 <li>怪异盒模型的宽高等于 <code>content + padding + border</code>，通过 <code>box-sizing: border-box</code> 设置。</li>
@@ -679,9 +692,9 @@
 <h2 id="四、讲讲-BFC"><a href="#四、讲讲-BFC" class="headerlink" title="四、讲讲 BFC"></a>四、讲讲 BFC</h2><p>BFC（块级格式化上下文）是一个独立的布局环境，可以理解为一个容器，这个容器有它自己的布局规则，布局时不会影响外界，同时也不受外部影响。</p>
 <p><strong>BFC 的布局规则</strong>：</p>
 <ul>
-<li>内部的盒子会在垂直方向上 一个接一个地放置。</li>
-<li>盒子垂直方向的距离由 <code>margin</code> 决定。属于同一个 BFC 的两个相邻盒子的 <code>margin</code>  会发生重叠</li>
-<li>计算BFC的高度时，浮动元素也参与计算</li>
+<li>内部的盒子会在垂直方向上自上而下地排列，和文档流的排列方式一致。</li>
+<li>盒子垂直方向的距离由 <code>margin</code> 决定。属于同一个 BFC 的两个相邻盒子的 <code>margin</code>  会发生重叠。</li>
+<li>计算BFC的高度时，浮动元素也参与计算。</li>
 <li>每个元素的左 <code>margin</code> 值和容器的左 <code>border</code> 相接触（对于从左往右的格式化，否则相反）。即使存在浮动也是如此。</li>
 <li>BFC 的区域不会与浮动的容器发生重叠。</li>
 <li>BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。反之也如此。</li>
@@ -694,6 +707,7 @@
 </ul>
 </li>
 <li>清除浮动  </li>
+<li>创建自适应两栏布局</li>
 </ul>
 <p><strong>触发 BFC 的条件</strong>：</p>
 <ul>
@@ -703,6 +717,24 @@
 <li><code>display</code> 的值为 <code>flex/inline-flex弹性元素</code> 或 <code>grid/inline-grid网格元素</code> 或 <code>inline-block行内块元素</code> 或 <code>table-cell表格单元格</code> 或 <code>table-caption表格标题</code></li>
 <li><code>overflow</code> 值不为 <code>visible</code></li>
 <li><code>contain</code> 值为 <code>layout</code> 或 <code>content</code> 或 <code>strict</code></li>
+</ul>
+<p><strong>如何解决 margin 重叠</strong>：</p>
+<ol>
+<li>兄弟之间重叠（底部元素设置 BFC ）</li>
+</ol>
+<ul>
+<li>底部元素变为行内盒子：<code>display: inline-block</code></li>
+<li>底部元素设置浮动：<code>float</code></li>
+<li>底部元素的 <code>position</code> 的值为 <code>absolute/fixed</code></li>
+</ul>
+<ol start="2">
+<li>父子之间重叠</li>
+</ol>
+<ul>
+<li>父元素加入：<code>overflow: hidden</code></li>
+<li>父元素添加透明边框：<code>border:1px solid transparent</code></li>
+<li>子元素变为行内盒子：<code>display: inline-block</code></li>
+<li>子元素加入浮动属性或定位</li>
 </ul>
 <h2 id="五、为什么要清除浮动？清除浮动的方式？"><a href="#五、为什么要清除浮动？清除浮动的方式？" class="headerlink" title="五、为什么要清除浮动？清除浮动的方式？"></a>五、为什么要清除浮动？清除浮动的方式？</h2><p>清除浮动是为了清除使用浮动元素产生的影响。这个影响就是，浮动元素的高度会塌陷，而高度的塌陷使页面后面的布局不能正常显示。</p>
 <p><strong>清除浮动的五种方法</strong>：</p>
@@ -2189,7 +2221,7 @@ div<span class="token punctuation">[</span><span class="token number">0</span><s
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://hcyety.github.io/2022/03/08/bei-zhan-da-han-qian-duan-shi-xi-zhi-css-pian/">https://hcyety.github.io/2022/03/08/bei-zhan-da-han-qian-duan-shi-xi-zhi-css-pian/</a>
+                    <a href="https://hcyety.github.io/2022/03/08/bei-zhan-da-han-qian-duan-mian-shi-zhi-css-pian/">https://hcyety.github.io/2022/03/08/bei-zhan-da-han-qian-duan-mian-shi-zhi-css-pian/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -2790,13 +2822,13 @@ div<span class="token punctuation">[</span><span class="token number">0</span><s
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/03/08/bei-zhan-da-han-qian-duan-shi-xi-zhi-html-pian/">
+                <a href="/2022/03/08/bei-zhan-da-han-qian-duan-mian-shi-zhi-html-pian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="备战大厂前端实习之HTML篇">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="备战大厂前端面试之HTML篇">
                         
-                        <span class="card-title">备战大厂前端实习之HTML篇</span>
+                        <span class="card-title">备战大厂前端面试之HTML篇</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -3066,7 +3098,7 @@ div<span class="token punctuation">[</span><span class="token number">0</span><s
 
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">81.2k</span>&nbsp;字
+                class="white-color">83.5k</span>&nbsp;字
             
             
             

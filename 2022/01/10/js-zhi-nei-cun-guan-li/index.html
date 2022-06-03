@@ -617,7 +617,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    16 分
+                    15 分
                 </div>
                 
 
@@ -761,13 +761,6 @@ btn<span class="token punctuation">.</span><span class="token function">addEvent
 </li>
 </ol>
 <p>当出现了一个含有DOM对象的循环引用时，就会发生内存泄露。</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token constant">A</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">var</span> a <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">"div"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  a<span class="token punctuation">.</span><span class="token function-variable function">onclick</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"hi"</span><span class="token punctuation">)</span>
-  <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span>
-<span class="token constant">A</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="内存泄露的解决方案"><a href="#内存泄露的解决方案" class="headerlink" title="内存泄露的解决方案"></a>内存泄露的解决方案</h3><p>下面的方案是从网上搜索到的资料，本人并没有实践过（主要是还不懂），仅供大家参考：</p>
 <ul>
 <li> 显式类型转换</li>
@@ -1903,7 +1896,7 @@ btn<span class="token punctuation">.</span><span class="token function">addEvent
 
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">81.2k</span>&nbsp;字
+                class="white-color">83.5k</span>&nbsp;字
             
             
             
