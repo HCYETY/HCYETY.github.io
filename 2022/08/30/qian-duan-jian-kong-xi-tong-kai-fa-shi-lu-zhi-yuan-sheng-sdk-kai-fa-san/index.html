@@ -656,18 +656,18 @@
             <div id="articleContent">
                 <p>在之前的文章我们已经理清 SDK 的开发流程：</p>
 <ol>
-<li><a target="_blank" rel="noopener" href="https://juejin.cn/post/7133968180967374885">明确采集数据</a></li>
-<li><a target="_blank" rel="noopener" href="https://juejin.cn/post/7134286771306627108">封装采集方法</a></li>
-<li>$\color{green}{数据上报后端}$</li>
-<li>$\color{green}{接入项目测试}$</li>
+<li><a href="https://hcyety.github.io/2022/08/30/qian-duan-jian-kong-xi-tong-kai-fa-shi-lu-zhi-yuan-sheng-sdk-kai-fa-yi/">明确采集数据</a></li>
+<li><a href="https://hcyety.github.io/2022/08/30/qian-duan-jian-kong-xi-tong-kai-fa-shi-lu-zhi-yuan-sheng-sdk-kai-fa-er/">封装采集方法</a></li>
+<li>数据上报后端</li>
+<li>接入项目测试</li>
 </ol>
 <p>那么本文就来看看怎么处理最后两点。</p>
-<h1 id="数据上报后端"><a href="#数据上报后端" class="headerlink" title="数据上报后端"></a>数据上报后端</h1><h2 id="开放后端接口"><a href="#开放后端接口" class="headerlink" title="开放后端接口"></a>开放后端接口</h2><p>后端的技术栈为 nodejs + koa + influxdb + mysql ，因此在入口文件 <code>app.ts</code> 中开放如下接口（这里以 前端异常 为例）：<br><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/958eee822b3c4a9883ee88791e885184~tplv-k3u1fbpfcp-watermark.image" alt="image.png"></p>
+<h1 id="数据上报后端"><a href="#数据上报后端" class="headerlink" title="数据上报后端"></a>数据上报后端</h1><h2 id="开放后端接口"><a href="#开放后端接口" class="headerlink" title="开放后端接口"></a>开放后端接口</h2><p>后端的技术栈为 nodejs + koa + influxdb + mysql ，因此在入口文件 <code>app.ts</code> 中开放如下接口（这里以 前端异常 为例）：<br><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/958eee822b3c4a9883ee88791e885184~tplv-k3u1fbpfcp-watermark.image" alt="后端开放的接口"></p>
 <ul>
 <li>上报异常数据的接口为 <code>/report/xxx</code> ，method 为 <code>POST</code> ；</li>
 <li>请求异常数据的接口为 <code>/api/xxx</code> ，method 为 <code>GET</code> 。</li>
 </ul>
-<h2 id="调用接口上报数据"><a href="#调用接口上报数据" class="headerlink" title="调用接口上报数据"></a>调用接口上报数据</h2><p><a target="_blank" rel="noopener" href="https://juejin.cn/post/7134286771306627108">上一篇文章</a> 我们已经封装好了捕获异常的方法，但还缺少了数据的上报功能，下面以 js 异常为例展示如何上报数据。</p>
+<h2 id="调用接口上报数据"><a href="#调用接口上报数据" class="headerlink" title="调用接口上报数据"></a>调用接口上报数据</h2><p><a href="https://hcyety.github.io/2022/08/30/qian-duan-jian-kong-xi-tong-kai-fa-shi-lu-zhi-yuan-sheng-sdk-kai-fa-er/">上一篇文章</a> 我们已经封装好了捕获异常的方法，但还缺少了数据的上报功能，下面以 js 异常为例展示如何上报数据。</p>
 <p>这是捕获 js 异常的函数：</p>
 <pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">window.addEventListener(&#39;error&#39;, (event) &#x3D;&gt; &#123;
     handleJs(event);
@@ -752,10 +752,12 @@ export function report(interfaceUrl: string, data: object): void &#123;
 <blockquote>
 <p>需要注意的是，使用 <code>Navigator.sendBeacon()</code> 的话，我们需要在后端进行适当的处理，才能获取到传过去数据，这在下面会讲到。</p>
 </blockquote>
-<h2 id="后端中间件逻辑"><a href="#后端中间件逻辑" class="headerlink" title="后端中间件逻辑"></a>后端中间件逻辑</h2><p>为了提高表数据的查询性能，后端使用了时序数据库 <code>influxdb</code> 来达到效果：<br><a target="_blank" rel="noopener" href="https://juejin.cn/post/7132867601574658062">【前端监控系统开发实录】之时序数据库的探索 | 青训营笔记</a></p>
+<h2 id="后端中间件逻辑"><a href="#后端中间件逻辑" class="headerlink" title="后端中间件逻辑"></a>后端中间件逻辑</h2><p>为了提高表数据的查询性能，后端使用了时序数据库 <code>influxdb</code> 来达到效果：<br><a href="https://hcyety.github.io/2022/08/30/qian-duan-jian-kong-xi-tong-kai-fa-shi-lu-zhi-shi-xu-shu-ju-ku-de-tan-suo/">【前端监控系统开发实录】之时序数据库的探索</a></p>
 <p>需要注意的是：</p>
 <ol>
-<li>注册中间件(一般在 app.js 里面)的时候在 <code>koa-bodyparser</code> 前加上一个中间件，让 <code>bodyparser</code> 不要处理这个路由请求，自己来处理这条特别的请求：<pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">app.use(async function(ctx,next) &#123;
+<li>注册中间件(一般在 app.js 里面)的时候在 <code>koa-bodyparser</code> 前加上一个中间件，让 <code>bodyparser</code> 不要处理这个路由请求，自己来处理这条特别的请求：</li>
+</ol>
+<pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">app.use(async function(ctx,next) &#123;
     &#x2F;&#x2F;判断请求的路由路径
     if (&#x2F;^.*&#x2F;beacon&#x2F;.+$&#x2F;.test(ctx.path)) &#123;
         ctx.disableBodyParser &#x3D; true;
@@ -766,13 +768,14 @@ export function report(interfaceUrl: string, data: object): void &#123;
 app.use(bodyParser());
 
 &#x2F;&#x2F; js 相关
-router.post(&#39;&#x2F;report&#x2F;js&#39;, addJs);
-
-......<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+router.post(&#39;&#x2F;report&#x2F;js&#39;, addJs);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="2">
 <li>调用 <code>/report/js</code> 接口后会进入 <code>addJs</code> 处理层，在里面引入 <code>co-body</code> 插件：<code>npm install co-body --save</code><pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">const coBody &#x3D; require(&#39;co-body&#39;);<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 <li>用 json 的方式格式化这个请求数据<pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">const params &#x3D; await coBody.json(ctx.req);<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 </ol>
-<h1 id="接入项目测试"><a href="#接入项目测试" class="headerlink" title="接入项目测试"></a>接入项目测试</h1><p>我们的项目结构是这样子的：<br><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b3aa25ade6824510ace466a38d74d75e~tplv-k3u1fbpfcp-watermark.image" alt="image.png"><br>可以知道，在 SDK 的 example 目录下是我们自己搭建的 vue 项目，用于测试异常是否能正确捕获，以及是否接入成功。</p>
+<h1 id="接入项目测试"><a href="#接入项目测试" class="headerlink" title="接入项目测试"></a>接入项目测试</h1><p>我们的项目结构是这样子的：  </p>
+<p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b3aa25ade6824510ace466a38d74d75e~tplv-k3u1fbpfcp-watermark.image" alt="SDK 文件结构图"></p>
+<p>可以知道，在 SDK 的 example 目录下是我们自己搭建的 vue 项目，用于测试异常是否能正确捕获，以及是否接入成功。</p>
 <p>那么测试项目是怎么接入 SDK 的呢？请看：</p>
 <blockquote>
 <p>根据实际开发步骤，这时候其实还没发布 npm 包，因此先采用本地引入 SDK 的方式测试是否能成功接入。</p>
@@ -1708,7 +1711,7 @@ init(&#123;
 
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">96.9k</span>&nbsp;字
+                class="white-color">96.8k</span>&nbsp;字
             
             
             

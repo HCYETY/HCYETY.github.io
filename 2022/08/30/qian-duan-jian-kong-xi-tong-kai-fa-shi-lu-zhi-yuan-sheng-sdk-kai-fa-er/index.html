@@ -656,10 +656,10 @@
             <div id="articleContent">
                 <p>在之前的文章我们已经理清 SDK 的开发流程：</p>
 <ol>
-<li><a target="_blank" rel="noopener" href="https://juejin.cn/post/7133968180967374885">明确采集数据</a></li>
-<li>$\color{green}{封装采集方法}$</li>
-<li><a target="_blank" rel="noopener" href="https://juejin.cn/post/7134672002052259877">数据上报后端</a></li>
-<li><a target="_blank" rel="noopener" href="https://juejin.cn/post/7134672002052259877">接入项目测试</a></li>
+<li><a href="https://hcyety.github.io/2022/08/30/qian-duan-jian-kong-xi-tong-kai-fa-shi-lu-zhi-yuan-sheng-sdk-kai-fa-yi/">明确采集数据</a></li>
+<li>封装采集方法</li>
+<li><a href="https://hcyety.github.io/2022/08/30/qian-duan-jian-kong-xi-tong-kai-fa-shi-lu-zhi-yuan-sheng-sdk-kai-fa-san/">数据上报后端</a></li>
+<li><a href="https://hcyety.github.io/2022/08/30/qian-duan-jian-kong-xi-tong-kai-fa-shi-lu-zhi-yuan-sheng-sdk-kai-fa-san/">接入项目测试</a></li>
 </ol>
 <p>那么本文就来看看怎么封装采集方法。</p>
 <h1 id="异常监控"><a href="#异常监控" class="headerlink" title="异常监控"></a>异常监控</h1><p>要想监控异常，首先我们要有异常可以监控，因此这里搭建了一个 vue 项目，在页面中做了一些按钮，每个按钮代表一种异常，我们要达到的效果：<strong>每点击一个按钮，SDK 要捕获到对应的错误，在控制台打印出捕获到的信息</strong>。</p>
@@ -768,7 +768,7 @@
 
 &lt;style&gt;&lt;&#x2F;style&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>页面呈现效果是这样的：<br><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/fbc08afdbb1c45519ea21d06851450ea~tplv-k3u1fbpfcp-watermark.image" alt="image.png"></p>
+<p>页面呈现效果是这样的：<br><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/fbc08afdbb1c45519ea21d06851450ea~tplv-k3u1fbpfcp-watermark.image" alt="简单的界面"></p>
 <p>到这里，我们已经简单制造好了各种异常，下面看看怎么捕获。</p>
 <p><strong>封装的 ts 类型</strong>：</p>
 <pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">&#x2F;&#x2F; 错误类型
@@ -978,7 +978,7 @@ window.console.error &#x3D; function (error) &#123;
 &#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h2 id="跨域异常"><a href="#跨域异常" class="headerlink" title="跨域异常"></a>跨域异常</h2><p><code>window.addEventListener(&#39;error&#39;)</code>捕获不到跨域错误，反而是被<code>window.addEventListener(&#39;unhandledrejection&#39;)</code>捕获，这个坑现在暂未解决，后续处理：</p>
-<p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ded00868612c41be83be5021be382494~tplv-k3u1fbpfcp-watermark.image" alt="image.png"></p>
+<p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ded00868612c41be83be5021be382494~tplv-k3u1fbpfcp-watermark.image" alt="跨域异常的坑"></p>
 <p>暂时使用<code>window.addEventListener(&#39;unhandledrejection&#39;)</code>捕获跨域错误：</p>
 <pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">window.addEventListener(&#39;unhandledrejection&#39;, (event) &#x3D;&gt; &#123;
     handlePromise(event);
@@ -1024,7 +1024,7 @@ const handlePromise &#x3D; function (event: any): void &#123;
 <li>重写<code>console.error</code>捕获 console.error 错误</li>
 </ol>
 <h1 id="行为监控"><a href="#行为监控" class="headerlink" title="行为监控"></a>行为监控</h1><h2 id="路由跳转"><a href="#路由跳转" class="headerlink" title="路由跳转"></a>路由跳转</h2><h3 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h3><p>触发一次<code>history.pushState</code>页面就会跳转两次：</p>
-<p><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d175e4b759bd45229c1b567a4e8a7c03~tplv-k3u1fbpfcp-watermark.image" alt="image.png"></p>
+<p><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d175e4b759bd45229c1b567a4e8a7c03~tplv-k3u1fbpfcp-watermark.image" alt="路由跳转的坑"></p>
 <h1 id="性能监控"><a href="#性能监控" class="headerlink" title="性能监控"></a>性能监控</h1><p>更新中…</p>
 
                 
@@ -1608,7 +1608,7 @@ const handlePromise &#x3D; function (event: any): void &#123;
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            上报数据至服务器
+                            上报数据至服务器 并 接入测试项目
                         
                     </div>
                     <div class="publish-info">
@@ -1917,7 +1917,7 @@ const handlePromise &#x3D; function (event: any): void &#123;
 
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">96.9k</span>&nbsp;字
+                class="white-color">96.8k</span>&nbsp;字
             
             
             

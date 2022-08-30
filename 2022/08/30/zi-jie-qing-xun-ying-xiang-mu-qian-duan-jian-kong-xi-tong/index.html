@@ -717,7 +717,7 @@
 <p>接下来笔者会把篇幅留给具体的开发流程。</p>
 <h2 id="搭建项目框架"><a href="#搭建项目框架" class="headerlink" title="搭建项目框架"></a>搭建项目框架</h2><p>在这里我们首先需要捋清这个项目的业务逻辑，我们要明白这个项目<strong>要做什么事</strong>，<strong>要达到什么目的</strong>：我们要<strong>监控项目</strong>，<strong>采集数据</strong>，<strong>将数据上报给服务器</strong>，<strong>将数据展示在网页上</strong>。</p>
 <p>笔者想到这里，自以为懂了，可以开始 coding 了，却没有深入思考：<strong>监控项目是指在 React 或 Vue 等框架上封装监控函数吗？</strong> 答案是否定的，框架那么多，怎么可能在一个框架上写监控呢，自然是自己用 js/ts 写原生 SDK 实现监控了。想到这里，我茅塞顿开：既然如此，视图展示和原生 SDK 应该是同级目录，另外加上后端服务，也就是说我要在一个文件夹下管理 3 个项目：</p>
-<p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1a7f8ecbf3ff482bb12b1b7b0839b471~tplv-k3u1fbpfcp-watermark.image" alt="image.png"></p>
+<p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1a7f8ecbf3ff482bb12b1b7b0839b471~tplv-k3u1fbpfcp-watermark.image" alt="项目文件结构"></p>
 <ul>
 <li>monitor-sdk：使用 webpack + ts 开发</li>
 <li>monitor-web：团队使用 vue3 + vite + ts 开发，后续我个人可能会用 react + webpack + ts 重写</li>
@@ -725,14 +725,14 @@
 </ul>
 <p>有了思路，其他就好办了，项目的初始化文章网上有的是，根据自己需求搭建就行了，如果需要的话后面会出详细搭建教程。</p>
 <h2 id="前端监控原生-SDK-开发"><a href="#前端监控原生-SDK-开发" class="headerlink" title="前端监控原生 SDK 开发"></a>前端监控原生 SDK 开发</h2><ol>
-<li><a target="_blank" rel="noopener" href="https://juejin.cn/post/7133968180967374885">【前端监控系统开发实录】之原生 SDK 开发（一） | 青训营笔记</a></li>
-<li><a target="_blank" rel="noopener" href="https://juejin.cn/post/7134286771306627108">【前端监控系统开发实录】之原生 SDK 开发（二） | 青训营笔记</a></li>
-<li><a target="_blank" rel="noopener" href="https://juejin.cn/post/7134672002052259877">【前端监控系统开发实录】之原生 SDK 开发（三） | 青训营笔记</a></li>
+<li><a href="https://hcyety.github.io/2022/08/30/qian-duan-jian-kong-xi-tong-kai-fa-shi-lu-zhi-yuan-sheng-sdk-kai-fa-yi/">【前端监控系统开发实录】之原生 SDK 开发（一）</a></li>
+<li><a href="https://hcyety.github.io/2022/08/30/qian-duan-jian-kong-xi-tong-kai-fa-shi-lu-zhi-yuan-sheng-sdk-kai-fa-er/">【前端监控系统开发实录】之原生 SDK 开发（二）</a></li>
+<li><a href="https://hcyety.github.io/2022/08/30/qian-duan-jian-kong-xi-tong-kai-fa-shi-lu-zhi-yuan-sheng-sdk-kai-fa-san/">【前端监控系统开发实录】之原生 SDK 开发（三）</a></li>
 </ol>
-<h2 id="将-SDK-发布到-npm"><a href="#将-SDK-发布到-npm" class="headerlink" title="将 SDK 发布到 npm"></a>将 SDK 发布到 npm</h2><p><a target="_blank" rel="noopener" href="https://juejin.cn/post/7131018811586641951/">【前端监控系统开发实录】之 SDK 发布至 npm | 青训营笔记</a></p>
+<h2 id="将-SDK-发布到-npm"><a href="#将-SDK-发布到-npm" class="headerlink" title="将 SDK 发布到 npm"></a>将 SDK 发布到 npm</h2><p><a href="https://hcyety.github.io/2022/08/30/qian-duan-jian-kong-xi-tong-kai-fa-shi-lu-zhi-sdk-fa-bu-zhi-npm/">【前端监控系统开发实录】之 SDK 发布至 npm</a></p>
 <h2 id="后端开发"><a href="#后端开发" class="headerlink" title="后端开发"></a>后端开发</h2><ol>
-<li><a target="_blank" rel="noopener" href="https://juejin.cn/post/7132867601574658062">【前端监控系统开发实录】之时序数据库的探索 | 青训营笔记</a></li>
-<li><a target="_blank" rel="noopener" href="https://juejin.cn/post/7133237688417255437">【前端监控系统开发实录】之使用 swagger 配置接口文档 | 青训营笔记</a></li>
+<li><a href="https://hcyety.github.io/2022/08/30/qian-duan-jian-kong-xi-tong-kai-fa-shi-lu-zhi-shi-xu-shu-ju-ku-de-tan-suo/">【前端监控系统开发实录】之时序数据库的探索</a></li>
+<li><a href="https://hcyety.github.io/2022/08/30/qian-duan-jian-kong-xi-tong-kai-fa-shi-lu-zhi-shi-yong-swagger-pei-zhi-jie-kou-wen-dang/">【前端监控系统开发实录】之使用 swagger 配置接口文档</a></li>
 </ol>
 <h2 id="web-视图展示"><a href="#web-视图展示" class="headerlink" title="web 视图展示"></a>web 视图展示</h2><p>开发中…</p>
 
@@ -1630,7 +1630,7 @@
 
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">96.9k</span>&nbsp;字
+                class="white-color">96.8k</span>&nbsp;字
             
             
             

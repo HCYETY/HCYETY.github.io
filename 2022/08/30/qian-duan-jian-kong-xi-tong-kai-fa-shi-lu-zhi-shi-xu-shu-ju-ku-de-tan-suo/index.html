@@ -688,7 +688,7 @@
 </blockquote>
 <p>需要提醒的是：</p>
 <ol>
-<li>写入数据时，我们会用到<code>new Point()</code>，这其实就是创建表中行数据的意思，然后使用<code>.floatField</code>方法创建键值对。如果需要新建 <strong>整数型</strong> 、<strong>浮点型</strong>、<strong>布尔型</strong> 等数据，可以进入<code>Point</code>对象查看源代码（按住 <strong>ctrl 键</strong> ，鼠标点击即可跳转）：<br><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/74c7a8e0d5404048b8b4162ebd2932a6~tplv-k3u1fbpfcp-watermark.image" alt="image.png"></li>
+<li>写入数据时，我们会用到<code>new Point()</code>，这其实就是创建表中行数据的意思，然后使用<code>.floatField</code>方法创建键值对。如果需要新建 <strong>整数型</strong> 、<strong>浮点型</strong>、<strong>布尔型</strong> 等数据，可以进入<code>Point</code>对象查看源代码（按住 <strong>ctrl 键</strong> ，鼠标点击即可跳转）：<br><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/74c7a8e0d5404048b8b4162ebd2932a6~tplv-k3u1fbpfcp-watermark.image" alt="源码"></li>
 <li>查询表数据我们是使用<code>const queryApi = new InfluxDB(&#123;YOUR_URL, YOUR_API_TOKEN&#125;).getQueryApi(YOUR_ORG)</code>的方式实例化一个<code>InfluxDB</code>客户端，然后调用该实例上的方法查表，如<code>queryApi.queryRows(fluxQuery, fluxObserver)</code>。但我们不仅要查表，还要将查找后的结果响应给前端（这里后端用的是 Node.js + Koa ），但问题是怎么响应，一开始我是这样做的：<pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">const clientDB &#x3D; new InfluxDB(&#123;url: **your_url**, token: **your_token**&#125;);
 const queryApi &#x3D; clientDB.getQueryApi(**your_org**);
 const query &#x3D; &#96;from(bucket: &quot;$&#123;**your_bucket**&#125;&quot;) |&gt; range(start: -1h)&#96;;
@@ -778,7 +778,7 @@ return ctx.body &#x3D; await new Promise((resolve, reject) &#x3D;&gt; &#123;
 &#125;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 将<code>queryApi.queryRows</code>使用 promise 包裹起来后，终于有返回结果了。</li>
 </ol>
-<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e5529580736543498e9130b2ee328f03~tplv-k3u1fbpfcp-watermark.image" alt="image.png"></p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e5529580736543498e9130b2ee328f03~tplv-k3u1fbpfcp-watermark.image" alt="Postman 调用接口"></p>
 
                 
             </div>
@@ -1670,7 +1670,7 @@ return ctx.body &#x3D; await new Promise((resolve, reject) &#x3D;&gt; &#123;
 
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">96.9k</span>&nbsp;字
+                class="white-color">96.8k</span>&nbsp;字
             
             
             
