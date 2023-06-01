@@ -623,7 +623,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    6.5k
+                    6.4k
                 </div>
                 
 
@@ -1019,7 +1019,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token function">objectFactory</span><span class="token punctuation">(</span>构造函数<span class="token punctuation">,</span> 初始化参数<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h2 id="什么是原型和原型链？原型链的问题？"><a href="#什么是原型和原型链？原型链的问题？" class="headerlink" title="什么是原型和原型链？原型链的问题？"></a>什么是原型和原型链？原型链的问题？</h2><p>我们创建的每个函数都有一个 <code>prototype（原型）</code> 属性，这个属性是一个指针，指向一个对象，而这个对象的用途是存储可以让所有实例共享的属性和方法。</p>
-<p>构造函数、实例、实例原型这三者的关系可以用一张图表示：<a href="./%E5%A4%87%E6%88%98%E5%A4%A7%E5%8E%82%E5%89%8D%E7%AB%AF%E5%AE%9E%E4%B9%A0%E4%B9%8BJavaScript%E7%AF%87/%E5%8E%9F%E5%9E%8B.png">构造函数、实例、实例原型的关系</a></p>
+<p>构造函数、实例、实例原型这三者的关系可以用一张图表示：<img src="./%E5%A4%87%E6%88%98%E5%A4%A7%E5%8E%82%E5%89%8D%E7%AB%AF%E5%AE%9E%E4%B9%A0%E4%B9%8BJavaScript%E7%AF%87/%E5%8E%9F%E5%9E%8B.png" alt="构造函数、实例、实例原型的关系"></p>
 <p>JavaScript 中所有的对象都是由它的原型对象继承而来。而原型对象自身也是一个对象，它也有自己的原型对象，这样层层上溯，就形成了一个类似链表的结构，这就是原型链。</p>
 <p>当我们在访问一个对象的属性时，如果这个对象内部不存在这个属性，那么它就会去 <code>prototype</code> 里找这个属性，这个 <code>prototype</code> 又会有自己的 <code>prototype</code> ，于是就这样一直找下去，直到 <code>Object._proto_</code> 为止，找不到就返回 <code>undefined</code> 。</p>
 <p>由于原型链的存在，我们可以让很多实例去共享原型上面的方法和属性，方便了我们的很多操作。但是原型链并非是十分完美的：</p>
@@ -2007,7 +2007,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">118.5k</span>&nbsp;字
+                class="white-color">118.4k</span>&nbsp;字
             
             
             
