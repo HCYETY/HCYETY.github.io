@@ -858,7 +858,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <li>内层变量可能覆盖外层变量</li>
 <li>用来计数的循环变量泄露为全局变量</li>
 </ul>
-<p>const对象的属性可以修改吗？<br><code>const</code> 保证的并不是变量的值不能改动，而是变量指向的那个内存地址不能改动。<br>对于基本数据类型的数据，其值就保存在变量指向的那个内存地址，因此等同于常量。<br>但对于应用类型的数据来说，变量指向数据的内存地址，保存的只是一个指针，<code>const</code> 只能保证这个指针是固定不变的，至于指针指向的数据结构是不是可变的，就完全不能控制了。</p>
+<p>const对象的属性可以修改吗？<br><code>const</code> 保证的并不是变量的值不能改动，而是变量指向的那个内存地址不能改动。<br>对于基本数据类型的数据，其值就保存在变量指向的那个内存地址，因此等同于常量。<br>但对于引用类型的数据来说，变量指向数据的内存地址，保存的只是一个指针，<code>const</code> 只能保证这个指针是固定不变的，至于指针指向的数据结构是不是可变的，就完全不能控制了。</p>
 <h2 id="声明变量和声明函数的提升有什么区别？"><a href="#声明变量和声明函数的提升有什么区别？" class="headerlink" title="声明变量和声明函数的提升有什么区别？"></a>声明变量和声明函数的提升有什么区别？</h2><p><strong>相同点</strong>：</p>
 <p>只要变量/函数在代码中声明了，无论是在哪个位置声明的，js 引擎都会将它的声明放在范围作用域的顶部，即提升声明。</p>
 <p><strong>不同点</strong>：</p>
@@ -2007,7 +2007,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">118.4k</span>&nbsp;字
+                class="white-color">120.5k</span>&nbsp;字
             
             
             
