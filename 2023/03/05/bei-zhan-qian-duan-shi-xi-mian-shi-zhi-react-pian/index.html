@@ -658,19 +658,19 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>前端面试题系列：</p>
+                <p>前端面试题系列文章：</p>
 <ul>
 <li>【1】<a href="https://hcyety.github.io/2022/03/08/bei-zhan-da-han-qian-duan-mian-shi-zhi-html-pian/">备战前端实习面试之HTML篇</a></li>
 <li>【2】<a href="https://hcyety.github.io/2022/03/08/bei-zhan-da-han-qian-duan-mian-shi-zhi-css-pian/">备战前端实习面试之CSS篇</a></li>
 <li>【3】<a href="https://hcyety.github.io/2022/06/01/bei-zhan-da-han-qian-duan-mian-shi-zhi-javascript-pian/">备战前端实习面试之JavaScript篇</a></li>
 <li>【4】备战前端实习面试之React篇</li>
 <li>【5】<a href="https://hcyety.github.io/2022/06/17/bei-zhan-da-han-qian-duan-mian-shi-zhi-vue-pian/">备战前端实习面试之Vue篇</a></li>
-<li>【6】备战前端实习面试之Node.js篇</li>
-<li>【7】备战前端实习面试之浏览器原理篇</li>
-<li>【8】备战前端实习面试之性能优化篇</li>
-<li>【9】备战前端实习面试之计算机网络篇</li>
-<li>【10】备战前端实习面试之手写代码篇</li>
-<li>【11】备战前端实习面试之代码输出结果篇</li>
+<li>【6】<a href="">备战前端实习面试之Node.js篇</a></li>
+<li>【7】<a href="https://hcyety.github.io/2023/06/01/bei-zhan-da-han-qian-duan-mian-shi-zhi-liu-lan-qi-pian/">备战前端实习面试之浏览器篇</a></li>
+<li>【8】<a href="">备战前端实习面试之性能优化篇</a></li>
+<li>【9】<a href="">备战前端实习面试之计算机网络篇</a></li>
+<li>【10】<a href="https://hcyety.github.io/2023/06/01/bei-zhan-da-han-qian-duan-shi-xi-zhi-shou-xie-dai-ma-pian/">备战前端实习面试之手写代码篇</a></li>
+<li>【11】<a href="https://hcyety.github.io/2022/03/08/bei-zhan-da-han-qian-duan-shi-xi-zhi-dai-ma-shu-chu-jie-guo-pian/">备战前端实习面试之代码输出结果篇</a></li>
 </ul>
 <h1 id="React"><a href="#React" class="headerlink" title="React"></a>React</h1><h2 id="事件机制"><a href="#事件机制" class="headerlink" title="事件机制"></a>事件机制</h2><p>React 并不是将 <code>click</code> 等事件绑定到了 div 的真实 DOM 上，而是在 <code>document</code> 处监听所有事件，当事件发生并且冒泡到 <code>document</code> 处的时候，React 将事件内容封装并交由真正的处理函数运行。这样的方式不仅仅减少了内存的消耗，还能在组件挂载销毁时统一订阅和移除事件。</p>
 <p>冒泡到 <code>document</code> 上的事件也不是原生的浏览器事件，而是由 React 自己实现的合成事件，因此如果不想要是事件冒泡的话应该调用 <code>event.preventDefault()</code> 方法，而不是调用 <code>event.stopProppagation()</code> 方法。</p>
@@ -1357,7 +1357,7 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            用自问自答的形式模拟面试，查漏补缺浏览器，备战大厂
+                            用自问自答的形式模拟面试，查漏补缺，备战大厂
                         
                     </div>
                     <div class="publish-info">
@@ -1398,32 +1398,44 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/11/02/gu-ge-liu-lan-qi-cha-jian-kai-fa/">
+                <a href="/2022/10/11/qing-bie-zai-yong-console-log-zuo-diao-shi-liao/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="谷歌浏览器插件开发">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="请别再用 console.log 做调试了">
                         
-                        <span class="card-title">谷歌浏览器插件开发</span>
+                        <span class="card-title">请别再用 console.log 做调试了</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            本来应该还有 BDD ，后续补上吧，挖坑~
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-11-02
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-10-11
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            hcyety
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E9%A1%B9%E7%9B%AE/" class="post-category">
+                                    项目
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%BC%80%E5%8F%91%E6%A8%A1%E5%BC%8F/">
+                        <span class="chip bg-color">开发模式</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -1658,7 +1670,7 @@
 
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">124.9k</span>&nbsp;字
+                class="white-color">125.3k</span>&nbsp;字
             
             
             

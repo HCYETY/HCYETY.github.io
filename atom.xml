@@ -6,7 +6,7 @@
   <link href="https://hcyety.github.io/atom.xml" rel="self"/>
   
   <link href="https://hcyety.github.io/"/>
-  <updated>2023-04-06T02:20:11.338Z</updated>
+  <updated>2023-06-01T08:04:15.235Z</updated>
   <id>https://hcyety.github.io/</id>
   
   <author>
@@ -17,24 +17,86 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
-    <link href="https://hcyety.github.io/2023/06/01/bei-zhan-da-han-qian-duan-shi-xi-zhi-shou-xie-dai-ma-pian/"/>
-    <id>https://hcyety.github.io/2023/06/01/bei-zhan-da-han-qian-duan-shi-xi-zhi-shou-xie-dai-ma-pian/</id>
-    <published>2023-06-01T03:45:20.656Z</published>
-    <updated>2023-04-06T02:20:11.338Z</updated>
+    <title>备战大厂前端实习之手写代码篇</title>
+    <link href="https://hcyety.github.io/2026/06/01/bei-zhan-da-han-qian-duan-shi-xi-zhi-shou-xie-dai-ma-pian/"/>
+    <id>https://hcyety.github.io/2026/06/01/bei-zhan-da-han-qian-duan-shi-xi-zhi-shou-xie-dai-ma-pian/</id>
+    <published>2026-06-01T03:52:08.000Z</published>
+    <updated>2023-06-01T08:04:15.235Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;ol&gt;
-&lt;li&gt;手写 Object.create&lt;br&gt;作用：将传入的对象作为原型&lt;pre class=&quot;line-numbers language-js&quot; data-language=&quot;js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span</summary>
+    <summary type="html">&lt;p&gt;前端面试题系列文章：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;【1】&lt;a</summary>
         
       
     
     
     
+    <category term="求职" scheme="https://hcyety.github.io/categories/%E6%B1%82%E8%81%8C/"/>
+    
+    
+    <category term="前端" scheme="https://hcyety.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="八股文" scheme="https://hcyety.github.io/tags/%E5%85%AB%E8%82%A1%E6%96%87/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>备战大厂前端面试之计算机网络篇</title>
+    <link href="https://hcyety.github.io/2023/06/01/bei-zhan-da-han-qian-duan-mian-shi-zhi-ji-suan-ji-wang-luo-pian/"/>
+    <id>https://hcyety.github.io/2023/06/01/bei-zhan-da-han-qian-duan-mian-shi-zhi-ji-suan-ji-wang-luo-pian/</id>
+    <published>2023-06-01T08:06:22.000Z</published>
+    <updated>2023-06-01T08:13:09.585Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;前端面试题系列文章：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;【1】&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="求职" scheme="https://hcyety.github.io/categories/%E6%B1%82%E8%81%8C/"/>
+    
+    
+    <category term="前端" scheme="https://hcyety.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="八股文" scheme="https://hcyety.github.io/tags/%E5%85%AB%E8%82%A1%E6%96%87/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>React 源码</title>
+    <link href="https://hcyety.github.io/2023/06/01/react-yuan-ma/"/>
+    <id>https://hcyety.github.io/2023/06/01/react-yuan-ma/</id>
+    <published>2023-06-01T08:00:24.000Z</published>
+    <updated>2023-06-01T08:01:23.219Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;作为框架的使用者，会首先关注 React 的 API ，但 React 团队作为框架的开发者，他们首先面对的是 React 的设计理念。所以，要学懂 React 的源码，我们需要将自己的角色，从框架的使用者转变为框架的开发者，从理念出发，自顶向下的学习。&lt;/p&gt;
+&lt;h1</summary>
+        
+      
+    
+    
+    
+    <category term="源码分析" scheme="https://hcyety.github.io/categories/%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/"/>
+    
+    
+    <category term="React" scheme="https://hcyety.github.io/tags/React/"/>
     
   </entry>
   
@@ -43,14 +105,14 @@
     <link href="https://hcyety.github.io/2023/06/01/bei-zhan-da-han-qian-duan-mian-shi-zhi-liu-lan-qi-pian/"/>
     <id>https://hcyety.github.io/2023/06/01/bei-zhan-da-han-qian-duan-mian-shi-zhi-liu-lan-qi-pian/</id>
     <published>2023-06-01T03:42:40.003Z</published>
-    <updated>2023-06-01T07:19:24.721Z</updated>
+    <updated>2023-06-01T08:06:58.527Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;前端面试题系列：&lt;/p&gt;
+    <summary type="html">&lt;p&gt;前端面试题系列文章：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;【1】&lt;a</summary>
         
@@ -72,14 +134,14 @@
     <link href="https://hcyety.github.io/2023/03/05/bei-zhan-qian-duan-shi-xi-mian-shi-zhi-react-pian/"/>
     <id>https://hcyety.github.io/2023/03/05/bei-zhan-qian-duan-shi-xi-mian-shi-zhi-react-pian/</id>
     <published>2023-03-05T01:58:17.000Z</published>
-    <updated>2023-06-01T03:56:09.679Z</updated>
+    <updated>2023-06-01T08:03:36.549Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;前端面试题系列：&lt;/p&gt;
+    <summary type="html">&lt;p&gt;前端面试题系列文章：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;【1】&lt;a</summary>
         
@@ -93,19 +155,6 @@
     <category term="前端" scheme="https://hcyety.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
     <category term="八股文" scheme="https://hcyety.github.io/tags/%E5%85%AB%E8%82%A1%E6%96%87/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>谷歌浏览器插件开发</title>
-    <link href="https://hcyety.github.io/2022/11/02/gu-ge-liu-lan-qi-cha-jian-kai-fa/"/>
-    <id>https://hcyety.github.io/2022/11/02/gu-ge-liu-lan-qi-cha-jian-kai-fa/</id>
-    <published>2022-11-02T10:50:10.000Z</published>
-    <updated>2023-06-01T02:40:58.781Z</updated>
-    
-    
-    
-    
     
   </entry>
   
@@ -522,39 +571,6 @@
     
     
     <category term="SDK" scheme="https://hcyety.github.io/tags/SDK/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>字节青训营项目：前端监控系统</title>
-    <link href="https://hcyety.github.io/2022/08/30/zi-jie-qing-xun-ying-xiang-mu-qian-duan-jian-kong-xi-tong/"/>
-    <id>https://hcyety.github.io/2022/08/30/zi-jie-qing-xun-ying-xiang-mu-qian-duan-jian-kong-xi-tong/</id>
-    <published>2022-08-30T09:55:59.000Z</published>
-    <updated>2022-08-30T10:49:01.540Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;选择项目&quot;&gt;&lt;a href=&quot;#选择项目&quot; class=&quot;headerlink&quot; title=&quot;选择项目&quot;&gt;&lt;/a&gt;选择项目&lt;/h1&gt;&lt;p&gt;在青训营会议中，字节大佬范文杰给我们提供了三个项目：前端监控系统、Low-code</summary>
-        
-      
-    
-    
-    
-    <category term="项目" scheme="https://hcyety.github.io/categories/%E9%A1%B9%E7%9B%AE/"/>
-    
-    
-    <category term="Ts" scheme="https://hcyety.github.io/tags/Ts/"/>
-    
-    <category term="NodeJs" scheme="https://hcyety.github.io/tags/NodeJs/"/>
-    
-    <category term="Koa" scheme="https://hcyety.github.io/tags/Koa/"/>
-    
-    <category term="MySQL" scheme="https://hcyety.github.io/tags/MySQL/"/>
-    
-    <category term="InfluxDB" scheme="https://hcyety.github.io/tags/InfluxDB/"/>
     
   </entry>
   
