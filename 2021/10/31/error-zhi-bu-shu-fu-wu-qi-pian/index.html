@@ -561,30 +561,30 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <ol>
-<li>POST <a target="_blank" rel="noopener" href="http://localhost:3000/login">http://localhost:3000/login</a> 404 (Not Found)?</li>
+<li><code>POST http://localhost:3000/login 404 (Not Found)</code>?</li>
 </ol>
 <p>有多种原因：①前端调用后端接口失败，通常是因为接口的路径匹配错误；②后端没有响应数据给前端；前端接收数据的格式与后端返回数据的格式不相符。</p>
 <blockquote>
 <p>参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_44163269/article/details/105442612">vue项目 前端 POST(GET) http://127.0.0.1xxx 404(Not Found)错误 （多种误区解决）</a></p>
 </blockquote>
 <ol start="2">
-<li>在服务器运行<code>npm run dev</code>报错：SyntaxError: Cannot use import statement outside a module？  </li>
+<li>在服务器运行<code>npm run dev</code>报错：<code>SyntaxError: Cannot use import statement outside a module</code>? </li>
 </ol>
 <p>这提示一般是node下无法使用import。</p>
 <blockquote>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43094085/article/details/114832738">解决方法参考这篇文章</a></p>
 </blockquote>
 <ol start="3">
-<li>在服务器上启动 NodeJs+ts 项目时报错之一：TS错误:⨯无法编译TypeScript(Error: TSError: ⨯ Unable to compile TypeScript)</li>
+<li>在服务器上启动 NodeJs+ts 项目时报错之一：TS错误: 无法编译TypeScript<code>(Error: TSError: ⨯ Unable to compile TypeScript)</code></li>
 </ol>
 <p>解决：从 package.json 中删除 ts-node 和 typescript 。然后：</p>
 <pre class="line-numbers language-none"><code class="language-none">npm install ts-node --save-dev
 npm install typescript -g 
 npm install typescript --save-dev<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <ol start="4">
-<li>在服务器上启动 NodeJs + Ts 项目时报错之二：Can’t run my Node.js Typescript project TypeError [ERR_UNKNOWN_FILE_EXTENSION]: Unknown file extension “.ts” for /app/src/App.ts</li>
+<li>在服务器上启动 NodeJs + Ts 项目时报错之二：<code>Can&#39;t run my Node.js Typescript project TypeError [ERR_UNKNOWN_FILE_EXTENSION]: Unknown file extension &quot;.ts&quot; for /app/src/App.ts</code></li>
 </ol>
-<p>情况说明：博主启动项目的命令是 <code>npm start</code> ，项目 <code>package.json</code> 文件中 <code>scripts</code> 字段下 <code>start</code> 的代码为 <code>node src/app.ts</code> 。不幸的是，由于项目中既有 ES6 模块又有 CommonJS 模块，因此不能按照网上的教程只在 <code>package.json</code> 中添加 <code>&quot;type&quot;: &quot;module</code> 或者 只在 <code>tsconfig.json</code> 中添加 <code>&quot;type&quot;: &quot;CommonJS&quot;</code> ，因为如果这样的话，项目运行后还是会报如下的错误：</p>
+<p>情况说明：笔者启动项目的命令是 <code>npm start</code> ，项目 <code>package.json</code> 文件中 <code>scripts</code> 字段下 <code>start</code> 的代码为 <code>node src/app.ts</code> 。不幸的是，由于项目中既有 ES6 模块又有 CommonJS 模块，因此不能按照网上的教程只在 <code>package.json</code> 中添加 <code>&quot;type&quot;: &quot;module</code> 或者 只在 <code>tsconfig.json</code> 中添加 <code>&quot;type&quot;: &quot;CommonJS&quot;</code> ，因为如果这样的话，项目运行后还是会报如下的错误：</p>
 <pre class="line-numbers language-none"><code class="language-none">import Koa from &#39;koa&#39;;
 ^^^^^^
 
@@ -592,7 +592,7 @@ SyntaxError: Cannot use import statement outside a module<span aria-hidden="true
 
 <p>解决方法：修改 <code>package.json</code> 中 <code>scripts</code> 字段下 <code>start</code> 的代码为 <code>node --experimental-modules --loader ts-node/esm &#123; 项目入口文件 &#125;</code> </p>
 <ol start="5">
-<li>服务器用 pm2 启动项目失败：Error: Cannot find module ‘/Users/wyb/.nvm/versions/io.js/v3.0.0/lib/node_modules/pm2/lib/ProcessContainerFork.js’</li>
+<li>服务器用 pm2 启动项目失败：<code>Error: Cannot find module &#39;/Users/wyb/.nvm/versions/io.js/v3.0.0/lib/node_modules/pm2/lib/ProcessContainerFork.js&#39;</code></li>
 </ol>
 <p>情况说明：笔者的服务器确定是有安装了 pm2 的，使用 <code>pm2 -v</code> 也可以正常查询到版本号。然而此前 NodeJs 因为我误操作卸载重装了，虽然 pm2 也重新安装了一遍，但根目录下残留的文件路径指向的是以前的 pm2 ，因此只要将根目录下的 pm2 删除即可。</p>
 <p>解决：<code>rm -rf ~/.pm2</code>  </p>
@@ -600,31 +600,34 @@ SyntaxError: Cannot use import statement outside a module<span aria-hidden="true
 <p>参考：<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/36690442/error-cannot-find-module-users-wyb-nvm-versions-io-js-v3-0-0-lib-node-module">overflow 回答</a></p>
 </blockquote>
 <ol start="6">
-<li>启动 pm2 报错：Process or Namespace ./src/app not found<pre class="line-numbers language-none"><code class="language-none">[PM2][ERROR] Process or Namespace .&#x2F;src&#x2F;app.ts not found
-[PM2][ERROR] Interpreter &#x2F;www&#x2F;server&#x2F;nvm&#x2F;versions&#x2F;node&#x2F;v14.17.6&#x2F;lib&#x2F;node_modules&#x2F;pm2&#x2F;node_modules&#x2F;.bin&#x2F;ts-node is NOT AVAILABLE in PATH. (type &#39;which &#x2F;www&#x2F;server&#x2F;nvm&#x2F;versions&#x2F;node&#x2F;v14.17.6&#x2F;lib&#x2F;node_modules&#x2F;pm2&#x2F;node_modules&#x2F;.bin&#x2F;ts-node&#39; to double check.)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-排查流程：正常下，可以先 <code>pm2 -v</code> 查看是否已经安装 pm2 ，如果不能显示版本信息，有两种情况，一种是没有安装，那么运行 <code>npm install pm2 -g</code> ；如果确定安装过了，则可以试试建立软链接：<code>ln -s &#123; 安装 pm2 的绝对路径 &#125; /usr/local/bin/</code> 。如果还不能解决，就再往下看看。</li>
+<li>启动 pm2 报错：<code>Process or Namespace ./src/app not found</code></li>
 </ol>
+<pre class="line-numbers language-none"><code class="language-none">[PM2][ERROR] Process or Namespace .&#x2F;src&#x2F;app.ts not found
+[PM2][ERROR] Interpreter &#x2F;www&#x2F;server&#x2F;nvm&#x2F;versions&#x2F;node&#x2F;v14.17.6&#x2F;lib&#x2F;node_modules&#x2F;pm2&#x2F;node_modules&#x2F;.bin&#x2F;ts-node is NOT AVAILABLE in PATH. (type &#39;which &#x2F;www&#x2F;server&#x2F;nvm&#x2F;versions&#x2F;node&#x2F;v14.17.6&#x2F;lib&#x2F;node_modules&#x2F;pm2&#x2F;node_modules&#x2F;.bin&#x2F;ts-node&#39; to double check.)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>排查流程：正常下，可以先 <code>pm2 -v</code> 查看是否已经安装 pm2 ，如果不能显示版本信息，有两种情况，一种是没有安装，那么运行 <code>npm install pm2 -g</code> ；如果确定安装过了，则可以试试建立软链接：<code>ln -s &#123; 安装 pm2 的绝对路径 &#125; /usr/local/bin/</code> 。如果还不能解决，就再往下看看。</p>
 <p>先看第二个报错，情况①博主的服务器安装了宝塔面板，并在面板里安装了 pm2 管理器，导致与服务器的 pm2 冲突。于是把宝塔面板中的 pm2 管理器卸载，就没有这个报错了。②用 xshell 工具执行这条命令：<code>pm2 start src/app.ts --interpreter ./node_modules/.bin/ts-node</code> 即可。</p>
 <ol start="7">
-<li><p>将项目中的脚本上传至服务器并执行时报错：npm: command not found？</p>
+<li>将项目中的脚本上传至服务器并执行时报错：<code>npm: command not found</code>？</li>
+</ol>
 <pre class="line-numbers language-none"><code class="language-none">deploy.sh: line 2: npm: command not found
 &#x2F;usr&#x2F;bin&#x2F;env: node: No such file or directory
 &#x2F;usr&#x2F;bin&#x2F;env: node: No such file or directory<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>根据网上的解决方法，正解本来应该是 用绝对路径设置软链 ，但博主的情况很特殊，是由于 /usr/bin/env 命令被修改，导致找不到 node ，这也是在我多方尝试无果之后向阿里提交工单，大佬给出的回复。<br>大佬的解决方法便是从版本相同的主机 copy 一份 /usr/bin/env 命令到我本机上，这才恢复正常。</p>
+
+<p>根据网上的解决方法，正解本来应该是 用绝对路径设置软链 ，但博主的情况很特殊，是由于 /usr/bin/env 命令被修改，导致找不到 node ，这也是在我多方尝试无果之后向阿里提交工单，大佬给出的回复。<br>大佬的解决方法便是从版本相同的主机 copy 一份 <code>/usr/bin/env</code> 命令到我本机上，这才恢复正常。</p>
 <blockquote>
 <p>注：在服务器上的操作大家一定要慎重，误删文件可能会导致各种很难解决的 bug ，这已经是我第二次遇到特殊情况了。</p>
 </blockquote>
-</li>
-<li><p>端口被占用？</p>
-</li>
+<ol start="8">
+<li>端口被占用？</li>
 </ol>
 <ul>
 <li>查看端口使用情况：<code>netstat -ntlp</code></li>
-<li>杀掉进程：<code>kill （对应端口的PID）</code><blockquote>
+<li>杀掉进程：<code>kill （对应端口的PID）</code></li>
+</ul>
+<blockquote>
 <p>参考资料：<a target="_blank" rel="noopener" href="http://blog.csdn.net/ljfphp/article/details/78666376">【转】linux下杀死进程（kill）的N种方法</a></p>
 </blockquote>
-</li>
-</ul>
 <ol start="9">
 <li>无法访问阿里云ip地址？</li>
 </ol>
@@ -633,15 +636,10 @@ SyntaxError: Cannot use import statement outside a module<span aria-hidden="true
 <p>排查1：<a target="_blank" rel="noopener" href="https://blog.csdn.net/sinat_25957705/article/details/80641077">阿里云服务器 nginx公网IP无法访问浏览器</a><br>排查2：<a target="_blank" rel="noopener" href="https://blog.csdn.net/Adime_J/article/details/109155234">linux服务器部署完成之后访问不到—–总结篇</a></p>
 </blockquote>
 <blockquote>
-<ol>
-<li>ping ip成功只能说明主机可以到达，端口还是有可能不可到达的。端口不可到达可能是由于HTTP 服务器未启动或者监听在其他端口入8080上了；还有一个可能是防火墙没开放80端口的访问权限。</li>
-</ol>
+<p>注：ping ip成功只能说明主机可以到达，端口还是有可能不可到达的。端口不可到达可能是由于HTTP 服务器未启动或者监听在其他端口入8080上了；还有一个可能是防火墙没开放80端口的访问权限。</p>
 </blockquote>
 <blockquote>
-<p>排查过程中遇到的问题：</p>
-<ol>
-<li>curl: (7) Failed to connect to 120.79.193.126 port 80: Connection refused<br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/jukaiit/p/8994448.html">Xshell 链接 Could not connect to ‘192.168.80.129’ (port 22): Connection failed</a><br>在Linux6中查看及设置开机自启信息是使用chkconfig命令，Linux7中此命令已经被替代。虽然Linux7中已经不再使用chkconfig命令来管理服务是否开机自启，但是此命令仍旧可用，但是输出信息提示我们使用chkconfig命令的输出只是呗SysV所管理的服务，不包括systemd管理的服务，所以如果想在CentOS7中查看systemd管理的服务需要使用以下命令：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_38295166/article/details/79828482">CentOS 7设置ssh服务自动启动</a></li>
-</ol>
+<p>排查过程中遇到的问题：<br><code>curl: (7) Failed to connect to 120.79.193.126 port 80: Connection refused</code><br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/jukaiit/p/8994448.html">Xshell 链接 Could not connect to ‘192.168.80.129’ (port 22): Connection failed</a><br>在Linux6中查看及设置开机自启信息是使用chkconfig命令，Linux7中此命令已经被替代。虽然Linux7中已经不再使用chkconfig命令来管理服务是否开机自启，但是此命令仍旧可用，但是输出信息提示我们使用chkconfig命令的输出只是呗SysV所管理的服务，不包括systemd管理的服务，所以如果想在CentOS7中查看systemd管理的服务需要使用以下命令：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_38295166/article/details/79828482">CentOS 7设置ssh服务自动启动</a></p>
 </blockquote>
 <blockquote>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_38705903/article/details/101911553">或许有用？</a></p>
@@ -1391,7 +1389,7 @@ SyntaxError: Cannot use import statement outside a module<span aria-hidden="true
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             <!-- 
-                <span id="year">2021-2022</span>
+                <span id="year">2021-2023</span>
             
             <span id="year">2021</span> -->
             <a href="/about" target="_blank">hcyety</a>
@@ -1451,7 +1449,7 @@ SyntaxError: Cannot use import statement outside a module<span aria-hidden="true
 
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">96.8k</span>&nbsp;字
+                class="white-color">118.5k</span>&nbsp;字
             
             
             

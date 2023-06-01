@@ -6,7 +6,7 @@
   <link href="https://hcyety.github.io/atom.xml" rel="self"/>
   
   <link href="https://hcyety.github.io/"/>
-  <updated>2022-08-30T10:49:01.518Z</updated>
+  <updated>2023-04-10T09:18:44.300Z</updated>
   <id>https://hcyety.github.io/</id>
   
   <author>
@@ -15,6 +15,307 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>备战前端实习面试之React篇</title>
+    <link href="https://hcyety.github.io/2023/03/05/bei-zhan-qian-duan-shi-xi-mian-shi-zhi-react-pian/"/>
+    <id>https://hcyety.github.io/2023/03/05/bei-zhan-qian-duan-shi-xi-mian-shi-zhi-react-pian/</id>
+    <published>2023-03-05T01:58:17.000Z</published>
+    <updated>2023-04-10T09:18:44.300Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;前端面试题系列：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;【1】&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="求职" scheme="https://hcyety.github.io/categories/%E6%B1%82%E8%81%8C/"/>
+    
+    
+    <category term="前端" scheme="https://hcyety.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="八股文" scheme="https://hcyety.github.io/tags/%E5%85%AB%E8%82%A1%E6%96%87/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>谷歌浏览器插件开发</title>
+    <link href="https://hcyety.github.io/2022/11/02/gu-ge-liu-lan-qi-cha-jian-kai-fa/"/>
+    <id>https://hcyety.github.io/2022/11/02/gu-ge-liu-lan-qi-cha-jian-kai-fa/</id>
+    <published>2022-11-02T10:50:10.000Z</published>
+    <updated>2022-11-02T10:50:10.196Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>请别再用 console.log 做调试了</title>
+    <link href="https://hcyety.github.io/2022/10/11/qing-bie-zai-yong-console-log-zuo-diao-shi-liao/"/>
+    <id>https://hcyety.github.io/2022/10/11/qing-bie-zai-yong-console-log-zuo-diao-shi-liao/</id>
+    <published>2022-10-11T14:04:22.000Z</published>
+    <updated>2022-10-11T14:06:01.816Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;请原谅我起这么一个标题来引人注意，之所以这么说，是因为我觉得通过这种方式调试代码还不够好，试想，在很多地方写 &lt;code&gt;console.log&lt;/code&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="项目" scheme="https://hcyety.github.io/categories/%E9%A1%B9%E7%9B%AE/"/>
+    
+    
+    <category term="开发模式" scheme="https://hcyety.github.io/tags/%E5%BC%80%E5%8F%91%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>前端单元测试框架——jest</title>
+    <link href="https://hcyety.github.io/2022/10/09/qian-duan-dan-yuan-ce-shi-kuang-jia-jest/"/>
+    <id>https://hcyety.github.io/2022/10/09/qian-duan-dan-yuan-ce-shi-kuang-jia-jest/</id>
+    <published>2022-10-09T12:35:28.000Z</published>
+    <updated>2022-10-11T14:07:52.827Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;学习 Jest 时，首先阅读官方文档，大致浏览下 API</summary>
+        
+      
+    
+    
+    
+    <category term="项目" scheme="https://hcyety.github.io/categories/%E9%A1%B9%E7%9B%AE/"/>
+    
+    
+    <category term="测试" scheme="https://hcyety.github.io/tags/%E6%B5%8B%E8%AF%95/"/>
+    
+    <category term="开发体验" scheme="https://hcyety.github.io/tags/%E5%BC%80%E5%8F%91%E4%BD%93%E9%AA%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MVC、MVP、MVVM 模式详解</title>
+    <link href="https://hcyety.github.io/2022/10/08/mvc-mvp-mvvm-mo-shi-xiang-jie/"/>
+    <id>https://hcyety.github.io/2022/10/08/mvc-mvp-mvvm-mo-shi-xiang-jie/</id>
+    <published>2022-10-08T13:36:07.000Z</published>
+    <updated>2022-10-08T15:24:35.385Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;MVC&quot;&gt;&lt;a href=&quot;#MVC&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="求职" scheme="https://hcyety.github.io/categories/%E6%B1%82%E8%81%8C/"/>
+    
+    
+    <category term="面试" scheme="https://hcyety.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Jenkins 自动化部署教程</title>
+    <link href="https://hcyety.github.io/2022/10/06/jenkins-zi-dong-hua-bu-shu-jiao-cheng/"/>
+    <id>https://hcyety.github.io/2022/10/06/jenkins-zi-dong-hua-bu-shu-jiao-cheng/</id>
+    <published>2022-10-06T11:12:04.000Z</published>
+    <updated>2022-10-07T05:59:19.351Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;部署流程&quot;&gt;&lt;a href=&quot;#部署流程&quot; class=&quot;headerlink&quot; title=&quot;部署流程&quot;&gt;&lt;/a&gt;部署流程&lt;/h1&gt;&lt;h2 id=&quot;下载-Jenkins&quot;&gt;&lt;a href=&quot;#下载-Jenkins&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="项目" scheme="https://hcyety.github.io/categories/%E9%A1%B9%E7%9B%AE/"/>
+    
+    
+    <category term="Jenkins" scheme="https://hcyety.github.io/tags/Jenkins/"/>
+    
+    <category term="自动化部署" scheme="https://hcyety.github.io/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2/"/>
+    
+    <category term="Linux" scheme="https://hcyety.github.io/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>文摘</title>
+    <link href="https://hcyety.github.io/2022/09/27/wen-zhai/"/>
+    <id>https://hcyety.github.io/2022/09/27/wen-zhai/</id>
+    <published>2022-09-27T15:56:44.000Z</published>
+    <updated>2022-09-27T16:04:58.501Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;《千与千寻》：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;不管前方的路有多苦&lt;br&gt;只要走的方向正确&lt;br&gt;不管多么崎岖不平&lt;br&gt;都比站在原地更接近幸福&lt;/p&gt;
+&lt;/blockquote&gt;
+</summary>
+        
+      
+    
+    
+    
+    <category term="语录" scheme="https://hcyety.github.io/categories/%E8%AF%AD%E5%BD%95/"/>
+    
+    
+    <category term="书" scheme="https://hcyety.github.io/tags/%E4%B9%A6/"/>
+    
+    <category term="摘抄" scheme="https://hcyety.github.io/tags/%E6%91%98%E6%8A%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【自研脚手架详细教程】开发实录</title>
+    <link href="https://hcyety.github.io/2022/09/23/zi-yan-jiao-shou-jia-xiang-xi-jiao-cheng-kai-fa-shi-lu/"/>
+    <id>https://hcyety.github.io/2022/09/23/zi-yan-jiao-shou-jia-xiang-xi-jiao-cheng-kai-fa-shi-lu/</id>
+    <published>2022-09-23T12:10:15.000Z</published>
+    <updated>2022-10-18T17:03:48.268Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;项目来源&quot;&gt;&lt;a href=&quot;#项目来源&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="项目" scheme="https://hcyety.github.io/categories/%E9%A1%B9%E7%9B%AE/"/>
+    
+    
+    <category term="脚手架" scheme="https://hcyety.github.io/tags/%E8%84%9A%E6%89%8B%E6%9E%B6/"/>
+    
+    <category term="自研" scheme="https://hcyety.github.io/tags/%E8%87%AA%E7%A0%94/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>微前端qiankun实践</title>
+    <link href="https://hcyety.github.io/2022/09/22/wei-qian-duan-qiankun-shi-jian/"/>
+    <id>https://hcyety.github.io/2022/09/22/wei-qian-duan-qiankun-shi-jian/</id>
+    <published>2022-09-22T10:36:09.000Z</published>
+    <updated>2022-09-23T01:10:38.441Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;项目架构&quot;&gt;&lt;a href=&quot;#项目架构&quot; class=&quot;headerlink&quot; title=&quot;项目架构&quot;&gt;&lt;/a&gt;项目架构&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;主应用：umi 搭建的框架&lt;/li&gt;
+&lt;li&gt;子应用：react&lt;/li&gt;
+&lt;li&gt;子应用：也是 umi</summary>
+        
+      
+    
+    
+    
+    <category term="项目" scheme="https://hcyety.github.io/categories/%E9%A1%B9%E7%9B%AE/"/>
+    
+    
+    <category term="React" scheme="https://hcyety.github.io/tags/React/"/>
+    
+    <category term="微前端" scheme="https://hcyety.github.io/tags/%E5%BE%AE%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="Umi" scheme="https://hcyety.github.io/tags/Umi/"/>
+    
+    <category term="Vue" scheme="https://hcyety.github.io/tags/Vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>什么是 AST</title>
+    <link href="https://hcyety.github.io/2022/09/21/ast-chou-xiang-yu-fa-shu-xiang-jie/"/>
+    <id>https://hcyety.github.io/2022/09/21/ast-chou-xiang-yu-fa-shu-xiang-jie/</id>
+    <published>2022-09-21T08:58:59.000Z</published>
+    <updated>2022-10-07T16:14:27.904Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;AST-可视化的网站&quot;&gt;&lt;a href=&quot;#AST-可视化的网站&quot; class=&quot;headerlink&quot; title=&quot;AST 可视化的网站&quot;&gt;&lt;/a&gt;AST 可视化的网站&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="JavaScript" scheme="https://hcyety.github.io/categories/JavaScript/"/>
+    
+    
+    <category term="AST" scheme="https://hcyety.github.io/tags/AST/"/>
+    
+    <category term="求职" scheme="https://hcyety.github.io/tags/%E6%B1%82%E8%81%8C/"/>
+    
+    <category term="插件开发" scheme="https://hcyety.github.io/tags/%E6%8F%92%E4%BB%B6%E5%BC%80%E5%8F%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>国考笔记</title>
+    <link href="https://hcyety.github.io/2022/09/16/guo-kao-bi-ji/"/>
+    <id>https://hcyety.github.io/2022/09/16/guo-kao-bi-ji/</id>
+    <published>2022-09-16T11:28:41.000Z</published>
+    <updated>2022-09-16T12:56:05.870Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;判断&quot;&gt;&lt;a href=&quot;#判断&quot; class=&quot;headerlink&quot; title=&quot;判断&quot;&gt;&lt;/a&gt;判断&lt;/h1&gt;&lt;h2 id=&quot;高频考点一：对称性&quot;&gt;&lt;a href=&quot;#高频考点一：对称性&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="公务员考试" scheme="https://hcyety.github.io/categories/%E5%85%AC%E5%8A%A1%E5%91%98%E8%80%83%E8%AF%95/"/>
+    
+    
+    <category term="国考" scheme="https://hcyety.github.io/tags/%E5%9B%BD%E8%80%83/"/>
+    
+    <category term="行测" scheme="https://hcyety.github.io/tags/%E8%A1%8C%E6%B5%8B/"/>
+    
+    <category term="笔记" scheme="https://hcyety.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>【前端监控系统开发实录】之使用 swagger 配置接口文档</title>
@@ -251,301 +552,6 @@
     
     
     
-    
-  </entry>
-  
-  <entry>
-    <title>备战大厂前端面试之Vue篇</title>
-    <link href="https://hcyety.github.io/2022/06/17/bei-zhan-da-han-qian-duan-mian-shi-zhi-vue-pian/"/>
-    <id>https://hcyety.github.io/2022/06/17/bei-zhan-da-han-qian-duan-mian-shi-zhi-vue-pian/</id>
-    <published>2022-06-17T12:10:49.883Z</published>
-    <updated>2022-08-30T10:16:59.922Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;前端面试题系列：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;【1】&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="求职" scheme="https://hcyety.github.io/categories/%E6%B1%82%E8%81%8C/"/>
-    
-    
-    <category term="前端" scheme="https://hcyety.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-    <category term="八股文" scheme="https://hcyety.github.io/tags/%E5%85%AB%E8%82%A1%E6%96%87/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>近期安排*一点感想</title>
-    <link href="https://hcyety.github.io/2022/06/16/jiang-you-yi-tian-ni-hui-yu-jian-mei-hao-de-yi-qie/"/>
-    <id>https://hcyety.github.io/2022/06/16/jiang-you-yi-tian-ni-hui-yu-jian-mei-hao-de-yi-qie/</id>
-    <published>2022-06-16T15:16:34.440Z</published>
-    <updated>2022-08-30T10:16:59.921Z</updated>
-    
-    
-    
-    
-    
-    <category term="随笔" scheme="https://hcyety.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>备战大厂前端面试之JavaScript篇</title>
-    <link href="https://hcyety.github.io/2022/06/01/bei-zhan-da-han-qian-duan-mian-shi-zhi-javascript-pian/"/>
-    <id>https://hcyety.github.io/2022/06/01/bei-zhan-da-han-qian-duan-mian-shi-zhi-javascript-pian/</id>
-    <published>2022-06-01T15:56:12.461Z</published>
-    <updated>2022-06-06T14:03:28.994Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;前端面试题系列：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;【1】&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="求职" scheme="https://hcyety.github.io/categories/%E6%B1%82%E8%81%8C/"/>
-    
-    
-    <category term="前端" scheme="https://hcyety.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-    <category term="八股文" scheme="https://hcyety.github.io/tags/%E5%85%AB%E8%82%A1%E6%96%87/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>项目功能实现：评论框插入表情</title>
-    <link href="https://hcyety.github.io/2022/05/20/xiang-mu-gong-neng-shi-xian-ping-lun-kuang-cha-ru-biao-qing/"/>
-    <id>https://hcyety.github.io/2022/05/20/xiang-mu-gong-neng-shi-xian-ping-lun-kuang-cha-ru-biao-qing/</id>
-    <published>2022-05-20T03:40:28.000Z</published>
-    <updated>2022-05-20T05:42:05.839Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h2&gt;&lt;p&gt;一个 React</summary>
-        
-      
-    
-    
-    
-    <category term="项目" scheme="https://hcyety.github.io/categories/%E9%A1%B9%E7%9B%AE/"/>
-    
-    
-    <category term="React" scheme="https://hcyety.github.io/tags/React/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>前端面经汇总</title>
-    <link href="https://hcyety.github.io/2022/04/29/qian-duan-mian-jing-hui-zong/"/>
-    <id>https://hcyety.github.io/2022/04/29/qian-duan-mian-jing-hui-zong/</id>
-    <published>2022-04-29T15:31:11.000Z</published>
-    <updated>2022-04-29T15:44:54.387Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;陆一柒科技有限公司&quot;&gt;&lt;a href=&quot;#陆一柒科技有限公司&quot; class=&quot;headerlink&quot; title=&quot;陆一柒科技有限公司&quot;&gt;&lt;/a&gt;陆一柒科技有限公司&lt;/h1&gt;&lt;p&gt;2022.03.08 16:00~16:25 –&amp;gt;</summary>
-        
-      
-    
-    
-    
-    <category term="求职" scheme="https://hcyety.github.io/categories/%E6%B1%82%E8%81%8C/"/>
-    
-    
-    <category term="前端" scheme="https://hcyety.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-    <category term="面经" scheme="https://hcyety.github.io/tags/%E9%9D%A2%E7%BB%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>深入探究“在浏览器输入URL到渲染页面”（中）性能优化</title>
-    <link href="https://hcyety.github.io/2022/04/29/shen-ru-tan-jiu-zai-liu-lan-qi-shu-ru-url-dao-xuan-ran-ye-mian-zhong-xing-neng-you-hua/"/>
-    <id>https://hcyety.github.io/2022/04/29/shen-ru-tan-jiu-zai-liu-lan-qi-shu-ru-url-dao-xuan-ran-ye-mian-zhong-xing-neng-you-hua/</id>
-    <published>2022-04-29T15:25:46.000Z</published>
-    <updated>2022-04-29T15:46:13.661Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;关于这道经典的面试题，笔者准备写三篇文章来对知识点进行深度和广度的挖掘：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="计算机网络" scheme="https://hcyety.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
-    
-    
-    <category term="面试" scheme="https://hcyety.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
-    
-    <category term="八股文" scheme="https://hcyety.github.io/tags/%E5%85%AB%E8%82%A1%E6%96%87/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>近期安排*一点感想</title>
-    <link href="https://hcyety.github.io/2022/04/28/jin-qi-an-pai-yi-dian-gan-xiang/"/>
-    <id>https://hcyety.github.io/2022/04/28/jin-qi-an-pai-yi-dian-gan-xiang/</id>
-    <published>2022-04-28T15:09:18.000Z</published>
-    <updated>2022-04-29T15:21:00.765Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;记事时间点：2022.04.28 大二下 星期四 晴&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;从 2</summary>
-        
-      
-    
-    
-    
-    
-    <category term="随笔" scheme="https://hcyety.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>深入探究“在浏览器输入URL到渲染页面”（上）过程剖析</title>
-    <link href="https://hcyety.github.io/2022/04/05/shen-ru-tan-jiu-zai-liu-lan-qi-shu-ru-url-dao-xuan-ran-ye-mian-shang-guo-cheng-pou-xi/"/>
-    <id>https://hcyety.github.io/2022/04/05/shen-ru-tan-jiu-zai-liu-lan-qi-shu-ru-url-dao-xuan-ran-ye-mian-shang-guo-cheng-pou-xi/</id>
-    <published>2022-04-05T05:42:45.000Z</published>
-    <updated>2022-04-29T15:36:40.897Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;这是一道十分经典的面试题，涉及到计网、操作系统、web</summary>
-        
-      
-    
-    
-    
-    <category term="计算机网络" scheme="https://hcyety.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
-    
-    
-    <category term="面试" scheme="https://hcyety.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
-    
-    <category term="八股文" scheme="https://hcyety.github.io/tags/%E5%85%AB%E8%82%A1%E6%96%87/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>备战大厂前端面试之CSS篇</title>
-    <link href="https://hcyety.github.io/2022/03/08/bei-zhan-da-han-qian-duan-mian-shi-zhi-css-pian/"/>
-    <id>https://hcyety.github.io/2022/03/08/bei-zhan-da-han-qian-duan-mian-shi-zhi-css-pian/</id>
-    <published>2022-03-08T14:34:03.000Z</published>
-    <updated>2022-06-02T06:45:35.625Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;前端面试题系列：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;【1】&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="求职" scheme="https://hcyety.github.io/categories/%E6%B1%82%E8%81%8C/"/>
-    
-    
-    <category term="前端" scheme="https://hcyety.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-    <category term="八股文" scheme="https://hcyety.github.io/tags/%E5%85%AB%E8%82%A1%E6%96%87/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>备战大厂前端面试之HTML篇</title>
-    <link href="https://hcyety.github.io/2022/03/08/bei-zhan-da-han-qian-duan-mian-shi-zhi-html-pian/"/>
-    <id>https://hcyety.github.io/2022/03/08/bei-zhan-da-han-qian-duan-mian-shi-zhi-html-pian/</id>
-    <published>2022-03-08T14:33:50.000Z</published>
-    <updated>2022-06-02T06:47:01.942Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;前端面试题系列：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;【1】备战前端实习面试之HTML篇&lt;/li&gt;
-&lt;li&gt;【2】&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="求职" scheme="https://hcyety.github.io/categories/%E6%B1%82%E8%81%8C/"/>
-    
-    
-    <category term="前端" scheme="https://hcyety.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-    <category term="八股文" scheme="https://hcyety.github.io/tags/%E5%85%AB%E8%82%A1%E6%96%87/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>前端必须知道的开发调试知识</title>
-    <link href="https://hcyety.github.io/2022/01/22/qian-duan-bi-xu-zhi-dao-de-kai-fa-diao-shi-zhi-shi/"/>
-    <id>https://hcyety.github.io/2022/01/22/qian-duan-bi-xu-zhi-dao-de-kai-fa-diao-shi-zhi-shi/</id>
-    <published>2022-01-22T14:52:40.000Z</published>
-    <updated>2022-01-23T11:47:05.924Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;浏览器控制台面板&quot;&gt;&lt;a href=&quot;#浏览器控制台面板&quot; class=&quot;headerlink&quot; title=&quot;浏览器控制台面板&quot;&gt;&lt;/a&gt;浏览器控制台面板&lt;/h2&gt;&lt;p&gt;浏览器的控制台有很多可供开发者 debug</summary>
-        
-      
-    
-    
-    
-    <category term="调试" scheme="https://hcyety.github.io/categories/%E8%B0%83%E8%AF%95/"/>
-    
-    
-    <category term="前端" scheme="https://hcyety.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-    <category term="浏览器控制台" scheme="https://hcyety.github.io/tags/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8E%A7%E5%88%B6%E5%8F%B0/"/>
-    
-    <category term="开发调试技巧" scheme="https://hcyety.github.io/tags/%E5%BC%80%E5%8F%91%E8%B0%83%E8%AF%95%E6%8A%80%E5%B7%A7/"/>
     
   </entry>
   

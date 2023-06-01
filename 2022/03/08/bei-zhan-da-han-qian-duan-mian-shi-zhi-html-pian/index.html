@@ -623,14 +623,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.3k
+                    3.8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    12 分
+                    13 分
                 </div>
                 
 
@@ -662,7 +662,7 @@
 <ul>
 <li>【1】备战前端实习面试之HTML篇</li>
 <li>【2】<a href="https://hcyety.github.io/2022/03/08/bei-zhan-da-han-qian-duan-shi-xi-zhi-css-pian/">备战前端实习面试之CSS篇</a></li>
-<li>【3】<a href="">备战前端实习面试之JavaScript篇</a></li>
+<li>【3】<a href="https://hcyety.github.io/2022/06/01/bei-zhan-da-han-qian-duan-mian-shi-zhi-javascript-pian/">备战前端实习面试之JavaScript篇</a></li>
 <li>【4】<a href="">备战前端实习面试之React篇</a></li>
 <li>【5】<a href="">备战前端实习面试之Node.js篇</a></li>
 <li>【6】<a href="">备战前端实习面试之浏览器原理篇</a></li>
@@ -700,7 +700,7 @@
 <p><strong>好处：</strong></p>
 <ul>
 <li>对开发者友好，让人容易理解，利于代码可读性</li>
-<li>对机器友好，让搜索引擎更容易读懂，利于 SEO</li>
+<li>搜索引擎的爬虫也依赖于 HTML 标记来确定上下文和各个关键字的权重，利于 SEO</li>
 </ul>
 <h2 id="四、说说-web-worker"><a href="#四、说说-web-worker" class="headerlink" title="四、说说 web worker"></a>四、说说 web worker</h2><p><code>web worker</code> 的作用是为 JavaScript 创造多线程环境，允许主线程创建 <code>Worker 线程</code>，然后将一些任务分配给其运行。</p>
 <p>在主线程运行的同时，Worker 线程在后台运行，两者互不干扰，等到 Worker 线程完成任务后就将结果返回给主线程。这样的好处是：一些计算密集型或高延迟的任务，被 Worker 线程负担了，主线程就会很流畅，不会被阻塞或拖慢（通过 <code>postMessage</code> 将结果传回到主线程即可）。</p>
@@ -744,13 +744,60 @@ FALLBACK:
 <li>离线情况下，浏览器会直接使用离线存储的资源加载页面。</li>
 </ul>
 <p><strong>注意事项</strong>：<br>（1）浏览器对缓存数据的容量限制可能不太一样（某些浏览器设置的限制是每个站点 5MB）。<br>（2）如果 <code>.manifest</code> 文件，或者内部列举的某一个文件不能正常下载，整个更新过程都将失败，浏览器继续全部使用老的缓存。<br>（3）引用 <code>.manifest</code> 的 html 必须与 <code>.manifest</code> 文件同源，在同一个域下。<br>（4）<code>FALLBACK</code> 中的资源必须和 <code>.manifest</code> 文件同源。<br>（5）当一个资源被缓存后，该浏览器直接请求这个绝对路径也会访问缓存中的资源。<br>（6）站点中的其他页面即使没有设置 <code>manifest</code> 属性，请求的资源如果在缓存中也从缓存中访问。<br>（7）当 <code>.manifest</code> 文件发生改变时，资源请求本身也会触发更新。</p>
-<h2 id="六、DOCTYPE（文档类型）的作用？严格模式和混杂模式的区别？"><a href="#六、DOCTYPE（文档类型）的作用？严格模式和混杂模式的区别？" class="headerlink" title="六、DOCTYPE（文档类型）的作用？严格模式和混杂模式的区别？"></a>六、DOCTYPE（文档类型）的作用？严格模式和混杂模式的区别？</h2><p><code>!DOCTYPE</code> 是用来告诉浏览器要以 <code>HTML5</code> 标准解析页面，如果不写，则进入混杂模式</p>
+<h2 id="六、DOCTYPE（文档类型）的作用？标准模式与兼容模式各有什么区别"><a href="#六、DOCTYPE（文档类型）的作用？标准模式与兼容模式各有什么区别" class="headerlink" title="六、DOCTYPE（文档类型）的作用？标准模式与兼容模式各有什么区别?"></a>六、DOCTYPE（文档类型）的作用？标准模式与兼容模式各有什么区别?</h2><p><code>!DOCTYPE</code> 是用来声明文档类型的。声明位于 HTML 文档中的第一行，不是一个 HTML 标签，处于 HTML 标签之前。告知浏览器要以什么文档标准解析这个文档：<code>!DOCTYPE</code> 存在即表示要以 <code>HTML5</code> 标准解析页面，也就是标准模式；如果不写或格式不正确会导致文档以兼容模式呈现。</p>
 <ul>
-<li>严格模式（标准模式）：以 w3c 标准解析代码</li>
-<li>混杂模式（怪异模式）：浏览器用自己的方式解析代码。混杂模式通常模拟老式浏览器的行为，以防止老站点无法工作</li>
+<li>标准模式的排版 和 JS 运作模式都是以该浏览器支持的最高标准运行。</li>
+<li>在兼容模式中，页面以宽松的向后兼容的方式显示，模拟老式浏览器的行为以防止站点无法工作。</li>
 </ul>
-<h2 id="七、常⽤的-meta-标签有哪些"><a href="#七、常⽤的-meta-标签有哪些" class="headerlink" title="七、常⽤的 meta 标签有哪些"></a>七、常⽤的 meta 标签有哪些</h2><p>meta 标签由 name 和 content 属性定义，用来描述网页文档的属性。<br>|属性|描述|值|例子|<br>|:–:|:–:|:–:|:–|<br>|charset|HTML文档的编码类型|utf-8<br>gbk|<code>&lt;meta charset=&quot;UTF-8&quot; &gt;</code>|<br>|keywords|页面关键词|自定义|<code>&lt;meta name=&quot;keywords&quot; content=&quot;关键词&quot; /&gt;</code>|<br>|description|页面描述|自定义|<code>&lt;meta name=&quot;description&quot; content=&quot;页面描述内容&quot; /&gt;</code>|<br>|refresh|页面重定向和刷新|自定义|<code>&lt;meta http-equiv=&quot;refresh&quot; content=&quot;0;url=&quot; /&gt;</code>|<br>|viewport|适配移动端，可以控制视口的大小和比例|width viewport ：宽度<br>height viewport ：高度<br>initial-scale ：初始缩放比例<br>maximum-scale ：最大缩放比例<br>minimum-scale ：最小缩放比例<br>user-scalable ：是否允许用户缩放(yes/no）|<code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, maximum-scale=1&quot;&gt;</code>|<br>|robots|搜索引擎索引方式|all：文件将被检索，且页面上的链接可以被查询；<br>none：文件将不被检索，且页面上的链接不可以被查询；<br>index：文件将被检索；<br>follow：页面上的链接可以被查询；<br>noindex：文件将不被检索；<br>nofollow：页面上的链接不可以被查询。|<code>&lt;meta name=&quot;robots&quot; content=&quot;index,follow&quot; /&gt;</code>|</p>
-<h2 id="八、iframe-有那些优点和缺点"><a href="#八、iframe-有那些优点和缺点" class="headerlink" title="八、iframe 有那些优点和缺点"></a>八、iframe 有那些优点和缺点</h2><p>iframe 元素会创建包含另外一个文档的内联框架（即行内框架）。<br>优点：</p>
+<h2 id="七、常⽤的-meta-标签有哪些"><a href="#七、常⽤的-meta-标签有哪些" class="headerlink" title="七、常⽤的 meta 标签有哪些"></a>七、常⽤的 meta 标签有哪些</h2><p>meta 标签由 name 和 content 属性定义，用来描述网页文档的属性。</p>
+<table>
+<thead>
+<tr>
+<th align="center">属性</th>
+<th align="center">描述</th>
+<th align="center">值</th>
+<th align="left">例子</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">charset</td>
+<td align="center">HTML文档的编码类型</td>
+<td align="center">utf-8<br>gbk</td>
+<td align="left"><code>&lt;meta charset=&quot;UTF-8&quot; &gt;</code></td>
+</tr>
+<tr>
+<td align="center">keywords</td>
+<td align="center">页面关键词</td>
+<td align="center">自定义</td>
+<td align="left"><code>&lt;meta name=&quot;keywords&quot; content=&quot;关键词&quot; /&gt;</code></td>
+</tr>
+<tr>
+<td align="center">description</td>
+<td align="center">页面描述</td>
+<td align="center">自定义</td>
+<td align="left"><code>&lt;meta name=&quot;description&quot; content=&quot;页面描述内容&quot; /&gt;</code></td>
+</tr>
+<tr>
+<td align="center">refresh</td>
+<td align="center">页面重定向和刷新</td>
+<td align="center">自定义</td>
+<td align="left"><code>&lt;meta http-equiv=&quot;refresh&quot; content=&quot;0;url=&quot; /&gt;</code></td>
+</tr>
+<tr>
+<td align="center">viewport</td>
+<td align="center">适配移动端，可以控制视口的大小和比例</td>
+<td align="center">width viewport ：宽度<br>height viewport ：高度<br>initial-scale ：初始缩放比例<br>maximum-scale：最大缩放比例<br>minimum-scale ：最小缩放比例<br>user-scalable ：是否允许用户缩放(yes/no）</td>
+<td align="left"><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, maximum-scale=1&quot;&gt;</code></td>
+</tr>
+<tr>
+<td align="center">robots</td>
+<td align="center">搜索引擎索引方式</td>
+<td align="center">all：文件将被检索，且页面上的链接可以被查询；<br>none：文件将不被检索，且页面上的链接不可以被查询；<br>index：文件将被检索；<br>follow：页面上的链接可以被查询；<br>noindex：文件将不被检索；<br>nofollow：页面上的链接不可以被查询。</td>
+<td align="left"><code>&lt;meta name=&quot;robots&quot; content=&quot;index,follow&quot; /&gt;</code></td>
+</tr>
+</tbody></table>
+<h2 id="八、iframe-有那些优点和缺点"><a href="#八、iframe-有那些优点和缺点" class="headerlink" title="八、iframe 有那些优点和缺点"></a>八、iframe 有那些优点和缺点</h2><p>iframe 元素会创建包含另外一个文档的内联框架（即行内框架）。</p>
+<p>优点：</p>
 <ul>
 <li>用来加载速度较慢的内容（如广告）</li>
 <li>可以使脚本可以并行下载</li>
@@ -758,10 +805,11 @@ FALLBACK:
 </ul>
 <p>缺点：</p>
 <ul>
-<li>iframe 会阻塞主页面的 onload 事件</li>
-<li>无法被一些搜索引擎索识别</li>
-<li>会产生很多页面，不容易管理</li>
+<li>iframe 会阻塞主页面的 onload 事件；</li>
+<li>搜索引擎的检索程序无法解读这种页面，不利于 SEO ； </li>
+<li>iframe 和主页面共享连接池，而浏览器对相同域的连接有限制，所以会影响页面的并行加载。</li>
 </ul>
+<p>使用 iframe 之前需要考虑这两个缺点。如果需要使用 iframe，最好是通过 javascript 动态给 iframe 添加 src 属性值，这样可以绕开以上两个问题。</p>
 <h2 id="九、defer-和-async-的区别"><a href="#九、defer-和-async-的区别" class="headerlink" title="九、defer 和 async 的区别"></a>九、defer 和 async 的区别</h2><p><code>defer</code> 和 <code>async</code> 都是 <code>&lt;script&gt;</code> 标签的属性。</p>
 <p>从下图可以得知：<br><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f5b83efb78914203b16106fb9215b5a0~tplv-k3u1fbpfcp-watermark.image" alt="image.png"><br><strong>defer：</strong></p>
 <ul>
@@ -777,7 +825,8 @@ FALLBACK:
 <li>src 会将其指向的资源下载并应用到文档内，这时候它会暂停其他资源的下载，直到该资源加载、编译、执行完毕。</li>
 <li>href 会与指向的网络资源建立链接关系，它会与其他资源并行下载，不会停止对当前文档的处理。</li>
 </ul>
-<h2 id="十一、行内元素、块级元素，以及两者的区别"><a href="#十一、行内元素、块级元素，以及两者的区别" class="headerlink" title="十一、行内元素、块级元素，以及两者的区别"></a>十一、行内元素、块级元素，以及两者的区别</h2><ol>
+<h2 id="十一、行内元素、块级元素，以及两者的区别"><a href="#十一、行内元素、块级元素，以及两者的区别" class="headerlink" title="十一、行内元素、块级元素，以及两者的区别"></a>十一、行内元素、块级元素，以及两者的区别</h2><p><strong>定义</strong>：CSS 规范规定，每个元素都有 display 属性，确定该元素的类型，每个元素都有默认的 display 值，如 div 的 display 默认值为“block”，则为“块级”元素；span 默认 display 属性值为“inline”，是“行内”元素。</p>
+<ol>
 <li>行内元素有：<code>a</code>、 <code>br</code>、 <code>cite</code>、 <code>em</code>、 <code>i</code>、 <code>img</code>、 <code>input</code>、 <code>label</code>、 <code>select</code>、 <code>span</code>、 <code>strong</code>、 <code>sub</code>、 <code>sup</code>、 <code>textarea</code></li>
 <li>块级元素有：<code>div</code>、<code>p</code>、<code>form</code>、<code>ul</code>、<code>ol</code>、<code>dl</code>、<code>h</code>、<code>hr</code>、<code>table</code>、<code>menu</code>、</li>
 <li>区别：</li>
@@ -791,7 +840,11 @@ FALLBACK:
 </blockquote>
 </li>
 </ul>
-<h2 id="十二、title-与-h1-的区别、b-与-strong-的区别、i-与-em-的区别"><a href="#十二、title-与-h1-的区别、b-与-strong-的区别、i-与-em-的区别" class="headerlink" title="十二、title 与 h1 的区别、b 与 strong 的区别、i 与 em 的区别"></a>十二、title 与 h1 的区别、b 与 strong 的区别、i 与 em 的区别</h2><p><code>title</code> 属性没有明确意义只表示是个标题，<code>h1</code> 则表示层次明确的标题。<br><code>strong</code> 标签有语义，是起到加重语气的效果，而 <code>b</code> 标签是没有的。虽然都能加粗字体，但搜索引擎更侧重 <code>strong</code> 标签。<br><code>i</code> 内容展示为斜体，<code>em</code> 表示强调的文本</p>
+<h2 id="十二、title-与-h1-的区别、b-与-strong-的区别、i-与-em-的区别"><a href="#十二、title-与-h1-的区别、b-与-strong-的区别、i-与-em-的区别" class="headerlink" title="十二、title 与 h1 的区别、b 与 strong 的区别、i 与 em 的区别"></a>十二、title 与 h1 的区别、b 与 strong 的区别、i 与 em 的区别</h2><ol>
+<li><code>title</code> 属性没有明确意义只表示是个标题，<code>h1</code> 则表示层次明确的标题。</li>
+<li><code>strong</code> 标签有语义，是起到加重语气的效果，而 <code>b</code> 标签是没有的。虽然都能加粗字体，但搜索引擎更侧重 <code>strong</code> 标签。</li>
+<li>效果都是斜体，<code>em</code> 是语义化标签，表强调；<code>i</code> 是样式标签，表斜体。</li>
+</ol>
 <h2 id="十三、label-的作用"><a href="#十三、label-的作用" class="headerlink" title="十三、label 的作用"></a>十三、label 的作用</h2><p><code>&lt;label&gt;</code> 标签是用来定义故意表单控件的关系。</p>
 <p>作用：用于绑定一个表单元素，当点击 <code>label</code> 标签的时候，被绑定的表单元素就会获得输入焦点。</p>
 <ul>
@@ -800,8 +853,11 @@ FALLBACK:
 <li>  使用方法2：<pre class="line-numbers language-none"><code class="language-none">&lt;label&gt;Date:&lt;input type&#x3D;&quot;text&quot;&#x2F;&gt;&lt;&#x2F;label&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 </ul>
 <h2 id="十四、canvas-和-svg-的区别"><a href="#十四、canvas-和-svg-的区别" class="headerlink" title="十四、canvas 和 svg 的区别"></a>十四、canvas 和 svg 的区别</h2><ul>
-<li>canvas 是画布，适合图形密集型的游戏，不支持事件处理</li>
-<li>svg 是矢量图，不依赖分辨率，不适合游戏，适合大型渲染区域（地图），支持事件处理</li>
+<li>canvas 是 HTML5 提供的新元素 <code>&lt;canvas&gt;</code> ，而 svg 存在的历史要比 canvas 久远，已经有十几年了。</li>
+<li>canvas 可以看做是一个画布，其绘制出来的图形为标量图，因此可以在 canvas 中引入 jpg 或 png 这类格式的图片，适合图形密集型的游戏。另外，我们喜欢用 canvas 来做一些统计用的图表，如柱状图曲线图或饼状图等。</li>
+<li>svg 所绘制的图形为矢量图，因此在 svg 中不能引入普通的图片。因为矢量图的不会失真的效果，在项目中我们会用来做小图标。但是由于其本质为矢量图，可以被无限放大而不会失真，这很适合被用来做地图，而百度地图就是用 svg 技术做出来的。</li>
+<li>从技术发面来讲 canvas 里面绘制的图形不能被引擎抓取，如我们要让 canvas 里面的一个图片跟随鼠标事件: <code>canvas.onmouseover=function()&#123;&#125;</code>。 而 svg 里面的图形可以被引擎抓取，支持事件的绑定。</li>
+<li>canvas 中我们绘制图形通常是通过 javascript 来实现，svg 更多的是通过标签来来实现的。</li>
 </ul>
 <h2 id="十五、渐进增强、优雅降级，以及两者的区别"><a href="#十五、渐进增强、优雅降级，以及两者的区别" class="headerlink" title="十五、渐进增强、优雅降级，以及两者的区别"></a>十五、渐进增强、优雅降级，以及两者的区别</h2><ol>
 <li>渐进增强：针对低版本浏览器也能保证基础功能，然后对高级浏览器改进追加功能（向上兼容）。</li>
@@ -1655,7 +1711,7 @@ FALLBACK:
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             <!-- 
-                <span id="year">2021-2022</span>
+                <span id="year">2021-2023</span>
             
             <span id="year">2021</span> -->
             <a href="/about" target="_blank">hcyety</a>
@@ -1715,7 +1771,7 @@ FALLBACK:
 
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">96.8k</span>&nbsp;字
+                class="white-color">118.5k</span>&nbsp;字
             
             
             

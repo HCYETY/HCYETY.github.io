@@ -623,7 +623,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    11.3k
+                    11.4k
                 </div>
                 
 
@@ -660,9 +660,9 @@
             <div id="articleContent">
                 <p>前端面试题系列：</p>
 <ul>
-<li>【1】<a href="https://hcyety.github.io/2022/03/08/bei-zhan-da-han-qian-duan-shi-xi-zhi-html-pian/">备战前端实习面试之HTML篇</a>  </li>
+<li>【1】<a href="https://hcyety.github.io/2022/03/08/bei-zhan-da-han-qian-duan-mian-shi-zhi-html-pian/">备战前端实习面试之HTML篇</a>  </li>
 <li>【2】备战前端实习面试之CSS篇  </li>
-<li>【3】<a href="">备战前端实习面试之JavaScript篇</a>  </li>
+<li>【3】<a href="https://hcyety.github.io/2022/06/01/bei-zhan-da-han-qian-duan-mian-shi-zhi-javascript-pian/">备战前端实习面试之JavaScript篇</a>  </li>
 <li>【4】<a href="">备战前端实习面试之React篇</a>  </li>
 <li>【5】<a href="">备战前端实习面试之Node.js篇</a>  </li>
 <li>【6】<a href="">备战前端实习面试之浏览器原理篇</a>  </li>
@@ -681,13 +681,19 @@
 <li>relative（不脱离文档流）<br>发生偏移时的参照为 position 属性取 static 时盒子的位置</li>
 <li>absolute（脱离文档流）<br>元素相对于最近的非 static 定位的祖先元素发生偏移</li>
 <li>fixed（脱离文档流）<br>元素相对于屏幕视口（viewport）的位置来发生偏移, 元素的位置在屏幕滚动时不会改变。这一点与 absolute 不同，absolute 在屏幕滚动时会跟着一起滚动</li>
-<li>sticky <br>可以被认为是 relative 和 fixed 的混合，元素在跨越特定阈值前为相对定位，之后为固定定位： sticky 会让元素在页面滚动时如同在正常流中（relative定位），但当滚动到特定位置时就会固定在屏幕上如同 fixed <blockquote>
+<li>sticky<br>可以被认为是 relative 和 fixed 的混合，元素在跨越特定阈值前为相对定位，之后为固定定位： sticky 会让元素在页面滚动时如同在正常流中（relative定位），但当滚动到特定位置时就会固定在屏幕上如同 fixed<blockquote>
 <p>sticky定位的阈值是相对它的最近滚动祖先来定义的，而 sticky 的作用区域也是它的第一个非static父元素内，也就是说粘性布局的效果只在该父元素内表现出来。</p>
 </blockquote>
 </li>
 <li>inherit<br>规定从父元素继承position属性的值</li>
 </ul>
-<h2 id="三、浮动的脱离文档流和绝对定位的脱离文档流是一样的吗"><a href="#三、浮动的脱离文档流和绝对定位的脱离文档流是一样的吗" class="headerlink" title="三、浮动的脱离文档流和绝对定位的脱离文档流是一样的吗"></a>三、浮动的脱离文档流和绝对定位的脱离文档流是一样的吗</h2><p>大盒子里包裹着使用 <code>float: left</code> 浮动的元素，其他小盒子会无视它，从浏览器左上角开始布局，但大盒子内的文本依旧会为浮动元素让出位置，这就导致了“字围”现象。<br><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/431b84edfb1d4f6180681fbf97c68fd5~tplv-k3u1fbpfcp-watermark.image" alt="image.png"></p>
+<h2 id="三、浮动的脱离文档流和绝对定位的脱离文档流是一样的吗"><a href="#三、浮动的脱离文档流和绝对定位的脱离文档流是一样的吗" class="headerlink" title="三、浮动的脱离文档流和绝对定位的脱离文档流是一样的吗"></a>三、浮动的脱离文档流和绝对定位的脱离文档流是一样的吗</h2><blockquote>
+<p>浮动会使元素脱离文档流，但是不会脱离文本流，在于其他盒子的文本内容计算布局的时候，还是占位置的。</p>
+</blockquote>
+<p>大盒子里包裹着使用 <code>float: left</code> 浮动的元素，其他小盒子会无视它，从浏览器左上角开始布局，但大盒子内的文本依旧会为浮动元素让出位置，这就导致了“字围”现象。<br><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/431b84edfb1d4f6180681fbf97c68fd5~tplv-k3u1fbpfcp-watermark.image" alt="image.png"></p>
+<blockquote>
+<p>绝对定位会使元素脱离文档流，同时也会脱离文本流，在于其他盒子的文本内容计算布局的时候，不占位置。</p>
+</blockquote>
 <p>使用绝对定义的元素，其他小盒子也会忽略它，但大盒子内的文本不同于浮动的脱离文档流，而是会忽略浮动的元素，因此文字会与浮动元素重叠。<br><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/3685780fda6f42dea8166a42583e431a~tplv-k3u1fbpfcp-watermark.image" alt="image.png"></p>
 <h2 id="四、讲讲-BFC"><a href="#四、讲讲-BFC" class="headerlink" title="四、讲讲 BFC"></a>四、讲讲 BFC</h2><p>BFC（块级格式化上下文）是一个独立的布局环境，可以理解为一个容器，这个容器有它自己的布局规则，布局时不会影响外界，同时也不受外部影响。</p>
 <p><strong>BFC 的布局规则</strong>：</p>
@@ -706,12 +712,12 @@
 <li>可应用于自适应两栏布局（避免右侧与左侧发生重叠)</li>
 </ul>
 </li>
-<li>清除浮动  </li>
+<li>清除内部浮动  </li>
 <li>创建自适应两栏布局</li>
 </ul>
 <p><strong>触发 BFC 的条件</strong>：</p>
 <ul>
-<li>根元素或包含根元素的元素</li>
+<li>根元素，即 HTML 元素（最大的一个 BFC）</li>
 <li><code>float</code> 的值不为 <code>none</code></li>
 <li><code>position</code> 的值为 <code>absolute</code> 或 <code>fixed</code></li>
 <li><code>display</code> 的值为 <code>flex/inline-flex弹性元素</code> 或 <code>grid/inline-grid网格元素</code> 或 <code>inline-block行内块元素</code> 或 <code>table-cell表格单元格</code> 或 <code>table-caption表格标题</code></li>
@@ -789,7 +795,7 @@
 <li>伪元素：在内容元素的前后插入额外的元素或样式，它们只在外部显示可见，但不会在文档的源代码中找到它们。</li>
 </ul>
 <h2 id="七、CSS3-的新特性"><a href="#七、CSS3-的新特性" class="headerlink" title="七、CSS3 的新特性"></a>七、CSS3 的新特性</h2><ol>
-<li>过渡  </li>
+<li>过渡</li>
 </ol>
 <p><strong>语法</strong>：<br>transition： <code>transition-property</code>【CSS属性】，<code>transition-duration</code>【花费时间】，<code>transition-timing-function</code>【效果曲线（默认ease）】，<code>transition-delay</code>【延迟时间（默认0）】。</p>
 <pre class="line-numbers language-css" data-language="css"><code class="language-css">// 连写（可以省略后面的两个参数）：
@@ -800,7 +806,39 @@ transition：width<span class="token punctuation">,</span> 5s<span class="token 
 <span class="token property">transition-timing-function</span><span class="token punctuation">:</span> linear<span class="token punctuation">;</span>
 <span class="token property">transition-delay</span><span class="token punctuation">:</span> 2s<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p><strong>transition-timing-function 的参数</strong>：<br>|值|描述|<br>|:–|:–|<br>|linear|匀速（等于 cubic-bezier(0,0,1,1)）|<br>|ease|逐渐变慢（cubic-bezier(0.25,0.1,0.25,1)）|<br>|ease-in|加速（等于 cubic-bezier(0.42,0,1,1)）|<br>|ease-out|减速（等于 cubic-bezier(0,0,0.58,1)）|<br>|ease-in-out|先加速后减速（等于 cubic-bezier(0.42,0,0.58,1)）|<br>|cubic-bezier(n,n,n,n)|在 cubic-bezier 函数中定义自己的值。可能的值是 0 至 1 之间的数值|</p>
+<p><strong>transition-timing-function 的参数</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>linear</td>
+<td>匀速（等于 cubic-bezier(0,0,1,1)）</td>
+</tr>
+<tr>
+<td>ease</td>
+<td>逐渐变慢（cubic-bezier(0.25,0.1,0.25,1)）</td>
+</tr>
+<tr>
+<td>ease-in</td>
+<td>加速（等于 cubic-bezier(0.42,0,1,1)）</td>
+</tr>
+<tr>
+<td>ease-out</td>
+<td>减速（等于 cubic-bezier(0,0,0.58,1)）</td>
+</tr>
+<tr>
+<td>ease-in-out</td>
+<td>先加速后减速（等于 cubic-bezier(0.42,0,0.58,1)）</td>
+</tr>
+<tr>
+<td>cubic-bezier(n,n,n,n)</td>
+<td>在 cubic-bezier 函数中定义自己的值。可能的值是 0 至 1 之间的数值</td>
+</tr>
+</tbody></table>
 <ol start="2">
 <li>动画<br>①animation：<code>animation-name</code>【动画名称】，<code>animation-duration</code>【一个周期花费时间】，<code>animation-timing-function</code>【运动曲线（默认ease）】，<code>animation-delay</code>【动画延迟（默认0）】，<br><code>animation-fill-mode</code>，<code>animation-direction</code>【是否反向播放动画（默认normal）】，<code>animation-iteration-count</code>【播放次数（默认1）】，<code>animation-play-state</code>【是否暂停动画（默认 running ）】<br>②告诉系统外面需要自己创建一个名称叫做xxx的动画<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token atrule"><span class="token rule">@keyframes</span> 动画名称</span> <span class="token punctuation">&#123;</span>
     <span class="token selector">from</span> <span class="token punctuation">&#123;</span>
@@ -1104,8 +1142,7 @@ backface-visibility	定义元素在不面对屏幕时是否可见。
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
 </ol>
 <ul>
-<li><p>not关键词</p>
-<ul>
+<li>not关键词<ul>
 <li>使用关键词“not”是用来排除某种制定的媒体类型，也就是用来排除符合表达式的设备。换句话说，not关键词表示对后面的表达式执行取反操作，如：  <pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token atrule"><span class="token rule">@media</span> <span class="token keyword">not</span> print <span class="token keyword">and</span> <span class="token punctuation">(</span><span class="token property">min-width</span><span class="token punctuation">:</span>1200px<span class="token punctuation">)</span></span> <span class="token punctuation">&#123;</span>
     样式代码
 <span class="token punctuation">&#125;</span>
@@ -1113,21 +1150,18 @@ backface-visibility	定义元素在不面对屏幕时是否可见。
 // 上面代码表示的是：样式代码将被使用在除打印设备和设备宽度小于1200px下的所有设备中<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
 </li>
-<li><p>only关键词</p>
-<ul>
+<li>only关键词<ul>
 <li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/927790abdd80">媒体查询使用方法@media</a></li>
 </ul>
 </li>
-<li><p>媒体类型</p>
-<ul>
+<li>媒体类型<ul>
 <li>all    用于所有媒体类型设备。</li>
 <li>print    用于打印机。</li>
 <li>screen    用于计算机屏幕、平板电脑、智能手机等等。</li>
 <li>speech    用于大声“读出”页面的屏幕阅读器。</li>
 </ul>
 </li>
-<li><p>媒体特性</p>
-<ul>
+<li>媒体特性<ul>
 <li>如果是横屏landscape、竖屏portrait，则语法：orientation：portrait | landscape  <pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token atrule"><span class="token rule">@media</span> <span class="token keyword">only</span> screen <span class="token keyword">and</span> <span class="token punctuation">(</span><span class="token property">orientation</span><span class="token punctuation">:</span>landscape<span class="token punctuation">)</span></span> <span class="token punctuation">&#123;</span>
     <span class="token selector">body</span> <span class="token punctuation">&#123;</span>
         <span class="token property">background-color</span><span class="token punctuation">:</span>lightblue<span class="token punctuation">;</span>
@@ -1143,120 +1177,131 @@ backface-visibility	定义元素在不面对屏幕时是否可见。
 更复杂的媒体查询</li>
 </ul>
 </li>
-<li><p>媒体查询中的“与”逻辑</p>
-  <pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token atrule"><span class="token rule">@media</span> screen <span class="token keyword">and</span> <span class="token punctuation">(</span><span class="token property">min-width</span><span class="token punctuation">:</span>400px<span class="token punctuation">)</span> <span class="token keyword">and</span> <span class="token punctuation">(</span><span class="token property">orientation</span><span class="token punctuation">:</span>landscape<span class="token punctuation">)</span></span> <span class="token punctuation">&#123;</span>
+<li>媒体查询中的“与”逻辑  <pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token atrule"><span class="token rule">@media</span> screen <span class="token keyword">and</span> <span class="token punctuation">(</span><span class="token property">min-width</span><span class="token punctuation">:</span>400px<span class="token punctuation">)</span> <span class="token keyword">and</span> <span class="token punctuation">(</span><span class="token property">orientation</span><span class="token punctuation">:</span>landscape<span class="token punctuation">)</span></span> <span class="token punctuation">&#123;</span>
     <span class="token selector">body</span><span class="token punctuation">&#123;</span>
         <span class="token property">color</span><span class="token punctuation">:</span>blue<span class="token punctuation">;</span>
     <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li><p>媒体查询中的“或”逻辑</p>
-  <pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token atrule"><span class="token rule">@media</span> screen <span class="token keyword">and</span> <span class="token punctuation">(</span><span class="token property">min-width</span><span class="token punctuation">:</span>400px<span class="token punctuation">)</span><span class="token punctuation">,</span> screen <span class="token keyword">and</span> <span class="token punctuation">(</span><span class="token property">orientation</span><span class="token punctuation">:</span>landscape<span class="token punctuation">)</span></span> <span class="token punctuation">&#123;</span>
+<li>媒体查询中的“或”逻辑  <pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token atrule"><span class="token rule">@media</span> screen <span class="token keyword">and</span> <span class="token punctuation">(</span><span class="token property">min-width</span><span class="token punctuation">:</span>400px<span class="token punctuation">)</span><span class="token punctuation">,</span> screen <span class="token keyword">and</span> <span class="token punctuation">(</span><span class="token property">orientation</span><span class="token punctuation">:</span>landscape<span class="token punctuation">)</span></span> <span class="token punctuation">&#123;</span>
     <span class="token selector">body</span><span class="token punctuation">&#123;</span>
         <span class="token property">color</span><span class="token punctuation">:</span>blue<span class="token punctuation">;</span>
     <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li><p>媒体查询中的“非”逻辑可以用not操作符让整个媒体查询失效。这就直接反转了整个媒体查询的含义。因而在下面的例子中，文本只会在朝向为竖着的时候变成蓝色。</p>
-  <pre class="line-numbers language-css" data-language="css"><code class="language-css">    <span class="token atrule"><span class="token rule">@media</span> <span class="token keyword">not</span> all <span class="token keyword">and</span> <span class="token punctuation">(</span><span class="token property">orientation</span><span class="token punctuation">:</span>landscape<span class="token punctuation">)</span></span> <span class="token punctuation">&#123;</span>
-        <span class="token selector">body</span><span class="token punctuation">&#123;</span>
-            <span class="token property">color</span><span class="token punctuation">:</span>blue<span class="token punctuation">;</span>
-        <span class="token punctuation">&#125;</span>
+<li>媒体查询中的“非”逻辑可以用not操作符让整个媒体查询失效。这就直接反转了整个媒体查询的含义。因而在下面的例子中，文本只会在朝向为竖着的时候变成蓝色。  <pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token atrule"><span class="token rule">@media</span> <span class="token keyword">not</span> all <span class="token keyword">and</span> <span class="token punctuation">(</span><span class="token property">orientation</span><span class="token punctuation">:</span>landscape<span class="token punctuation">)</span></span> <span class="token punctuation">&#123;</span>
+    <span class="token selector">body</span><span class="token punctuation">&#123;</span>
+        <span class="token property">color</span><span class="token punctuation">:</span>blue<span class="token punctuation">;</span>
     <span class="token punctuation">&#125;</span>
-    ```  
-    
-## 八、CSS中可继承与不可继承属性有哪些？
-
-1. **无继承性的属性**
-
-① **display**：规定元素应该生成的框的类型
-
-② **文本属性**：
--   vertical-align：垂直文本对齐
--   text-decoration：规定添加到文本的装饰
--   text-shadow：文本阴影效果
--   white-space：空白符的处理
--   unicode-bidi：设置文本的方向
-
-③ **盒子模型的属性**：width、height、margin、border、padding
-
-④ **背景属性**：background、background-color、background-image、background-repeat、background-position、background-attachment
-
-⑤ **定位属性**：float、clear、position、top、right、bottom、left、min-width、min-height、max-width、max-height、overflow、clip、z-index
-
-⑥ **生成内容属性**：content、counter-reset、counter-increment
-
-⑦ **轮廓样式属性**：outline-style、outline-width、outline-color、outline
-
-⑧ **页面样式属性**：size、page-break-before、page-break-after
-
-⑨ **声音样式属性**：pause-before、pause-after、pause、cue-before、cue-after、cue、play-during
-
-2. **有继承性的属性**
-
-① **字体系列属性**
--   font-family：字体系列
--   font-weight：字体的粗细
--   font-size：字体的大小
--   font-style：字体的风格
-
-② **文本系列属性**
--   text-indent：文本缩进
--   text-align：文本水平对齐
--   line-height：行高
--   word-spacing：单词之间的间距
--   letter-spacing：中文或者字母之间的间距
--   text-transform：控制文本大小写（就是uppercase、lowercase、capitalize这三个）
--   color：文本颜色
-
-③ **元素可见性**
--   visibility：控制元素显示隐藏
-
-④ **列表布局属性**
--   list-style：列表风格，包括list-style-type、list-style-image等
-
-⑤ **光标属性**
--   cursor：光标显示为何种形态
-
-## 九、隐藏元素的方法有哪些
-
-1. **<span class="token property">display</span><span class="token punctuation">:</span> none**
-- 不会在页面中占据位置，也不会响应绑定的监听事件。
-2. **<span class="token property">visibility</span><span class="token punctuation">:</span> hidden**
-- 在页面中占据位置，但不会响应绑定的监听事件。
-3. **<span class="token property">opacity</span><span class="token punctuation">:</span> 0**
-- 在页面中占据位置，且会响应绑定的监听事件。
-4. **<span class="token property">position</span><span class="token punctuation">:</span> absolute**
-5. **<span class="token property">z-index</span><span class="token punctuation">:</span> 负值**
-6. **<span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">scale</span><span class="token punctuation">(</span>0<span class="token punctuation">,</span>0<span class="token punctuation">)</span>**
-- 在页面中占据位置，但不会响应绑定的监听事件。
-7. **clip/clip-path**
-- 在页面中占据位置，但不会响应绑定的监听事件。
-
-## <span class="token property">十、display</span><span class="token punctuation">:</span>none 与 <span class="token property">visibility</span><span class="token punctuation">:</span>hidden 的区别
-
-这两个属性都是让元素隐藏，不可见。  
-
-区别如下：
-- 在渲染树中
-  - `<span class="token property">display</span><span class="token punctuation">:</span>none` 会让元素完全从渲染树中消失，渲染时不会占据任何空间；
-  - `<span class="token property">visibility</span><span class="token punctuation">:</span>hidden` 不会让元素从渲染树中消失，渲染的元素还会占据相应的空间，只是内容不可见。
-- 是否是继承属性
-  - `<span class="token property">display</span><span class="token punctuation">:</span>none` 是非继承属性，子孙节点会随着父节点从渲染树消失，通过修改子孙节点的属性也无法显示；
-  - `<span class="token property">visibility</span><span class="token punctuation">:</span>hidden` 是继承属性，子孙节点消失是由于继承了`hidden`，通过设置 `<span class="token property">visibility</span><span class="token punctuation">:</span>visible` 可以让子孙节点显示；
-- 修改常规文档流中元素的 `display` 通常会造成文档的重排，但是修改 `visibility` 属性只会造成本元素的重绘；
-- 如果使用读屏器，设置为 `<span class="token property">display</span><span class="token punctuation">:</span>none` 的内容不会被读取，设置为 `<span class="token property">visibility</span><span class="token punctuation">:</span>hidden` 的内容会被读取。
-
-## <span class="token property">十一、display</span><span class="token punctuation">:</span>inline-block 什么时候会显示间隙？
-
-- 有空格时会有间隙，可以删除空格解决；
-- 使用 `font-size` 时，可通过设置 `<span class="token property">font-size</span><span class="token punctuation">:</span>0`、`letter-spacing`、`word-spacing`解决；
-- `margin` 正值时，可以让 `margin` 使用负值解决；
-
-## 十二、单行、多行文本溢出隐藏
-- 单行文本溢出
-```css
-<span class="token property">overflow</span><span class="token punctuation">:</span> hiddle<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<h2 id="八、CSS中可继承与不可继承属性有哪些？"><a href="#八、CSS中可继承与不可继承属性有哪些？" class="headerlink" title="八、CSS中可继承与不可继承属性有哪些？"></a>八、CSS中可继承与不可继承属性有哪些？</h2><ol>
+<li><strong>无继承性的属性</strong></li>
+</ol>
+<p>① <strong>display</strong>：规定元素应该生成的框的类型</p>
+<p>② <strong>文本属性</strong>：</p>
+<ul>
+<li>  vertical-align：垂直文本对齐</li>
+<li>  text-decoration：规定添加到文本的装饰</li>
+<li>  text-shadow：文本阴影效果</li>
+<li>  white-space：空白符的处理</li>
+<li>  unicode-bidi：设置文本的方向</li>
+</ul>
+<p>③ <strong>盒子模型的属性</strong>：width、height、margin、border、padding</p>
+<p>④ <strong>背景属性</strong>：background、background-color、background-image、background-repeat、background-position、background-attachment</p>
+<p>⑤ <strong>定位属性</strong>：float、clear、position、top、right、bottom、left、min-width、min-height、max-width、max-height、overflow、clip、z-index</p>
+<p>⑥ <strong>生成内容属性</strong>：content、counter-reset、counter-increment</p>
+<p>⑦ <strong>轮廓样式属性</strong>：outline-style、outline-width、outline-color、outline</p>
+<p>⑧ <strong>页面样式属性</strong>：size、page-break-before、page-break-after</p>
+<p>⑨ <strong>声音样式属性</strong>：pause-before、pause-after、pause、cue-before、cue-after、cue、play-during</p>
+<ol start="2">
+<li><strong>有继承性的属性</strong></li>
+</ol>
+<p>① <strong>字体系列属性</strong></p>
+<ul>
+<li>  font-family：字体系列</li>
+<li>  font-weight：字体的粗细</li>
+<li>  font-size：字体的大小</li>
+<li>  font-style：字体的风格</li>
+</ul>
+<p>② <strong>文本系列属性</strong></p>
+<ul>
+<li>  text-indent：文本缩进</li>
+<li>  text-align：文本水平对齐</li>
+<li>  line-height：行高</li>
+<li>  word-spacing：单词之间的间距</li>
+<li>  letter-spacing：中文或者字母之间的间距</li>
+<li>  text-transform：控制文本大小写（就是uppercase、lowercase、capitalize这三个）</li>
+<li>  color：文本颜色</li>
+</ul>
+<p>③ <strong>元素可见性</strong></p>
+<ul>
+<li>  visibility：控制元素显示隐藏</li>
+</ul>
+<p>④ <strong>列表布局属性</strong></p>
+<ul>
+<li>  list-style：列表风格，包括list-style-type、list-style-image等</li>
+</ul>
+<p>⑤ <strong>光标属性</strong></p>
+<ul>
+<li>  cursor：光标显示为何种形态</li>
+</ul>
+<h2 id="九、隐藏元素的方法有哪些"><a href="#九、隐藏元素的方法有哪些" class="headerlink" title="九、隐藏元素的方法有哪些"></a>九、隐藏元素的方法有哪些</h2><ol>
+<li><strong>display: none</strong></li>
+</ol>
+<ul>
+<li>不会在页面中占据位置，也不会响应绑定的监听事件。</li>
+</ul>
+<ol start="2">
+<li><strong>visibility: hidden</strong></li>
+</ol>
+<ul>
+<li>在页面中占据位置，但不会响应绑定的监听事件。</li>
+</ul>
+<ol start="3">
+<li><strong>opacity: 0</strong></li>
+</ol>
+<ul>
+<li>在页面中占据位置，且会响应绑定的监听事件。</li>
+</ul>
+<ol start="4">
+<li><strong>position: absolute</strong></li>
+<li><strong>z-index: 负值</strong></li>
+<li><strong>transform: scale(0,0)</strong></li>
+</ol>
+<ul>
+<li>在页面中占据位置，但不会响应绑定的监听事件。</li>
+</ul>
+<ol start="7">
+<li><strong>clip/clip-path</strong></li>
+</ol>
+<ul>
+<li>在页面中占据位置，但不会响应绑定的监听事件。</li>
+</ul>
+<h2 id="十、display-none-与-visibility-hidden-的区别"><a href="#十、display-none-与-visibility-hidden-的区别" class="headerlink" title="十、display:none 与 visibility:hidden 的区别"></a>十、display:none 与 visibility:hidden 的区别</h2><p>这两个属性都是让元素隐藏，不可见。  </p>
+<p>区别如下：</p>
+<ul>
+<li>在渲染树中<ul>
+<li><code>display:none</code> 会让元素完全从渲染树中消失，渲染时不会占据任何空间；</li>
+<li><code>visibility:hidden</code> 不会让元素从渲染树中消失，渲染的元素还会占据相应的空间，只是内容不可见。</li>
+</ul>
+</li>
+<li>是否是继承属性<ul>
+<li><code>display:none</code> 是非继承属性，子孙节点会随着父节点从渲染树消失，通过修改子孙节点的属性也无法显示；</li>
+<li><code>visibility:hidden</code> 是继承属性，子孙节点消失是由于继承了<code>hidden</code>，通过设置 <code>visibility:visible</code> 可以让子孙节点显示；</li>
+</ul>
+</li>
+<li>修改常规文档流中元素的 <code>display</code> 通常会造成文档的重排，但是修改 <code>visibility</code> 属性只会造成本元素的重绘；</li>
+<li>如果使用读屏器，设置为 <code>display:none</code> 的内容不会被读取，设置为 <code>visibility:hidden</code> 的内容会被读取。</li>
+</ul>
+<h2 id="十一、display-inline-block-什么时候会显示间隙？"><a href="#十一、display-inline-block-什么时候会显示间隙？" class="headerlink" title="十一、display:inline-block 什么时候会显示间隙？"></a>十一、display:inline-block 什么时候会显示间隙？</h2><ul>
+<li>有空格时会有间隙，可以删除空格解决；</li>
+<li>使用 <code>font-size</code> 时，可通过设置 <code>font-size:0</code>、<code>letter-spacing</code>、<code>word-spacing</code>解决；</li>
+<li><code>margin</code> 正值时，可以让 <code>margin</code> 使用负值解决；</li>
+</ul>
+<h2 id="十二、单行、多行文本溢出隐藏"><a href="#十二、单行、多行文本溢出隐藏" class="headerlink" title="十二、单行、多行文本溢出隐藏"></a>十二、单行、多行文本溢出隐藏</h2><ul>
+<li><p>单行文本溢出</p>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token property">overflow</span><span class="token punctuation">:</span> hiddle<span class="token punctuation">;</span>
 <span class="token property">text-overflow</span><span class="token punctuation">:</span> ellipsis<span class="token punctuation">;</span>
-<span class="token property">white-space</span><span class="token punctuation">:</span> nowrap<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<span class="token property">white-space</span><span class="token punctuation">:</span> nowrap<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
 <li><p>多行文本溢出</p>
 <pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token property">overflow</span><span class="token punctuation">:</span> hiddle<span class="token punctuation">;</span>
 <span class="token property">text-overflow</span><span class="token punctuation">:</span> ellipsis<span class="token punctuation">;</span>
@@ -1561,9 +1606,9 @@ h1  .content .desc a
 <h2 id="二十五、link-和-import-的区别"><a href="#二十五、link-和-import-的区别" class="headerlink" title="二十五、link 和 @import 的区别"></a>二十五、link 和 @import 的区别</h2><p>两者都是外部引用 css 的方式，区别如下：</p>
 <ul>
 <li>link 是 XHTML 标签，无兼容问题；@import 是在 css2.1 时提出的，低版本的浏览器不支持；</li>
-<li>link 引入 css 时，在页面载入时同时加载；@import 需要在页面完全载入以后再加载；</li>
-<li>link 支持使用 JavaScript 去控制 DOM 修改样式，@import不支持；</li>
-<li>link 是 XHTML 标签，除了加载 css 外，还可以定义 rss 等其他事务，@import只属于 css 范畴，只能加载 css</li>
+<li>link 引入 css 时，在页面载入时同时加载；@import 引用的 CSS 会等到页面完全载入以后再加载；</li>
+<li>link 支持使用 js 去控制 DOM 修改样式，@import不支持；</li>
+<li>link 是 XHTML 标签，除了加载 css 外，还可以定义 rss 等其他事务，@import 是 CSS 提供的，只能用于加载 css</li>
 </ul>
 <h2 id="二十六、动画性能如何优化"><a href="#二十六、动画性能如何优化" class="headerlink" title="二十六、动画性能如何优化"></a>二十六、动画性能如何优化</h2><ol>
 <li><p>动画中尽量少使用会触发重排重绘的 css 属性</p>
@@ -2196,6 +2241,7 @@ window<span class="token punctuation">.</span><span class="token function-variab
 div<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
     div<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>classList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
                 
             </div>
             <hr/>
@@ -3038,7 +3084,7 @@ div<span class="token punctuation">[</span><span class="token number">0</span><s
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             <!-- 
-                <span id="year">2021-2022</span>
+                <span id="year">2021-2023</span>
             
             <span id="year">2021</span> -->
             <a href="/about" target="_blank">hcyety</a>
@@ -3098,7 +3144,7 @@ div<span class="token punctuation">[</span><span class="token number">0</span><s
 
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">96.8k</span>&nbsp;字
+                class="white-color">118.5k</span>&nbsp;字
             
             
             

@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="前端面经汇总, hcyety&#39;s blog">
+    <meta name="keywords" content="前端面经和八股汇总, hcyety&#39;s blog">
     <meta name="description" content="诗和远方，我向往的；自在独行，我渴望的">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>前端面经汇总 | hcyety&#39;s blog</title>
+    <title>前端面经和八股汇总 | hcyety&#39;s blog</title>
     <link rel="icon" type="image/png" href="/medias/logo.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -464,12 +464,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">前端面经汇总</h1>
+                    <h1 class="description center-align post-title">前端面经和八股汇总</h1>
                 </div>
             </div>
         </div>
@@ -593,6 +593,10 @@
                                 <span class="chip bg-color">面经</span>
                             </a>
                         
+                            <a href="/tags/%E5%85%AB%E8%82%A1/">
+                                <span class="chip bg-color">八股</span>
+                            </a>
+                        
                     </div>
                     
                 </div>
@@ -623,14 +627,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    677
+                    1.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    4 分
                 </div>
                 
 
@@ -658,7 +662,21 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="陆一柒科技有限公司"><a href="#陆一柒科技有限公司" class="headerlink" title="陆一柒科技有限公司"></a>陆一柒科技有限公司</h1><p>2022.03.08 16:00~16:25 –&gt; 答案传送门</p>
+                <p>前端面试题系列文章：</p>
+<ul>
+<li>【1】<a href="https://hcyety.github.io/2022/03/08/bei-zhan-da-han-qian-duan-shi-xi-zhi-html-pian/">备战前端实习面试之HTML篇</a></li>
+<li>【2】<a href="https://hcyety.github.io/2022/03/08/bei-zhan-da-han-qian-duan-shi-xi-zhi-css-pian/">备战前端实习面试之CSS篇</a></li>
+<li>【3】<a href="https://hcyety.github.io/2022/06/01/bei-zhan-da-han-qian-duan-mian-shi-zhi-javascript-pian/">备战前端实习面试之JavaScript篇</a></li>
+<li>【4】备战前端实习面试之React篇</li>
+<li>【5】备战前端实习面试之Node.js篇</li>
+<li>【6】备战前端实习面试之浏览器原理篇</li>
+<li>【8】备战前端实习面试之性能优化篇</li>
+<li>【7】备战前端实习面试之计算机网络篇</li>
+<li>【9】备战前端实习面试之手写代码篇</li>
+<li>【9】备战前端实习面试之代码输出结果篇</li>
+</ul>
+<hr>
+<h1 id="陆一柒科技有限公司"><a href="#陆一柒科技有限公司" class="headerlink" title="陆一柒科技有限公司"></a>陆一柒科技有限公司</h1><p>2022.03.08 16:00~16:25 –&gt; 答案传送门</p>
 <ol>
 <li><p>自我介绍</p>
 </li>
@@ -817,6 +835,87 @@
 <li><p>浏览器用 cors 去跨域，请求是一次还是两次</p>
 </li>
 </ol>
+<h1 id="映客直播"><a href="#映客直播" class="headerlink" title="映客直播"></a>映客直播</h1><ol>
+<li>连续几道代码输出题</li>
+</ol>
+<ul>
+<li>函数柯里化</li>
+</ul>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> <span class="token constant">MAP</span> <span class="token operator">=</span>  <span class="token punctuation">&#123;</span>
+  <span class="token function-variable function">onclick</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token function-variable function">curry</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">val</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">z</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">return</span> val<span class="token operator">++</span> <span class="token operator">+</span> z
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">var</span> <span class="token function-variable function">getInfo</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">val</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">return</span> <span class="token constant">MAP</span><span class="token punctuation">[</span>val<span class="token punctuation">]</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">var</span> fn <span class="token operator">=</span> <span class="token function">getInfo</span><span class="token punctuation">(</span><span class="token string">'curry'</span><span class="token punctuation">)</span>
+
+<span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">a</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// 300</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">a</span><span class="token punctuation">(</span><span class="token number">300</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// 401</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">fn</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// 300</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">getInfo</span><span class="token punctuation">(</span><span class="token string">'curry'</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">300</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// 400</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>深浅拷贝</li>
+</ul>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+  name<span class="token operator">:</span> <span class="token string">'baidu'</span><span class="token punctuation">,</span> 
+  arr<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">,</span> <span class="token string">'c'</span><span class="token punctuation">]</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">var</span> obj2 <span class="token operator">=</span> obj
+<span class="token keyword">var</span> arr <span class="token operator">=</span> obj<span class="token punctuation">.</span>arr
+
+obj2<span class="token punctuation">.</span>arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">,</span> <span class="token string">'c'</span><span class="token punctuation">,</span> <span class="token string">'d'</span><span class="token punctuation">]</span>
+obj2<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">'inke'</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span> <span class="token comment">// ['a', 'b', 'c']</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">.</span>name<span class="token punctuation">)</span> <span class="token comment">// 'inke'</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj <span class="token operator">===</span> obj2<span class="token punctuation">)</span> <span class="token comment">// true</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">.</span>arr <span class="token operator">===</span> obj2<span class="token punctuation">.</span>arr<span class="token punctuation">)</span> <span class="token comment">// true</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">.</span>arr <span class="token operator">===</span> arr<span class="token punctuation">)</span>  <span class="token comment">//false</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>变量提升</li>
+</ul>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  x <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token comment">// error</span>
+  <span class="token keyword">let</span> x<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ol start="2">
+<li>编程题</li>
+</ol>
+<p>字符串长度为N，判断有没有重复的字符，有重复的返回true</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">judge</span><span class="token punctuation">(</span><span class="token parameter">str</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">const</span> map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> ch <span class="token keyword">of</span> str<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>map<span class="token punctuation">.</span><span class="token function">has</span><span class="token punctuation">(</span>ch<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+      map<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>ch<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>map 和 set 两种方法的时间复杂度</p>
+</blockquote>
+<ol start="3">
+<li>React：什么时候用函数组件，什么时候用类组件</li>
+<li>Node：用到了哪些中间件</li>
+</ol>
 
                 
             </div>
@@ -887,6 +986,10 @@
                             
                                 <a href="/tags/%E9%9D%A2%E7%BB%8F/">
                                     <span class="chip bg-color">面经</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%85%AB%E8%82%A1/">
+                                    <span class="chip bg-color">八股</span>
                                 </a>
                             
                         </div>
@@ -1656,7 +1759,7 @@
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             <!-- 
-                <span id="year">2021-2022</span>
+                <span id="year">2021-2023</span>
             
             <span id="year">2021</span> -->
             <a href="/about" target="_blank">hcyety</a>
@@ -1716,7 +1819,7 @@
 
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">96.8k</span>&nbsp;字
+                class="white-color">118.5k</span>&nbsp;字
             
             
             
