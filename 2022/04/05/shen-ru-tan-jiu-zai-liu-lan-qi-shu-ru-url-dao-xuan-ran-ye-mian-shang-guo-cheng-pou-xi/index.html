@@ -783,7 +783,7 @@
 </li>
 <li><code>Etag/If-None-Match</code> <ul>
 <li><code>Etag</code> 是服务器响应请求时，返回当前资源文件的一个唯一标识（由服务器生成一段 hash 字符串）</li>
-<li><code>If-None-Match</code> 是客户端再次发起该请求时，携带上次请求返回的唯一标识 <code>Etag</code> 值，通过此字段告诉服务器该资源上次请求返回的唯一标识值。<br>服务器收到请求，发现该请求头中含有 <code>If-None-Match</code> ，会根据该字段值与该资源在服务器的 <code>Etag</code> 值作对比：若发现一致则返回 <code>303</code> ，代表资源无更新，继续使用缓存文件；不一致则重新返回资源文件，状态码为 <code>200</code> 。</li>
+<li><code>If-None-Match</code> 是客户端再次发起该请求时，携带上次请求返回的唯一标识 <code>Etag</code> 值，通过此字段告诉服务器该资源上次请求返回的唯一标识值。<br>服务器收到请求，发现该请求头中含有 <code>If-None-Match</code> ，会根据该字段值与该资源在服务器的 <code>Etag</code> 值作对比：若发现一致则返回 <code>304</code> ，代表资源无更新，继续使用缓存文件；不一致则重新返回资源文件，状态码为 <code>200</code> 。</li>
 </ul>
 </li>
 </ul>
@@ -1840,7 +1840,7 @@ https:&#x2F;&#x2F;map.baidu.com&#x2F;<span aria-hidden="true" class="line-number
 
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">125.3k</span>&nbsp;字
+                class="white-color">128.7k</span>&nbsp;字
             
             
             

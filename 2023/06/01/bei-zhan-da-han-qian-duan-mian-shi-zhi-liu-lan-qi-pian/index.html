@@ -623,14 +623,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.1k
+                    6.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    14 分
+                    22 分
                 </div>
                 
 
@@ -838,22 +838,20 @@
 <blockquote>
 <p>DNS劫持由于涉嫌违法，已经被监管起来，现在很少会有DNS劫持，⽽http劫持依然⾮常盛⾏，最有效的办法就是全站HTTPS，将HTTP加密，这使得运营商⽆法获取明⽂，就⽆法劫持你的响应内容。</p>
 </blockquote>
-<h2 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h2><h3 id="什么是同源策略"><a href="#什么是同源策略" class="headerlink" title="什么是同源策略"></a>什么是同源策略</h3><p>同源策略是一个重要的安全策略，它用于限制一个源的文档或者它加载的脚本如何能与另一个源的资源进行交互。它能帮助阻隔恶意文档，减少可能被攻击的媒介。</p>
-<p>所谓同源，就是指协议、域名、端口都要相同，只要有其中一个不同就会产生跨域。</p>
-<h3 id="为什么会有同源策略"><a href="#为什么会有同源策略" class="headerlink" title="为什么会有同源策略"></a>为什么会有同源策略</h3><ul>
-<li>为了防止恶意网页可以获取其他网站的本地数据。</li>
-<li>为了防止恶意网站在自己网站有访问其他网站的权利，以免通过 cookie 免登，拿到数据。<h3 id="什么是跨域"><a href="#什么是跨域" class="headerlink" title="什么是跨域"></a>什么是跨域</h3>跨域指浏览器不能执行其他网站的脚本，它是由浏览器的同源策略造成的，是浏览器对 JavaScript 施加的安全限制。</li>
-</ul>
+<h2 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h2><p>跨域问题（Cross-Origin Resource Sharing，CORS）是由浏览器的同源策略引起的。同源策略是一种安全机制，限制了一个源（域名、协议和端口）下的文档或脚本如何与不同源的资源进行交互。</p>
+<p>同源策略要求，只有当两个页面具有相同的协议、域名和端口号时，它们才被认为是同源的。如果两个页面的任意一个要访问另一个页面的资源，而它们不满足同源策略的要求，就会发生跨域问题。</p>
+<p>跨域问题出现的主要原因是为了保护用户的隐私和安全。如果浏览器没有跨域限制，恶意网站就可以通过脚本访问其他网站上的用户数据，导致安全风险。</p>
 <p>注意：跨域并不是请求发不出去，服务端也能收到请求并正常返回结果，只是结果被浏览器拦截了。</p>
 <h3 id="解决跨域的九种方法"><a href="#解决跨域的九种方法" class="headerlink" title="解决跨域的九种方法"></a>解决跨域的九种方法</h3><h4 id="JSONP"><a href="#JSONP" class="headerlink" title="JSONP"></a>JSONP</h4><p><strong>原理</strong>：利用 <code>&lt;script&gt;</code> 标签没有跨域限制的漏洞，网页可以得到从其他来源动态产生的 JSON 数据， JSONP 请求一定需要对方的服务器做支持才可以</p>
 <p><strong>优缺点</strong>：JSONP 简单且兼容性好，可用于解决主流浏览器的跨域数据访问的问题；但仅支持 get 方法，因为 script 脚本的请求方式是 GET。</p>
 <p><strong>实现流程：</strong></p>
 <ul>
-<li>创建一个 <code>&lt;script&gt;</code> 并载入页面中，src 是跨域的 api 接口地址，但后面需要带上一个标记有回调函数的请求参数，如 <code>http://10.92.191.223:3000/test/?callback=handleCallback</code>。后端接受到请求后需要进行特殊的处理，将回调函数名和数据拼接成一个函数调用的形式返回给前端，如 <code>handleCallback(&#123;&quot;status&quot;: &quot;success&quot;, &quot;message&quot;: &quot;跨域成功&quot;&#125;)</code>。因为是 script 脚本，所以前端请求到这个脚本后会立即执行这个脚本内容，即调用这个回调函数。<!-- - 声明一个回调函数，其函数名（如 show ）当做参数值，</li>
+<li>创建一个 <code>&lt;script&gt;</code> 并载入页面中，src 是跨域的 api 接口地址，但后面需要带上一个标记有回调函数的请求参数，如 <code>http://10.92.191.223:3000/test/?callback=handleCallback</code>。后端接受到请求后需要进行特殊的处理，将回调函数名和数据拼接成一个函数调用的形式返回给前端，如 <code>handleCallback(&#123;&quot;status&quot;: &quot;success&quot;, &quot;message&quot;: &quot;跨域成功&quot;&#125;)</code>。因为是 script 脚本，所以前端请求到这个脚本后会立即执行这个脚本内容，即调用这个回调函数。</li>
+<li>声明一个回调函数，其函数名（如 show ）当做参数值，</li>
 <li>创建一个 <code>&lt;script&gt;</code> 标签，把要跨域的 api 数据接口地址赋值给 script 的 src 属性，同时还要在这个地址中向服务器传递该函数名（如 <code>?callback=show</code> ）</li>
 <li>将创建的回调函数传递给跨域请求数据的服务器</li>
 <li>服务器收到请求后进行处理：把传递进来的函数名和要响应回去的数据拼接成一个字符串</li>
-<li>服务器把准备的数据通通过 HTTP 协议返回给客户端，客户端再调用执行之前声明的回调函数，对返回的数据进行操作 –&gt;</li>
+<li>服务器把准备的数据通通过 HTTP 协议返回给客户端，客户端再调用执行之前声明的回调函数，对返回的数据进行操作</li>
 </ul>
 <p><strong>代码实现：</strong></p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">jsonp</span><span class="token punctuation">(</span><span class="token parameter">url<span class="token punctuation">,</span> callback</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
@@ -998,10 +996,12 @@ xhr.withCredentials &#x3D; true;<span aria-hidden="true" class="line-numbers-row
 <li><code>IE 事件模型</code>，该事件共有两个过程，分别是事件处理阶段和事件冒泡阶段。事件处理阶段会首先执行目标元素绑定的监听事件，然后执行事件冒泡阶段。</li>
 <li><code>DOM2 级事件模型</code>，该事件共有三个过程，分别是事件捕获阶段、事件处理阶段、事件冒泡阶段。</li>
 </ul>
-<h2 id="对事件委托的理解"><a href="#对事件委托的理解" class="headerlink" title="对事件委托的理解"></a>对事件委托的理解</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>事件委托本质上是利用了 <strong>浏览器事件冒泡</strong> 的机制。因为事件在冒泡过程中会上传到父节点，父节点可以通过事件对象获取到目标节点，因此可以把子节点的监听函数定义在父节点上，由父节点的监听函数统一处理多个子元素的事件，这种方式称为事件委托（事件代理）。</p>
-<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ul>
-<li>减少内存消耗</li>
-<li>动态绑定事件</li>
+<h2 id="对事件委托的理解"><a href="#对事件委托的理解" class="headerlink" title="对事件委托的理解"></a>对事件委托的理解</h2><p>事件委托本质上是利用了 <strong>浏览器事件冒泡</strong> 的机制。因为事件在冒泡过程中会上传到父节点，父节点可以通过事件对象获取到目标节点，因此可以把子节点的监听函数定义在父节点上，由父节点的监听函数统一处理多个子元素的事件，这种方式称为事件委托（事件代理）。</p>
+<p>通过事件委托，我们可以将事件处理程序集中绑定在父元素上，而不必为每个子元素都绑定事件处理程序。这样做的好处包括：</p>
+<ul>
+<li>减少内存消耗：不需要为每个子元素都绑定事件处理程序，减少了内存占用。</li>
+<li>动态元素支持：对于后续添加到父元素中的子元素，无需手动绑定事件，它们会自动继承父元素的事件处理程序。</li>
+<li>简化代码：通过将事件处理程序绑定到父元素上，可以减少重复的代码。</li>
 </ul>
 <h2 id="进程和线程"><a href="#进程和线程" class="headerlink" title="进程和线程"></a>进程和线程</h2><p><strong>进程的概念</strong>：进程描述了 CPU 在运行指令及加载和保存上下文所需的时间，放在应用上来说就代表了一个程序。</p>
 <p><strong>线程的概念</strong>：线程是进程中的更小单位，描述了执行一段指令所需的时间。</p>
@@ -1615,19 +1615,19 @@ xhr.withCredentials &#x3D; true;<span aria-hidden="true" class="line-numbers-row
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/06/01/react-yuan-ma/">
+                <a href="/2023/06/01/bei-zhan-da-han-qian-duan-shi-xi-zhi-shou-xie-dai-ma-pian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="React 源码">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="备战大厂前端实习之手写代码篇">
                         
-                        <span class="card-title">React 源码</span>
+                        <span class="card-title">备战大厂前端实习之手写代码篇</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            深入分析 React 源码
+                            用自问自答的形式模拟面试，查漏补缺，备战大厂
                         
                     </div>
                     <div class="publish-info">
@@ -1638,8 +1638,8 @@ xhr.withCredentials &#x3D; true;<span aria-hidden="true" class="line-numbers-row
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/" class="post-category">
-                                    源码分析
+                            <a href="/categories/%E6%B1%82%E8%81%8C/" class="post-category">
+                                    求职
                                 </a>
                             
                             
@@ -1649,8 +1649,12 @@ xhr.withCredentials &#x3D; true;<span aria-hidden="true" class="line-numbers-row
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/React/">
-                        <span class="chip bg-color">React</span>
+                    <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                        <span class="chip bg-color">前端</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%85%AB%E8%82%A1%E6%96%87/">
+                        <span class="chip bg-color">八股文</span>
                     </a>
                     
                 </div>
@@ -1940,7 +1944,7 @@ xhr.withCredentials &#x3D; true;<span aria-hidden="true" class="line-numbers-row
 
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">125.3k</span>&nbsp;字
+                class="white-color">128.7k</span>&nbsp;字
             
             
             
