@@ -623,14 +623,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    6.2k
+                    8.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    22 分
+                    30 分
                 </div>
                 
 
@@ -678,24 +678,87 @@
 <li>JS 引擎：解析和执行 javascript 来实现逻辑和控制 DOM 进行交互。</li>
 </ul>
 <p>最开始渲染引擎和 JS 引擎并没有区分的很明确，后来 JS 引擎越来越独立，内核就倾向于只指渲染引擎。</p>
-<h2 id="GET-和-POST-的区别"><a href="#GET-和-POST-的区别" class="headerlink" title="GET 和 POST 的区别"></a>GET 和 POST 的区别</h2><h2 id="事件循环"><a href="#事件循环" class="headerlink" title="事件循环"></a>事件循环</h2><h3 id="浏览器中的事件循环"><a href="#浏览器中的事件循环" class="headerlink" title="浏览器中的事件循环"></a>浏览器中的事件循环</h3><p><strong>宏任务有哪些</strong>：</p>
+<h2 id="GET-和-POST-的区别"><a href="#GET-和-POST-的区别" class="headerlink" title="GET 和 POST 的区别"></a>GET 和 POST 的区别</h2><p>GET和POST是HTTP协议中的两种常用的请求方法，它们在以下几个方面有所区别：</p>
+<p>参数传递位置：</p>
+<p>GET请求的参数通常以查询字符串的形式附加在URL的末尾，例如：<a target="_blank" rel="noopener" href="http://example.com/path?param1=value1&amp;param2=value2%E3%80%82%E5%8F%82%E6%95%B0%E5%8F%AF%E8%A7%81%EF%BC%8C%E5%8F%AF%E4%BB%A5%E8%A2%AB%E4%B9%A6%E7%AD%BE%E4%BF%9D%E5%AD%98%E5%92%8C%E7%BC%93%E5%AD%98%EF%BC%8C%E9%95%BF%E5%BA%A6%E5%8F%97URL%E9%95%BF%E5%BA%A6%E9%99%90%E5%88%B6%E3%80%82">http://example.com/path?param1=value1&amp;param2=value2。参数可见，可以被书签保存和缓存，长度受URL长度限制。</a><br>POST请求的参数通常包含在请求体中，不会显示在URL中，因此对于传递敏感信息更为安全。参数长度理论上没有限制，但实际上会受到服务器和浏览器的限制。<br>安全性：</p>
+<p>GET请求是幂等且安全的，即对服务器资源的请求不会产生副作用，不会修改、删除或创建资源。<br>POST请求不是幂等的，可能会对服务器资源产生副作用，例如创建新的资源或更新已有资源。<br>缓存：</p>
+<p>GET请求可以被缓存，因为相同的URL和参数会产生相同的结果。可以利用浏览器缓存来提高性能。<br>POST请求默认不会被缓存，每次发送都会向服务器请求最新数据。<br>可见性：</p>
+<p>GET请求的参数和URL可见，可以被用户或其他人看到。因此，不应将敏感信息放在URL中。<br>POST请求的参数不会显示在URL中，对于传递敏感信息更为安全。<br>用途：</p>
+<p>GET请求用于获取数据，一般用于数据的读取。<br>POST请求用于提交数据，一般用于数据的创建、更新或删除。<br>需要根据具体的需求和场景来选择使用GET或POST方法。一般来说，如果是获取数据或不对服务器产生副作用的操作，可以使用GET请求；如果涉及敏感信息的传递、数据的提交或对服务器资源产生副作用的操作，应使用POST请求。</p>
+<h2 id="事件循环"><a href="#事件循环" class="headerlink" title="事件循环"></a>事件循环</h2><p>事件循环是JavaScript中处理异步操作的机制。它负责协调和执行任务队列中的任务。事件循环分为宏任务（macrotask）和微任务（microtask）两种类型的任务。</p>
+<p>宏任务是一些需要在事件循环中进行处理的较大的任务单元，例如I/O操作、定时器回调等。它们被放置在事件循环的宏任务队列中，并按照先进先出的顺序执行。</p>
+<blockquote>
+<p><strong>宏任务有哪些</strong>：<br><code>script</code>、<code>setTimeout</code>、<code>setInterval</code>、<code>setImmediate</code>、<code>Promise</code>、<code>I/O</code>、<code>UI render</code></p>
+</blockquote>
+<p>微任务是一些轻量级的任务单元，它们在宏任务执行结束后，但在浏览器渲染之前执行。常见的微任务包括Promise的回调函数、MutationObserver的回调函数等。它们被放置在事件循环的微任务队列中，并在宏任务执行结束后按照先进先出的顺序执行。</p>
+<blockquote>
+<p><strong>微任务有哪些</strong>：<br><code>process.nextTick</code>、<code>Promise.then</code>、**<code>async/await</code>**、<code>MutationObserver（html5 新特性）</code></p>
+</blockquote>
+<p>为什么要有宏任务和微任务的区分呢？主要原因有两点：</p>
 <ul>
-<li><code>script</code></li>
-<li><code>setTimeout</code></li>
-<li><code>setInterval</code></li>
-<li><code>setImmediate</code></li>
-<li><code>Promise</code></li>
-<li><code>I/O</code></li>
-<li><code>UI render</code></li>
+<li>执行顺序和优先级：宏任务和微任务的执行顺序不同。宏任务在事件循环中处于较低优先级，每次只执行一个宏任务，因此在宏任务之间有可能存在较长的延迟。而微任务在宏任务执行结束后立即执行，因此它们能够更快地响应和处理结果。通过将一些高优先级的任务作为微任务，可以更及时地处理和更新相关的状态。</li>
+<li>防止阻塞和提高响应性：由于宏任务的执行可能会较为耗时，如果所有任务都作为宏任务执行，可能会导致事件循环被长时间占用，造成其他任务无法及时得到处理，从而影响页面的响应性能。通过将某些短小且高优先级的任务作为微任务执行，可以保证这些任务能够在尽可能短的时间内得到处理，提高页面的响应性和流畅度。</li>
 </ul>
-<p><strong>微任务有哪些</strong>：</p>
+<p>总结起来，宏任务和微任务的区分主要是为了控制任务的执行顺序、优先级和响应性能。通过合理地利用微任务和宏任务，我们可以更好地处理异步任务，提高应用程序的性能和用户体验。</p>
+<h3 id="浏览器中的事件循环"><a href="#浏览器中的事件循环" class="headerlink" title="浏览器中的事件循环"></a>浏览器中的事件循环</h3><p>基本流程：</p>
+<ol>
+<li><p>执行同步任务：首先执行当前的同步代码，即按照顺序执行的 JavaScript 代码。</p>
+</li>
+<li><p>执行微任务队列：在执行完同步任务后，浏览器会检查微任务队列（microtask queue）中是否有微任务，如果有则按顺序执行所有的微任务。常见的微任务包括 Promise 的回调函数和 MutationObserver 的回调函数。</p>
+</li>
+<li><p>执行宏任务队列：浏览器会从宏任务队列中选择一个任务执行。常见的宏任务包括：</p>
+</li>
+</ol>
 <ul>
-<li><code>process.nextTick</code></li>
-<li><code>Promise.then</code></li>
-<li><strong><code>async/await</code></strong></li>
-<li><code>MutationObserver（html5 新特性）</code></li>
+<li>setTimeout 和 setInterval 的回调函数</li>
+<li>I/O 操作的回调函数</li>
+<li>用户交互事件的回调函数</li>
 </ul>
-<h3 id="node-中的事件循环"><a href="#node-中的事件循环" class="headerlink" title="node 中的事件循环"></a>node 中的事件循环</h3><h2 id="浏览器安全"><a href="#浏览器安全" class="headerlink" title="浏览器安全"></a>浏览器安全</h2><h3 id="xss-攻击"><a href="#xss-攻击" class="headerlink" title="xss 攻击"></a>xss 攻击</h3><p><strong>概念</strong>：xss 攻击指的是<strong>跨站脚本攻击</strong>，是一种代码注入攻击。攻击者通过在网站注入恶意脚本，使其在用户的浏览器上运行，从而盗取用户的信息，如 cookie 等。</p>
+<p>每次只执行一个宏任务，执行完当前宏任务后，会检查是否需要执行 UI 渲染操作（重绘和回流），然后再执行下一个宏任务。</p>
+<ol start="4">
+<li><p>更新 UI 渲染：如果需要执行 UI 渲染操作，浏览器会根据 DOM 的变化进行重绘（repaint）和回流（reflow）。</p>
+</li>
+<li><p>检查是否有新的事件：在每个阶段结束后，浏览器会检查是否有新的事件被触发，例如用户的交互事件、定时器的到期等。</p>
+</li>
+<li><p>重复以上步骤：循环执行以上步骤，直到没有任何任务需要执行。</p>
+</li>
+</ol>
+<p>需要注意的是，事件循环中的微任务和宏任务的执行顺序是有区别的，微任务总是在宏任务之前执行。这意味着，即使宏任务队列中有很多任务等待执行，浏览器也会先处理完当前微任务队列中的所有任务，再执行下一个宏任务。</p>
+<p>浏览器的事件循环机制使得 JavaScript 可以处理异步操作，保证了用户交互的响应性，并且可以实现高效的动画和渲染操作。了解浏览器事件循环的工作原理有助于编写高性能和响应式的 Web 应用程序。</p>
+<h3 id="node-中的事件循环"><a href="#node-中的事件循环" class="headerlink" title="node 中的事件循环"></a>node 中的事件循环</h3><p>在 Node.js 中，事件循环是处理异步操作的核心机制。Node.js 的事件循环遵循事件驱动的模型，用于处理输入、执行回调函数和管理事件队列。</p>
+<p>以下是 Node.js 的事件循环的基本流程：</p>
+<ol>
+<li><p>执行同步任务：首先执行当前的同步代码，即在 JavaScript 代码中按照顺序执行的部分。</p>
+</li>
+<li><p>执行微任务队列：在执行同步任务之后，Node.js 会检查微任务队列（microtask queue）中是否有微任务（例如 Promise 的回调函数），如果有则按顺序执行所有的微任务。</p>
+</li>
+<li><p>执行事件循环阶段：Node.js 事件循环分为多个阶段，每个阶段都有对应的任务队列（如 timers 队列、I/O callbacks 队列等）。</p>
+</li>
+</ol>
+<ul>
+<li>timers 阶段：处理定时器任务，执行已经到期的定时器回调函数。</li>
+<li>I/O callbacks 阶段：处理网络 I/O 相关的回调函数，如网络请求、文件 I/O 等。</li>
+<li>idle, prepare 阶段：内部使用，一般不需要关注。</li>
+<li>poll 阶段：等待新的 I/O 事件，处理 I/O 相关的回调函数。</li>
+<li>check 阶段：执行 setImmediate() 的回调函数。</li>
+<li>close callbacks 阶段：处理关闭事件的回调函数，如关闭数据库连接、服务器等。</li>
+</ul>
+<ol start="4">
+<li><p>检查是否有被触发的事件：在每个阶段结束后，Node.js 会检查是否有被触发的事件，如果有则立即执行对应事件的回调函数。</p>
+</li>
+<li><p>重复以上步骤：循环执行以上步骤，直到没有任何任务需要执行。</p>
+</li>
+</ol>
+<p>需要注意的是，在事件循环过程中，如果某个阶段的任务队列为空，Node.js 会等待，直到有任务被添加到队列中才会进入下一个阶段。</p>
+<p>事件循环的机制使得 Node.js 可以高效处理大量的并发请求，同时能够响应用户的输入和事件。它提供了一种非阻塞、异步的编程模型，允许开发人员编写高效且可扩展的服务器端应用程序。</p>
+<h3 id="浏览器事件循环和node时间循环的区别"><a href="#浏览器事件循环和node时间循环的区别" class="headerlink" title="浏览器事件循环和node时间循环的区别"></a>浏览器事件循环和node时间循环的区别</h3><ol>
+<li>运行环境：浏览器事件循环运行在浏览器环境中，而 Node.js 的事件循环运行在服务器端的 Node.js 运行时环境中。</li>
+<li>宏任务队列和微任务队列：浏览器事件循环有多个宏任务队列（如宏任务队列、消息队列、UI 渲染队列等），每个宏任务队列都有自己的微任务队列。而 Node.js 的事件循环只有一个宏任务队列和一个微任务队列</li>
+<li>宏任务和微任务的执行时机：在浏览器事件循环中，每个宏任务执行完毕后，会立即执行该宏任务队列中的所有微任务。而在 Node.js 的事件循环中，每个宏任务执行完毕后，会执行完当前微任务队列中的所有微任务，然后才会执行下一个宏任务。</li>
+<li>I/O 操作的处理：浏览器事件循环通过浏览器提供的 API 来处理 I/O 操作，如定时器、网络请求等。而 Node.js 的事件循环通过 libuv 库来处理 I/O 操作，包括文件 I/O、网络 I/O 等。</li>
+<li>事件触发机制：浏览器事件循环主要由用户交互事件、定时器和网络请求等触发。Node.js 的事件循环主要由 I/O 事件和定时器触发。</li>
+</ol>
+<h2 id="浏览器安全"><a href="#浏览器安全" class="headerlink" title="浏览器安全"></a>浏览器安全</h2><h3 id="xss-攻击"><a href="#xss-攻击" class="headerlink" title="xss 攻击"></a>xss 攻击</h3><p><strong>概念</strong>：xss 攻击指的是<strong>跨站脚本攻击</strong>，是一种代码注入攻击。攻击者通过在网站注入恶意脚本，使其在用户的浏览器上运行，从而盗取用户的信息，如 cookie 等。</p>
 <p><strong>本质</strong>：由于网站没有对恶意代码进行过滤，使其与正常的代码混合在一起了，但浏览器没有能力区分这些恶意代码，只能无条件执行。</p>
 <p><strong>特点</strong>：</p>
 <ul>
@@ -876,7 +939,8 @@
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h4 id="CORS"><a href="#CORS" class="headerlink" title="CORS"></a>CORS</h4><p><strong>概念</strong>：CORS 即跨域资源共享，当一个资源从与该资源本身所在的服务器不同的域、协议或端口请求一个资源时，会发起一个跨域 HTTP 请求，它使用额外的 HTTP 头来告诉浏览器，让运行在一个 origin 上的 web 应用被准许访问来自不同源服务器上的指定的资源。</p>
-<p><strong>类别</strong>：CORS 分为 <strong>简单请求</strong> 和 <strong>非简单请求</strong><br>满足以下两个条件，就可以看做是简单请求：</p>
+<p><strong>类别</strong>：CORS 分为 <strong>简单请求</strong> 和 <strong>非简单请求</strong>   </p>
+<p>满足以下两个条件，就可以看做是简单请求：</p>
 <ol>
 <li>请求方法是以下三种方法之一：</li>
 </ol>
@@ -892,12 +956,13 @@
 <li>Accept</li>
 <li>Accept-Language</li>
 <li>Content-Language</li>
-<li>Content-Type：只限于三个值<code>application/x-www-form-urlencoded</code>、<code>multipart/form-data</code>、<code>text/plain</code><br>若不满足以上条件，就属于非简单请求了。</li>
+<li>Content-Type：只限于三个值<code>application/x-www-form-urlencoded</code>、<code>multipart/form-data</code>、<code>text/plain</code></li>
 </ul>
+<p>若不满足以上条件，就属于非简单请求了。</p>
 <blockquote>
 <p>简单请求：</p>
 </blockquote>
-<p><strong>基本流程</strong>：浏览器直接发出 CORS 请求，会在头信息中增加一个 <code>Origin</code> 字段，表明本次请求来自哪个源（协议+域名+端口），浏览器根据这个字段的值来决定是否同意这次请求。</p>
+<p><strong>基本流程</strong>：浏览器直接发出 CORS 请求，会自动在头信息中增加一个 <code>Origin</code> 字段，表明本次请求来自哪个源（协议+域名+端口），浏览器根据这个字段的值来决定是否同意这次请求。</p>
 <p><strong>结果</strong>：</p>
 <ol>
 <li>如果 Origin 指定的域名在许可范围内，服务器返回的响应，会多出几个头信息字段:</li>
@@ -989,7 +1054,7 @@ xhr.withCredentials &#x3D; true;<span aria-hidden="true" class="line-numbers-row
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h4 id="location-hash-iframe跨域"><a href="#location-hash-iframe跨域" class="headerlink" title="location.hash + iframe跨域"></a>location.hash + iframe跨域</h4><p><strong>实现原理</strong>：a 想要与 b 跨域相互通信，需通过中间页 c 来实现。 三个页面，不同域之间利用 iframe 的 <code>location.hash</code> 传值，相同域之间直接 js 访问来通信。</p>
-<h4 id=""><a href="#" class="headerlink" title=""></a></h4><h4 id="-1"><a href="#-1" class="headerlink" title=""></a></h4><h2 id="浏览器事件机制"><a href="#浏览器事件机制" class="headerlink" title="浏览器事件机制"></a>浏览器事件机制</h2><h3 id="什么是事件？什么是事件模型？"><a href="#什么是事件？什么是事件模型？" class="headerlink" title="什么是事件？什么是事件模型？"></a>什么是事件？什么是事件模型？</h3><p>事件是用户操作网页时发生的交互动作，比如 <code>click</code>/<code>move</code> ，事件除了用户触发的动作外，还可以是文档加载、窗口滚动和大小调整。事件被封装成一个 <code>event</code> 对象，包含了该事件发生时的所有相关信息以及可以对事件进行的操作。</p>
+<h2 id="浏览器事件机制"><a href="#浏览器事件机制" class="headerlink" title="浏览器事件机制"></a>浏览器事件机制</h2><h3 id="什么是事件？什么是事件模型？"><a href="#什么是事件？什么是事件模型？" class="headerlink" title="什么是事件？什么是事件模型？"></a>什么是事件？什么是事件模型？</h3><p>事件是用户操作网页时发生的交互动作，比如 <code>click</code>/<code>move</code> ，事件除了用户触发的动作外，还可以是文档加载、窗口滚动和大小调整。事件被封装成一个 <code>event</code> 对象，包含了该事件发生时的所有相关信息以及可以对事件进行的操作。</p>
 <p>现代浏览器一共有三种事件模型：</p>
 <ul>
 <li><code>DOM0 级事件模型</code>，这种模型不会传播，所以没有事件流的概念，但现在有的浏览器支持以冒泡的方式实现，它可以在网页中直接定义监听函数，也可以通过 js 属性来指定监听函数。直接在 DOM 对象上注册事件名称，就是 <code>DOM0</code> 写法。</li>
@@ -1027,20 +1092,6 @@ xhr.withCredentials &#x3D; true;<span aria-hidden="true" class="line-numbers-row
 <li>使用 absolute 或 fixed ，使元素脱离文档流</li>
 <li>将元素设置 display: none ，操作结束后再把它显示出来</li>
 </ul>
-<h2 id="-2"><a href="#-2" class="headerlink" title=""></a></h2><h2 id="-3"><a href="#-3" class="headerlink" title=""></a></h2><h2 id="-4"><a href="#-4" class="headerlink" title=""></a></h2><h2 id="编程题：有一个数组-idArr-，长度是-100；-现在要调用一个接口-fetch-去查询每个数组元素-id"><a href="#编程题：有一个数组-idArr-，长度是-100；-现在要调用一个接口-fetch-去查询每个数组元素-id" class="headerlink" title="编程题：有一个数组 idArr ，长度是 100； 现在要调用一个接口 fetch 去查询每个数组元素 id"></a>编程题：有一个数组 idArr ，长度是 100； 现在要调用一个接口 fetch 去查询每个数组元素 id</h2><p>对应的 name；要求要分批调用，每批最多只能查询 10 个，以此实现一个 batch 函数；<br>进阶1：怎么判断批量操作是否都成功了，还是有的失败了；<br>进阶2：实现能找到查询失败的数据，并重新批量发接口重试 </p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> idArr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">&#123;</span>
-  id<span class="token operator">:</span> <span class="token string">'1'</span><span class="token punctuation">,</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>
-  id<span class="token operator">:</span> <span class="token string">'2'</span><span class="token punctuation">,</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>
-  id<span class="token operator">:</span> <span class="token string">'100'</span><span class="token punctuation">,</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-
-<span class="token function-variable function">fetch</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">params<span class="token operator">:</span> <span class="token punctuation">&#123;</span>id<span class="token operator">:</span> string<span class="token punctuation">&#125;</span><span class="token punctuation">[</span><span class="token punctuation">]</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> Promise<span class="token operator">&lt;</span><span class="token punctuation">&#123;</span>id<span class="token operator">:</span> string<span class="token punctuation">;</span> name<span class="token operator">:</span> string<span class="token punctuation">&#125;</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token operator">></span>
-
-<span class="token keyword">const</span> batch <span class="token operator">=</span> <span class="token punctuation">(</span>idArr<span class="token operator">:</span> <span class="token punctuation">&#123;</span>id<span class="token operator">:</span> string<span class="token punctuation">&#125;</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">:</span> Promise<span class="token operator">&lt;</span><span class="token punctuation">&#123;</span>id<span class="token operator">:</span> string<span class="token punctuation">;</span> name<span class="token operator">:</span> string<span class="token punctuation">&#125;</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token operator">></span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-
-<span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -1944,7 +1995,7 @@ xhr.withCredentials &#x3D; true;<span aria-hidden="true" class="line-numbers-row
 
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">128.7k</span>&nbsp;字
+                class="white-color">132.8k</span>&nbsp;字
             
             
             

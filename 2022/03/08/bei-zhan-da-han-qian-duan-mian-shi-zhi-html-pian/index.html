@@ -623,14 +623,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.8k
+                    4.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    14 分
+                    16 分
                 </div>
                 
 
@@ -865,6 +865,20 @@ FALLBACK:
 <li>优雅降级：一开始就构建站点的完整功能，然后针对浏览器进行测试和修复（向下兼容）。</li>
 <li>区别：优雅降级是从复杂的现状开始，并试图减少用户体验的供给，而渐进增强则是从一个非常基础的，能够起作用的版本开始，并不断扩充，以适应未来环境的需要。</li>
 </ol>
+<h2 id="十六、-scoped-的作用"><a href="#十六、-scoped-的作用" class="headerlink" title="十六、 scoped 的作用"></a>十六、 <code>scoped</code> 的作用</h2><p><code>scoped</code> 是一个用于 <code>&lt;style&gt;</code> 标签的 HTML 属性，它的作用是将样式限定在特定的父元素范围内生效，不影响其他元素。</p>
+<p>具体来说，当在 <code>&lt;style&gt;</code> 标签中添加 <code>scoped</code> 属性时，该样式仅适用于包含该 <code>&lt;style&gt;</code> 标签的父元素及其子元素，而不会影响其他元素。这意味着在相同页面中的其他地方使用相同的 CSS 选择器名称时，不会出现样式冲突的问题。</p>
+<p>使用 <code>scoped</code> 属性可以方便地在组件化开发或特定模块中定义样式，而不必担心样式会影响到其他地方的元素。这样可以提高代码的可维护性和可重用性。</p>
+<p>需要注意的是， <code>scoped</code> 属性在 HTML5 中已被废弃，它在最新的 HTML 标准中已经不推荐使用。而现代前端开发中，一般使用 CSS-in-JS、CSS Modules、CSS 命名空间等技术来实现样式的模块化和隔离，以解决样式冲突的问题。</p>
+<h2 id="十七、css-样式隔离"><a href="#十七、css-样式隔离" class="headerlink" title="十七、css 样式隔离"></a>十七、css 样式隔离</h2><p>CSS样式隔离是一种将样式限定在特定范围内生效的方法，避免样式冲突和影响其他元素的外观。它在前端开发中非常有用，特别是在组件化开发或模块化开发中，可以确保样式的独立性和可重用性。</p>
+<p>以下是几种实现CSS样式隔离的常见方法：</p>
+<ol>
+<li>命名约定：使用一套约定俗成的命名规范来命名CSS类名，确保在不同的模块或组件中命名不会冲突。例如，可以使用BEM（Block-Element-Modifier）命名规范来规范化类名，避免样式冲突。</li>
+<li>CSS模块化：使用CSS模块化工具或框架，如CSS Modules、Styled Components等，将样式与组件进行绑定，确保样式仅应用于对应的组件。这种方式通过使用特定的语法或编译工具，将CSS样式隔离在组件的作用域内，避免了全局样式的冲突。</li>
+<li>CSS-in-JS：使用CSS-in-JS库，如Emotion、Styled Components等，将CSS样式直接写在JavaScript/TypeScript代码中，通过动态生成样式类名或行内样式的方式，实现样式的隔离和组件化。</li>
+<li>Shadow DOM：使用Web标准中的Shadow DOM技术，创建一个独立的DOM子树，使得其内部的样式只影响Shadow DOM内的元素，不会泄漏到外部。这种方式在一些现代浏览器中得到了广泛支持。</li>
+<li>CSS命名空间：使用CSS命名空间的概念，将样式规则嵌套在特定的命名空间下，限定样式的作用范围。通过给根元素或容器元素添加命名空间前缀，实现样式的隔离。</li>
+</ol>
+<p>这些方法可以根据具体情况和开发需求选择使用。通过使用适当的样式隔离方法，可以确保样式的独立性和可维护性，减少样式冲突的问题，提高前端开发的效率和代码的可靠性。</p>
 
                 
             </div>
@@ -1768,7 +1782,7 @@ FALLBACK:
 
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">128.7k</span>&nbsp;字
+                class="white-color">132.8k</span>&nbsp;字
             
             
             

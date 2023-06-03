@@ -623,14 +623,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    667
+                    851
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    4 分
                 </div>
                 
 
@@ -808,6 +808,23 @@
     <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token punctuation">)</span>
   <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="编程题：有一个数组-idArr-，长度是-100；-现在要调用一个接口-fetch-去查询每个数组元素-id"><a href="#编程题：有一个数组-idArr-，长度是-100；-现在要调用一个接口-fetch-去查询每个数组元素-id" class="headerlink" title="编程题：有一个数组 idArr ，长度是 100； 现在要调用一个接口 fetch 去查询每个数组元素 id"></a>编程题：有一个数组 idArr ，长度是 100； 现在要调用一个接口 fetch 去查询每个数组元素 id</h2><p>对应的 name；要求要分批调用，每批最多只能查询 10 个，以此实现一个 batch 函数；<br>进阶1：怎么判断批量操作是否都成功了，还是有的失败了；<br>进阶2：实现能找到查询失败的数据，并重新批量发接口重试 </p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> idArr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">&#123;</span>
+  id<span class="token operator">:</span> <span class="token string">'1'</span><span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>
+  id<span class="token operator">:</span> <span class="token string">'2'</span><span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>
+  id<span class="token operator">:</span> <span class="token string">'100'</span><span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token function-variable function">fetch</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">params<span class="token operator">:</span> <span class="token punctuation">&#123;</span>id<span class="token operator">:</span> string<span class="token punctuation">&#125;</span><span class="token punctuation">[</span><span class="token punctuation">]</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> Promise<span class="token operator">&lt;</span><span class="token punctuation">&#123;</span>id<span class="token operator">:</span> string<span class="token punctuation">;</span> name<span class="token operator">:</span> string<span class="token punctuation">&#125;</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token operator">></span>
+
+<span class="token keyword">const</span> batch <span class="token operator">=</span> <span class="token punctuation">(</span>idArr<span class="token operator">:</span> <span class="token punctuation">&#123;</span>id<span class="token operator">:</span> string<span class="token punctuation">&#125;</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">:</span> Promise<span class="token operator">&lt;</span><span class="token punctuation">&#123;</span>id<span class="token operator">:</span> string<span class="token punctuation">;</span> name<span class="token operator">:</span> string<span class="token punctuation">&#125;</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token operator">></span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="数组扁平化"><a href="#数组扁平化" class="headerlink" title="数组扁平化"></a>数组扁平化</h2><h2 id="写一个消息的发布与订阅"><a href="#写一个消息的发布与订阅" class="headerlink" title="写一个消息的发布与订阅"></a>写一个消息的发布与订阅</h2><h2 id="字符串驼峰命名转-连接"><a href="#字符串驼峰命名转-连接" class="headerlink" title="字符串驼峰命名转_连接"></a>字符串驼峰命名转_连接</h2>
                 
             </div>
             <hr/>
@@ -1706,7 +1723,7 @@
 
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">128.7k</span>&nbsp;字
+                class="white-color">132.8k</span>&nbsp;字
             
             
             
