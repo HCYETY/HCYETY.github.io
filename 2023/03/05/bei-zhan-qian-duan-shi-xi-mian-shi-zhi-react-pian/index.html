@@ -623,14 +623,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.1k
+                    4.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    11 分
+                    16 分
                 </div>
                 
 
@@ -695,7 +695,7 @@
 <li>事件委派：React 会把所有的事件绑定到结构的最外层，使用统一的事件监听器，这个事件监听器维持了一个映射来保存所有组件内部事件和处理函数。</li>
 <li>自动绑定：React 组件中，每个方法的上下文都会指向该组件的实例，即自动绑定 this 为当前组件。</li>
 </ul>
-<h2 id="对-React-Fiber-的理解，它解决了什么问题？"><a href="#对-React-Fiber-的理解，它解决了什么问题？" class="headerlink" title="对 React-Fiber 的理解，它解决了什么问题？"></a>对 React-Fiber 的理解，它解决了什么问题？</h2><p>React V15 在渲染时，会递归对比 VirtualDOM 树，找出需要变动的节点，然后同步更新他们，一气呵成。这个过程期间，React 会占据浏览器资源，这会导致用户触发的事件得不到响应，并且会导致掉帧，导致用户感觉到卡顿。</p>
+<h2 id="对-React-Fiber-的理解，它解决了什么问题？"><a href="#对-React-Fiber-的理解，它解决了什么问题？" class="headerlink" title="对 React Fiber 的理解，它解决了什么问题？"></a>对 React Fiber 的理解，它解决了什么问题？</h2><p>React V15 在渲染时，会递归对比 VirtualDOM 树，找出需要变动的节点，然后同步更新他们，一气呵成。这个过程期间，React 会占据浏览器资源，这会导致用户触发的事件得不到响应，并且会导致掉帧，导致用户感觉到卡顿。</p>
 <p>为了给用户制造一种应用很快的“假象”，不能让一个任务长期霸占着资源。可以将浏览器的渲染、布局、绘制、资源加载、事件响应、脚本执行视作操作系统的“进程”，需要通过某些调度策略合理地分配 CPU 资源，从而提高浏览器的用户响应速率，同时兼顾任务执行效率。</p>
 <p>所以 React 通过 Fiber 架构，让这个执行过程变成可被中断。“适时”地让出 CPU 执行权，除了可以让浏览器及时地响应用户的交互，还有其他好处：</p>
 <ul>
@@ -742,30 +742,51 @@
 <li>更新过程（Update），组件状态发生变化，重新更新渲染的过程；</li>
 <li>卸载过程（Unmount），组件从DOM树中被移除的过程；</li>
 </ul>
-<h2 id="用过哪些-hooks"><a href="#用过哪些-hooks" class="headerlink" title="用过哪些 hooks"></a>用过哪些 hooks</h2><h2 id="React-Hooks-解决了哪些问题？"><a href="#React-Hooks-解决了哪些问题？" class="headerlink" title="React Hooks 解决了哪些问题？"></a>React Hooks 解决了哪些问题？</h2><ol>
-<li>在组件之间复用状态逻辑很难。</li>
-</ol>
-<h2 id="说说真实-DOM-与虚拟-DOM-的区别，优缺点"><a href="#说说真实-DOM-与虚拟-DOM-的区别，优缺点" class="headerlink" title="说说真实 DOM 与虚拟 DOM 的区别，优缺点"></a>说说真实 DOM 与虚拟 DOM 的区别，优缺点</h2><h3 id="虚拟-DOM-是什么"><a href="#虚拟-DOM-是什么" class="headerlink" title="虚拟 DOM 是什么"></a>虚拟 DOM 是什么</h3><p>虚拟 DOM 是一个 js 对象，通过对象的方式来表示 DOM 结构。将也免得状态抽象为 js 对象的形式，配合不同的渲染工具，使跨平台渲染成为可能。通过事务处理机制，将多次 DOM 修改的结果一次性的更新到页面上，从而有效地减少页面渲染的次数，减少修改 DOM 的重绘重排次数，提高渲染性能。</p>
-<p>在代码渲染到页面之前，vue 或 react 会把代码转换成一个对象，也就是虚拟 DOM ，以对象的形式来描述真实 DOM 结构，最终渲染到页面。在每次数据发生改变时，虚拟 DOM 都会缓存一份，变化之时，现在的虚拟dom会与缓存的虚拟dom进行比较。在vue或者react内部封装了diff算法，通过这个算法来进行比较，渲染时修改改变的变化，原先没有发生改变的通过原先的数据进行渲染。</p>
-<p>另外现代前端框架的一个基本要求就是无须手动操作DOM，一方面是因为手动操作DOM无法保证程序性能，多人协作的项目中如果review不严格，可能会有开发者写出性能较低的代码，另一方面更重要的是省略手动DOM操作可以大大提高开发效率。</p>
-<ul>
-<li>真实DOM就是我们在浏览器开发者工具中看到的DOM结构</li>
-<li>虚拟DOM简单来说就是 JS 对象，此对象中的字段包含了对真实DOM的描述:<ul>
-<li>type:是什么标签/元素</li>
-<li>props:标签/元素有哪些属性</li>
-<li>children:是否有子元素</li>
-</ul>
-</li>
-</ul>
-<h3 id="虚拟-DOM-大概是如何工作的"><a href="#虚拟-DOM-大概是如何工作的" class="headerlink" title="虚拟 DOM 大概是如何工作的"></a>虚拟 DOM 大概是如何工作的</h3><p>用高阶组件<br>在函数组件中，并没有 shouldComponentUpdate 这个生命周期，可以利用高阶组件，封装一个类似 PureComponet 的功能</p>
-<p>使用 React.memo<br>React.memo 是 React 16.6 新的一个 API，用来缓存组件的渲染，避免不必要的更新，其实也是一个高阶组件，与 PureComponent 十分类似，但不同的是， React.memo只能用于函数组件。</p>
-<h3 id="虚拟-DOM-的优缺点"><a href="#虚拟-DOM-的优缺点" class="headerlink" title="虚拟 DOM 的优缺点"></a>虚拟 DOM 的优缺点</h3><p><strong>优点</strong>：</p>
+<h2 id="React-Hooks-有哪些，详细描述-amp-功能"><a href="#React-Hooks-有哪些，详细描述-amp-功能" class="headerlink" title="React Hooks 有哪些，详细描述&amp;功能"></a>React Hooks 有哪些，详细描述&amp;功能</h2><p>React Hooks 是 React16.8引入的一种新特性，它们允许你在不编写类组件的情况下使用状态和其他 React 功能。</p>
 <ol>
-<li>不直接操作 DOM，数据驱动视图,也在一定程度上提升了性能，解决了频繁操作真实 DOM 的低效率工作。</li>
-<li>解决了扩平台开发的问题，因为虚拟 DOM 描述的东西可以是真实 DOM,也可以是安卓界面。IOS 界面等等,这就可以对接不同平台的渲染逻辑。从而实现”一次编码，多端运行”(如 React,React Native)</li>
+<li><code>useState</code>：<code>useState</code> 是最常用的 React Hook 之一，用于在函数组件中添加状态。它接受一个初始值作为参数，并返回一个包含当前状态和更新状态的函数数组。你可以使用返回的函数来读取和更新状态值。</li>
+<li><code>useEffect</code>：<code>useEffect</code> 允许你在函数组件中执行副作用操作，比如订阅事件、发送网络请求或手动修改 DOM 。它接受一个回调函数和一个依赖数组作为参数。回调函数在 <strong>每次渲染时都会被调用</strong> ，但你可以通过依赖数组来控制何时重新调用该回调函数。</li>
+<li><code>useContext</code>：<code>useContext</code> 用于在函数组件中访问 React 的上下文（context）。它接受一个上下文对象（通过 <code>React.createContext</code> 创建），并返回该上下文的当前值。使用 <code>useContext</code> ，你可以避免在组件层级中显式地传递上下文。</li>
+<li><code>useReducer</code>：<code>useReducer</code> 是另一种用于管理状态的 Hook。它接受一个状态更新函数和一个初始状态作为参数，并返回一个包含当前状态和触发状态更新的 <code>dispatch</code> 函数的数组。它通常与 <code>useContext</code> 一起使用，以实现复杂的状态管理。</li>
+<li><code>useRef</code>：<code>useRef</code> 返回一个可变的 <code>ref</code> 对象，它在组件的整个生命周期中保持不变。它通常用于获取或存储对 DOM 节点的引用，以及在每次渲染之间存储任意值。</li>
+<li><code>useMemo</code>：<code>useMemo</code> 用于在组件渲染过程中缓存计算结果。它接受一个回调函数和依赖数组作为参数，并返回计算结果。在依赖数组不变的情况下，<code>useMemo</code> 会返回上一次计算的结果，从而避免不必要的重复计算。</li>
+<li><code>useCallback</code>：<code>useCallback</code> 类似于 useMemo，但它用于缓存函数。它接受一个回调函数和依赖数组，并返回一个记忆化的回调函数。这在将回调函数作为 props 传递给子组件时特别有用，以避免不必要的重新渲染。</li>
 </ol>
-<p><strong>缺点</strong>：</p>
-<p>如果当虚拟 DOM 的构建和diff的过程相对复杂(比如很多递归遍历等操作),那么虚拟 DOM 的 JS 计算是比较耗时的。</p>
+<h2 id="React-Hooks-解决了哪些问题？"><a href="#React-Hooks-解决了哪些问题？" class="headerlink" title="React Hooks 解决了哪些问题？"></a>React Hooks 解决了哪些问题？</h2><ol>
+<li>状态逻辑复用：在使用类组件时，复用组件之间的状态逻辑需要使用高阶组件 (Higher-Order Components) 或 Render Props，而 Hooks 提供了一种更简洁、直接的方式来共享和复用状态逻辑，通过自定义的 Hook 可以将状态逻辑封装起来，并在多个组件中重用。</li>
+<li>状态管理的复杂性：在使用类组件时，复杂的状态管理往往需要使用类似 Redux 这样的状态管理库，而 Hooks 中的 useState 和 useReducer 可以更直接地管理组件的状态，减少了引入额外状态管理库的需求。</li>
+<li>生命周期的混乱：在类组件中，生命周期方法 (Lifecycle methods) 可能会导致代码的分散和逻辑的混乱，而 Hooks 提供了一种更直观的方式来处理组件的生命周期，通过 useEffect 可以集中处理副作用操作，并且可以更细粒度地控制副作用的执行时机。</li>
+<li>对于函数组件的限制：在过去，函数组件只能是无状态的（Stateless），无法拥有自己的内部状态和生命周期方法，而 Hooks 的引入使函数组件具备了处理状态和副作用的能力，使得函数组件可以代替类组件的使用，从而更好地组织和复用代码。</li>
+<li>难以理解的闭包和 this：在类组件中，由于 JavaScript 中 this 的工作机制以及闭包的影响，很容易在事件处理函数中出现问题，而 Hooks 的使用可以避免这些问题，使得事件处理函数更简洁、直观。</li>
+</ol>
+<h2 id="说说真实-DOM-与虚拟-DOM-的区别，优缺点"><a href="#说说真实-DOM-与虚拟-DOM-的区别，优缺点" class="headerlink" title="说说真实 DOM 与虚拟 DOM 的区别，优缺点"></a>说说真实 DOM 与虚拟 DOM 的区别，优缺点</h2><h3 id="真实-DOM"><a href="#真实-DOM" class="headerlink" title="真实 DOM"></a>真实 DOM</h3><p>真实 DOM 是浏览器中实际存在的 DOM 树，它是由浏览器解析 HTML 并构建的，它代表着当前页面的结构和内容。当页面发生变化时，真实 DOM 需要进行重新渲染，重新计算布局和绘制，这个过程比较耗费性能，特别是当 DOM 树较为庞大时。</p>
+<h3 id="虚拟-DOM"><a href="#虚拟-DOM" class="headerlink" title="虚拟 DOM"></a>虚拟 DOM</h3><p>虚拟 DOM 是一个轻量级的 JavaScript 对象树，它是对真实 DOM 的抽象表示。它通过在内存中维护一个与真实 DOM 结构相对应的虚拟 DOM 树来跟踪页面的状态。当页面状态发生变化时，虚拟 DOM 可以高效地计算出与最终渲染结果对应的最小 DOM 更新，并将这些更新批量应用到真实 DOM 上，从而减少了不必要的 DOM 操作和页面重绘，提高了性能。</p>
+<h3 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h3><ol>
+<li>虚拟 DOM 相对于真实 DOM 具有以下优点：</li>
+</ol>
+<ul>
+<li>性能优化：虚拟 DOM 可以通过比较两个虚拟 DOM 树的差异来最小化对真实 DOM 的操作，从而提高页面渲染性能。</li>
+<li>简化复杂度：使用虚拟 DOM 可以将页面状态的管理和更新逻辑进行抽象和封装，使代码更易于理解、维护和重用。</li>
+<li>跨平台能力：虚拟 DOM 不仅可以在浏览器环境下使用，还可以在其他平台上使用，如服务器端渲染和原生应用开发。</li>
+</ul>
+<ol start="2">
+<li>然而，虚拟 DOM 也存在一些缺点：</li>
+</ol>
+<ul>
+<li>内存消耗：使用虚拟 DOM 需要在内存中维护一份额外的数据结构，这会增加一定的内存消耗。</li>
+<li>引入复杂性：引入虚拟 DOM 增加了框架本身的复杂性，同时开发者需要学习和掌握虚拟 DOM 的概念和使用方式。</li>
+</ul>
+<h3 id="虚拟-DOM-大概是如何工作的"><a href="#虚拟-DOM-大概是如何工作的" class="headerlink" title="虚拟 DOM 大概是如何工作的"></a>虚拟 DOM 大概是如何工作的</h3><p>虚拟 DOM 的工作原理可以概括为以下几个步骤：</p>
+<ol>
+<li><strong>初始化阶段</strong>：在初始渲染时，通过解析 HTML 或使用 JSX，创建一个初始的虚拟 DOM 树。这个虚拟 DOM 树是一个纯 JavaScript 对象，与真实 DOM 结构一一对应，但不包含任何与浏览器相关的操作。</li>
+<li><strong>状态变更</strong>：当应用的状态发生变化时，触发重新渲染。这可能是由用户交互、数据更新或其他事件引起的。</li>
+<li><strong>生成新的虚拟 DOM 树</strong>：根据状态变更，生成一个新的虚拟 DOM 树。这个树与之前的虚拟 DOM 树进行比较，找出发生变化的部分。</li>
+<li><strong>差异计算</strong>：通过对比前后两个虚拟 DOM 树的差异，找到需要更新的节点。这个过程通常使用一种叫作 “diffing” 的算法来计算差异。</li>
+<li><strong>批量更新</strong>：将计算得到的需要更新的节点集合应用到真实 DOM 上。这个过程通过一系列 DOM 操作（如添加、删除、修改节点）来进行。由于是批量更新，避免了频繁的 DOM 操作，提高了性能。</li>
+<li><strong>重新渲染</strong>：当差异计算和批量更新完成后，页面上的真实 DOM 结构已经与最新的虚拟 DOM 树保持一致，从而完成了重新渲染。</li>
+</ol>
+<p>通过虚拟 DOM，React 在每次状态变更时，不直接操作真实 DOM，而是通过对比虚拟 DOM 树的差异，最小化真实 DOM 的更新操作。这样可以减少浏览器的重绘和回流，提高页面的性能和响应速度。</p>
+<p>需要注意的是，虚拟 DOM 并不意味着一定会比手动操作真实 DOM 快，而是通过优化更新过程来提高性能。在一些简单的场景下，直接操作真实 DOM 可能更为高效。虚拟 DOM 的优势主要在于处理复杂页面和频繁状态变更时能够提供更好的性能。</p>
 <h2 id="说说-Diff-算法"><a href="#说说-Diff-算法" class="headerlink" title="说说 Diff 算法"></a>说说 Diff 算法</h2><p>diff 操作本身是有性能损耗的，React文档中提到，即使在最前沿的算法中，将前后两棵树完全比对的算法的复杂程度为 O(n³)，其中n是树中元素的数量。</p>
 <p>为了降低算法复杂度，React 的 diff 设置了三个限制条件，以确保复杂度能降为<code>O(n)</code>：</p>
 <ul>
@@ -773,6 +794,9 @@
 <li>只复用同类型的 DOM 节点。如果元素由<code>div</code>变为<code>p</code>，React 会销毁<code>div</code>及其子孙节点，并新建<code>p</code>及其子孙节点。</li>
 <li>通过元素的<code>key</code>属性判断是否可以复用。</li>
 </ul>
+<h2 id="React-通信方式"><a href="#React-通信方式" class="headerlink" title="React 通信方式"></a>React 通信方式</h2><h2 id="受控组件与非受控组件"><a href="#受控组件与非受控组件" class="headerlink" title="受控组件与非受控组件"></a>受控组件与非受控组件</h2><p>在 React 中，受控组件和非受控组件是表单元素的两种不同管理方式。</p>
+<p><strong>受控组件（Controlled Components）</strong>是指由 React 组件来控制其表单元素的值和状态。它们通过在组件的 state 中存储值，并使用事件处理程序来更新 state 和处理表单变化。当用户输入时，组件会根据 state 中的值进行重新渲染，并根据需要更新表单元素的值。受控组件的值和状态完全由 React 组件管理。</p>
+<p><strong>非受控组件（Uncontrolled Components）</strong>是指表单元素的值和状态由 DOM 自身来管理，而不受 React 组件的控制。在非受控组件中，组件不会维护输入框的值的状态，而是通过引用 DOM 元素来获取最新的值。通常使用 ref 来访问 DOM 元素。</p>
 
                 
             </div>
@@ -1672,7 +1696,7 @@
 
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">132.8k</span>&nbsp;字
+                class="white-color">137.2k</span>&nbsp;字
             
             
             

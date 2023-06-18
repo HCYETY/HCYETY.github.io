@@ -623,14 +623,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    211
+                    1.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    4 分
                 </div>
                 
 
@@ -676,7 +676,53 @@
 <li><a href="https://hcyety.github.io/2022/04/05/shen-ru-tan-jiu-zai-liu-lan-qi-shu-ru-url-dao-xuan-ran-ye-mian-shang-guo-cheng-pou-xi/">深入探究“在浏览器输入URL到渲染页面”（上）过程剖析</a></li>
 <li><a href="https://hcyety.github.io/2022/04/29/shen-ru-tan-jiu-zai-liu-lan-qi-shu-ru-url-dao-xuan-ran-ye-mian-zhong-xing-neng-you-hua/">深入探究“在浏览器输入URL到渲染页面”（中）性能优化</a></li>
 </ul>
-
+<h2 id="HTTP-协议"><a href="#HTTP-协议" class="headerlink" title="HTTP 协议"></a>HTTP 协议</h2><p>HTTP（Hypertext Transfer Protocol）是一种用于传输超文本（HTML）文档的应用层协议。它是在客户端和服务器之间进行通信的一种规范，用于请求和响应数据。</p>
+<p>HTTP 的主要特点包括：</p>
+<ul>
+<li><strong>无连接</strong>：每个 HTTP 请求都是独立的，服务器不会保留之前的任何请求状态。这意味着每个请求都需要进行完整的连接、传输和关闭，无法直接利用已经建立的连接。</li>
+<li><strong>无状态</strong>：HTTP 协议本身不对请求和响应之间的状态进行持久化保存。服务器不会保留之前请求的任何信息，每个请求都是相互独立的。这导致服务器无法感知客户端之间的关联和状态。</li>
+<li><strong>基于文本</strong>：HTTP 的消息是由纯文本组成的，以 ASCII 码的形式进行传输。请求和响应的头部和主体都是使用纯文本进行定义和表示。</li>
+<li><strong>简单灵活</strong>：HTTP 的设计目标之一是简单性，它的方法和头部字段的语义相对简单，易于理解和实现。同时，HTTP 协议也具备一定的灵活性，允许根据需要添加自定义的头部字段和扩展功能。</li>
+<li><strong>支持缓存</strong>：HTTP 协议支持缓存机制，可以将经常请求的资源保存在客户端或代理服务器上，减少对服务器的请求，提高访问速度和性能。</li>
+<li><strong>支持安全性</strong>：HTTP 协议本身是不安全的，但可以通过使用 HTTPS（HTTP Secure）协议来加密通信内容，提供更高的安全性和隐私保护。</li>
+</ul>
+<p>HTTP 协议使用请求-响应模型，客户端发起一个请求，服务器接收请求并返回响应。请求和响应的结构由方法（如 GET、POST、PUT、DELETE）、URL、协议版本、头部字段和可选的主体组成。HTTP 的工作流程如下：</p>
+<ol>
+<li><p><strong>建立连接</strong>：客户端通过 TCP（Transmission Control Protocol）与服务器建立连接。默认使用端口号 <strong>80</strong> ，如果使用加密的 HTTPS 则使用端口号 <strong>443</strong> 。</p>
+</li>
+<li><p><strong>发送请求</strong>：客户端向服务器发送 HTTP 请求，请求由以下几部分组成：</p>
+</li>
+</ol>
+<ul>
+<li>请求行：包含请求方法、请求 URL 和协议版本</li>
+<li>请求头部：包含与请求相关的各种信息，如用户代理、内容类型等</li>
+<li>请求主体（可选）：用于传输请求的数据，如表单数据、JSON 数据等</li>
+</ul>
+<ol start="3">
+<li><p><strong>处理请求</strong>：服务器接收到请求后，根据请求行中的方法和 URL 进行处理，并生成相应的响应。</p>
+</li>
+<li><p><strong>发送响应</strong>：服务器将生成的 HTTP 响应发送回客户端，响应由以下几部分组成：</p>
+</li>
+</ol>
+<ul>
+<li>状态行：包含协议版本、状态码和状态消息。</li>
+<li>响应头部：包含与响应相关的各种信息，如内容类型、缓存控制等。</li>
+<li>响应主体：包含服务器返回的数据，如 HTML 页面、JSON 数据等。</li>
+</ul>
+<ol start="5">
+<li><strong>关闭连接</strong>：在请求和响应完成后，客户端和服务器都可以选择关闭连接，释放资源。</li>
+</ol>
+<p>HTTP 协议定义了一些常见的请求方法，包括：</p>
+<ul>
+<li>GET：从服务器获取资源。</li>
+<li>POST：向服务器提交数据，用于创建新资源或进行处理。</li>
+<li>PUT：将数据发送到服务器，用于更新现有资源。</li>
+<li>DELETE：删除服务器上的资源。</li>
+<li>PATCH：部分更新服务器上的资源。</li>
+<li>HTTP 协议还支持一些其他功能，如缓存控制、身份验证、重定向、内容压缩等。</li>
+</ul>
+<p>总结起来，HTTP 协议是一种用于在客户端和服务器之间传输数据的协议，它采用请求-响应模型，通过请求方法和 URL 标识资源，并使用各种头部字段来传递额外的信息。HTTP 协议在 Web 开发中广泛应用，为浏览器和服务器之间的数据交换提供了一种标准化的方式。</p>
+<h2 id="简单说下对称加密和非对称加密的区别"><a href="#简单说下对称加密和非对称加密的区别" class="headerlink" title="简单说下对称加密和非对称加密的区别"></a>简单说下对称加密和非对称加密的区别</h2><h2 id=""><a href="#" class="headerlink" title=""></a></h2>
                 
             </div>
             <hr/>
@@ -1577,7 +1623,7 @@
 
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">132.8k</span>&nbsp;字
+                class="white-color">137.2k</span>&nbsp;字
             
             
             

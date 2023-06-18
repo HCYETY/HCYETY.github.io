@@ -6,7 +6,7 @@
   <link href="https://hcyety.github.io/atom.xml" rel="self"/>
   
   <link href="https://hcyety.github.io/"/>
-  <updated>2023-06-01T08:14:06.212Z</updated>
+  <updated>2023-06-17T13:33:04.286Z</updated>
   <id>https://hcyety.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://hcyety.github.io/2023/06/01/bei-zhan-da-han-qian-duan-mian-shi-zhi-ji-suan-ji-wang-luo-pian/"/>
     <id>https://hcyety.github.io/2023/06/01/bei-zhan-da-han-qian-duan-mian-shi-zhi-ji-suan-ji-wang-luo-pian/</id>
     <published>2023-06-01T08:06:22.000Z</published>
-    <updated>2023-06-01T08:14:06.212Z</updated>
+    <updated>2023-06-17T13:33:04.286Z</updated>
     
     
       
@@ -134,7 +134,7 @@
     <link href="https://hcyety.github.io/2023/03/05/bei-zhan-qian-duan-shi-xi-mian-shi-zhi-react-pian/"/>
     <id>https://hcyety.github.io/2023/03/05/bei-zhan-qian-duan-shi-xi-mian-shi-zhi-react-pian/</id>
     <published>2023-03-05T01:58:17.000Z</published>
-    <updated>2023-06-01T08:22:31.752Z</updated>
+    <updated>2023-06-17T12:19:44.822Z</updated>
     
     
       
@@ -271,7 +271,7 @@
     <link href="https://hcyety.github.io/2022/09/27/wen-zhai/"/>
     <id>https://hcyety.github.io/2022/09/27/wen-zhai/</id>
     <published>2022-09-27T15:56:44.000Z</published>
-    <updated>2023-06-01T02:40:58.777Z</updated>
+    <updated>2023-06-15T13:24:51.612Z</updated>
     
     
       
@@ -282,7 +282,8 @@
 &lt;blockquote&gt;
 &lt;p&gt;不管前方的路有多苦&lt;br&gt;只要走的方向正确&lt;br&gt;不管多么崎岖不平&lt;br&gt;都比站在原地更接近幸福&lt;/p&gt;
 &lt;/blockquote&gt;
-</summary>
+&lt;blockquote&gt;
+&lt;p&gt;若人间不解风情，我为你造一夜美梦&lt;br&gt;把孤独藏进耳</summary>
         
       
     
@@ -385,35 +386,6 @@
     <category term="求职" scheme="https://hcyety.github.io/tags/%E6%B1%82%E8%81%8C/"/>
     
     <category term="插件开发" scheme="https://hcyety.github.io/tags/%E6%8F%92%E4%BB%B6%E5%BC%80%E5%8F%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>国考笔记</title>
-    <link href="https://hcyety.github.io/2022/09/16/guo-kao-bi-ji/"/>
-    <id>https://hcyety.github.io/2022/09/16/guo-kao-bi-ji/</id>
-    <published>2022-09-16T11:28:41.000Z</published>
-    <updated>2023-06-01T02:40:58.773Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;判断&quot;&gt;&lt;a href=&quot;#判断&quot; class=&quot;headerlink&quot; title=&quot;判断&quot;&gt;&lt;/a&gt;判断&lt;/h1&gt;&lt;h2 id=&quot;高频考点一：对称性&quot;&gt;&lt;a href=&quot;#高频考点一：对称性&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="公务员考试" scheme="https://hcyety.github.io/categories/%E5%85%AC%E5%8A%A1%E5%91%98%E8%80%83%E8%AF%95/"/>
-    
-    
-    <category term="国考" scheme="https://hcyety.github.io/tags/%E5%9B%BD%E8%80%83/"/>
-    
-    <category term="行测" scheme="https://hcyety.github.io/tags/%E8%A1%8C%E6%B5%8B/"/>
-    
-    <category term="笔记" scheme="https://hcyety.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
@@ -571,6 +543,39 @@
     
     
     <category term="SDK" scheme="https://hcyety.github.io/tags/SDK/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>字节青训营项目：前端监控系统</title>
+    <link href="https://hcyety.github.io/2022/08/30/zi-jie-qing-xun-ying-xiang-mu-qian-duan-jian-kong-xi-tong/"/>
+    <id>https://hcyety.github.io/2022/08/30/zi-jie-qing-xun-ying-xiang-mu-qian-duan-jian-kong-xi-tong/</id>
+    <published>2022-08-30T09:55:59.000Z</published>
+    <updated>2022-08-30T10:49:01.540Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;选择项目&quot;&gt;&lt;a href=&quot;#选择项目&quot; class=&quot;headerlink&quot; title=&quot;选择项目&quot;&gt;&lt;/a&gt;选择项目&lt;/h1&gt;&lt;p&gt;在青训营会议中，字节大佬范文杰给我们提供了三个项目：前端监控系统、Low-code</summary>
+        
+      
+    
+    
+    
+    <category term="项目" scheme="https://hcyety.github.io/categories/%E9%A1%B9%E7%9B%AE/"/>
+    
+    
+    <category term="Ts" scheme="https://hcyety.github.io/tags/Ts/"/>
+    
+    <category term="NodeJs" scheme="https://hcyety.github.io/tags/NodeJs/"/>
+    
+    <category term="Koa" scheme="https://hcyety.github.io/tags/Koa/"/>
+    
+    <category term="MySQL" scheme="https://hcyety.github.io/tags/MySQL/"/>
+    
+    <category term="InfluxDB" scheme="https://hcyety.github.io/tags/InfluxDB/"/>
     
   </entry>
   

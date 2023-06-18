@@ -663,7 +663,10 @@
 <ul>
 <li>深入探究“在浏览器输入URL到渲染页面”（上）过程剖析</li>
 <li><a href="https://hcyety.github.io/2022/04/29/shen-ru-tan-jiu-zai-liu-lan-qi-shu-ru-url-dao-xuan-ran-ye-mian-zhong-xing-neng-you-hua/">深入探究“在浏览器输入URL到渲染页面”（中）性能优化</a></li>
-<li><a href="">深入探究“在浏览器输入URL到渲染页面”（下）模拟面试</a><h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1>我们知道会有这么一个过程：</li>
+<li><a href="">深入探究“在浏览器输入URL到渲染页面”（下）模拟面试</a></li>
+</ul>
+<h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><p>我们知道会有这么一个过程：</p>
+<ul>
 <li>输入 URL 地址：在浏览器地址栏输入网站连接</li>
 <li>DNS 解析：将域名解析成 IP 地址</li>
 <li>TCP 连接：浏览器与服务器进行三次握手</li>
@@ -674,8 +677,9 @@
 </ul>
 <p>这个过程不能说错，但笔者觉得不够全面，因为在这背后还有更多的技术在默默支撑着这些功能的实现，我们一起来探究下。</p>
 <blockquote>
-<p>先简述总体过程：<br><strong>一、用户输入</strong></p>
+<p>先简述总体过程：</p>
 </blockquote>
+<p><strong>一、用户输入</strong></p>
 <ul>
 <li>用户在浏览器地址栏输入 url 并回车</li>
 </ul>
@@ -726,7 +730,7 @@
 <p>这个我们在前面简述总流程时已经说过了，但是所谓的“查看本地缓存”是怎么个查看法，缓存又是存到何处，我们来探究下其中细节：</p>
 <h3 id="浏览器缓存"><a href="#浏览器缓存" class="headerlink" title="浏览器缓存"></a>浏览器缓存</h3><p>所谓“查看本地缓存”，其实就是我们常听到的浏览器缓存。</p>
 <p>浏览器缓存有两种，分别是 <strong>强缓存</strong> 和 <strong>协商缓存</strong> 。</p>
-<p>浏览器在发送请求时，根据请求头的 <code>Expires</code> 和 <code>Cache-Control</code> 判断是否命中强缓存策略，如果命中，直接从缓存获取资源，不会发送请求了；如果没有命中，发送请求，根据请求头 <code>Last-Modified</code> 和 <code>Etag</code> 判断是否命中协商缓存，如果命中，直接从缓存获取资源，如果没有命中，则直接从服务端获取资源。</p>
+<p>浏览器在发送请求时，根据请求头的 <code>Expires</code> 和 <code>Cache-Control</code> 判断是否命中强缓存策略，如果命中，直接从缓存获取资源，不会发送请求了；如果没有命中，发送请求，根据请求头 <code>If-Modified-Since</code> 的 <code>Last-Modified</code> 值和 <code>If-None-Match</code> 的 <code>Etag</code> 值判断是否命中协商缓存，如果命中，直接从缓存获取资源，如果没有命中，则直接从服务端获取资源。</p>
 <h4 id="强缓存"><a href="#强缓存" class="headerlink" title="强缓存"></a>强缓存</h4><p>强制缓存就是向浏览器缓存查找该请求结果，并根据该结果的缓存规则来决定是否使用该缓存结果的过程。</p>
 <p>怎么判断是否命中强缓存呢？有三种情况：</p>
 <ul>
@@ -736,10 +740,12 @@
 </ul>
 <p>怎么做到强缓存呢？可以通过设置两种 HTTP Header 实现：<code>Expires</code> 和 <code>Cache-Control</code>（<code>Cache-Control</code> 的优先级高于 <code>Expires</code>）。</p>
 <ul>
-<li><code>Expires</code> 是 HTTP/1.0 控制网页缓存的字段，其值为服务器返回该请求结果缓存的到期时间。也就是说，<code>Expires = max-age + 请求时间</code> ，需要和 <code>Last-modified</code> 结合使用。<blockquote>
-<p><code>Expires</code> 控制缓存的原理是使用客户端的时间与服务端返回的时间作对比，那么如果①客户端的时间被人为修改，或者②由于时区不同服务端的时间不准确，那么强缓存会直接失效。因此到了 HTTP/1.1 <code>Expire</code> 已经被 <code>Cache-Control</code> 替代，这也是为什么 <code>Expires</code> 和 <code>Cache-Control</code> ，优先级却低于 <code>Cache-Control</code> 的原因。</p>
+<li><code>Expires</code> 是 HTTP/1.0 控制网页缓存的字段，其值为服务器返回该请求结果缓存的到期时间。也就是说，<code>Expires = max-age + 请求时间</code> ，需要和 <code>Last-modified</code> 结合使用。</li>
+</ul>
+<blockquote>
+<p><code>Expires</code> 控制缓存的原理是使用客户端的时间与服务端返回的时间作对比，那么如果①客户端的时间被人为修改，或者②由于时区不同服务端的时间不准确，那么强缓存会直接失效。因此到了 HTTP/1.1 <code>Expire</code> 已经被 <code>Cache-Control</code> 替代，这也是为什么 <code>Expires</code> 的优先级低于 <code>Cache-Control</code> 的原因。</p>
 </blockquote>
-</li>
+<ul>
 <li><code>Cache-Control</code> 是 HTTP/1.1 控制网页缓存的字段，主要取值为：<ul>
 <li><code>public</code>：默认值，所有内容都将被缓存（浏览器和代理服务器都可以缓存，并且在多用户间共享）</li>
 <li><code>private</code>：所有内容只有客户端可以缓存（不能在用户间共享）</li>
@@ -797,10 +803,12 @@
 <ul>
 <li>先到浏览器的 DNS 缓存中查询是否有对应记录，如有则直接返回 ip ，完成解析，如果没有则下一步；</li>
 <li>判断软件或浏览器是否有进行域名直接查询，如果有的话，会直接连到软件服务商提供的 DNS 服务器上，并返回 ip ；如果没有，则继续查询操作系统的缓存，如有缓存则直接返回 ip ，如果没有则下一步；</li>
-<li>查看本地 <code>host</code> 文件（因为 <code>hosts</code> 文件会建立域名到 ip 地址的绑定关系），比如 <code>windows</code> 的 <code>host</code> 文件一般位于 <code>“C:\Windows\System32\drivers\etc”</code> ，如果这里也没有的话就需要到本地 DNS 服务器上查找了。<blockquote>
+<li>查看本地 <code>host</code> 文件（因为 <code>hosts</code> 文件会建立域名到 ip 地址的绑定关系），比如 <code>windows</code> 的 <code>host</code> 文件一般位于 <code>“C:\Windows\System32\drivers\etc”</code> ，如果这里也没有的话就需要到本地 DNS 服务器上查找了。</li>
+</ul>
+<blockquote>
 <p>如果至此还没有命中域名，这时浏览器才会向本地 DNS 服务器发起一个请求来解析这个域名（题外话：通常本地域名服务器在你的城市的某个角落，距离不会很远，一般都会缓存域名解析结果，大约 80% 的域名解析到这里就完成了）。<br>提一嘴：DNS 域名服务器一般分3种，分别是根域名服务器（.）、顶级域名服务器（.com、.cn、.net 等）、权限域名服务器（xxx.com、xxx.cn、xxx.net 等）。</p>
 </blockquote>
-</li>
+<ul>
 <li>查询 DNS 请求到达本地 DNS 服务器之后，本地 DNS 服务器会首先查询它自己的缓存记录，如果缓存中有此条记录，就可以直接返回结果。如果没有，本地 DNS 服务器还要向根域名服务器进行查询【由本地 DNS 服务器代替浏览器发起这个请求】。</li>
 <li>根域名服务器没有记录具体的域名和 ip 地址的对应关系，它会返回域名的顶级域名服务器的地址，让本地 DNS 服务器去这个地址获取 ip 。</li>
 <li>于是本地 DNS 服务器得到新的地址后，向顶级域名服务器发出请求。顶级域名服务器收到请求，会返回权威域名服务器的地址，让本地 DNS 服务器其这个地址获取 ip 。</li>
@@ -920,12 +928,13 @@ https:&#x2F;&#x2F;map.baidu.com&#x2F;<span aria-hidden="true" class="line-number
 <ol>
 <li>解析 <code>HTML</code> 构建 <code>DOM</code> 树</li>
 <li>解析 <code>CSS</code> 构建 <code>CSSOM</code> 树</li>
-<li>创建 <code>Layout</code>（布局） 树，并计算元素的布局信息。<ul>
+<li>创建 <code>Layout</code>（布局） 树，并计算元素的几何信息。<ul>
 <li>遍历 <code>DOM</code> 树中的所有可见节点，并把这些节点加到布局中；</li>
 <li>而不可见的节点会被布局树忽略掉，如 <code>head</code> 标签下面的全部内容，再比如属性为 <code>dispaly:none</code> 等的元素也不会被包进布局树</li>
 </ul>
 </li>
-<li>对布局树进行分层，并生成分层树。<ul>
+<li>对布局树进行分层，并生成层次树。<ul>
+<li>分层的作用确定哪些元素需要放置在哪一图层。</li>
 <li>通常情况下，并不是布局树的每个节点都包含一个图层，如果一个节点没有对应的层，那么这个节点就从属于父节点的图层。</li>
 </ul>
 </li>
@@ -944,7 +953,6 @@ https:&#x2F;&#x2F;map.baidu.com&#x2F;<span aria-hidden="true" class="line-number
 </li>
 </ol>
 <h1 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h1><p>看完这篇文章后，你的大脑应该会感觉很充实，学到了很多底层知识，同时知道了在面试中遇到这道题时该怎么回答，这是好事。但其实这里面还可以继续深挖下去，你知道的，面试官的水平通常会比面试者高，他们可能会问更加深层次的东西，要想回答上来，我们平时要注意多思考，多问为什么。</p>
-<p>这里笔者也针对这个经典面试题写了一篇文章：深入探究“在浏览器输入URL到渲染页面”（下）模拟面试，如果担心在面试时被问住，可以先收藏下，不过这篇文章笔者还没写好，后续会补上。</p>
 
                 
             </div>
@@ -1840,7 +1848,7 @@ https:&#x2F;&#x2F;map.baidu.com&#x2F;<span aria-hidden="true" class="line-number
 
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">132.8k</span>&nbsp;字
+                class="white-color">137.2k</span>&nbsp;字
             
             
             

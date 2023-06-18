@@ -627,14 +627,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.2k
+                    3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    11 分
                 </div>
                 
 
@@ -702,6 +702,17 @@
 <li><p>了解哪些排序，介绍一种常用的</p>
 </li>
 </ol>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">let</span> obj  <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Object</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">let</span> num <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">shift</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>arguments<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> num <span class="token operator">!=</span> <span class="token string">'function'</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">return</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+  obj<span class="token punctuation">.</span>__proro__ <span class="token operator">=</span> num<span class="token punctuation">.</span>prototype<span class="token punctuation">;</span>
+  <span class="token keyword">let</span> ret <span class="token operator">=</span> <span class="token function">num</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> arguments<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> type ret <span class="token operator">===</span> <span class="token string">'object'</span> <span class="token operator">?</span> ret <span class="token operator">|</span> obj<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <hr>
 <h1 id="数预智能"><a href="#数预智能" class="headerlink" title="数预智能"></a>数预智能</h1><p>2022.04.22 18:30~19:00 –&gt; 答案传送门</p>
 <ol>
@@ -930,7 +941,191 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <li>unknown vs any</li>
 <li>怎么判断新技术是有价值的</li>
 </ol>
-
+<h1 id="广州海纳数智技术有限公司"><a href="#广州海纳数智技术有限公司" class="headerlink" title="广州海纳数智技术有限公司"></a>广州海纳数智技术有限公司</h1><p>2023.06.15 10:30~11:45 –&gt; 答案传送门</p>
+<h2 id="一面"><a href="#一面" class="headerlink" title="一面"></a>一面</h2><p><strong>项目</strong>：<br>首屏渲染时间是怎么优化的<br>跨域，实现跨域的方法<br>怎么实现监控<br>怎么捕获异常，使用什么 API<br>数据上报的方式</p>
+<blockquote>
+<p>降了 Image 和 navigator.sendBeacon<br>navigator.sendBeacon 有什么缺点<br>存在浏览器兼容性问题<br>Image 的方式是怎么实现的</p>
+</blockquote>
+<p><strong>八股</strong>：<br>前端性能优化<br>事件循环<br>Promise，代码输出</p>
+<blockquote>
+<p><img src="image.png" alt="Alt text"></p>
+</blockquote>
+<p><strong>React</strong>：<br>为什么会有 <code>React hooks</code><br>什么是高阶组件</p>
+<h2 id="二面"><a href="#二面" class="headerlink" title="二面"></a>二面</h2><p><strong>项目</strong>：<br>脚手架是怎么搭建的<br>前端监控接入时是同步的还是异步的<br>数据保存到哪里</p>
+<p><strong>八股</strong>：<br>事件循环，什么是宏任务和微任务<br>浏览器性能<br>css 和 js 的优化<br><code>cookie</code> 和 <code>localStorage</code> 的区别<br>给 <code>localStorage</code> 做一个过期时间的功能，不使用后端<br>this 指向，<code>.bar()</code> 之后再 <code>.call()</code> <code>this</code> 会改变吗，那 <code>.bar()</code> 之后再 <code>new()</code> 呢<br>原型链<br>React 和 Vue 的区别</p>
+<hr>
+<h2 id="对-websocket-的理解"><a href="#对-websocket-的理解" class="headerlink" title="对 websocket 的理解"></a>对 websocket 的理解</h2><p>websocket 是 HTML5 提供的一种浏览器与服务器间进行全双工通讯的网络技术，依靠这种技术可以实现客户端和服务器端的长连接，双向实时通信。</p>
+<p>它最大的特点就是，服务器可以主动向客户端推送信息，客户端也可以主动向服务器发送信息。</p>
+<p>还有其他的特点：可以与任意服务器进行通信。</p>
+<ul>
+<li>可以发送文本，也可以发送二进制数据。</li>
+<li>建立在 TCP 协议之上，服务器端的实现比较容易。</li>
+<li>没有同源限制，客户端</li>
+</ul>
+<h2 id="宏任务和微任务都有哪些？"><a href="#宏任务和微任务都有哪些？" class="headerlink" title="宏任务和微任务都有哪些？"></a>宏任务和微任务都有哪些？</h2><table>
+<thead>
+<tr>
+<th>宏任务</th>
+<th>浏览器</th>
+<th>Node</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>I/O</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>setTimeout</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>setInterval</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>setImmediate</td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>requestAnimationFrame</td>
+<td>✅</td>
+<td>❌</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>微任务</th>
+<th>浏览器</th>
+<th>Node</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>process.nextTick</td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>MutationObserver</td>
+<td>✅</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>Promise.then catch finally</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+</tbody></table>
+<h2 id="require-和-import的区别"><a href="#require-和-import的区别" class="headerlink" title="require 和 import的区别"></a>require 和 import的区别</h2><ul>
+<li>CommonJS 使用 require 导入、exports/module.exports 导出，通常适用范围如 Node.js；</li>
+<li>ES6 使用 import 导入、export 导出，通常适用范围如 React；</li>
+<li>CommonJS 输出的是一个值的拷贝，而 ES6 输出的是值的引用；</li>
+<li>require 是赋值过程并且是运行时才执行，也就是同步加载；</li>
+<li>import 是解构过程并且是编译时执行，理解为异步加载；</li>
+<li>require 可以理解为一个全局方法，因为它是一个方法所以意味着可以在任何地方执行。</li>
+<li>import 会提升到整个模块的头部，具有置顶性，但是建议写在文件的顶部。</li>
+</ul>
+<h2 id="require中-exports-和-module-exports-的区别"><a href="#require中-exports-和-module-exports-的区别" class="headerlink" title="require中 exports 和 module.exports 的区别"></a>require中 exports 和 module.exports 的区别</h2><ul>
+<li>module.exports 初始值为一个空对象 {}</li>
+<li>exports 是指向的 module.exports 的引用</li>
+<li>require() 返回的是 module.exports 而不是 exports<br>即 module.exports 指向新的对象时，exports 断开了与 module.exports 的引用，那么通过 exports = module.exports 让 exports 重新指向 module.exports 即可。</li>
+</ul>
+<h2 id="什么是进程和线程"><a href="#什么是进程和线程" class="headerlink" title="什么是进程和线程"></a>什么是进程和线程</h2><p>启动一个程序的时候，操作系统会为该程序创建一块内存，用来存放代码、运行数据和一个执行任务的主线程，这样的一个运行环境就叫进程。</p>
+<p>线程是进程中的更小单位，描述了执行一段指令所需的时间。</p>
+<h2 id="进程和线程的区别"><a href="#进程和线程的区别" class="headerlink" title="进程和线程的区别"></a>进程和线程的区别</h2><ul>
+<li>进程可以看做独立应用，线程不行；</li>
+<li>资源：</li>
+<li>通信方面：</li>
+<li>调度：</li>
+<li>系统开销：</li>
+</ul>
+<h2 id="进程间的通信方式"><a href="#进程间的通信方式" class="headerlink" title="进程间的通信方式"></a>进程间的通信方式</h2><h2 id="事件循环"><a href="#事件循环" class="headerlink" title="事件循环"></a>事件循环</h2><h2 id="dns缓存的更新过程"><a href="#dns缓存的更新过程" class="headerlink" title="dns缓存的更新过程"></a>dns缓存的更新过程</h2><h2 id="tcp协议"><a href="#tcp协议" class="headerlink" title="tcp协议"></a>tcp协议</h2><h2 id="tcp和udp的差别，各举出一个例子"><a href="#tcp和udp的差别，各举出一个例子" class="headerlink" title="tcp和udp的差别，各举出一个例子"></a>tcp和udp的差别，各举出一个例子</h2><h2 id="UDP丢包的优化方案"><a href="#UDP丢包的优化方案" class="headerlink" title="UDP丢包的优化方案"></a>UDP丢包的优化方案</h2><h2 id="http报文"><a href="#http报文" class="headerlink" title="http报文"></a>http报文</h2><p>HTTP 常见的请求头：</p>
+<ul>
+<li><code>Accept</code>：浏览器能够处理的内容类型</li>
+<li><code>Accept-Charset</code>：浏览器能够显示的字符集</li>
+<li><code>Accept-Encoding</code>：浏览器能够处理的压缩编码</li>
+<li><code>Accept-Language</code>：浏览器当前设置的语言</li>
+<li><code>Connection</code>：浏览器与服务器之间连接的类型</li>
+<li><code>Cookie</code>：当前页面设置的任何 Cookie</li>
+<li><code>Host</code>：发出请求的页面所在的域</li>
+<li><code>Referer</code>：发出请求的页面的 url</li>
+<li><code>User-Agent</code>：浏览器的用户代理字符串</li>
+</ul>
+<p>HTTP 常见的响应头：</p>
+<ul>
+<li><code>Content-Type</code>：表示后面的文档属于什么 MIME 类型，属性值有以下四种：<ul>
+<li><code>application/x-www-form-urlencoded</code>：</li>
+<li><code>multipart/form-data</code>：</li>
+<li><code>application/json</code>：服务器消息主题是序列化后的 JSON 字符串</li>
+<li><code>text/xml</code>：主要用来提交 XML 格式的数据</li>
+</ul>
+</li>
+<li>``：</li>
+<li>``：</li>
+<li>``：</li>
+<li>``：</li>
+</ul>
+<h2 id="强缓存字段和协商缓存字段"><a href="#强缓存字段和协商缓存字段" class="headerlink" title="强缓存字段和协商缓存字段"></a>强缓存字段和协商缓存字段</h2><h2 id="http正向代理和反向代理"><a href="#http正向代理和反向代理" class="headerlink" title="http正向代理和反向代理"></a>http正向代理和反向代理</h2><h2 id="GET-和-POST-说一下"><a href="#GET-和-POST-说一下" class="headerlink" title="GET 和 POST 说一下"></a>GET 和 POST 说一下</h2><ul>
+<li>参数类型：POST 的参数传递支持更多的数据类型。</li>
+<li>请求长度：浏览器由于对 url 长度的限制，所以会影响 GET 请求发送数据时的长度。</li>
+<li>发送的报文格式：GET 请求的报文中实体部分为空，POST 请求的报文中实体部分一般为向服务器发送的数据。</li>
+<li>是否缓存：浏览器一般会对 GET 请求缓存，但很少对 POST 请求缓存。</li>
+<li>应用场景：</li>
+<li>安全性：GET 请求可以将请求的参数放入 url 中向服务器发送，而 POST 请求时将请求的参数放入请求体中的，POST 请求会比 GET 请求相对安全一些。</li>
+</ul>
+<h2 id="浏览器是cookie和localstorage有什么区别"><a href="#浏览器是cookie和localstorage有什么区别" class="headerlink" title="浏览器是cookie和localstorage有什么区别"></a>浏览器是cookie和localstorage有什么区别</h2><h2 id="position干什么，属性值，left是负数是什么意思"><a href="#position干什么，属性值，left是负数是什么意思" class="headerlink" title="position干什么，属性值，left是负数是什么意思"></a>position干什么，属性值，left是负数是什么意思</h2><h2 id="display有什么作用"><a href="#display有什么作用" class="headerlink" title="display有什么作用"></a>display有什么作用</h2><h2 id="行内块和块有什么不一样"><a href="#行内块和块有什么不一样" class="headerlink" title="行内块和块有什么不一样"></a>行内块和块有什么不一样</h2><h2 id="说一下react的生命周期函数"><a href="#说一下react的生命周期函数" class="headerlink" title="说一下react的生命周期函数"></a>说一下react的生命周期函数</h2><h2 id="shouldComponentUpdate的应用场景"><a href="#shouldComponentUpdate的应用场景" class="headerlink" title="shouldComponentUpdate的应用场景"></a>shouldComponentUpdate的应用场景</h2><h2 id="pureconponent呢"><a href="#pureconponent呢" class="headerlink" title="pureconponent呢"></a>pureconponent呢</h2><h2 id="render属于构造函数吗"><a href="#render属于构造函数吗" class="headerlink" title="render属于构造函数吗"></a>render属于构造函数吗</h2><h2 id="构造函数属于生命周期函数吗"><a href="#构造函数属于生命周期函数吗" class="headerlink" title="构造函数属于生命周期函数吗"></a>构造函数属于生命周期函数吗</h2><h2 id="map与object的差别"><a href="#map与object的差别" class="headerlink" title="map与object的差别"></a>map与object的差别</h2><h2 id="场景题：往map里面存100000数据，怎么依次取出前十条数据"><a href="#场景题：往map里面存100000数据，怎么依次取出前十条数据" class="headerlink" title="场景题：往map里面存100000数据，怎么依次取出前十条数据"></a>场景题：往map里面存100000数据，怎么依次取出前十条数据</h2><h2 id="跟上题一样，怎么取出map中以a开头的前十条数据"><a href="#跟上题一样，怎么取出map中以a开头的前十条数据" class="headerlink" title="跟上题一样，怎么取出map中以a开头的前十条数据"></a>跟上题一样，怎么取出map中以a开头的前十条数据</h2><h2 id="了解node的什么"><a href="#了解node的什么" class="headerlink" title="了解node的什么"></a>了解node的什么</h2><h2 id="说一下href和src的区别"><a href="#说一下href和src的区别" class="headerlink" title="说一下href和src的区别"></a>说一下href和src的区别</h2><h2 id="说一下transform的原理"><a href="#说一下transform的原理" class="headerlink" title="说一下transform的原理"></a>说一下transform的原理</h2><h2 id="说一下js的执行上下文"><a href="#说一下js的执行上下文" class="headerlink" title="说一下js的执行上下文"></a>说一下js的执行上下文</h2><h2 id="函数和对象及其上下文存储在哪里"><a href="#函数和对象及其上下文存储在哪里" class="headerlink" title="函数和对象及其上下文存储在哪里"></a>函数和对象及其上下文存储在哪里</h2><h2 id="说一下V8的垃圾回收机制"><a href="#说一下V8的垃圾回收机制" class="headerlink" title="说一下V8的垃圾回收机制"></a>说一下V8的垃圾回收机制</h2><h2 id="手写虚拟dom转换成真实dom（写代码）"><a href="#手写虚拟dom转换成真实dom（写代码）" class="headerlink" title="手写虚拟dom转换成真实dom（写代码）"></a>手写虚拟dom转换成真实dom（写代码）</h2><h2 id="http状态码，304、499"><a href="#http状态码，304、499" class="headerlink" title="http状态码，304、499"></a>http状态码，304、499</h2><p>HTTP的状态码分成5类，分别是：</p>
+<ul>
+<li>1xx: 信息响应</li>
+<li>2xx: 响应成功</li>
+<li>3xx: 重定向</li>
+<li>4xx: 客户端问题</li>
+<li>5xx: 服务端问题</li>
+</ul>
+<p>499 是指客户端发起请求后，一段时间内没有收到代理服务器的应答，导致连接失败。<br>有两种可能：</p>
+<ol>
+<li>代理服务器认为客户端发起的请求过于危险，所以主动断开</li>
+<li>代理服务器连接不到其他服务，导致连接超时</li>
+</ol>
+<p>304是命中协商缓存时返回的标识</p>
+<h2 id="HTTP-状态码-304-是多好还是少好"><a href="#HTTP-状态码-304-是多好还是少好" class="headerlink" title="HTTP 状态码 304 是多好还是少好"></a>HTTP 状态码 304 是多好还是少好</h2><p>产生较多 304 状态码的原因：</p>
+<ul>
+<li>页面更新周期长或不更新</li>
+<li>纯静态页面或强制生成静态 HTML</li>
+</ul>
+<p>出现过多 304 状态码会造成以下问题：</p>
+<ul>
+<li>网站快照停止</li>
+<li>收录减少</li>
+<li>权重下降</li>
+</ul>
+<h2 id="js引擎如何执行js代码的"><a href="#js引擎如何执行js代码的" class="headerlink" title="js引擎如何执行js代码的"></a>js引擎如何执行js代码的</h2><h2 id="介绍下-Set、Map、WeakSet-和-WeakMap-的区别？"><a href="#介绍下-Set、Map、WeakSet-和-WeakMap-的区别？" class="headerlink" title="介绍下 Set、Map、WeakSet 和 WeakMap 的区别？"></a>介绍下 Set、Map、WeakSet 和 WeakMap 的区别？</h2><p>Set</p>
+<ol>
+<li>成员唯一、无序；</li>
+<li>只有键值，没有键名；</li>
+<li>可以遍历，方法有 <code>add</code>、<code>delete</code>、<code>has</code>。</li>
+</ol>
+<p>weakSet</p>
+<ol>
+<li>成员都是对象；</li>
+<li>成员都是弱引用，可以被垃圾回收机制回收；</li>
+<li>不能遍历，方法有 <code>add</code>、<code>delete</code>、<code>has</code>。</li>
+</ol>
+<p>Map</p>
+<ol>
+<li>本质上是键值对的集合；</li>
+<li>可以遍历。</li>
+</ol>
+<p>weakMap</p>
+<ol>
+<li>只接收对象作为键名（null 除外）；</li>
+<li>键名是弱引用，键值可以是任意的；</li>
+<li>不能遍历。</li>
+</ol>
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2><h2 id="-1"><a href="#-1" class="headerlink" title=""></a></h2><h2 id="-2"><a href="#-2" class="headerlink" title=""></a></h2><h2 id="-3"><a href="#-3" class="headerlink" title=""></a></h2><h2 id="-4"><a href="#-4" class="headerlink" title=""></a></h2><h2 id="-5"><a href="#-5" class="headerlink" title=""></a></h2><h2 id="-6"><a href="#-6" class="headerlink" title=""></a></h2><h2 id="-7"><a href="#-7" class="headerlink" title=""></a></h2><h2 id="-8"><a href="#-8" class="headerlink" title=""></a></h2><h2 id="-9"><a href="#-9" class="headerlink" title=""></a></h2>
                 
             </div>
             <hr/>
@@ -1833,7 +2028,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">132.8k</span>&nbsp;字
+                class="white-color">137.2k</span>&nbsp;字
             
             
             
