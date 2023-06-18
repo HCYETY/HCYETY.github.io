@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="React-Ts 项目：在线编程笔试平台, hcyety&#39;s blog">
+    <meta name="keywords" content="浏览器的存储, hcyety&#39;s blog">
     <meta name="description" content="诗和远方，我向往的；自在独行，我渴望的">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>React-Ts 项目：在线编程笔试平台 | hcyety&#39;s blog</title>
+    <title>浏览器的存储 | hcyety&#39;s blog</title>
     <link rel="icon" type="image/png" href="/medias/logo.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -464,12 +464,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">React-Ts 项目：在线编程笔试平台</h1>
+                    <h1 class="description center-align post-title">浏览器的存储</h1>
                 </div>
             </div>
         </div>
@@ -585,24 +585,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/React/">
-                                <span class="chip bg-color">React</span>
+                            <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                                <span class="chip bg-color">前端</span>
                             </a>
                         
-                            <a href="/tags/Ts/">
-                                <span class="chip bg-color">Ts</span>
-                            </a>
-                        
-                            <a href="/tags/NodeJs/">
-                                <span class="chip bg-color">NodeJs</span>
-                            </a>
-                        
-                            <a href="/tags/Koa/">
-                                <span class="chip bg-color">Koa</span>
-                            </a>
-                        
-                            <a href="/tags/MySQL/">
-                                <span class="chip bg-color">MySQL</span>
+                            <a href="/tags/%E5%85%AB%E8%82%A1%E6%96%87/">
+                                <span class="chip bg-color">八股文</span>
                             </a>
                         
                     </div>
@@ -613,8 +601,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E9%A1%B9%E7%9B%AE/" class="post-category">
-                                项目
+                            <a href="/categories/%E6%B1%82%E8%81%8C/" class="post-category">
+                                求职
                             </a>
                         
                     </div>
@@ -626,7 +614,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-11-02
+                    2022-01-09
                 </div>
                 
 
@@ -635,14 +623,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.6k
+                    2.8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    10 分
                 </div>
                 
 
@@ -670,127 +658,272 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>上一篇博客说到线上部署项目到服务器，博主说的就是这个 React-Ts 项目啦，它是博主为将来找实习准备的，用到的技术点有好一些是边学边做的，如果有不同见解的地方还请读者不吝赐教。</p>
-<blockquote>
-<p>需要事先说明的是，关于这个项目的博客，博主并不打算讲解代码实现，每个人的项目用到的技术栈不尽相同，但有一点可以确定，就是项目功能点的实现逻辑是大致相同的，故博主会更多地讲解各模块/功能点的逻辑实现 ^_^</p>
-</blockquote>
-<h2 id="项目介绍"><a href="#项目介绍" class="headerlink" title="项目介绍"></a>项目介绍</h2><p>这是一个前后端分离项目：在线编程笔试平台。按照用户角色分为两部分，分别是面试官侧和候选人侧，主要功能是候选人在线完成代码编写，面试官可查看编程结果。</p>
-<h2 id="项目任务拆解"><a href="#项目任务拆解" class="headerlink" title="项目任务拆解"></a>项目任务拆解</h2><ol>
-<li>登录/注册模块</li>
+                <h1 id="浏览器的存储"><a href="#浏览器的存储" class="headerlink" title="浏览器的存储"></a>浏览器的存储</h1><h2 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h2><ol>
+<li>cookie是什么</li>
 </ol>
-<ul>
-<li>支持邮箱登录和注册</li>
-<li>支持“退出登录”功能</li>
-</ul>
+<p><code>cookie</code> 是指存储在用户本地终端上的数据，同时它是与具体的web页面或者站点相关的。<code>cookie</code> 数据会自动在web浏览器和web服务器之间传输，也就是说HTTP请求发送时，会把保存在该请求域名下的所有 <code>cookie</code> 值发送给web服务器，因此服务器端脚本是可以读、写存储在客户端的 <code>cookie</code> 的操作。</p>
 <ol start="2">
-<li>面试题模块</li>
+<li>Cookie的特点</li>
 </ol>
 <ul>
-<li>面试官可填写面试题</li>
-<li>每个面试题有固定链接</li>
-<li>支持新建面试题和修改面试题目</li>
-<li>支持邀请一个候选人编程</li>
-<li>面试题目支持富文本格式</li>
+<li>不同的浏览器存放的 <code>cookie</code> 位置不一样，也是不能通用的。  </li>
+<li><code>cookie</code> 的存储是以域名形式进行区分的，不同的域下存储的 <code>cookie</code> 是独立的。</li>
+<li>我们可以设置 <code>cookie</code> 生效的域（当前设置 <code>cookie</code> 所在域的子域），也就是说，我们能够操作的 <code>cookie</code> 是当前域以及当前域下的所有子域。</li>
 </ul>
 <ol start="3">
-<li>在线编程模块</li>
+<li>Cookie的缺点</li>
 </ol>
 <ul>
-<li>候选人可在线编写代码</li>
-<li>代码支持多种语言高亮 111</li>
-<li>候选人侧提交最终编程代码 111</li>
-<li>面试官侧刷新能看到最终代码 111</li>
+<li>存储量小。大小和数量有限制，每个 domain 最多只能有 20 条  <code>cookie</code> ，每个 <code>cookie</code> 不能超过4KB，否则会被截断。   </li>
+<li>影响性能。由于 <code>cookie</code> 会由浏览器作为请求头发送，因此当Cookie存储信息过多时，会影响特定域的资源获取的效率，增加文档传输的负载（同一个域名下的所有请求都会携带 <code>cookie</code>）。 且每次访问都要传送 <code>cookie</code> 给服务器，浪费带宽。  </li>
+<li>安全问题。<code>cookie</code> 一旦被劫持，就可以获取用户的 session 信息。  </li>
+<li>只能储存字符串，且以文本的方式存储。  </li>
+<li><code>cookie</code> 需要指定作用域，不可以跨域调用。  </li>
+<li><code>cookie</code> 数据有路径（path）的概念，可以限制 <code>cookie</code> 只属于某个路径下。  </li>
+<li>用户可以操作（禁用） <code>cookie</code> ，功能受限；</li>
 </ul>
 <ol start="4">
-<li>在线编程模块支持自动刷新</li>
+<li>应用场景</li>
 </ol>
 <ul>
-<li>候选人侧代码支持自动保存</li>
-<li>面试官侧代码自动刷新</li>
+<li>判断用户是否登陆过网站，以便下次登录时能够实现自动登录（或者记住密码）。如果我们删除 <code>cookie</code> ，则每次登录必须从新填写登录的相关信息。  </li>
+<li>保存上次登录的时间等信息。  </li>
+<li>保存上次查看的页面  </li>
+<li>浏览计数  </li>
+<li>广告追踪  </li>
+<li>购物车的状态保持</li>
 </ul>
 <ol start="5">
-<li>实时文字聊天模块</li>
+<li>Cookie的操作</li>
+</ol>
+<p>基本的 <code>Cookie</code> 操作主要有三个：读取，写入和删除。但在JavaScript中去处理 <code>cookie</code> 是一件很繁琐的事情，因为 <code>cookie</code> 中的所有的名字和值都是经过URI编码的，所以当我们必须使用 <code>decodeURICompoent</code> 来进行解码才能得到 <code>cookie</code> 的值。</p>
+<ul>
+<li>expires：过期时间</li>
+</ul>
+<p>默认为这个 <code>cookie</code> 生命周期为浏览器会话期间，只要关闭浏览器窗口， <code>cookie</code> 就消失了。</p>
+<p>如果设置一个时间，当过了到期日期时，浏览器会自动删除该 <code>cookie</code> 。<br>如果想删除一个 <code>cookie</code> ，只需要把它过期时间设置成过去的时间即可，比如希望设置过期时间一年：<code>new Date().getTime() + 365 * 24 * 60 * 60 * 1000</code></p>
+<ul>
+<li>path：路径</li>
+</ul>
+<p>值可以是一个目录，或者是一个路径。</p>
+<p>如果 <code>cc.com/test/index.html</code> 建立了一个cookie，那么在 <code>cc.com/test/</code> 目录里的所有页面，以及该目录下面任何子目录里的页面都可以访问这个cookie。因此在 <code>cc.com/test/test2/test3</code> 里的任何页面都可以访问 <code>cc.com/test/index.html</code> 建立的 cookie 。<br>若 <code>cc.com/test/</code> 若想访问 <code>cc.com/test/index.html</code> 设置的 cookes ，需要把 cookies 的 <code>path</code> 属性设置成 “/”。<br>在指定路径的时候，凡是来自同一服务器，URL里有相同路径的所有WEB页面都可以共享 cookies 。</p>
+<ul>
+<li>domain：主机名</li>
+</ul>
+<p>是指同一个域下的不同主机，例如：<code>www.baidu.com</code> 和 <code>map.baidu.com</code> 就是两个不同的主机名。默认情况下，一个主机中创建的 cookie 在另一个主机下是不能被访问的，但可以通过 domain 参数来实现对其的控制：<code>document.cookie = &quot;name=value;domain=.baidu.com&quot;</code><br>这样，所有 <code>*.baidu.com</code> 的主机都可以访问该 cookie 。</p>
+<p>看下具体实现方法：</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">document<span class="token punctuation">.</span>cookie <span class="token operator">=</span> <span class="token string">"username=John Doe; expires=Thu, 18 Dec 2013 12:00:00 GMT; path=/"</span>    <span class="token comment">// 设置cookie</span>
+document<span class="token punctuation">.</span>cookie <span class="token operator">=</span> <span class="token string">"username=; expires=Thu, 01 Jan 1970 00:00:00 GMT"</span>    <span class="token comment">// 删除cookie</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>我们来看看CookieUtil对象是如何操纵cookie的：</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> CookieUtil <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">// get可根据cookie的名字获取相应的值</span>
+    <span class="token function-variable function">get</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">const</span> cookieName <span class="token operator">=</span> <span class="token function">encodeURIcOMPONET</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"="</span><span class="token punctuation">,</span>
+            cookieStart <span class="token operator">=</span> document<span class="token punctuation">.</span>cookie<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span>cookieName<span class="token punctuation">)</span><span class="token punctuation">,</span>
+            cookieValue <span class="token operator">=</span> <span class="token keyword">null</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>cookieStart <span class="token operator">></span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">const</span> cookieEnd <span class="token operator">=</span> document<span class="token punctuation">.</span>cookie<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">";"</span><span class="token punctuation">,</span> cookieStart<span class="token punctuation">)</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>cookieEnd <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                cookieEnd <span class="token operator">=</span> document<span class="token punctuation">.</span>cookie<span class="token punctuation">.</span>length
+            <span class="token punctuation">&#125;</span>
+            cookieValue <span class="token operator">=</span> <span class="token function">decodeURICompoent</span><span class="token punctuation">(</span>document<span class="token punctuation">.</span>cookie<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span>cookieStart <span class="token operator">+</span> cookieName<span class="token punctuation">.</span>length<span class="token punctuation">,</span> cookieEnd<span class="token punctuation">)</span><span class="token punctuation">)</span>	
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">return</span> cookieValue
+    <span class="token punctuation">&#125;</span>
+    <span class="token comment">// set设置一个cookie</span>
+    <span class="token function-variable function">set</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> value<span class="token punctuation">,</span> expires<span class="token punctuation">,</span> path<span class="token punctuation">,</span> domain<span class="token punctuation">,</span> secure</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">var</span> cookieText <span class="token operator">=</span> <span class="token function">encodeURIComponet</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">"="</span><span class="token operator">+</span><span class="token function">encodeURIComponet</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>expires <span class="token keyword">instanceof</span> <span class="token class-name">Date</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            cookieText <span class="token operator">+=</span> <span class="token string">"; expires="</span> <span class="token operator">+</span> expires<span class="token punctuation">.</span><span class="token function">toGMTString</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            cookieText <span class="token operator">+=</span> <span class="token string">";path="</span> <span class="token operator">+</span> path
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>domain<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            cookieText <span class="token operator">+=</span> <span class="token string">"; domain"</span> <span class="token operator">+</span> domain
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>secure<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            cookieText <span class="token operator">+=</span> <span class="token string">"; secure"</span>
+        <span class="token punctuation">&#125;</span>
+        document<span class="token punctuation">.</span>cookie <span class="token operator">=</span> cookieText
+    <span class="token punctuation">&#125;</span>
+    <span class="token comment">// 删除已有的cookie</span>
+    <span class="token function-variable function">unset</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> path<span class="token punctuation">,</span> domain<span class="token punctuation">,</span> secure</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> path<span class="token punctuation">,</span> domain<span class="token punctuation">,</span> secure<span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="web存储"><a href="#web存储" class="headerlink" title="web存储"></a>web存储</h2><p>web存储机制最初作为HTML5的一部分被定义成API的形式，但又由于其本身的独特性与其他的一些原因而剥离了出来，成为独立的一个标准。web存储标准的API包括locaStorage对象和seesionStorage对象。它所产生的主要原因主要出于以下两个原因：</p>
+<ul>
+<li>人们希望有一种在cookie之外存储回话数据的途径。</li>
+<li>人们希望有一种存储大量可以跨会话存在的数据的机制。</li>
+</ul>
+<p><code>sessionStorage</code> 和 <code>localStorage</code> 属于浏览器对象模型BOM的对象window</p>
+<p><code>sessionStorage</code> 保存的数据用于浏览器的一次会话（session），当会话结束（通常是窗口关闭），数据被清空；<code>localStorage</code> 保存的数据长期存在，下一次访问该网站的时候，网页可以直接读取以前保存的数据。除了保存期限的长短不同，这两个对象的其他方面都一致。</p>
+<p>保存的数据都以“键值对”的形式存在。也就是说，每一项数据都有一个键名和对应的值。所有的数据都是以文本格式保存。</p>
+<h3 id="localStorage"><a href="#localStorage" class="headerlink" title="localStorage"></a>localStorage</h3><ol>
+<li>localStorage是什么</li>
+</ol>
+<p>在HTML5中，新加入了一个localStorage特性，这个特性主要是用来作为本地存储来使用的，解决了cookie存储空间不足的问题(cookie中每条cookie的存储空间为4k)，localStorage中一般浏览器支持的是5M大小，这个在不同的浏览器中localStorage会有所不同。</p>
+<ol start="2">
+<li>localStorage的优点：</li>
 </ol>
 <ul>
-<li>候选人和面试官可实时文字聊天</li>
-<li>其他获得连接的人都可参与文字聊天</li>
+<li>localStorage拓展了cookie的4K限制；   </li>
+<li>localStorage会可以将第一次请求的数据直接存储到本地，这个相当于一个5M大小的针对于前端页面的数据库，相比于cookie可以节约带宽，但是这个却是只有在高版本的浏览器中才支持的；   </li>
+<li>localStorage 方法存储的数据没有时间限制。第二天、第二周或下一年之后，数据依然可用。</li>
 </ul>
+<ol start="3">
+<li>localStorage的缺点：</li>
+</ol>
+<ul>
+<li>浏览器的大小不统一，并且在IE8以上的IE版本才支持 <code>localStorage</code> 这个属性；   </li>
+<li>目前所有的浏览器中都会把 <code>localStorage</code> 的值类型限定为 <code>string</code> 类型，这个在对我们日常比较常见的JSON对象类型需要一些转换；   </li>
+<li><code>localStorage</code> 在浏览器的隐私模式下面是不可读取的；   </li>
+<li><code>localStorage</code> 本质上是对字符串的读取，如果存储内容多的话会消耗内存空间，会导致页面变卡；   </li>
+<li><code>localStorage</code> 不能被爬虫抓取到</li>
+</ul>
+<ol start="4">
+<li>localStorage的操作</li>
+</ol>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">window<span class="token punctuation">.</span>localStorage<span class="token punctuation">.</span>username <span class="token operator">=</span> <span class="token string">'hehe'</span>            <span class="token comment">// 设置</span>
+window<span class="token punctuation">.</span>localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">'username'</span><span class="token punctuation">,</span> <span class="token string">'hehe'</span><span class="token punctuation">)</span>  <span class="token comment">// 设置</span>
+window<span class="token punctuation">.</span>localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">'username'</span><span class="token punctuation">)</span>          <span class="token comment">// 读取</span>
+window<span class="token punctuation">.</span>localStorage<span class="token punctuation">.</span><span class="token function">removeItem</span><span class="token punctuation">(</span><span class="token string">'username'</span><span class="token punctuation">)</span>       <span class="token comment">// 删除</span>
+window<span class="token punctuation">.</span>localStorage<span class="token punctuation">.</span><span class="token function">key</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>                       <span class="token comment">// 读取索引为 1 的值</span>
+window<span class="token punctuation">.</span>localStorage<span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span>                      <span class="token comment">// 清除所有</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>但需要注意的是，以上示例全是存储字符串格式的数据，当我们需要传输其他格式的数据时，我们就需要将这些数据全部转换为字符串格式，然后再进行存储：</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> user <span class="token operator">=</span> <span class="token punctuation">&#123;</span>name<span class="token operator">:</span><span class="token string">"Srtian"</span><span class="token punctuation">,</span> age<span class="token operator">:</span> <span class="token number">22</span><span class="token punctuation">&#125;</span>
+localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">"user"</span><span class="token punctuation">,</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>user<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>在获取值的时候也需要将其转化回来：</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> age <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>localStorage<span class="token punctuation">.</span>user<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ol start="5">
+<li>localStorage储存数据的有效期与作用域</li>
+</ol>
+<p>通过 <code>localStorage</code> 存储的数据时永久性的，除非我们使用 <code>removeItem</code> 来删除或者用户通过设置浏览器配置来删除，负责数据会一直保留在用户的电脑上，永不过期。</p>
 <ol start="6">
-<li>在线语音聊天模块</li>
+<li>localStorage的作用域</li>
 </ol>
+<p><code>localStorage</code> 的作用域限定在文档源级别的（意思就是同源的才能共享），同源的文档间会共享 <code>localStorage</code> 的数据，他们可以互相读取对方的数据，甚至有时会覆盖对方的数据。当然，<code>localStorage</code> 的作用域同样也受浏览器的限制。</p>
+<h3 id="sessionStorage"><a href="#sessionStorage" class="headerlink" title="sessionStorage"></a>sessionStorage</h3><p><code>sessionStorage</code> 与 <code>localStorage</code> 的唯一一点区别就是 <code>localStorage</code> 属于永久性存储，而 <code>sessionStorage</code> 属于当会话结束的时候， <code>sessionStorage</code> 中的键值对就会被清空。</p>
 <ul>
-<li>候选人和面试官可实时语音聊天</li>
+<li>Session Storage 只存储当前会话页的数据，且只有当用户关闭当前会话页或浏览器时，数据才会被清除。</li>
+<li>sessionStorage的基本语法  <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 保存数据到sessionStorage</span>
+sessionStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">'name'</span><span class="token punctuation">,</span> <span class="token string">'Srtian'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 从sessionStorage获取数据</span>
+<span class="token keyword">var</span> data <span class="token operator">=</span> sessionStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">'name'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 从sessionStorage删除保存的数据</span>
+sessionStorage<span class="token punctuation">.</span><span class="token function">removeItem</span><span class="token punctuation">(</span><span class="token string">'name'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 从sessionStorage删除所有保存的数据</span>
+sessionStorage<span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
-<ol start="7">
-<li>在线编程模块支持运行JS代码</li>
-</ol>
+<p>下面的示例会自动保存一个文本输入框的内容，如果浏览器因偶然因素被刷新了，文本输入框里面的内容会被恢复，写入的内容不会丢失：</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 获取文本输入框</span>
+<span class="token keyword">var</span> field <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"field"</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 检测是否存在 autosave 键值</span>
+<span class="token comment">// (这个会在页面偶然被刷新的情况下存在)</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>sessionStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">"autosave"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token comment">// 恢复文本输入框的内容</span>
+  field<span class="token punctuation">.</span>value <span class="token operator">=</span> sessionStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">"autosave"</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
+<span class="token comment">// 监听文本输入框的 change 事件</span>
+field<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"change"</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token comment">// 保存结果到 sessionStorage 对象中</span>
+  sessionStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">"autosave"</span><span class="token punctuation">,</span> field<span class="token punctuation">.</span>value<span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p><a target="_blank" rel="noopener" href="http://javascript.ruanyifeng.com/bom/webstorage.html#toc3">Storage API</a></p>
+</blockquote>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><table>
+<thead>
+<tr>
+<th align="left">存储方式</th>
+<th align="left">作用与特性</th>
+<th align="left">存储数量及大小</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">cookie</td>
+<td align="left">1.存储用户信息，获取数据需要与服务器建立连接。<br>2.可存储的数据有限，且依赖于服务器，无需请求服务器的数据尽量不要存放在cookie中，以免影响页面性能。<br>3.可设置过期时间。</td>
+<td align="left">最好将cookie控制在4095B以内，超出的数据会被忽略。</td>
+</tr>
+<tr>
+<td align="left">localStorage</td>
+<td align="left">1.存储客户端信息，无需请求服务器。<br>2.数据永久保存，除非用户手动清理客户端缓存。<br>3. 开发者可自行封装一个方法，设置失效时间。</td>
+<td align="left">5M左右，各浏览器的存储空间有差异。</td>
+</tr>
+<tr>
+<td align="left">sessionStorage</td>
+<td align="left">1.存储客户端信息，无需请求服务器。<br>2.数据保存在当前会话，刷新页面数据不会被清除，结束会话（关闭浏览器、关闭页面、跳转页面）数据失效。</td>
+<td align="left">同localStorage</td>
+</tr>
+</tbody></table>
+<p>区别：<br>|异同点|cookie|localStorage|sessionStorage|<br>|:–|:–|:–|:–|<br>|数据生命周期|默认是会话结束的时候。也可设置过期时间|永久存储，除非手动删除|会话结束时（当前页面关闭的时候，会自动销毁）|<br>|存储数据大小|4k左右|一般5M或更大|一般5M或更大|<br>|存储位置|保存在浏览器端，与服务器进行交互通信|都保存在客户端，不与服务器进行交互通信|都保存在客户端，不与服务器进行交互通信|<br>|作用域|在所有同源窗口中都是共享的|在所有同源窗口中都是共享的|不在不同的浏览器页面中共享，即使是同一个页面|</p>
+<!-- ## Session机制  
+- session机制：当程序需要为某个客户端的请求创建一个session的时候，服务器首先**检查这个客户端的请求里是否已包含了一个session标识 - 称为session id**。如果已包含一个session id则说明以前已经为此客户端创建过session，**服务器就按照session id把这个session检索出来使用**；如果客户端请求不包含session id，则为此客户端创建一个session并且生成一个与此session相关联的session id（session id的值应该是一个既不会重复，又不容易被找到规律以仿造的字符串），这个session id将被在本次响应中返回给客户端保存。 
+    - 保存session id的方式：①采用cookie；②URL重写。
+        - ①把session的id放在cookie里面，这样在交互过程中浏览器可以自动的按照规则把这个标识发挥给服务器。一般这个cookie的名字都是类似于SEEESIONID。
+            <pre class="line-numbers language-none"><code class="language-none">比如weblogic对于web应用程序生成的cookie，JSESSIONID&#x3D;ByOK3vjFD75aPnrF7C2HmdnV6QZcEbzWoWiBYEnLerjQ99zWpBng!-145788764，它的名字就是JSESSIONID。 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre><code>    【由于cookie可以被人为的禁止，必须有其他机制以便在cookie被禁止时仍然能够把session id传递回服务器，即采用URL重写。】
+    - ②就是把session id直接附加在URL路径的后面，附加方式也有两种：  
+    一种是作为URL路径的附加信息
+        <pre class="line-numbers language-none"><code class="language-none">http:&#x2F;&#x2F;.....&#x2F;xxx;jsessionid&#x3D;ByOK3vjFD75aPnrF7C2HmdnV6QZcEbzWoWiBYEnLerjQ99zWpBng!-145788764 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+        另一种是作为查询字符串附加在URL后面
+        <pre class="line-numbers language-none"><code class="language-none">http:&#x2F;&#x2F;.....&#x2F;xxx?jsessionid&#x3D;ByOK3vjFD75aPnrF7C2HmdnV6QZcEbzWoWiBYEnLerjQ99zWpBng!-145788764 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+        【这两种方式对于用户来说是没有区别的，只是服务器在解析的时候处理的方式不同，采用第一种方式也有利于把session id的信息和正常程序参数区分开来。 】  
+        为了在整个交互过程中始终保持状态，就必须在每个客户端可能请求的路径后面都包含这个session id。  
+&gt; [了解Session机制](https://blog.csdn.net/h19910518/article/details/79348051)
+</code></pre>
+<p>用个例子来描述一下cookie和session机制之间的区别与联系：  </p>
+<blockquote>
+<p>笔者曾经常去的一家咖啡店有喝5杯咖啡免费赠一杯咖啡的优惠，然而一次性消费5杯咖啡的机会微乎其微，这时就需要某种方式来纪录某位顾客的消费数量：<br>1、该店的店员很厉害，能记住每位顾客的消费数量，只要顾客一走进咖啡店，店员就知道该怎么对待了。这种做法就是协议本身支持状态。<br>2、发给顾客一张卡片，上面记录着消费的数量，一般还有个有效期限。每次消费时，如果顾客出示这张卡片，则此次消费就会与以前或以后的消费相联系起来。这种做法就是在客户端保持状态。<br>3、发给顾客一张会员卡，除了卡号之外什么信息也不纪录，每次消费时，如果顾客出示该卡片，则店员在店里的纪录本上找到这个卡号对应的纪录添加一些消费信息。这种做法就是在服务器端保持状态。   </p>
+</blockquote>
+<blockquote>
+<p>由于HTTP协议是无状态的，而出于种种考虑也不希望使之成为有状态的，因此，后面两种方案就成为现实的选择。具体来说cookie机制采用的是在客户端保持状态的方案，而session机制采用的是在服务器端保持状态的方案。同时我们也看到，由于采用服务器端保持状态的方案在客户端也需要保存一个标识，所以session机制可能需要借助于cookie机制来达到保存标识的目的，尽管实际上它还有其他选择。</p>
+</blockquote>
 <ul>
-<li>候选人和面试官可在线运行 JS 代码并查看输出</li>
+<li>session：用于保存每个用户的专用信息，变量的值保存在服务器端，通过SessionID来区分不同的客户。</li>
+<li>session有期限：当一个网站的第一个窗口关掉了，而没有继续接着访问第二个页面，就没有使用到session。这时候<strong>session不会在中断程序后立刻关闭session，而是会给它一定的保留时间</strong>。当最近一次访问的时候开始计时，每刷新一次重写开始计时。当隔了这么久的时间，还没有访问这个session，就要关闭这个session了。所以<strong>session有过期时间，session什么时候过期，要看配置</strong>。session对象默认30分钟没有使用，则服务器会自动销毁session，在web.xml文件中可以手工配置session的失效时间。<ul>
+<li>在谈论session机制的时候，常常听到这样一种误解“只要关闭浏览器，session就消失了”。<br>其实可以想象一下会员卡的例子，除非顾客主动对店家提出销卡，否则店家绝对不会轻易删除顾客的资料。对session来说也是一样的，<strong>除非程序通知服务器删除一个session，否则服务器会一直保留，程序一般都是在用户做log off的时候发个指令去删除session</strong>。<br>然而浏览器从来不会主动在关闭之前通知服务器它将要关闭，因此服务器根本不会有机会知道浏览器已经关闭，<strong>之所以会有这种错觉，是大部分session机制都使用会话cookie来保存session id，而关闭浏览器后这个session id就消失了</strong>，再次连接服务器时也就无法找到原来的session。  </li>
 </ul>
-<ol start="8">
-<li>在线编程模块支持协同编辑</li>
-</ol>
-<ul>
-<li>候选人和面试官可实时协作编程</li>
+  <strong>如果服务器设置的cookie被保存到硬盘上，或者使用某种手段改写浏览器发出的HTTP请求头，把原来的session id发送给服务器，则再次打开浏览器仍然能够找到原来的session。</strong></li>
+<li>session 的安全性大于 cookie<blockquote>
+<p>（1）sessionID存储在cookie中，若要攻破session首先要攻破cookie；<br>  （2）sessionID是要有人登录，或者启动session_start才会有，所以攻破cookie也不一定能得到sessionID；<br>  （3）第二次启动session_start后，前一次的sessionID就是失效了，session过期后，sessionID也随之失效。<br>  （4）sessionID是加密的<br>  （5）综上所述，攻击者必须在短时间内攻破加密的sessionID，这是有难度的</p>
+</blockquote>
+</li>
+<li>session的缺点<blockquote>
+<p>（1）Session保存的东西越多，就越占用服务器内存，对于用户在线人数较多的网站，服务器的内存压力会比较大。<br>  （2）依赖于cookie（sessionID保存在cookie），如果禁用cookie，则要使用URL重写，不安全<br>  （3）创建Session变量有很大的随意性，可随时调用，不需要开发者做精确地处理，所以，过度使用session变量将会导致代码不可读而且不好维护。</p>
+</blockquote>
+</li>
+<li>Session中的一些常用方法说明：  <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">isNew</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">//是否是新的Session，一般在第一次访问的时候出现</span>
+<span class="token function">getid</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">//拿到session，获取ID</span>
+<span class="token function">getCreationTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">//当前session创建的时间</span>
+<span class="token function">getLastAccessedTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">//最近的一次访问这个session的时间。</span>
+getRrquestedSessionid <span class="token comment">// 跟随上个网页cookies或者URL传过来的session</span>
+<span class="token function">isRequestedSessionIdFromCookie</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">//是否通过Cookies传过来的</span>
+<span class="token function">isRequestedSessionIdFromURL</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">//是否通过重写URL传过来的</span>
+<span class="token function">isRequestedSessionIdValid</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">//是不是有效的sessionID</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>用途：<ul>
+<li>网上商城中的购物车   </li>
+<li>保存用户登录信息  </li>
+<li>将某些数据放入session中，供同一用户的不同页面使用  </li>
+<li>防止用户非法登录<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/lonelydreamer/p/6169469.html">Session机制详解</a> –&gt;</p>
+</blockquote>
+</li>
 </ul>
-<ol start="9">
-<li>视频聊天模块</li>
-</ol>
-<ul>
-<li>候选人和面试官可实时视频聊天<h2 id="技术栈"><a href="#技术栈" class="headerlink" title="技术栈"></a>技术栈</h2>前端：React + TypeScript ，后端：Node.js + MySQL + Koa 。<h2 id="项目实现"><a href="#项目实现" class="headerlink" title="项目实现"></a>项目实现</h2></li>
-<li>  为了实现登录/注册模块，使用 Cookie 验证用户信息、localStorage 保存登录态、nodemailer 发送验证码邮件至用户邮箱、登录或注册按钮设置防抖，实现了登录、注册、忘记密码和15天内免登陆功能。</li>
-<li>  为了实现创建面试题模块，使用 Ant Design 完成 UI 设计、wangEditor  支持面试官编辑面试题、在修改信息时调用后端接口以获取数据进行初始化、nodemailer 发送邮件告知候选人试卷信息，使面试官能进行试卷和试题的增删查改，以及邮件通知当事人试卷信息。</li>
-<li>  为了实现在线编程模块，使用 react-monaco-editor 支持候选人编辑代码并提交、filter api 完成试题的多次筛选，实现了编程功能。</li>
-<li>  为了实现实时文字聊天模块，使用 WebSocket 监听客户端和服务端的聊天信息，后端接受处理后响应给前端，使候选人和面试官能进行实时文字交流。</li>
-<li>  为了快速完成项目部署，前端使用 scp 连接服务器并上传文件到服务器 nginx 下的指定目录，后端使用 fs 读写本地文件、node-ssh 连接服务器并将指定文件上传到 tomcat 下的指定目录、运行本地编写的 deploy.sh 脚本启动后端服务、并用 pm2 实时监控，以此实现了项目的自动化部署。<h2 id="可拓展点"><a href="#可拓展点" class="headerlink" title="可拓展点"></a>可拓展点</h2></li>
-<li>  性能优化。</li>
-<li>  用户能提供试题题解，支持评论。</li>
-<li>  实现语言国际化，支持多种语言切换。</li>
-<li>  完善安全措施，能防止 xss 、csrf 等网络攻击。</li>
-<li>  用户数据图形化，直观展示用户做题量、通过率等信息。</li>
-<li>  实现视频和语音聊天模块，支持实时视频通话和语音聊天。</li>
+</li>
 </ul>
-<h2 id="项目亮点（目前只实现了第一点）"><a href="#项目亮点（目前只实现了第一点）" class="headerlink" title="项目亮点（目前只实现了第一点）"></a>项目亮点（目前只实现了第一点）</h2><ol>
-<li>实现自动化部署</li>
-<li>支持运行 JS 代码</li>
-<li>解决编辑冲突</li>
-<li>支持文字、语音、视频聊天</li>
-<li>性能优化</li>
-<li>支持国际化</li>
-<li>适配移动端<h2 id="项目进度"><a href="#项目进度" class="headerlink" title="项目进度"></a>项目进度</h2></li>
-</ol>
-<ul>
-<li><input checked="" disabled="" type="checkbox"> 2021/09/04：实现登录/注册的静态页面</li>
-<li><input checked="" disabled="" type="checkbox"> 2021/09/19：实现登录/注册逻辑（包括账号密码登录、登录拦截，session 身份验证）</li>
-<li><input checked="" disabled="" type="checkbox"> 2021/09/29：初步部署前后端项目到阿里云服务器</li>
-<li><input checked="" disabled="" type="checkbox"> 2021/10/04：购买域名并实现自动化部署项目</li>
-<li><input checked="" disabled="" type="checkbox"> 2021/10/05：支持使用邮箱 登录和注册（删除了账号密码登录、注册的方式）</li>
-<li><input checked="" disabled="" type="checkbox"> 2021/10/09：支持新建/删除试卷，在“新建试卷”里新建/修改/删除试题，发送邮件至候选人邮箱</li>
-<li><input checked="" disabled="" type="checkbox"> 2021/10/23：初步完成面试题模块（包含“修改试卷”）</li>
-<li><input checked="" disabled="" type="checkbox"> 2021/10/30：初步完成在线编程模块</li>
-<li><input checked="" disabled="" type="checkbox"> 2021/10/31：搭建个人博客</li>
-<li><input checked="" disabled="" type="checkbox"> 2021/11/02：记录项目从开始到现在的一系列笔记<h2 id="项目展示"><a href="#项目展示" class="headerlink" title="项目展示"></a>项目展示</h2><h3 id="PC-端"><a href="#PC-端" class="headerlink" title="PC 端"></a>PC 端</h3></li>
-</ul>
-<ol>
-<li>登录/注册<br><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0cfdc5d4a8c4499bb4b61c079a472efc~tplv-k3u1fbpfcp-zoom-1.image" alt="登录界面"><br><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/861c4674ea42445c8e03a5833ae1668d~tplv-k3u1fbpfcp-zoom-1.image" alt="注册界面"><h4 id="面试官侧"><a href="#面试官侧" class="headerlink" title="面试官侧"></a>面试官侧</h4></li>
-<li>试题管理<br><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/52886536520b41448e775b477e96582e~tplv-k3u1fbpfcp-zoom-1.image" alt="试卷展示"><br><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/3a4e1f09467942778499873449cd7da5~tplv-k3u1fbpfcp-zoom-1.image" alt="添加试题之试卷信息"><br><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7ead02f50b73402cb6cd1dfe4bf0604e~tplv-k3u1fbpfcp-zoom-1.image" alt="添加试题之试题信息"><br><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/5c9e8cac0462483cb873ada635b1a614~tplv-k3u1fbpfcp-zoom-1.image" alt="修改试卷1"><br><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/112c4560c1264156a071bb2b14e9dbdd~tplv-k3u1fbpfcp-zoom-1.image" alt="修改试卷2"></li>
-<li>阅卷管理<br><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0ddf77041ab8406391ce4fe51b6a8f33~tplv-k3u1fbpfcp-zoom-1.image" alt="试卷展示"><br><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/bf43ca6e4c104112a23d6fe1a3822cbc~tplv-k3u1fbpfcp-zoom-1.image" alt="试卷详细信息之1"><br><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ffabbd4d5e8e4cfd99e4a4236d552c41~tplv-k3u1fbpfcp-zoom-1.image" alt="试卷详细信息之2"><br><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/5317d1a2c34d4a1389ebbf5759c7872a~tplv-k3u1fbpfcp-zoom-1.image" alt="试卷详细信息之3"><br><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0ed582f546a24485b3b0b0d464136f21~tplv-k3u1fbpfcp-zoom-1.image" alt="批阅试卷"></li>
-<li>面试间管理<br><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/58382121b13e4b859e2940cd0dde6198~tplv-k3u1fbpfcp-zoom-1.image" alt="面试间信息展示"><br><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/57acd164b15749d7887082c0f073e33d~tplv-k3u1fbpfcp-zoom-1.image" alt="添加面试间"></li>
-<li>面试间入口<br><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/edca450ad7c8435fbf37d679332305dc~tplv-k3u1fbpfcp-zoom-1.image" alt="进入面试间"><h4 id="候选人侧"><a href="#候选人侧" class="headerlink" title="候选人侧"></a>候选人侧</h4><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/9dbdb188dff346779348aa6beb7fe66c~tplv-k3u1fbpfcp-zoom-1.image" alt="查看试卷"><br><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/c275d45505424420b3509472543ea407~tplv-k3u1fbpfcp-zoom-1.image" alt="面试间入口"><br><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/3910385a1081432197dc0a82883279c7~tplv-k3u1fbpfcp-zoom-1.image" alt="面试间展示"></li>
-</ol>
-<h2 id="项目地址"><a href="#项目地址" class="headerlink" title="项目地址"></a>项目地址</h2><p>GitHub 前端仓库地址：<a target="_blank" rel="noopener" href="https://github.com/HCYETY/react-ts-coding_web">https://github.com/HCYETY/react-ts-coding_web</a></p>
-<p>GitHub 后端仓库地址：<a target="_blank" rel="noopener" href="https://github.com/HCYETY/node-mysql-coding_serve">https://github.com/HCYETY/node-mysql-coding_serve</a></p>
-<p>项目演示地址：<a target="_blank" rel="noopener" href="http://www.syandeg.com/">http://www.syandeg.com</a></p>
-<h2 id="写在后面"><a href="#写在后面" class="headerlink" title="写在后面"></a>写在后面</h2><p>这个项目是笔者的第一个实习项目，前后端均由笔者独立完成，花费了很多时间和精力，读者觉得不错的话不妨给个<code>star</code>支持一下呀，不胜感激~ ^_^</p>
-<p>这个项目笔者打算继续完善并维护下去，将它做大起来，如果有读者感兴趣该项目，<strong>想参与实现某个功能</strong>，<strong>或者有什么好的想法</strong>，也可以在评论区留言或者在 Github 上提 issue 等等，笔者看到的话会及时回复哒，<strong>先谢谢大家的支持啦</strong>！</p>
-<p>另外针对本项目，后续会出相关文章介绍具体实现过程，大家也可以关注一下！</p>
-<p>在线编程笔试平台项目系列文章：</p>
-<ol>
-<li><a href="https://hcyety.github.io/2021/10/31/error-zhi-bu-shu-fu-wu-qi-pian/">ERROR 之部署服务器篇</a></li>
-<li><a href="https://hcyety.github.io/2021/11/01/qian-hou-duan-fen-chi-xiang-mu-xian-shang-bu-shu/">前后端分离项目线上部署</a></li>
-<li><a href="https://hcyety.github.io/2021/11/02/xiang-mu-zhi-deng-lu-zhu-ce-mo-kuai/">项目之登录/注册模块</a></li>
-</ol>
-<h2 id="本文还在持续更新中……"><a href="#本文还在持续更新中……" class="headerlink" title="本文还在持续更新中……"></a>本文还在持续更新中……</h2>
+
                 
             </div>
             <hr/>
@@ -816,7 +949,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://hcyety.github.io/2021/11/02/react-ts-xiang-mu-zai-xian-bian-cheng-bi-shi-ping-tai/">https://hcyety.github.io/2021/11/02/react-ts-xiang-mu-zai-xian-bian-cheng-bi-shi-ping-tai/</a>
+                    <a href="https://hcyety.github.io/2022/01/09/liu-lan-qi-de-cun-chu/">https://hcyety.github.io/2022/01/09/liu-lan-qi-de-cun-chu/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -854,24 +987,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/React/">
-                                    <span class="chip bg-color">React</span>
+                                <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                                    <span class="chip bg-color">前端</span>
                                 </a>
                             
-                                <a href="/tags/Ts/">
-                                    <span class="chip bg-color">Ts</span>
-                                </a>
-                            
-                                <a href="/tags/NodeJs/">
-                                    <span class="chip bg-color">NodeJs</span>
-                                </a>
-                            
-                                <a href="/tags/Koa/">
-                                    <span class="chip bg-color">Koa</span>
-                                </a>
-                            
-                                <a href="/tags/MySQL/">
-                                    <span class="chip bg-color">MySQL</span>
+                                <a href="/tags/%E5%85%AB%E8%82%A1%E6%96%87/">
+                                    <span class="chip bg-color">八股文</span>
                                 </a>
                             
                         </div>
@@ -1376,31 +1497,31 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/11/02/xiang-mu-zhi-deng-lu-zhu-ce-mo-kuai/">
+                <a href="/2022/01/09/shi-me-shi-bi-bao/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="项目之登录/注册模块">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="什么是闭包">
                         
-                        <span class="card-title">项目之登录/注册模块</span>
+                        <span class="card-title">什么是闭包</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            记录登录/注册功能的逻辑实现
+                            要面试了，复习下 JS
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-11-02
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-01-09
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E9%A1%B9%E7%9B%AE/" class="post-category">
-                                    项目
+                            <a href="/categories/JavaScript/" class="post-category">
+                                    JavaScript
                                 </a>
                             
                             
@@ -1410,12 +1531,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%99%BB%E5%BD%95/">
-                        <span class="chip bg-color">登录</span>
-                    </a>
-                    
-                    <a href="/tags/%E6%B3%A8%E5%86%8C/">
-                        <span class="chip bg-color">注册</span>
+                    <a href="/tags/%E9%9D%A2%E8%AF%95/">
+                        <span class="chip bg-color">面试</span>
                     </a>
                     
                 </div>
@@ -1429,31 +1546,31 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/11/01/qian-hou-duan-fen-chi-xiang-mu-xian-shang-bu-shu/">
+                <a href="/2022/01/08/tcp-de-liu-liang-kong-zhi-ji-zhi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="前后端分离项目线上部署">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="TCP 的流量控制机制">
                         
-                        <span class="card-title">前后端分离项目线上部署</span>
+                        <span class="card-title">TCP 的流量控制机制</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            部署前后端分离项目从基础到进阶
+                            
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-01
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-08
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E9%83%A8%E7%BD%B2/" class="post-category">
-                                    部署
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="post-category">
+                                    计算机网络
                                 </a>
                             
                             
@@ -1463,20 +1580,16 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Linux-%E6%9C%8D%E5%8A%A1%E5%99%A8/">
-                        <span class="chip bg-color">Linux 服务器</span>
+                    <a href="/tags/%E9%9D%A2%E8%AF%95/">
+                        <span class="chip bg-color">面试</span>
                     </a>
                     
-                    <a href="/tags/%E7%BA%BF%E4%B8%8A%E9%83%A8%E7%BD%B2/">
-                        <span class="chip bg-color">线上部署</span>
+                    <a href="/tags/%E8%BF%90%E8%BE%93%E5%B1%82/">
+                        <span class="chip bg-color">运输层</span>
                     </a>
                     
-                    <a href="/tags/scp2/">
-                        <span class="chip bg-color">scp2</span>
-                    </a>
-                    
-                    <a href="/tags/node-ssh/">
-                        <span class="chip bg-color">node-ssh</span>
+                    <a href="/tags/TCP/">
+                        <span class="chip bg-color">TCP</span>
                     </a>
                     
                 </div>
