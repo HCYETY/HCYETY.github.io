@@ -623,14 +623,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.6k
+                    5.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    16 分
+                    20 分
                 </div>
                 
 
@@ -721,7 +721,7 @@
 <li>类组件可以定义并维护 <code>state</code> ，函数组件不能。</li>
 <li>类组件中可以获取到实例化后的 <code>this</code> ，并基于这个 <code>this</code> 做各种各样的事情，函数组件不可以。</li>
 </ul>
-<h2 id="React-setState-调用之后发生了什么？是同步还是异步？"><a href="#React-setState-调用之后发生了什么？是同步还是异步？" class="headerlink" title="React setState 调用之后发生了什么？是同步还是异步？"></a>React setState 调用之后发生了什么？是同步还是异步？</h2><h2 id="React组件的state和props有什么区别？"><a href="#React组件的state和props有什么区别？" class="headerlink" title="React组件的state和props有什么区别？"></a>React组件的state和props有什么区别？</h2><ol>
+<h2 id="React-setState-调用之后发生了什么？是同步还是异步？"><a href="#React-setState-调用之后发生了什么？是同步还是异步？" class="headerlink" title="React setState 调用之后发生了什么？是同步还是异步？"></a>React setState 调用之后发生了什么？是同步还是异步？</h2><h2 id="除了setState能改变状态值，还有什么方法"><a href="#除了setState能改变状态值，还有什么方法" class="headerlink" title="除了setState能改变状态值，还有什么方法"></a>除了setState能改变状态值，还有什么方法</h2><h2 id="React组件的state和props有什么区别？"><a href="#React组件的state和props有什么区别？" class="headerlink" title="React组件的state和props有什么区别？"></a>React组件的state和props有什么区别？</h2><ol>
 <li>props</li>
 </ol>
 <p><code>props</code> 是一个从外部传进组件的参数，从父组件向子组件传递数据，它具有可读性和不变性，只能通过外部组件主动传入新的 <code>props</code> 来重新渲染子组件，否则子组件的 <code>props</code> 以及展现形式不会改变。</p>
@@ -754,10 +754,10 @@
 </ol>
 <h2 id="React-Hooks-解决了哪些问题？"><a href="#React-Hooks-解决了哪些问题？" class="headerlink" title="React Hooks 解决了哪些问题？"></a>React Hooks 解决了哪些问题？</h2><ol>
 <li>状态逻辑复用：在使用类组件时，复用组件之间的状态逻辑需要使用高阶组件 (Higher-Order Components) 或 Render Props，而 Hooks 提供了一种更简洁、直接的方式来共享和复用状态逻辑，通过自定义的 Hook 可以将状态逻辑封装起来，并在多个组件中重用。</li>
-<li>状态管理的复杂性：在使用类组件时，复杂的状态管理往往需要使用类似 Redux 这样的状态管理库，而 Hooks 中的 useState 和 useReducer 可以更直接地管理组件的状态，减少了引入额外状态管理库的需求。</li>
-<li>生命周期的混乱：在类组件中，生命周期方法 (Lifecycle methods) 可能会导致代码的分散和逻辑的混乱，而 Hooks 提供了一种更直观的方式来处理组件的生命周期，通过 useEffect 可以集中处理副作用操作，并且可以更细粒度地控制副作用的执行时机。</li>
+<li>状态管理的复杂性：在使用类组件时，复杂的状态管理往往需要使用类似 Redux 这样的状态管理库，而 Hooks 中的 <code>useState</code> 和 <code>useReducer</code> 可以更直接地管理组件的状态，减少了引入额外状态管理库的需求。</li>
+<li>生命周期的混乱：在类组件中，生命周期方法 (Lifecycle methods) 可能会导致代码的分散和逻辑的混乱，而 Hooks 提供了一种更直观的方式来处理组件的生命周期，通过 <code>useEffect</code> 可以集中处理副作用操作，并且可以更细粒度地控制副作用的执行时机。</li>
 <li>对于函数组件的限制：在过去，函数组件只能是无状态的（Stateless），无法拥有自己的内部状态和生命周期方法，而 Hooks 的引入使函数组件具备了处理状态和副作用的能力，使得函数组件可以代替类组件的使用，从而更好地组织和复用代码。</li>
-<li>难以理解的闭包和 this：在类组件中，由于 JavaScript 中 this 的工作机制以及闭包的影响，很容易在事件处理函数中出现问题，而 Hooks 的使用可以避免这些问题，使得事件处理函数更简洁、直观。</li>
+<li>难以理解的闭包和 this：在类组件中，由于 JavaScript 中 <code>this</code> 的工作机制以及闭包的影响，很容易在事件处理函数中出现问题，而 Hooks 的使用可以避免这些问题，使得事件处理函数更简洁、直观。</li>
 </ol>
 <h2 id="说说真实-DOM-与虚拟-DOM-的区别，优缺点"><a href="#说说真实-DOM-与虚拟-DOM-的区别，优缺点" class="headerlink" title="说说真实 DOM 与虚拟 DOM 的区别，优缺点"></a>说说真实 DOM 与虚拟 DOM 的区别，优缺点</h2><h3 id="真实-DOM"><a href="#真实-DOM" class="headerlink" title="真实 DOM"></a>真实 DOM</h3><p>真实 DOM 是浏览器中实际存在的 DOM 树，它是由浏览器解析 HTML 并构建的，它代表着当前页面的结构和内容。当页面发生变化时，真实 DOM 需要进行重新渲染，重新计算布局和绘制，这个过程比较耗费性能，特别是当 DOM 树较为庞大时。</p>
 <h3 id="虚拟-DOM"><a href="#虚拟-DOM" class="headerlink" title="虚拟 DOM"></a>虚拟 DOM</h3><p>虚拟 DOM 是一个轻量级的 JavaScript 对象树，它是对真实 DOM 的抽象表示。它通过在内存中维护一个与真实 DOM 结构相对应的虚拟 DOM 树来跟踪页面的状态。当页面状态发生变化时，虚拟 DOM 可以高效地计算出与最终渲染结果对应的最小 DOM 更新，并将这些更新批量应用到真实 DOM 上，从而减少了不必要的 DOM 操作和页面重绘，提高了性能。</p>
@@ -794,9 +794,75 @@
 <li>只复用同类型的 DOM 节点。如果元素由<code>div</code>变为<code>p</code>，React 会销毁<code>div</code>及其子孙节点，并新建<code>p</code>及其子孙节点。</li>
 <li>通过元素的<code>key</code>属性判断是否可以复用。</li>
 </ul>
-<h2 id="React-通信方式"><a href="#React-通信方式" class="headerlink" title="React 通信方式"></a>React 通信方式</h2><h2 id="受控组件与非受控组件"><a href="#受控组件与非受控组件" class="headerlink" title="受控组件与非受控组件"></a>受控组件与非受控组件</h2><p>在 React 中，受控组件和非受控组件是表单元素的两种不同管理方式。</p>
+<h2 id="React-通信方式"><a href="#React-通信方式" class="headerlink" title="React 通信方式"></a>React 通信方式</h2><ol>
+<li><code>Props</code>（属性）：通过组件的 props 属性，可以将数据从父组件传递给子组件。父组件可以通过在子组件的标签中设置属性值，子组件可以通过 this.props 来获取父组件传递的数据。</li>
+<li><code>Callback</code>（回调函数）：父组件可以将一个函数作为 prop 传递给子组件，子组件可以在需要的时候调用该函数并传递参数，实现与父组件的通信。</li>
+<li><code>Context</code>（上下文）：Context 提供了一种在组件树中共享数据的方式，避免了 props 层层传递的繁琐。通过创建一个 Context 对象，并使用 Provider 和 Consumer 组件，在组件树中的任意位置共享数据。</li>
+<li><code>Redux</code>（状态管理）：Redux 是一种可预测的状态管理容器，可以在 React 应用中实现全局状态管理。通过定义全局的状态和操作，组件可以从 Redux Store 中获取状态并触发操作来更新状态。</li>
+<li><code>React Router</code>（路由）：React Router 是一个用于处理页面路由的库，可以实现页面之间的导航和传递参数。通过路由配置和 URL 参数，组件可以根据路由信息来展示不同的内容。</li>
+</ol>
+<h2 id="受控组件与非受控组件"><a href="#受控组件与非受控组件" class="headerlink" title="受控组件与非受控组件"></a>受控组件与非受控组件</h2><p>在 React 中，受控组件和非受控组件是表单元素的两种不同管理方式。</p>
 <p><strong>受控组件（Controlled Components）</strong>是指由 React 组件来控制其表单元素的值和状态。它们通过在组件的 state 中存储值，并使用事件处理程序来更新 state 和处理表单变化。当用户输入时，组件会根据 state 中的值进行重新渲染，并根据需要更新表单元素的值。受控组件的值和状态完全由 React 组件管理。</p>
 <p><strong>非受控组件（Uncontrolled Components）</strong>是指表单元素的值和状态由 DOM 自身来管理，而不受 React 组件的控制。在非受控组件中，组件不会维护输入框的值的状态，而是通过引用 DOM 元素来获取最新的值。通常使用 ref 来访问 DOM 元素。</p>
+<h2 id="对-React-和-Vue-的理解，它们的异同"><a href="#对-React-和-Vue-的理解，它们的异同" class="headerlink" title="对 React 和 Vue 的理解，它们的异同"></a>对 React 和 Vue 的理解，它们的异同</h2><p>相似之处：</p>
+<ul>
+<li>都将注意力集中保持在核心库，而将其他功能如路由和全局状态管理交给相关的库</li>
+<li>都有自己的构建工具，能让你得到一个根据最佳实践设置的项目模板。</li>
+<li>都使用了Virtual DOM（虚拟DOM）提高重绘性能</li>
+<li>都有props的概念，允许组件间的数据传递</li>
+<li>都鼓励组件化应用，将应用分拆成一个个功能明确的模块，提高复用性</li>
+</ul>
+<p>不同之处：</p>
+<ol>
+<li>数据流</li>
+</ol>
+<p>Vue默认支持数据双向绑定，而React一直提倡单向数据流</p>
+<ol start="2">
+<li>虚拟DOM</li>
+</ol>
+<p>Vue2.x开始引入”Virtual DOM”，消除了和React在这方面的差异，但是在具体的细节还是有各自的特点。</p>
+<ul>
+<li>Vue宣称可以更快地计算出Virtual DOM的差异，这是由于它在渲染过程中，会跟踪每一个组件的依赖关系，不需要重新渲染整个组件树。</li>
+<li>对于React而言，每当应用的状态被改变时，全部子组件都会重新渲染。当然，这可以通过 PureComponent/shouldComponentUpdate这个生命周期方法来进行控制，但Vue将此视为默认的优化。</li>
+</ul>
+<ol start="3">
+<li>组件化</li>
+</ol>
+<p>React与Vue最大的不同是模板的编写。</p>
+<ul>
+<li>Vue鼓励写近似常规HTML的模板。写起来很接近标准 HTML元素，只是多了一些属性。</li>
+<li>React推荐你所有的模板通用JavaScript的语法扩展——JSX书写。</li>
+</ul>
+<p>具体来讲：React中render函数是支持闭包特性的，所以我们import的组件在render中可以直接调用。但是在Vue中，由于模板中使用的数据都必须挂在 this 上进行一次中转，所以 import 完组件之后，还需要在 components 中再声明下。</p>
+<ol start="4">
+<li>监听数据变化的实现原理不同</li>
+</ol>
+<ul>
+<li>Vue 通过 getter/setter 以及一些函数的劫持，能精确知道数据变化，不需要特别的优化就能达到很好的性能</li>
+<li>React 默认是通过比较引用的方式进行的，如果不优化（PureComponent/shouldComponentUpdate）可能导致大量不必要的vDOM的重新渲染。这是因为 Vue 使用的是可变数据，而React更强调数据的不可变。</li>
+</ul>
+<ol start="5">
+<li>高阶组件</li>
+</ol>
+<ul>
+<li>react可以通过高阶组件（Higher Order Components– HOC）来扩展，而vue需要通过mixins来扩展。</li>
+<li>原因高阶组件就是高阶函数，而React的组件本身就是纯粹的函数，所以高阶函数对React来说易如反掌。相反Vue.js使用HTML模板创建视图组件，这时模板无法有效的编译，因此Vue不采用HOC来实现。</li>
+</ul>
+<ol start="6">
+<li>构建工具</li>
+</ol>
+<p>两者都有自己的构建工具</p>
+<ul>
+<li>React ==&gt; Create React APP</li>
+<li>Vue ==&gt; vue-cli</li>
+</ul>
+<ol start="7">
+<li>跨平台</li>
+</ol>
+<ul>
+<li>React ==&gt; React Native</li>
+<li>Vue ==&gt; Weex</li>
+</ul>
 
                 
             </div>
@@ -1383,7 +1449,7 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            用自问自答的形式模拟面试，查漏补缺，备战大厂
+                            用自问自答的形式模拟面试，备战大厂
                         
                     </div>
                     <div class="publish-info">
@@ -1696,7 +1762,7 @@
 
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">140.1k</span>&nbsp;字
+                class="white-color">141.5k</span>&nbsp;字
             
             
             

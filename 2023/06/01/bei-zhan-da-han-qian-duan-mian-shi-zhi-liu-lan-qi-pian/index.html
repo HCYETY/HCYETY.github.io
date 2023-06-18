@@ -623,14 +623,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    8.5k
+                    8.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    30 分
+                    31 分
                 </div>
                 
 
@@ -672,28 +672,61 @@
 <li>【10】<a href="https://hcyety.github.io/2023/06/01/bei-zhan-da-han-qian-duan-shi-xi-zhi-shou-xie-dai-ma-pian/">备战前端实习面试之手写代码篇</a></li>
 <li>【11】<a href="https://hcyety.github.io/2022/03/08/bei-zhan-da-han-qian-duan-shi-xi-zhi-dai-ma-shu-chu-jie-guo-pian/">备战前端实习面试之代码输出结果篇</a></li>
 </ul>
-<h1 id="浏览器"><a href="#浏览器" class="headerlink" title="浏览器"></a>浏览器</h1><h2 id="介绍一下你对浏览器内核的理解？"><a href="#介绍一下你对浏览器内核的理解？" class="headerlink" title="介绍一下你对浏览器内核的理解？"></a>介绍一下你对浏览器内核的理解？</h2><p>主要分成两部分：渲染引擎和 JS 引擎。</p>
+<h1 id="浏览器"><a href="#浏览器" class="headerlink" title="浏览器"></a>浏览器</h1><h2 id="对浏览器内核的理解"><a href="#对浏览器内核的理解" class="headerlink" title="对浏览器内核的理解"></a>对浏览器内核的理解</h2><p>主要分成两部分：渲染引擎和 JS 引擎。</p>
 <ul>
 <li>渲染引擎：负责取得网页的内容（HTML、XML、图像等等）、整理讯息（例如加入 CSS 等），以及计算网页的显示方式，然后渲染到用户的屏幕上。 </li>
 <li>JS 引擎：解析和执行 javascript 来实现逻辑和控制 DOM 进行交互。</li>
 </ul>
 <p>最开始渲染引擎和 JS 引擎并没有区分的很明确，后来 JS 引擎越来越独立，内核就倾向于只指渲染引擎。</p>
-<h2 id="GET-和-POST-的区别"><a href="#GET-和-POST-的区别" class="headerlink" title="GET 和 POST 的区别"></a>GET 和 POST 的区别</h2><p>GET和POST是HTTP协议中的两种常用的请求方法，它们在以下几个方面有所区别：</p>
-<p>参数传递位置：</p>
-<p>GET请求的参数通常以查询字符串的形式附加在URL的末尾，例如：<a target="_blank" rel="noopener" href="http://example.com/path?param1=value1&amp;param2=value2%E3%80%82%E5%8F%82%E6%95%B0%E5%8F%AF%E8%A7%81%EF%BC%8C%E5%8F%AF%E4%BB%A5%E8%A2%AB%E4%B9%A6%E7%AD%BE%E4%BF%9D%E5%AD%98%E5%92%8C%E7%BC%93%E5%AD%98%EF%BC%8C%E9%95%BF%E5%BA%A6%E5%8F%97URL%E9%95%BF%E5%BA%A6%E9%99%90%E5%88%B6%E3%80%82">http://example.com/path?param1=value1&amp;param2=value2。参数可见，可以被书签保存和缓存，长度受URL长度限制。</a><br>POST请求的参数通常包含在请求体中，不会显示在URL中，因此对于传递敏感信息更为安全。参数长度理论上没有限制，但实际上会受到服务器和浏览器的限制。<br>安全性：</p>
-<p>GET请求是幂等且安全的，即对服务器资源的请求不会产生副作用，不会修改、删除或创建资源。<br>POST请求不是幂等的，可能会对服务器资源产生副作用，例如创建新的资源或更新已有资源。<br>缓存：</p>
-<p>GET请求可以被缓存，因为相同的URL和参数会产生相同的结果。可以利用浏览器缓存来提高性能。<br>POST请求默认不会被缓存，每次发送都会向服务器请求最新数据。<br>可见性：</p>
-<p>GET请求的参数和URL可见，可以被用户或其他人看到。因此，不应将敏感信息放在URL中。<br>POST请求的参数不会显示在URL中，对于传递敏感信息更为安全。<br>用途：</p>
-<p>GET请求用于获取数据，一般用于数据的读取。<br>POST请求用于提交数据，一般用于数据的创建、更新或删除。<br>需要根据具体的需求和场景来选择使用GET或POST方法。一般来说，如果是获取数据或不对服务器产生副作用的操作，可以使用GET请求；如果涉及敏感信息的传递、数据的提交或对服务器资源产生副作用的操作，应使用POST请求。</p>
-<h2 id="事件循环"><a href="#事件循环" class="headerlink" title="事件循环"></a>事件循环</h2><p>事件循环是JavaScript中处理异步操作的机制。它负责协调和执行任务队列中的任务。事件循环分为宏任务（macrotask）和微任务（microtask）两种类型的任务。</p>
-<p>宏任务是一些需要在事件循环中进行处理的较大的任务单元，例如I/O操作、定时器回调等。它们被放置在事件循环的宏任务队列中，并按照先进先出的顺序执行。</p>
-<blockquote>
-<p><strong>宏任务有哪些</strong>：<br><code>script</code>、<code>setTimeout</code>、<code>setInterval</code>、<code>setImmediate</code>、<code>Promise</code>、<code>I/O</code>、<code>UI render</code></p>
-</blockquote>
-<p>微任务是一些轻量级的任务单元，它们在宏任务执行结束后，但在浏览器渲染之前执行。常见的微任务包括Promise的回调函数、MutationObserver的回调函数等。它们被放置在事件循环的微任务队列中，并在宏任务执行结束后按照先进先出的顺序执行。</p>
-<blockquote>
-<p><strong>微任务有哪些</strong>：<br><code>process.nextTick</code>、<code>Promise.then</code>、**<code>async/await</code>**、<code>MutationObserver（html5 新特性）</code></p>
-</blockquote>
+<h2 id="GET-和-POST-的区别"><a href="#GET-和-POST-的区别" class="headerlink" title="GET 和 POST 的区别"></a>GET 和 POST 的区别</h2><p><code>GET</code> 和 <code>POST</code> 是HTTP协议中的两种常用的请求方法，它们在以下几个方面有所区别：</p>
+<ul>
+<li>参数传递位置：</li>
+</ul>
+<p>GET请求的参数通常以查询字符串的形式附加在URL的末尾，例如：<code>http://example.com/path?param1=value1&amp;param2=value2</code> 。参数可见，可以被书签保存和缓存，长度受URL长度限制。<br>POST请求的参数通常包含在请求体中，不会显示在URL中，因此对于传递敏感信息更为安全。参数长度理论上没有限制，但实际上会受到服务器和浏览器的限制。</p>
+<ul>
+<li>安全性：</li>
+</ul>
+<p><code>GET</code> 请求是幂等且安全的，即对服务器资源的请求不会产生副作用，不会修改、删除或创建资源。<br><code>POST</code> 请求不是幂等的，可能会对服务器资源产生副作用，例如创建新的资源或更新已有资源。</p>
+<ul>
+<li>缓存：</li>
+</ul>
+<p><code>GET</code> 请求可以被缓存，因为相同的URL和参数会产生相同的结果。可以利用浏览器缓存来提高性能。<br><code>POST</code> 请求默认不会被缓存，每次发送都会向服务器请求最新数据。</p>
+<ul>
+<li>可见性：</li>
+</ul>
+<p><code>GET</code> 请求的参数和URL可见，可以被用户或其他人看到。因此，不应将敏感信息放在URL中。<br><code>POST</code> 请求的参数不会显示在URL中，对于传递敏感信息更为安全。</p>
+<ul>
+<li>用途：</li>
+</ul>
+<p><code>GET</code> 请求用于获取数据，一般用于数据的读取。<br><code>POST</code> 请求用于提交数据，一般用于数据的创建、更新或删除。<br>需要根据具体的需求和场景来选择使用 <code>GET</code> 或 <code>POST</code> 方法。一般来说，如果是获取数据或不对服务器产生副作用的操作，可以使用 <code>GET</code> 请求；如果涉及敏感信息的传递、数据的提交或对服务器资源产生副作用的操作，应使用 <code>POST</code> 请求。</p>
+<h2 id="事件循环"><a href="#事件循环" class="headerlink" title="事件循环"></a>事件循环</h2><p>首先，JavaScript是一门单线程的语言，意味着同一时间内只能做一件事，但是这并不意味着单线程就是阻塞，而实现单线程非阻塞的方法就是事件循环。</p>
+<p>在JavaScript中，所有的任务都可以分为</p>
+<ul>
+<li>同步任务：立即执行的任务，同步任务一般会直接进入到主线程中执行</li>
+<li>异步任务：异步执行的任务，比如ajax网络请求，setTimeout定时函数等</li>
+</ul>
+<p>在执行代码时，同步任务进入主线程，即主执行栈，异步任务进入任务队列，主线程内的任务执行完毕为空，会去任务队列读取对应的任务，推入主线程执行，不断循环，这个过程就叫事件循环。</p>
+<p>总的来说，事件循环是 JS 中处理异步操作的机制，它负责协调和执行任务队列中的任务。事件循环分为宏任务（macrotask）和微任务（microtask）两种类型的任务。</p>
+<h3 id="宏任务和微任务"><a href="#宏任务和微任务" class="headerlink" title="宏任务和微任务"></a>宏任务和微任务</h3><p>宏任务是一些需要在事件循环中进行处理的较大的任务单元，例如I/O操作、定时器回调等。它们被放置在事件循环的宏任务队列中，并按照先进先出的顺序执行。</p>
+<p><strong>宏任务有哪些</strong>：</p>
+<ul>
+<li><code>script</code></li>
+<li><code>setTimeout</code></li>
+<li><code>setInterval</code></li>
+<li><code>setImmediate</code></li>
+<li><code>Promise</code></li>
+<li><code>I/O</code> 操作的回调函数</li>
+<li><code>UI render</code></li>
+<li>用户交互事件的回调函数</li>
+</ul>
+<p>微任务是一些轻量级的任务单元，它们在宏任务执行结束后，但在浏览器渲染之前执行。它们被放置在事件循环的微任务队列中，并在宏任务执行结束后按照先进先出的顺序执行。</p>
+<p><strong>微任务有哪些</strong>：</p>
+<ul>
+<li><code>process.nextTick</code></li>
+<li><code>Promise</code> 的回调函数</li>
+<li><strong><code>async/await</code></strong></li>
+<li><code>MutationObserver（html5 新特性）</code></li>
+</ul>
 <p>为什么要有宏任务和微任务的区分呢？主要原因有两点：</p>
 <ul>
 <li>执行顺序和优先级：宏任务和微任务的执行顺序不同。宏任务在事件循环中处于较低优先级，每次只执行一个宏任务，因此在宏任务之间有可能存在较长的延迟。而微任务在宏任务执行结束后立即执行，因此它们能够更快地响应和处理结果。通过将一些高优先级的任务作为微任务，可以更及时地处理和更新相关的状态。</li>
@@ -704,17 +737,14 @@
 <ol>
 <li><p>执行同步任务：首先执行当前的同步代码，即按照顺序执行的 JavaScript 代码。</p>
 </li>
-<li><p>执行微任务队列：在执行完同步任务后，浏览器会检查微任务队列（microtask queue）中是否有微任务，如果有则按顺序执行所有的微任务。常见的微任务包括 Promise 的回调函数和 MutationObserver 的回调函数。</p>
+<li><p>执行微任务队列：在执行完同步任务后，浏览器会检查微任务队列（microtask queue）中是否有微任务，如果有则按顺序执行所有的微任务。</p>
 </li>
-<li><p>执行宏任务队列：浏览器会从宏任务队列中选择一个任务执行。常见的宏任务包括：</p>
+<li><p>执行宏任务队列：浏览器会从宏任务队列中选择一个任务执行。</p>
 </li>
 </ol>
-<ul>
-<li>setTimeout 和 setInterval 的回调函数</li>
-<li>I/O 操作的回调函数</li>
-<li>用户交互事件的回调函数</li>
-</ul>
+<blockquote>
 <p>每次只执行一个宏任务，执行完当前宏任务后，会检查是否需要执行 UI 渲染操作（重绘和回流），然后再执行下一个宏任务。</p>
+</blockquote>
 <ol start="4">
 <li><p>更新 UI 渲染：如果需要执行 UI 渲染操作，浏览器会根据 DOM 的变化进行重绘（repaint）和回流（reflow）。</p>
 </li>
@@ -751,7 +781,7 @@
 </ol>
 <p>需要注意的是，在事件循环过程中，如果某个阶段的任务队列为空，Node.js 会等待，直到有任务被添加到队列中才会进入下一个阶段。</p>
 <p>事件循环的机制使得 Node.js 可以高效处理大量的并发请求，同时能够响应用户的输入和事件。它提供了一种非阻塞、异步的编程模型，允许开发人员编写高效且可扩展的服务器端应用程序。</p>
-<h3 id="浏览器事件循环和node时间循环的区别"><a href="#浏览器事件循环和node时间循环的区别" class="headerlink" title="浏览器事件循环和node时间循环的区别"></a>浏览器事件循环和node时间循环的区别</h3><ol>
+<h3 id="浏览器事件循环和-node-事件循环的区别"><a href="#浏览器事件循环和-node-事件循环的区别" class="headerlink" title="浏览器事件循环和 node 事件循环的区别"></a>浏览器事件循环和 node 事件循环的区别</h3><ol>
 <li>运行环境：浏览器事件循环运行在浏览器环境中，而 Node.js 的事件循环运行在服务器端的 Node.js 运行时环境中。</li>
 <li>宏任务队列和微任务队列：浏览器事件循环有多个宏任务队列（如宏任务队列、消息队列、UI 渲染队列等），每个宏任务队列都有自己的微任务队列。而 Node.js 的事件循环只有一个宏任务队列和一个微任务队列</li>
 <li>宏任务和微任务的执行时机：在浏览器事件循环中，每个宏任务执行完毕后，会立即执行该宏任务队列中的所有微任务。而在 Node.js 的事件循环中，每个宏任务执行完毕后，会执行完当前微任务队列中的所有微任务，然后才会执行下一个宏任务。</li>
@@ -1075,7 +1105,8 @@ xhr.withCredentials &#x3D; true;<span aria-hidden="true" class="line-numbers-row
 <li>进程可以看做是独立应用，但线程不行</li>
 <li>资源：进程是 CPU 资源分配</li>
 </ul>
-<p><strong>Chrome 打开一个页面需要启动多少进程？分别有哪些进程</strong>？<br>浏览器从关闭状态进行启动，然后新开 1 个页面至少需要 1 个网络进程、1 个浏览器进程、1 个 GPU 进程以及 1 个渲染进程，共 4 个进程；后续再新开标签页，浏览器、网络进程、GPU进程是共享的，不会重新启动，如果2个页面属于同一站点的话，并且从a页面中打开的b页面，那么他们也会共用一个渲染进程，否则新开一个渲染进程。</p>
+<p><strong>Chrome 打开一个页面需要启动多少进程？分别有哪些进程</strong>？</p>
+<p>浏览器从关闭状态进行启动，然后新开 1 个页面至少需要 1 个网络进程、1 个浏览器进程、1 个 GPU 进程以及 1 个渲染进程，共 4 个进程；后续再新开标签页，浏览器、网络进程、GPU进程是共享的，不会重新启动，如果2个页面属于同一站点的话，并且从a页面中打开的b页面，那么他们也会共用一个渲染进程，否则新开一个渲染进程。</p>
 <ul>
 <li><code>浏览器进程</code>：主要负责界面显示、用户交互、子进程管理，同时提供存储等功能。</li>
 <li><code>渲染进程</code>：核心任务是将 HTML、CSS 和 JS 转换为用户可以与之交互的网页。默认情况下，Chrome 会为每个 Tab 标签创建一个渲染进程。出于安全考虑，渲染进程都是运行在沙箱模式下。</li>
@@ -1083,15 +1114,16 @@ xhr.withCredentials &#x3D; true;<span aria-hidden="true" class="line-numbers-row
 <li><code>网络进程</code>：主要负责页面的网络资源加载。之前是作为一个模块运行在浏览器进程里的，后来被独立出来，成为一个单独的进程。</li>
 <li><code>插件进程</code>：主要负责插件的运行。因为插件易崩溃，所以需要通过插件进程来隔离，以保证插件的崩溃不会对浏览器和页面造成影响。</li>
 </ul>
-<h2 id="减少回流与重绘的方法"><a href="#减少回流与重绘的方法" class="headerlink" title="减少回流与重绘的方法"></a>减少回流与重绘的方法</h2><ul>
-<li>避免频繁的操作 DOM ，可以创建一个文档片段，在它上面应用所有 DOM 操作，最后再把它添加到文档中</li>
-<li>如果非得操作 DOM ，尽量在低层级的 DOM 节点进行操作</li>
-<li>将 DOM 的多个读操作（写操作）放在一起，而不是读写操作穿插着写。</li>
-<li>使用 CSS 表达式</li>
-<li>不要频繁修改元素的样式，对于静态页面，可以修改类名，而不是样式</li>
-<li>使用 absolute 或 fixed ，使元素脱离文档流</li>
-<li>将元素设置 display: none ，操作结束后再把它显示出来</li>
-</ul>
+<h2 id="CSS加载会阻塞页面展示吗"><a href="#CSS加载会阻塞页面展示吗" class="headerlink" title="CSS加载会阻塞页面展示吗"></a>CSS加载会阻塞页面展示吗</h2><p><strong>会</strong>。在浏览器渲染页面的过程中，遇到外部CSS文件的加载会触发阻塞行为，即浏览器会等待CSS文件完全加载和解析后再进行页面的渲染。这是因为CSS文件对于页面的样式和布局起到重要的作用，浏览器需要先获取CSS文件并解析其中的样式规则，然后根据这些规则来确定元素的样式和布局信息，最终进行页面的渲染。</p>
+<p>当浏览器遇到外部CSS文件时，会执行以下操作：</p>
+<ol>
+<li>发送网络请求：浏览器会发送网络请求去获取CSS文件。</li>
+<li>下载CSS文件：浏览器会等待CSS文件完全下载完成。</li>
+<li>解析CSS文件：浏览器会解析CSS文件中的样式规则。</li>
+<li>构建渲染树：浏览器根据DOM树和解析后的CSS样式规则构建渲染树。</li>
+<li>布局和绘制：浏览器根据渲染树进行布局和绘制，最终展示页面。</li>
+</ol>
+<p>因此，如果CSS文件较大或网络连接较慢，CSS加载会耗费一定的时间，导致页面展示的延迟。这也是为什么在优化页面加载性能时，通常会采取一些策略，如使用内联CSS、压缩和合并CSS文件、使用浏览器缓存等来加快CSS加载速度，以减少页面展示的延迟。</p>
 
                 
             </div>
@@ -1678,7 +1710,7 @@ xhr.withCredentials &#x3D; true;<span aria-hidden="true" class="line-numbers-row
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            用自问自答的形式模拟面试，查漏补缺，备战大厂
+                            用自问自答的形式模拟面试，备战大厂
                         
                     </div>
                     <div class="publish-info">
@@ -1731,7 +1763,7 @@ xhr.withCredentials &#x3D; true;<span aria-hidden="true" class="line-numbers-row
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            用自问自答的形式模拟面试，查漏补缺，备战大厂
+                            用自问自答的形式模拟面试，备战大厂
                         
                     </div>
                     <div class="publish-info">
@@ -1995,7 +2027,7 @@ xhr.withCredentials &#x3D; true;<span aria-hidden="true" class="line-numbers-row
 
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">140.1k</span>&nbsp;字
+                class="white-color">141.5k</span>&nbsp;字
             
             
             
