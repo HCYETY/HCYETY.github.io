@@ -1069,7 +1069,8 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <li>引用类型，变量保存的就是一个内存中的一个指针。所以，当原型上面的属性是一个引用类型的值时，我们通过其中某一个实例对原型属性的更改，结果会反映在所有实例上面，这也是原型 共享 属性造成的最大问题 </li>
 <li>另一个问题就是我们在创建子类型（比如上面的 person）时，没有办法向超类型（ Person ）的构造函数中传递参数</li>
 </ul>
-<h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><h3 id="什么是闭包"><a href="#什么是闭包" class="headerlink" title="什么是闭包"></a>什么是闭包</h3><p>闭包就是在函数内部可以访问到其外部所以能访问到外部的参数和变量，是因为它是顺着作用域链向上查找的。</p>
+<h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><h3 id="什么是闭包"><a href="#什么是闭包" class="headerlink" title="什么是闭包"></a>什么是闭包</h3><p>函数嵌套函数，内部函数被外部函数返回并保存下来时，就会产生闭包。</p>
+<p>闭包就是在函数内部可以访问到其外部所以能访问到外部的参数和变量，是因为它是顺着作用域链向上查找的。</p>
 <h3 id="闭包的应用"><a href="#闭包的应用" class="headerlink" title="闭包的应用"></a>闭包的应用</h3><ol>
 <li>维护函数内的变量安全,避免全局变量的污染。</li>
 <li>维持一个变量不被回收。</li>
@@ -2060,7 +2061,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">141.5k</span>&nbsp;字
+                class="white-color">143.4k</span>&nbsp;字
             
             
             

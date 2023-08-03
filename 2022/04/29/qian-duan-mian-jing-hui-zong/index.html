@@ -627,14 +627,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3k
+                    3.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    11 分
+                    13 分
                 </div>
                 
 
@@ -802,14 +802,17 @@
 </li>
 <li><p>聊天数据是存到数据库的吗</p>
 </li>
-<li><p>算法题：二叉树路径和<br>给定一颗二叉树，返回所有路径的节点值相加后的结果，如：</p>
+<li><p>算法题：二叉树路径和</p>
+</li>
+</ol>
+<p>给定一颗二叉树，返回所有路径的节点值相加后的结果，如：</p>
 <pre class="line-numbers language-none"><code class="language-none">   1
   &#x2F; \
  2   3
 &#x2F; \  &#x2F;
 4 5 6<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>返回结果 (1+2+4)+(1+2+5)+(1+3+6)=25</p>
-</li>
+<ol start="7">
 <li><p>算法题：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/valid-parentheses/">有效的括号</a></p>
 </li>
 <li><p>浏览器存储数据的方式</p>
@@ -941,6 +944,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <li>unknown vs any</li>
 <li>怎么判断新技术是有价值的</li>
 </ol>
+<hr>
 <h1 id="广州海纳数智技术有限公司"><a href="#广州海纳数智技术有限公司" class="headerlink" title="广州海纳数智技术有限公司"></a>广州海纳数智技术有限公司</h1><p>2023.06.15 10:30~11:45 –&gt; 答案传送门</p>
 <h2 id="一面"><a href="#一面" class="headerlink" title="一面"></a>一面</h2><p><strong>项目</strong>：<br>首屏渲染时间是怎么优化的<br>跨域，实现跨域的方法<br>怎么实现监控<br>怎么捕获异常，使用什么 API<br>数据上报的方式</p>
 <blockquote>
@@ -952,7 +956,96 @@ console<span class="token punctuation">.</span><span class="token function">log<
 </blockquote>
 <p><strong>React</strong>：<br>为什么会有 <code>React hooks</code><br>什么是高阶组件</p>
 <h2 id="二面"><a href="#二面" class="headerlink" title="二面"></a>二面</h2><p><strong>项目</strong>：<br>脚手架是怎么搭建的<br>前端监控接入时是同步的还是异步的<br>数据保存到哪里</p>
-<p><strong>八股</strong>：<br>事件循环，什么是宏任务和微任务<br>浏览器性能<br>css 和 js 的优化<br><code>cookie</code> 和 <code>localStorage</code> 的区别<br>给 <code>localStorage</code> 做一个过期时间的功能，不使用后端<br>this 指向，<code>.bar()</code> 之后再 <code>.call()</code> <code>this</code> 会改变吗，那 <code>.bar()</code> 之后再 <code>new()</code> 呢<br>原型链<br>React 和 Vue 的区别</p>
+<p><strong>八股</strong>：<br>事件循环，什么是宏任务和微任务<br>浏览器性能<br>css 和 js 的优化<br><code>cookie</code> 和 <code>localStorage</code> 的区别<br>给 <code>localStorage</code> 做一个过期时间的功能，不使用后端<br>this 指向，<code>.bind()</code> 之后再 <code>.call()</code> <code>this</code> 会改变吗，那 <code>.bind()</code> 之后再 <code>new()</code> 呢<br>原型链<br>React 和 Vue 的区别</p>
+<hr>
+<h1 id="第四范式"><a href="#第四范式" class="headerlink" title="第四范式"></a>第四范式</h1><p>2023.06.19 10:00~10:30 –&gt; 答案传送门</p>
+<ol>
+<li>模拟实现 flat</li>
+<li> 代码输出</li>
+</ol>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">async1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">await</span> <span class="token function">async2</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token function">async1</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">function</span> <span class="token function">async2</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
+<span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 1 3 5 8 2 6 7 4</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ol start="3">
+<li>React hooks</li>
+<li> useCallback、useMemo、useContext</li>
+<li> 讲讲微前端</li>
+<li> 有没有接触过 Electron</li>
+<li> 介绍项目</li>
+<li> 埋点是怎么做的</li>
+</ol>
+<hr>
+<h1 id="阿里飞猪"><a href="#阿里飞猪" class="headerlink" title="阿里飞猪"></a>阿里飞猪</h1><p>2023.06.29 11:00~11:20 –&gt; 答案传送门</p>
+<h2 id="一面（项目）"><a href="#一面（项目）" class="headerlink" title="一面（项目）"></a>一面（项目）</h2><ol>
+<li>数据收集的方式，哪些 API</li>
+<li>window.addEventListener 参数，注册在哪里</li>
+<li>怎么封装 SDK</li>
+<li>行为数据通过哪些 API 收集到的</li>
+<li>PV、UV 怎么统计，点击怎么统计</li>
+<li>怎么监听点击事件</li>
+<li>五个按钮要监控，五个不用监控，还有其他点击事件，要怎么封装</li>
+<li>如果节点外层有层层嵌套，怎么知道最深层的节点有指定属性</li>
+<li>上报的信息是什么</li>
+<li>怎么定位源代码</li>
+<li>性能分析用什么 API</li>
+<li>微前端的实现原理是什么</li>
+</ol>
+<hr>
+<h1 id="小红书"><a href="#小红书" class="headerlink" title="小红书"></a>小红书</h1><p>2023.07.17 15:00~15:30 –&gt; 答案传送门</p>
+<h2 id="一面-1"><a href="#一面-1" class="headerlink" title="一面"></a>一面</h2><ol>
+<li>项目中遇到的问题</li>
+<li>用户行为怎么做的</li>
+<li>复杂度在哪里</li>
+<li>元素居中的方法</li>
+<li>hooks</li>
+<li>Promise 方法</li>
+<li>Promise.all 使用场景</li>
+<li>性能指标</li>
+<li>编程题：解析url</li>
+</ol>
+<h2 id="二面-1"><a href="#二面-1" class="headerlink" title="二面"></a>二面</h2><p>2023.07.20 14:00~14:30 –&gt; 答案传送门</p>
+<ol>
+<li>怎么捕获 js 错误</li>
+<li>其他错误捕获</li>
+<li>状态码</li>
+<li>强缓存和协商缓存</li>
+<li>事件循环</li>
+<li>宏任务和微任务</li>
+<li>localStorage、sessionstorage、indexedDB 的区别</li>
+<li>前端性能优化的常见手段<blockquote>
+<p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6941278592215515143">「2021」高频前端面试题汇总之前端性能优化篇</a></p>
+</blockquote>
+</li>
+<li>CDN 优化要在网络层做什么配置才能优化请求速度</li>
+<li>qiankun 解析过程</li>
+<li>qiankun 的沙箱是怎么实现的</li>
+<li>webpack 怎么提升加载性能</li>
+<li>Tree-shaking 注意事项</li>
+</ol>
+<p>实践、性能优化方案（网络、构建、语法）、网络、工程化</p>
 <hr>
 <h2 id="对-websocket-的理解"><a href="#对-websocket-的理解" class="headerlink" title="对 websocket 的理解"></a>对 websocket 的理解</h2><p>websocket 是 HTML5 提供的一种浏览器与服务器间进行全双工通讯的网络技术，依靠这种技术可以实现客户端和服务器端的长连接，双向实时通信。</p>
 <p>它最大的特点就是，服务器可以主动向客户端推送信息，客户端也可以主动向服务器发送信息。</p>
@@ -1125,7 +1218,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <li>键名是弱引用，键值可以是任意的；</li>
 <li>不能遍历。</li>
 </ol>
-<h2 id=""><a href="#" class="headerlink" title=""></a></h2><h2 id="-1"><a href="#-1" class="headerlink" title=""></a></h2><h2 id="-2"><a href="#-2" class="headerlink" title=""></a></h2><h2 id="-3"><a href="#-3" class="headerlink" title=""></a></h2><h2 id="-4"><a href="#-4" class="headerlink" title=""></a></h2><h2 id="-5"><a href="#-5" class="headerlink" title=""></a></h2><h2 id="-6"><a href="#-6" class="headerlink" title=""></a></h2><h2 id="-7"><a href="#-7" class="headerlink" title=""></a></h2><h2 id="-8"><a href="#-8" class="headerlink" title=""></a></h2><h2 id="-9"><a href="#-9" class="headerlink" title=""></a></h2>
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2>
                 
             </div>
             <hr/>
@@ -2028,7 +2121,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">141.5k</span>&nbsp;字
+                class="white-color">143.4k</span>&nbsp;字
             
             
             

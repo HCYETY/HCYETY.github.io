@@ -623,7 +623,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.4k
+                    1.3k
                 </div>
                 
 
@@ -681,10 +681,8 @@
 <ul>
 <li><strong>无连接</strong>：每个 HTTP 请求都是独立的，服务器不会保留之前的任何请求状态。这意味着每个请求都需要进行完整的连接、传输和关闭，无法直接利用已经建立的连接。</li>
 <li><strong>无状态</strong>：HTTP 协议本身不对请求和响应之间的状态进行持久化保存。服务器不会保留之前请求的任何信息，每个请求都是相互独立的。这导致服务器无法感知客户端之间的关联和状态。</li>
-<li><strong>基于文本</strong>：HTTP 的消息是由纯文本组成的，以 ASCII 码的形式进行传输。请求和响应的头部和主体都是使用纯文本进行定义和表示。</li>
 <li><strong>简单灵活</strong>：HTTP 的设计目标之一是简单性，它的方法和头部字段的语义相对简单，易于理解和实现。同时，HTTP 协议也具备一定的灵活性，允许根据需要添加自定义的头部字段和扩展功能。</li>
 <li><strong>支持缓存</strong>：HTTP 协议支持缓存机制，可以将经常请求的资源保存在客户端或代理服务器上，减少对服务器的请求，提高访问速度和性能。</li>
-<li><strong>支持安全性</strong>：HTTP 协议本身是不安全的，但可以通过使用 HTTPS（HTTP Secure）协议来加密通信内容，提供更高的安全性和隐私保护。</li>
 </ul>
 <p>HTTP 协议使用请求-响应模型，客户端发起一个请求，服务器接收请求并返回响应。请求和响应的结构由方法（如 GET、POST、PUT、DELETE）、URL、协议版本、头部字段和可选的主体组成。HTTP 的工作流程如下：</p>
 <ol>
@@ -722,16 +720,15 @@
 <li>HTTP 协议还支持一些其他功能，如缓存控制、身份验证、重定向、内容压缩等。</li>
 </ul>
 <p>总结起来，HTTP 协议是一种用于在客户端和服务器之间传输数据的协议，它采用请求-响应模型，通过请求方法和 URL 标识资源，并使用各种头部字段来传递额外的信息。HTTP 协议在 Web 开发中广泛应用，为浏览器和服务器之间的数据交换提供了一种标准化的方式。</p>
-<h2 id="TLS-连接"><a href="#TLS-连接" class="headerlink" title="TLS 连接"></a>TLS 连接</h2><h2 id="什么是-HTTP3"><a href="#什么是-HTTP3" class="headerlink" title="什么是 HTTP3"></a>什么是 HTTP3</h2><h2 id="HTTP1-1、HTTP2、HTTP3"><a href="#HTTP1-1、HTTP2、HTTP3" class="headerlink" title="HTTP1.1、HTTP2、HTTP3"></a>HTTP1.1、HTTP2、HTTP3</h2><h2 id="http-1-0-1-12-0-区别"><a href="#http-1-0-1-12-0-区别" class="headerlink" title="http 1.0 1.12.0 区别"></a>http 1.0 1.12.0 区别</h2><p>http 1.0最基础的http 协议<br>http 1.1</p>
-<ul>
-<li>引入更多的缓存策略，如 cache-control: E-tag</li>
-<li>长链接，默认开启 Connection: keep-alive ，多次 http 请求减少了 TCP连接次数</li>
-<li>断点续传，状态吗 206</li>
-<li>增加新的 method PUT DELETE 等，可以设计 Restful APIhttp2.0</li>
-<li>header 压缩，以减少体积</li>
-<li>多路复用，一个TCP 连接中可以多个 http 并行请求。拼接资源(如雪碧图、多js 拼接一个)将变的多余。服务器端推送</li>
-</ul>
-<h2 id=""><a href="#" class="headerlink" title=""></a></h2><h2 id="-1"><a href="#-1" class="headerlink" title=""></a></h2>
+<h2 id="TLS-连接"><a href="#TLS-连接" class="headerlink" title="TLS 连接"></a>TLS 连接</h2><h2 id="什么是-HTTP3"><a href="#什么是-HTTP3" class="headerlink" title="什么是 HTTP3"></a>什么是 HTTP3</h2><h2 id="HTTP1-0-1-1-2-0-的区别"><a href="#HTTP1-0-1-1-2-0-的区别" class="headerlink" title="HTTP1.0/1.1/2.0 的区别"></a>HTTP1.0/1.1/2.0 的区别</h2><h2 id="GET-和-POST-的区别"><a href="#GET-和-POST-的区别" class="headerlink" title="GET 和 POST 的区别"></a>GET 和 POST 的区别</h2><ol>
+<li>GET 一般是获取数据，POST 一般是提交数据</li>
+<li>GET 参数会放在 url 上，安全性比较差，POST 是放在 body 中</li>
+<li>GET 请求刷新服务器或退回是没有影响的，POST 请求退回时会重新提交数据</li>
+<li>GET 请求时会被缓存，POST 请求不会被缓存</li>
+<li>GET 请求会被保存在浏览器历史记录中，POST 不会</li>
+<li>GET 请求只能进行 url 编码，POST 请求支持很多种（文件、表单）</li>
+</ol>
+
                 
             </div>
             <hr/>
@@ -1301,30 +1298,29 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/06/01/bei-zhan-da-han-qian-duan-mian-shi-zhi-ji-suan-ji-wang-luo-pian/">
+                <a href="/2023/06/29/a-li-fei-zhu-mian-jing-xiang-jie/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="备战大厂前端面试之计算机网络篇">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="阿里飞猪面经详解">
                         
-                        <span class="card-title">备战大厂前端面试之计算机网络篇</span>
+                        <span class="card-title">阿里飞猪面经详解</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            用自问自答的形式模拟面试，备战大厂
+                            复盘飞猪的面经
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-06-01
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-06-29
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1337,7 +1333,6 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -1345,8 +1340,12 @@
                         <span class="chip bg-color">前端</span>
                     </a>
                     
-                    <a href="/tags/%E5%85%AB%E8%82%A1%E6%96%87/">
-                        <span class="chip bg-color">八股文</span>
+                    <a href="/tags/%E9%9D%A2%E7%BB%8F/">
+                        <span class="chip bg-color">面经</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%A1%B9%E7%9B%AE/">
+                        <span class="chip bg-color">项目</span>
                     </a>
                     
                 </div>
@@ -1632,7 +1631,7 @@
 
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">141.5k</span>&nbsp;字
+                class="white-color">143.4k</span>&nbsp;字
             
             
             

@@ -623,14 +623,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    268
+                    1.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    4 分
                 </div>
                 
 
@@ -672,7 +672,90 @@
 <li>【10】<a href="https://hcyety.github.io/2023/06/01/bei-zhan-da-han-qian-duan-shi-xi-zhi-shou-xie-dai-ma-pian/">备战前端实习面试之手写代码篇</a></li>
 <li>【11】<a href="https://hcyety.github.io/2022/03/08/bei-zhan-da-han-qian-duan-shi-xi-zhi-dai-ma-shu-chu-jie-guo-pian/">备战前端实习面试之代码输出结果篇</a></li>
 </ul>
-<h1 id="项目"><a href="#项目" class="headerlink" title="项目"></a>项目</h1><h2 id="前端监控系统"><a href="#前端监控系统" class="headerlink" title="前端监控系统"></a>前端监控系统</h2><h2 id="在线编程笔试平台"><a href="#在线编程笔试平台" class="headerlink" title="在线编程笔试平台"></a>在线编程笔试平台</h2><h2 id="简历中的其他部分"><a href="#简历中的其他部分" class="headerlink" title="简历中的其他部分"></a>简历中的其他部分</h2><h3 id="脚手架怎么制作"><a href="#脚手架怎么制作" class="headerlink" title="脚手架怎么制作"></a>脚手架怎么制作</h3><h3 id="这个项目有什么亮点"><a href="#这个项目有什么亮点" class="headerlink" title="这个项目有什么亮点"></a>这个项目有什么亮点</h3><h3 id="做完有什么收获"><a href="#做完有什么收获" class="headerlink" title="做完有什么收获"></a>做完有什么收获</h3><h3 id="有遇到什么难题吗，怎么解决的"><a href="#有遇到什么难题吗，怎么解决的" class="headerlink" title="有遇到什么难题吗，怎么解决的"></a>有遇到什么难题吗，怎么解决的</h3><h3 id="有针对项目做过什么优化吗，有什么性能优化的措施"><a href="#有针对项目做过什么优化吗，有什么性能优化的措施" class="headerlink" title="有针对项目做过什么优化吗，有什么性能优化的措施"></a>有针对项目做过什么优化吗，有什么性能优化的措施</h3><h3 id="项目中为什么使用-TS-而不是-JS"><a href="#项目中为什么使用-TS-而不是-JS" class="headerlink" title="项目中为什么使用 TS 而不是 JS"></a>项目中为什么使用 TS 而不是 JS</h3><h3 id="国际化要怎么做"><a href="#国际化要怎么做" class="headerlink" title="国际化要怎么做"></a>国际化要怎么做</h3><h3 id="对工程化的理解"><a href="#对工程化的理解" class="headerlink" title="对工程化的理解"></a>对工程化的理解</h3>
+<h1 id="项目"><a href="#项目" class="headerlink" title="项目"></a>项目</h1><h2 id="前端监控系统"><a href="#前端监控系统" class="headerlink" title="前端监控系统"></a>前端监控系统</h2><h3 id="说说对前端监控的理解"><a href="#说说对前端监控的理解" class="headerlink" title="说说对前端监控的理解"></a>说说对前端监控的理解</h3><p>前端监控是指在前端应用程序中收集、监视和分析各种关键指标和数据，以了解应用程序的性能、稳定性和用户体验情况。通过前端监控，开发团队可以及时发现和解决问题，提高应用程序的质量，追求更好的性能和用户体验。</p>
+<p>前端监控一般需要监控各种指标，包括页面加载时间、资源加载时间、错误信息、用户交互行为、页面性能指标（如FPS、CPU占用等）以及用户行为分析等。</p>
+<ol>
+<li>错误监控：通过监控前端应用程序中的错误信息，可以快速发现并定位代码中的错误和异常。错误信息包括JavaScript运行时错误、网络请求错误、资源加载错误等。</li>
+<li>性能监控：需要追踪页面加载时间、资源加载时间、渲染性能等关键性能指标。</li>
+<li>用户体验监控：需要记录用户的交互行为、浏览行为和页面转化情况等。</li>
+<li>监控工具和技术：前端监控可以使用各种监控工具和技术实现，例如使用JavaScript错误监控库（如Sentry、Bugsnag等）捕获JavaScript错误，使用性能监控工具（如Web Vitals、Lighthouse等）评估页面性能，使用用户行为分析工具（如Google Analytics、Hotjar等）了解用户行为等。</li>
+<li>数据分析和报告：对收集的数据进行分析和报告，通过统计和可视化的方式呈现。</li>
+</ol>
+<h3 id="如何设计埋点-SDK"><a href="#如何设计埋点-SDK" class="headerlink" title="如何设计埋点 SDK"></a>如何设计埋点 SDK</h3><h3 id="前端核心性能指标"><a href="#前端核心性能指标" class="headerlink" title="前端核心性能指标"></a>前端核心性能指标</h3><ol>
+<li>页面加载时间（Page Load Time）：</li>
+</ol>
+<ul>
+<li>概念：指从用户请求页面开始到页面完全加载完成所需的时间。</li>
+</ul>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 计算页面加载时间</span>
+<span class="token keyword">const</span> startTime <span class="token operator">=</span> performance<span class="token punctuation">.</span>timing<span class="token punctuation">.</span>navigationStart<span class="token punctuation">;</span> <span class="token comment">// 页面导航开始时间</span>
+<span class="token keyword">const</span> endTime <span class="token operator">=</span> performance<span class="token punctuation">.</span>timing<span class="token punctuation">.</span>loadEventEnd<span class="token punctuation">;</span> <span class="token comment">// 页面加载完成时间</span>
+<span class="token keyword">const</span> pageLoadTime <span class="token operator">=</span> endTime <span class="token operator">-</span> startTime<span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Page Load Time:'</span><span class="token punctuation">,</span> pageLoadTime<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ol start="2">
+<li>首次内容渲染时间（First Contentful Paint，FCP）：</li>
+</ol>
+<ul>
+<li>概念：指页面上第一次渲染任何文本、图像、非空白的canvas或SVG的时间点。</li>
+</ul>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 计算首次内容渲染时间</span>
+
+<span class="token comment">// 方法一：</span>
+<span class="token keyword">const</span> fcpEntry <span class="token operator">=</span> performance<span class="token punctuation">.</span><span class="token function">getEntriesByName</span><span class="token punctuation">(</span><span class="token string">'first-contentful-paint'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> fcpTime <span class="token operator">=</span> fcpEntry<span class="token punctuation">.</span>startTime<span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'First Contentful Paint:'</span><span class="token punctuation">,</span> fcpTime<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 方法二：</span>
+<span class="token keyword">const</span> observer <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">PerformanceObserver</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">list</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">const</span> entries <span class="token operator">=</span> list<span class="token punctuation">.</span><span class="token function">getEntries</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> fcpEntry <span class="token operator">=</span> entries<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">entry</span><span class="token punctuation">)</span> <span class="token operator">=></span> entry<span class="token punctuation">.</span>name <span class="token operator">===</span> <span class="token string">'first-contentful-paint'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>fcpEntry<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'首次内容渲染时间:'</span><span class="token punctuation">,</span> fcpEntry<span class="token punctuation">.</span>startTime<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+observer<span class="token punctuation">.</span><span class="token function">observe</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> entryTypes<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'paint'</span><span class="token punctuation">]</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ol start="3">
+<li>首次有效渲染时间（First Meaningful Paint，FMP）：</li>
+</ol>
+<ul>
+<li>概念：指页面上有意义的内容首次出现并可视的时间点。 </li>
+<li>计算实现：需要根据具体的业务场景来定义什么是有意义的内容，并监测关键元素的渲染时间。</li>
+</ul>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 监测关键元素的渲染时间</span>
+
+<span class="token comment">// 方法一：</span>
+<span class="token keyword">const</span> keyElement <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'content'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 假设content为关键元素</span>
+<span class="token keyword">const</span> fmpTime <span class="token operator">=</span> keyElement <span class="token operator">?</span> keyElement<span class="token punctuation">.</span>renderTime <span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'First Meaningful Paint:'</span><span class="token punctuation">,</span> fmpTime<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 方法二：</span>
+<span class="token keyword">const</span> observer <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">PerformanceObserver</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">list</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">const</span> entries <span class="token operator">=</span> list<span class="token punctuation">.</span><span class="token function">getEntries</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> fmpEntry <span class="token operator">=</span> entries<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">entry</span><span class="token punctuation">)</span> <span class="token operator">=></span> entry<span class="token punctuation">.</span>name <span class="token operator">===</span> <span class="token string">'first-meaningful-paint'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>fmpEntry<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'首次有效渲染时间:'</span><span class="token punctuation">,</span> fmpEntry<span class="token punctuation">.</span>startTime<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+observer<span class="token punctuation">.</span><span class="token function">observe</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> entryTypes<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'paint'</span><span class="token punctuation">]</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ol start="4">
+<li>用户交互响应时间（Time to Interactive，TTI）：</li>
+</ol>
+<ul>
+<li>详解：TTI是指页面加载完成后，用户可以与页面进行交互的时间点。 </li>
+<li>计算实现：可以通过监测用户交互事件的响应时间来确定 <code>TTI</code> 。</li>
+</ul>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 监测用户交互事件的响应时间</span>
+<span class="token keyword">const</span> button <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'button'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 假设button为用户交互元素</span>
+<span class="token keyword">let</span> ttiTime <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+button<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+ttiTime <span class="token operator">=</span> performance<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 用户点击按钮时的时间</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Time to Interactive:'</span><span class="token punctuation">,</span> ttiTime<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="在线编程笔试平台"><a href="#在线编程笔试平台" class="headerlink" title="在线编程笔试平台"></a>在线编程笔试平台</h2><h2 id="简历中的其他部分"><a href="#简历中的其他部分" class="headerlink" title="简历中的其他部分"></a>简历中的其他部分</h2><h3 id="脚手架怎么制作"><a href="#脚手架怎么制作" class="headerlink" title="脚手架怎么制作"></a>脚手架怎么制作</h3><h3 id="这个项目有什么亮点"><a href="#这个项目有什么亮点" class="headerlink" title="这个项目有什么亮点"></a>这个项目有什么亮点</h3><h3 id="做完有什么收获"><a href="#做完有什么收获" class="headerlink" title="做完有什么收获"></a>做完有什么收获</h3><h3 id="有遇到什么难题吗，怎么解决的"><a href="#有遇到什么难题吗，怎么解决的" class="headerlink" title="有遇到什么难题吗，怎么解决的"></a>有遇到什么难题吗，怎么解决的</h3><h3 id="有针对项目做过什么优化吗，有什么性能优化的措施"><a href="#有针对项目做过什么优化吗，有什么性能优化的措施" class="headerlink" title="有针对项目做过什么优化吗，有什么性能优化的措施"></a>有针对项目做过什么优化吗，有什么性能优化的措施</h3><h3 id="项目中为什么使用-TS-而不是-JS"><a href="#项目中为什么使用-TS-而不是-JS" class="headerlink" title="项目中为什么使用 TS 而不是 JS"></a>项目中为什么使用 TS 而不是 JS</h3><h3 id="国际化要怎么做"><a href="#国际化要怎么做" class="headerlink" title="国际化要怎么做"></a>国际化要怎么做</h3><h3 id="对工程化的理解"><a href="#对工程化的理解" class="headerlink" title="对工程化的理解"></a>对工程化的理解</h3><h3 id="微前端"><a href="#微前端" class="headerlink" title="微前端"></a>微前端</h3>
                 
             </div>
             <hr/>
@@ -1579,7 +1662,7 @@
 
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">141.5k</span>&nbsp;字
+                class="white-color">143.4k</span>&nbsp;字
             
             
             

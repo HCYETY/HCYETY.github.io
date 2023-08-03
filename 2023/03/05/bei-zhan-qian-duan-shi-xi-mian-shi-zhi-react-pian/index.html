@@ -705,7 +705,7 @@
 <h2 id="对-componentWillReceiveProps-的理解"><a href="#对-componentWillReceiveProps-的理解" class="headerlink" title="对 componentWillReceiveProps 的理解"></a>对 <code>componentWillReceiveProps</code> 的理解</h2><p>该方法当 <code>props</code> 发生变化时执行，初始化 <code>render</code> 时不执行。在这个回调函数里面，你可以根据属性的变化，通过调用 <code>this.setState()</code> 来更新你的组件状态，旧的属性还是可以通过 <code>this.props</code> 来获取，这里调用更新状态是安全的，并不会触发额外的 <code>render</code> 调用。</p>
 <p>使用好处：在这个生命周期中，可以在子组件的 <code>render</code> 函数执行前获取新的 <code>props</code> ，从而更新子组件自己的 <code>state</code> 。可以将数据请求放在这里执行，需要传的参数则从 <code>componentWillReceiveProps(nextProps)</code> 中获取，而不必将所有的请求都放在父组件中。于是该请求只会在该组件渲染时才会发出，从而减轻请求负担。</p>
 <h2 id="对-React-Intl-的理解，它的工作原理？"><a href="#对-React-Intl-的理解，它的工作原理？" class="headerlink" title="对 React-Intl 的理解，它的工作原理？"></a>对 React-Intl 的理解，它的工作原理？</h2><p>React-intl是雅虎的语言国际化开源项目FormatJS的一部分，通过其提供的组件和API可以与ReactJS绑定。</p>
-<p>React-intl提供了两种使用方法，一种是引用React组件，另一种<br>当 DOM 操作比较频繁时， React 底层会先将前后两次的虚拟 DOM 树进行对比，定位出具体需要更新的部分，生成一个补丁集</p>
+<p>React-intl提供了两种使用方法，一种是引用React组件，另一种当 DOM 操作比较频繁时， React 底层会先将前后两次的虚拟 DOM 树进行对比，定位出具体需要更新的部分，生成一个补丁集</p>
 <h2 id="React组件的构造函数有什么作用？它是必须的吗？"><a href="#React组件的构造函数有什么作用？它是必须的吗？" class="headerlink" title="React组件的构造函数有什么作用？它是必须的吗？"></a>React组件的构造函数有什么作用？它是必须的吗？</h2><p>构造函数主要用于两个目的：</p>
 <ul>
 <li>通过将对象分配给 <code>this.state</code> 来初始化本地状态</li>
@@ -1762,7 +1762,7 @@
 
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">141.5k</span>&nbsp;字
+                class="white-color">143.4k</span>&nbsp;字
             
             
             
